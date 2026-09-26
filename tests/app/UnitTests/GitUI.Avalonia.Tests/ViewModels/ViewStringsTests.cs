@@ -1,5 +1,6 @@
 using System.Xml.Linq;
 using GitExtensions.Extensibility.Translations;
+using GitExtensions.Extensibility.Translations.Xliff;
 using GitExtensions.Plugins.CreateLocalBranches;
 using GitExtensions.Plugins.DeleteUnusedBranches;
 using GitExtensions.Plugins.FindLargeFiles;
@@ -221,6 +222,32 @@ public sealed class ViewStringsTests
         strings.NewName.NeutralText.Should().Be("New name");
     }
 
+    [TestCase(false)]
+    [TestCase(true)]
+    public void Main_and_plugin_catalogs_preserve_German_translations_in_either_order(bool pluginsFirst)
+    {
+        string directory = Path.Combine(FindRepoRoot(), "src", "app", "GitUI", "Translation");
+        TranslationFile main = TranslationSerializer.Deserialize(Path.Combine(directory, "German.xlf"))!;
+        TranslationFile plugins = TranslationSerializer.Deserialize(Path.Combine(directory, "German.Plugins.xlf"))!;
+        TranslationFile[] catalogs = pluginsFirst ? [plugins, main] : [main, plugins];
+
+        // Catalogs cache missing entries, so also check a second window using the same files.
+        for (int window = 0; window < 2; window++)
+        {
+            RenameBranchStrings rename = new();
+            FindLargeFilesStrings largeFiles = new();
+            foreach (TranslationFile catalog in catalogs)
+            {
+                ((ITranslate)rename).TranslateItems(catalog);
+                ((ITranslate)largeFiles).TranslateItems(catalog);
+            }
+
+            rename.NewName.Text.Should().Be("Neuer Name");
+            rename.Rename.Text.Should().Be("Umbenennen");
+            largeFiles.Title.Text.Should().Be("Finde große Dateien");
+        }
+    }
+
     // English.xlf stores multi-line sources with whatever line endings git checked out.
     private static string Normalize(string text) => text.ReplaceLineEndings("\n");
 
@@ -236,17 +263,17 @@ public sealed class ViewStringsTests
                 Id: (string)unit.Attribute("id")!,
                 Source: (string)unit.Element(ns + "source")!)))
             .ToDictionary(u => (u.Category, u.Id), u => u.Source);
+    }
 
-        static string FindRepoRoot()
+    private static string FindRepoRoot()
+    {
+        DirectoryInfo? directory = new(TestContext.CurrentContext.TestDirectory);
+        while (directory is not null && !File.Exists(Path.Combine(directory.FullName, "GitExtensions.slnx")))
         {
-            DirectoryInfo? directory = new(TestContext.CurrentContext.TestDirectory);
-            while (directory is not null && !File.Exists(Path.Combine(directory.FullName, "GitExtensions.slnx")))
-            {
-                directory = directory.Parent;
-            }
-
-            return directory?.FullName ?? throw new DirectoryNotFoundException("Repository root not found");
+            directory = directory.Parent;
         }
+
+        return directory?.FullName ?? throw new DirectoryNotFoundException("Repository root not found");
     }
 
     private sealed class RecordingTranslation : ITranslation

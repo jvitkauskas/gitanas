@@ -75,7 +75,9 @@ public abstract class ViewStrings : ITranslate
     {
         foreach ((string category, string item, string property, TranslatedText text) in _entries)
         {
-            text.Text = translation.TranslateItem(category, item, property, () => text.NeutralText) ?? text.NeutralText;
+            // Main and plugin catalogs are applied in sequence. A missing entry must not undo a translation
+            // from another catalog, or cache this view's fallback as a translation for later views.
+            text.Text = translation.TranslateItem(category, item, property, () => null) ?? text.Text;
         }
     }
 

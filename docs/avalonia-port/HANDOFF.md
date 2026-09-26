@@ -169,6 +169,16 @@ needed Windows updates to satisfy .NET's CET prerequisite; no application fix wa
 left the normal qa settings/registry absent. The reusable `ge-qa-windows10` VM, evidence and cold checkpoint
 are retained locally; see its report for launch instructions and explicit coverage limits.
 
+## UI comparison follow-up (2026-09-26)
+
+The [WinForms comparison follow-up](QA-UI-Improvements-2026-09-26.md) makes Commit commands wrap at narrow
+widths, reduces the action column, restores per-list regex examples/history, improves hints and dynamic links,
+and separates content panes using the host theme. Release builds and all 18 suites pass on Linux and Windows;
+the report records actual UI checks and limits. The Mutter `destroyed popup not top most popup` crash from the
+comparison recurred once; the new protocol trace captures parent destruction before a popup. Its deterministic
+UI trigger and fix remain open. Do not conflate it with the fixed key-repeat
+issue or claim the existing vendored backend fixes popup teardown.
+
 ## Rules
 
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` when an agent makes them. Do not commit the

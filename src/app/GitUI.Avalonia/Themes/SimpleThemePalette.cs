@@ -69,6 +69,18 @@ internal static class SimpleThemePalette
         byte Channel(byte from, byte to) => (byte)Math.Round(from + ((to - from) * amount));
     }
 
+    /// <summary>Preserves a theme color when readable; otherwise chooses the best contrasting neutral.</summary>
+    internal static Color ReadableText(Color preferred, params Color[] backgrounds)
+    {
+        if (backgrounds.All(background => Contrast(preferred, background) >= 4.5))
+        {
+            return preferred;
+        }
+
+        return backgrounds.Min(background => Contrast(Colors.White, background)) >= backgrounds.Min(background => Contrast(Colors.Black, background))
+            ? Colors.White : Colors.Black;
+    }
+
     private static double Contrast(Color first, Color second)
     {
         double a = Luminance(first);

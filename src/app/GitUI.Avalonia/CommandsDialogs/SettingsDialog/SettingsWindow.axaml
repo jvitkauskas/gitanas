@@ -47,7 +47,7 @@
       <!-- Equivalent of SettingsTreeViewUserControl: the filter and the tree of the pages. -->
       <DockPanel>
         <TextBox Name="filter" DockPanel.Dock="Top" Margin="0,0,0,4" Watermark="{Binding Strings.TypeToFind.Text}" Text="{Binding Filter}" />
-        <TreeView Name="pagesTree" ItemsSource="{Binding Nodes}" SelectedItem="{Binding SelectedNode}"
+        <TreeView Background="{DynamicResource WindowBrush}" Name="pagesTree" ItemsSource="{Binding Nodes}" SelectedItem="{Binding SelectedNode}"
                   BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
           <TreeView.ItemContainerTheme>
             <ControlTheme TargetType="TreeViewItem" BasedOn="{StaticResource {x:Type TreeViewItem}}" x:DataType="vm:SettingsTreeNode">

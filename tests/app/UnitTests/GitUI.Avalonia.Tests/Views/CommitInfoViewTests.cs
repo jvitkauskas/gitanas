@@ -21,6 +21,22 @@ public sealed class CommitInfoViewTests : HeadlessTest
     private static readonly GitRevision Revision = new(ObjectId.Parse("c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3c3")) { Subject = "Fix the bug", Author = "Alice", AuthorEmail = "alice@example.org" };
 
     [Test]
+    public Task Links_resolve_their_brush_after_attachment_and_follow_resource_changes() => OnUiThreadAsync(() =>
+    {
+        XhtmlTextBlock text = new() { Xhtml = "<a href='https://example.org'>Example</a>" };
+        Run link = text.Inlines!.OfType<Run>().Single();
+        Window window = new() { Content = text, Width = 300, Height = 200 };
+        window.Resources["SystemControlHyperlinkTextBrush"] = Brushes.LightSkyBlue;
+        window.Show();
+        Dispatcher.UIThread.RunJobs();
+        link.Foreground.Should().BeSameAs(Brushes.LightSkyBlue);
+        window.Resources["SystemControlHyperlinkTextBrush"] = Brushes.DarkBlue;
+        Dispatcher.UIThread.RunJobs();
+        link.Foreground.Should().BeSameAs(Brushes.DarkBlue);
+        window.Close();
+    });
+
+    [Test]
     public Task Xhtml_text_shows_the_markup_and_raises_link_clicks() => OnUiThreadAsync(() =>
     {
         XhtmlTextBlock text = new() { Xhtml = "Author: <a href='mailto:alice@example.org'>Alice &lt;alice@example.org&gt;</a><br/><b>bold</b> <u>tag</u>: caf&#233; &amp; more" };

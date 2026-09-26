@@ -19,6 +19,24 @@ namespace GitUI.AvaloniaTests.Views;
 public sealed class FileStatusListViewTests : HeadlessTest
 {
     [Test]
+    public Task File_filters_are_remembered_on_Enter_and_when_leaving_the_input() => OnUiThreadAsync(() =>
+    {
+        (Window window, FileStatusListView view, FileStatusListViewModel viewModel) = Show();
+        TextBox filter = view.FindControl<TextBox>("filterTextBox")!;
+        filter.Focus();
+        window.KeyTextInput(@"\.cs$");
+        window.KeyPressQwerty(PhysicalKey.Enter, RawInputModifiers.None);
+        viewModel.FilterHistory[0].Should().Be(@"\.cs$");
+        viewModel.AllEntries.Should().HaveCount(2);
+        filter.Text = "src";
+        Dispatcher.UIThread.RunJobs();
+        view.FindControl<Button>("clearFilterButton")!.Focus();
+        Dispatcher.UIThread.RunJobs();
+        viewModel.FilterHistory[0].Should().Be("src");
+        window.Close();
+    });
+
+    [Test]
     public Task Render_screenshots([Values("light", "dark")] string theme) => OnUiThreadAsync(() =>
     {
         UseTheme(theme == "dark" ? ThemeVariant.Dark : ThemeVariant.Light);

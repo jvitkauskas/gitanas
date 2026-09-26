@@ -54,7 +54,7 @@
       </TextBlock>
       <TextBlock Name="caret" Grid.Column="4" VerticalAlignment="Center" />
     </Grid>
-    <Grid ColumnDefinitions="380,Auto,*">
+    <Grid ColumnDefinitions="8*,Auto,17*">
       <!-- Equivalent of splitLeft: the unstaged files, then toolbarStaged above the staged files. -->
       <Grid RowDefinitions="Auto,*,Auto,Auto,*">
         <!-- The rescan is the Refresh button of the toolbar of the unstaged files, as in FormCommit. -->
@@ -107,8 +107,8 @@
         </Border>
         <GridSplitter Grid.Row="1" Height="5" ResizeDirection="Rows" Background="Transparent" />
         <!-- Equivalent of tableLayoutPanel1: the buttons beside toolbarCommit and the message. -->
-        <Grid Grid.Row="2" ColumnDefinitions="220,*" RowDefinitions="Auto,*" ColumnSpacing="6">
-          <ScrollViewer Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+        <Grid Grid.Row="2" ColumnDefinitions="Auto,*" RowDefinitions="Auto,*" ColumnSpacing="6">
+          <ScrollViewer Grid.RowSpan="2" MinWidth="170" MaxWidth="200" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
             <StackPanel Classes="commitButtons" Spacing="4">
               <Button Name="solveMergeConflictsButton" Command="{Binding SolveMergeConflictsCommand}" IsVisible="{Binding HasMergeConflicts}"
                       Background="#C0E66363" FontWeight="Bold">
@@ -120,19 +120,19 @@
               <Button Name="commitButton" Command="{Binding CommitCommand}" IsEnabled="{Binding CanCommit}">
                 <Grid ColumnDefinitions="Auto,*">
                   <Image Name="commitImage" Source="avares://GitUI.Avalonia/Assets/RepoStateClean.png" Width="16" Height="16" />
-                  <AccessText Grid.Column="1" Text="{Binding Strings.Commit.AccessKeyText}" HorizontalAlignment="Center" />
+                  <AccessText Grid.Column="1" Text="{Binding Strings.Commit.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 </Grid>
               </Button>
               <Button Name="commitAndPushButton" Command="{Binding CommitAndPushCommand}"
                       IsEnabled="{Binding CanCommit}" IsVisible="{Binding Options.ShowCommitAndPush}" Classes.forced="{Binding IsPushForced}">
                 <Grid ColumnDefinitions="Auto,*">
                   <Image Source="avares://GitUI.Avalonia/Assets/ArrowUp.png" Width="16" Height="16" />
-                  <AccessText Grid.Column="1" Text="{Binding CommitAndPushText}" HorizontalAlignment="Center" />
+                  <AccessText Grid.Column="1" Text="{Binding CommitAndPushText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 </Grid>
               </Button>
               <Button Name="modifyMessageButton" Command="{Binding ModifyCommitMessageCommand}"
                       IsVisible="{Binding ShowModifyMessageButton}" ToolTip.Tip="{Binding Strings.ModifyCommitMessageButtonToolTip.Text}">
-                <AccessText Text="{Binding Strings.ModifyCommitMessage.AccessKeyText}" HorizontalAlignment="Center" />
+                <AccessText Text="{Binding Strings.ModifyCommitMessage.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
               </Button>
               <CheckBox Name="amend" Content="{Binding Strings.Amend.AccessKeyText}" IsChecked="{Binding Amend}" IsEnabled="{Binding IsAmendEnabled}" />
               <StackPanel Name="amendPanel" Margin="18,0,0,0" Spacing="4" IsVisible="{Binding Amend}">
@@ -141,7 +141,7 @@
                         IsEnabled="{Binding CanResetSoft}" ToolTip.Tip="{Binding Strings.ResetSoftToolTip.Text}">
                   <Grid ColumnDefinitions="Auto,*">
                     <Image Source="avares://GitUI.Avalonia/Assets/ResetCurrentBranchToHere.png" Width="16" Height="16" />
-                    <AccessText Grid.Column="1" Text="{Binding Strings.ResetSoft.AccessKeyText}" HorizontalAlignment="Center" />
+                    <AccessText Grid.Column="1" Text="{Binding Strings.ResetSoft.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                   </Grid>
                 </Button>
               </StackPanel>
@@ -150,26 +150,52 @@
               <Button Name="stashStagedButton" Command="{Binding StashStagedCommand}" IsVisible="{Binding Options.SupportStashStaged}">
                 <Grid ColumnDefinitions="Auto,*">
                   <Image Source="avares://GitUI.Avalonia/Assets/Stash.png" Width="16" Height="16" />
-                  <AccessText Grid.Column="1" Text="{Binding Strings.StashStaged.AccessKeyText}" HorizontalAlignment="Center" />
+                  <AccessText Grid.Column="1" Text="{Binding Strings.StashStaged.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 </Grid>
               </Button>
               <Button Name="resetAllButton" Command="{Binding ResetAllChangesCommand}" IsEnabled="{Binding HasChanges}" IsVisible="{Binding Options.ShowResetAllChanges}">
                 <Grid ColumnDefinitions="Auto,*">
                   <Image Source="avares://GitUI.Avalonia/Assets/ResetWorkingDirChanges.png" Width="16" Height="16" />
-                  <AccessText Grid.Column="1" Text="{Binding Strings.ResetAllChanges.AccessKeyText}" HorizontalAlignment="Center" />
+                  <AccessText Grid.Column="1" Text="{Binding Strings.ResetAllChanges.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 </Grid>
               </Button>
               <Button Name="resetUnstagedButton" Command="{Binding ResetUnstagedChangesCommand}" IsEnabled="{Binding HasUnstagedChanges}" IsVisible="{Binding Options.ShowResetWorkTreeChanges}">
                 <Grid ColumnDefinitions="Auto,*">
                   <Image Source="avares://GitUI.Avalonia/Assets/ResetWorkingDirChanges.png" Width="16" Height="16" />
-                  <AccessText Grid.Column="1" Text="{Binding Strings.ResetUnstagedChanges.AccessKeyText}" HorizontalAlignment="Center" />
+                  <AccessText Grid.Column="1" Text="{Binding Strings.ResetUnstagedChanges.AccessKeyText}" HorizontalAlignment="Center" TextWrapping="Wrap" />
                 </Grid>
               </Button>
             </StackPanel>
           </ScrollViewer>
           <!-- Equivalent of toolbarCommit: previous messages, templates, create branch, and the options on the right. -->
-          <DockPanel Grid.Column="1" Margin="0,0,0,2">
-            <DropDownButton Name="optionsButton" DockPanel.Dock="Right" Classes="toolbar" Content="{Binding Strings.Options.AccessKeyText}">
+          <!-- Keep every command reachable when the message pane is narrow. -->
+          <WrapPanel Name="messageToolbar" Grid.Column="1" Margin="0,0,0,2">
+            <DropDownButton Name="commitMessageButton" Classes="toolbar" IsEnabled="{Binding IsMessageEditable}">
+              <Grid ColumnDefinitions="Auto,*" ColumnSpacing="4">
+                <Image Source="avares://GitUI.Avalonia/Assets/WorkingDirChanges.png" Width="16" Height="16" />
+                <AccessText Grid.Column="1" TextWrapping="Wrap" Text="{Binding Strings.CommitMessageMenu.AccessKeyText}" />
+              </Grid>
+              <!-- A context menu opened by the button: the items of a MenuFlyout filled when opening are not shown. -->
+              <DropDownButton.ContextMenu>
+                <ContextMenu Placement="BottomEdgeAlignedLeft" />
+              </DropDownButton.ContextMenu>
+            </DropDownButton>
+            <DropDownButton Name="commitTemplatesButton" Classes="toolbar" IsEnabled="{Binding IsMessageEditable}" ToolTip.Tip="{Binding Strings.CommitTemplatesToolTip.Text}">
+              <Grid ColumnDefinitions="Auto,*" ColumnSpacing="4">
+                <Image Source="avares://GitUI.Avalonia/Assets/CommitTemplates.png" Width="16" Height="16" />
+                <AccessText Grid.Column="1" TextWrapping="Wrap" Text="{Binding Strings.CommitTemplates.AccessKeyText}" />
+              </Grid>
+              <DropDownButton.ContextMenu>
+                <ContextMenu Placement="BottomEdgeAlignedLeft" />
+              </DropDownButton.ContextMenu>
+            </DropDownButton>
+            <Button Name="createBranchButton" Classes="toolbar" Command="{Binding CreateBranchCommand}" ToolTip.Tip="{Binding Strings.CreateBranchToolTip.Text}">
+              <Grid ColumnDefinitions="Auto,*" ColumnSpacing="4">
+                <Image Source="avares://GitUI.Avalonia/Assets/BranchCreate.png" Width="16" Height="16" />
+                <AccessText Grid.Column="1" TextWrapping="Wrap" Text="{Binding Strings.CreateBranch.AccessKeyText}" />
+              </Grid>
+            </Button>
+            <DropDownButton Name="optionsButton" Classes="toolbar" Content="{Binding Strings.Options.AccessKeyText}">
               <DropDownButton.Flyout>
                 <MenuFlyout Placement="BottomEdgeAlignedRight">
                   <MenuItem Header="{Binding Strings.CloseDialogAfterEachCommit.AccessKeyText}" ToggleType="CheckBox" IsChecked="{Binding CloseDialogAfterEachCommit}" />
@@ -201,35 +227,7 @@
                 </MenuFlyout>
               </DropDownButton.Flyout>
             </DropDownButton>
-            <!-- Clipped when too narrow, instead of drawn below the options (the overflow of the ToolStrip). -->
-            <StackPanel Orientation="Horizontal" Spacing="2" ClipToBounds="True">
-              <DropDownButton Name="commitMessageButton" Classes="toolbar" IsEnabled="{Binding IsMessageEditable}">
-                <StackPanel Orientation="Horizontal" Spacing="4">
-                  <Image Source="avares://GitUI.Avalonia/Assets/WorkingDirChanges.png" Width="16" Height="16" />
-                  <AccessText Text="{Binding Strings.CommitMessageMenu.AccessKeyText}" />
-                </StackPanel>
-                <!-- A context menu opened by the button: the items of a MenuFlyout filled when opening are not shown. -->
-                <DropDownButton.ContextMenu>
-                  <ContextMenu Placement="BottomEdgeAlignedLeft" />
-                </DropDownButton.ContextMenu>
-              </DropDownButton>
-              <DropDownButton Name="commitTemplatesButton" Classes="toolbar" IsEnabled="{Binding IsMessageEditable}" ToolTip.Tip="{Binding Strings.CommitTemplatesToolTip.Text}">
-                <StackPanel Orientation="Horizontal" Spacing="4">
-                  <Image Source="avares://GitUI.Avalonia/Assets/CommitTemplates.png" Width="16" Height="16" />
-                  <AccessText Text="{Binding Strings.CommitTemplates.AccessKeyText}" />
-                </StackPanel>
-                <DropDownButton.ContextMenu>
-                  <ContextMenu Placement="BottomEdgeAlignedLeft" />
-                </DropDownButton.ContextMenu>
-              </DropDownButton>
-              <Button Name="createBranchButton" Classes="toolbar" Command="{Binding CreateBranchCommand}" ToolTip.Tip="{Binding Strings.CreateBranchToolTip.Text}">
-                <StackPanel Orientation="Horizontal" Spacing="4">
-                  <Image Source="avares://GitUI.Avalonia/Assets/BranchCreate.png" Width="16" Height="16" />
-                  <AccessText Text="{Binding Strings.CreateBranch.AccessKeyText}" />
-                </StackPanel>
-              </Button>
-            </StackPanel>
-          </DockPanel>
+          </WrapPanel>
           <Border Grid.Column="1" Grid.Row="1" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
             <Panel>
               <!-- As Message.TextBoxFont = AppSettings.CommitFont. -->

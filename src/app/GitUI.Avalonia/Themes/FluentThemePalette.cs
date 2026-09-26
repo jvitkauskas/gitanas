@@ -51,6 +51,12 @@ internal static class FluentThemePalette
             Map(control + "ForegroundFocused", "ThemeForegroundBrush");
         }
 
+        Map("TextControlPlaceholderForeground", "ThemeForegroundLowBrush");
+        Map("TextControlPlaceholderForegroundPointerOver", "ThemeForegroundLowBrush");
+        Map("TextControlPlaceholderForegroundFocused", "ThemeForegroundLowBrush");
+        Map("ComboBoxPlaceHolderForeground", "ThemeForegroundLowBrush");
+        Map("ComboBoxPlaceHolderForegroundPointerOver", "ThemeForegroundLowBrush");
+        Map("ComboBoxPlaceHolderForegroundFocused", "ThemeForegroundLowBrush");
         Map("TextControlBackgroundFocused", "SimpleInputBackgroundBrush");
         Map("TextControlBorderBrushFocused", "SimpleFocusBrush");
         Map("TextControlForegroundPointerOver", "ThemeForegroundBrush");

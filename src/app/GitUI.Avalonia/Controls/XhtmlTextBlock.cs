@@ -6,6 +6,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Documents;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.Markup.Xaml.MarkupExtensions;
 using Avalonia.Media;
 
 namespace GitUI.Avalonia.Controls;
@@ -205,9 +206,9 @@ public sealed class XhtmlTextBlock : SelectableTextBlock
                 if (uri is not null)
                 {
                     run.TextDecorations = global::Avalonia.Media.TextDecorations.Underline;
-                    run.Foreground = this.TryFindResource("SystemControlHyperlinkTextBrush", ActualThemeVariant, out object? brush) && brush is IBrush linkBrush
-                        ? linkBrush
-                        : Brushes.RoyalBlue;
+
+                    // Resolve after attachment too, and follow later theme/resource changes.
+                    run.Bind(TextElement.ForegroundProperty, new DynamicResourceExtension("SystemControlHyperlinkTextBrush"));
                     _links.Add((text.Length, text.Length + value.Length, uri));
                 }
 

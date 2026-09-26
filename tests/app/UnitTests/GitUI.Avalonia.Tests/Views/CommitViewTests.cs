@@ -1,4 +1,6 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Headless;
 using Avalonia.Input;
 using Avalonia.LogicalTree;
@@ -16,6 +18,49 @@ namespace GitUI.AvaloniaTests.Views;
 [TestFixture]
 public sealed class CommitViewTests : HeadlessTest
 {
+    [TestCase(700, false)]
+    [TestCase(950, false)]
+    [TestCase(1200, false)]
+    [TestCase(700, true)]
+    [TestCase(950, true)]
+    [TestCase(1200, true)]
+    public Task Message_commands_remain_inside_the_pane_at_small_window_widths(int width, bool longLabels) => OnUiThreadAsync(() =>
+    {
+        (CommitViewModel viewModel, _) = CommitViewModelTests.Create(new CommitViewModelTests.FakeHost());
+        CommitWindow window = new() { DataContext = viewModel, Width = width, Height = 650 };
+        if (longLabels)
+        {
+            foreach (string name in new[] { "commitMessageButton", "commitTemplatesButton", "createBranchButton" })
+            {
+                // Exercise label lengths found in translations without changing the process language.
+                window.FindControl<Button>(name)!.GetLogicalDescendants().OfType<AccessText>().Single().Text = "Eine längere übersetzte Beschriftung für diesen Befehl";
+            }
+        }
+
+        window.Show();
+        Dispatcher.UIThread.RunJobs();
+        WrapPanel toolbar = window.FindControl<WrapPanel>("messageToolbar")!;
+        Control[] buttons = toolbar.Children.ToArray();
+        buttons.Should().HaveCount(4);
+        foreach (Control button in buttons)
+        {
+            button.IsEffectivelyVisible.Should().BeTrue();
+            button.Bounds.Width.Should().BeGreaterThan(0);
+            button.Bounds.Right.Should().BeLessThanOrEqualTo(toolbar.Bounds.Width + 1);
+            button.Bounds.Bottom.Should().BeLessThanOrEqualTo(toolbar.Bounds.Height + 1);
+            global::Avalonia.Point position = button.TranslatePoint(default, window)!.Value;
+            (position.X + button.Bounds.Width).Should().BeLessThanOrEqualTo(window.ClientSize.Width + 1);
+        }
+
+        for (int index = 0; index < buttons.Length; index++)
+        {
+            buttons.Skip(index + 1).Should().OnlyContain(other => !buttons[index].Bounds.Intersects(other.Bounds));
+        }
+
+        window.MessageEditor.Bounds.Width.Should().BeGreaterThan(180);
+        window.Close();
+    });
+
     [Test]
     public Task Render_screenshots([Values("light", "dark")] string theme) => OnUiThreadAsync(() =>
     {

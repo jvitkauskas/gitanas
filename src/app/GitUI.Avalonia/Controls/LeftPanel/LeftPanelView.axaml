@@ -58,7 +58,7 @@
       </Button>
     </Grid>
     <!-- The trees as a virtualizing list of their visible nodes (FlatTreeList), for the thousands of references of a large repository. -->
-    <ListBox Name="tree">
+    <ListBox Name="tree" Background="{DynamicResource WindowBrush}">
       <ListBox.ContextMenu>
         <!-- Equivalent of menuMain: filled for the selection when it opens (contextMenu_Opening). -->
         <ContextMenu Name="treeMenu" />

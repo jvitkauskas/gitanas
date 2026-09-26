@@ -12,6 +12,9 @@ Latest additional compositor coverage: [Ubuntu GNOME and Fedora KDE VM QA](QA-VM
 full builds/tests, native Wayland workflows, live scaling and X11 fallback. See that report for explicit limits.
 Additional Windows coverage: [Windows 10 LTSC VM QA](QA-VM-Windows-2026-09-26.md), including the full build,
 all 18 test suites, five external merge tools, native dialogs and live 100–200% scaling.
+The [UI comparison follow-up](QA-UI-Improvements-2026-09-26.md) covers responsive Commit commands,
+file-filter history, theme contrast and content panes on Ubuntu Wayland and Windows, plus an unresolved
+intermittent Wayland popup-order crash observed during the preceding comparison.
 
 ## Setup
 

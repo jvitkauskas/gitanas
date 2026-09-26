@@ -1636,6 +1636,10 @@ Suitable for some config files modified locally.</source>
         <source>Find in commit files using git-grep regular expression...</source>
         <target />
       </trans-unit>
+      <trans-unit id="filterHistoryButton.ToolTipText">
+        <source>Recent file filters and examples</source>
+        <target />
+      </trans-unit>
       <trans-unit id="tmsiEditLocallyIgnoredFiles.Text">
         <source>Edit &amp;locally ignored files</source>
         <target />

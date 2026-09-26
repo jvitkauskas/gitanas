@@ -65,6 +65,26 @@ public partial class FileStatusListView : UserControl
                 : [],
             PlacementMode.BottomEdgeAlignedRight);
 
+        filterTextBox.LostFocus += (_, _) => (DataContext as FileStatusListViewModel)?.RememberFilter();
+        filterTextBox.AddHandler(
+            KeyDownEvent,
+            (_, e) =>
+            {
+                if (e.Key == global::Avalonia.Input.Key.Enter && e.KeyModifiers == global::Avalonia.Input.KeyModifiers.None)
+                {
+                    (DataContext as FileStatusListViewModel)?.RememberFilter();
+                    e.Handled = true;
+                }
+                else if (e.Key == global::Avalonia.Input.Key.F4 && e.KeyModifiers == global::Avalonia.Input.KeyModifiers.None)
+                {
+                    // Alt+Down belongs to the containing dialog's next-file/change navigation.
+                    ShowFilterHistory();
+                    e.Handled = true;
+                }
+            },
+            global::Avalonia.Interactivity.RoutingStrategies.Tunnel);
+        filterHistoryButton.Click += (_, _) => ShowFilterHistory();
+
         // As SetFindInCommitFilesGitGrepVisibilityImpl: the box has the focus when it is shown.
         gitGrepBox.PropertyChanged += (_, e) =>
         {
@@ -83,6 +103,29 @@ public partial class FileStatusListView : UserControl
                 viewModel.ActivateSelection();
             }
         };
+    }
+
+    private void ShowFilterHistory()
+    {
+        if (DataContext is not FileStatusListViewModel viewModel)
+        {
+            return;
+        }
+
+        viewModel.RememberFilter();
+        MenuFlyout? flyout = FreshMenuFlyout.Show(
+            filterHistoryButton,
+            viewModel.FilterHistory.Select(expression => new MenuItem
+            {
+                Header = expression.Replace("_", "__"),
+                Command = viewModel.ApplyFilterCommand,
+                CommandParameter = expression,
+            }),
+            PlacementMode.BottomEdgeAlignedRight);
+        if (flyout is not null)
+        {
+            flyout.Closed += (_, _) => filterTextBox.Focus();
+        }
     }
 
     /// <summary>The context menu, e.g. for tests.</summary>

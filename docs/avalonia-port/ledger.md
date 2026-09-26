@@ -315,6 +315,14 @@ modal repetition and live 100–200% scaling pass. Windows updates resolved the 
 prerequisite; no new application blocker was confirmed. The report distinguishes coverage from untested Windows
 integrations and physical/multiple-display behavior.
 
+The [WinForms comparison follow-up](QA-UI-Improvements-2026-09-26.md) adds responsive Commit commands,
+bounded per-list filter history, readable hints/dynamic links and theme-aware content panes. Full Linux and
+Windows builds/tests pass; the report distinguishes live UI checks from automated layout/contrast coverage.
+The preceding comparison observed a Mutter `destroyed popup not top most popup` protocol crash, which recurred
+once during follow-up dismissal checks. The new trace records parent destruction before a popup; its
+deterministic UI trigger remains unknown. It is not fixed
+by this UI batch or by the separate vendored key-repeat patch.
+
 The [Windows QA report of 2026-09-25](QA-Windows-2026-09-25.md) records the earlier click-through. Portable copies no
 longer register themselves as the installed application or create registry keys when reading absent settings;
 their checklist startup preference is local to the portable settings file. Saving unchanged shell-extension options

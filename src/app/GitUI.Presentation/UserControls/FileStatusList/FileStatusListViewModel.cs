@@ -18,6 +18,7 @@ public sealed class FileStatusListStrings : ViewStrings
         NoFiles = Add("NoFiles", "Text", "No changes");
         LoadingFiles = Add("LoadingFiles", "Text", "Loading data...");
         FilterWatermark = Add("cboFilterComboBox", "Watermark", "Filter files using a regular expression...");
+        FilterHistory = Add("filterHistoryButton", "ToolTipText", "Recent file filters and examples");
         FilterToolTipTitle = Add("FilterToolTip", "ToolTipTitle", "RegEx");
         AsTreeToolTip = Add("btnAsTree", "ToolTipText", "Toggle flat list / tree");
         ByPathToolTip = Add("btnByPath", "ToolTipText", "Group by file path");
@@ -32,6 +33,8 @@ public sealed class FileStatusListStrings : ViewStrings
     public TranslatedText LoadingFiles { get; }
 
     public TranslatedText FilterWatermark { get; }
+
+    public TranslatedText FilterHistory { get; }
 
     public TranslatedText FilterToolTipTitle { get; }
 
@@ -110,6 +113,32 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     /// <summary>The error of an invalid <see cref="Filter"/>, as its tooltip.</summary>
     [ObservableProperty]
     public partial string? FilterError { get; set; }
+
+    /// <summary>Recent file filters and the examples offered by the WinForms filter dropdown.</summary>
+    public ObservableCollection<string> FilterHistory { get; } = ["^(?!.*NotThisWord)", @"^(?!.*\bg?tests?/)"];
+
+    /// <summary>Remembers a valid filter that matches files, when accepted or when its input loses focus.</summary>
+    public void RememberFilter()
+    {
+        if (string.IsNullOrWhiteSpace(Filter) || FilterError is not null || !AllEntries.Any())
+        {
+            return;
+        }
+
+        FilterHistory.Remove(Filter);
+        FilterHistory.Insert(0, Filter);
+        while (FilterHistory.Count > 10)
+        {
+            FilterHistory.RemoveAt(FilterHistory.Count - 1);
+        }
+    }
+
+    [RelayCommand]
+    private void ApplyFilter(string expression)
+    {
+        Filter = expression;
+        RememberFilter();
+    }
 
     public bool IsFilterActive => _filterRegex is not null;
 

@@ -206,14 +206,18 @@
       <TextBox Name="filterTextBox" Text="{Binding Filter}" PlaceholderText="{Binding Strings.FilterWatermark.Text}"
                ToolTip.Tip="{Binding FilterError}" Classes.active="{Binding IsFilterActive}" Classes.invalid="{Binding FilterError, Converter={x:Static ObjectConverters.IsNotNull}}">
         <TextBox.InnerRightContent>
-          <Button Name="clearFilterButton" Classes="toolbar" Content="✕" Command="{Binding ClearFilterCommand}"
-                  IsVisible="{Binding Filter, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+          <StackPanel Orientation="Horizontal">
+            <Button Name="clearFilterButton" Classes="toolbar" Content="✕" Command="{Binding ClearFilterCommand}"
+                    IsVisible="{Binding Filter, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+            <DropDownButton Name="filterHistoryButton" Classes="toolbar" Padding="2,0" MinHeight="0" Height="22" VerticalAlignment="Center"
+                            ToolTip.Tip="{Binding Strings.FilterHistory.Text}" AutomationProperties.Name="{Binding Strings.FilterHistory.Text}" />
+          </StackPanel>
         </TextBox.InnerRightContent>
       </TextBox>
     </Grid>
-    <Panel>
+    <Panel Background="{DynamicResource WindowBrush}">
       <!-- The tree as a virtualizing list of its visible nodes (FlatTreeList), for the thousands of files of a large commit. -->
-      <ListBox Name="filesTree" SelectionMode="Multiple" IsVisible="{Binding !ShowNoFiles}">
+      <ListBox Background="{DynamicResource WindowBrush}" Name="filesTree" SelectionMode="Multiple" IsVisible="{Binding !ShowNoFiles}">
         <ListBox.ContextMenu>
           <!-- Equivalent of FileStatusList.ItemContextMenu. -->
           <ContextMenu Name="treeMenu">

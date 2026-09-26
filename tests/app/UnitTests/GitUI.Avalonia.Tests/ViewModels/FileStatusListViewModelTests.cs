@@ -21,6 +21,52 @@ public sealed class FileStatusListViewModelTests
     ];
 
     [Test]
+    public void Filter_history_keeps_valid_matching_expressions_and_reuses_them_without_losing_selection()
+    {
+        FileStatusListViewModel viewModel = Create();
+        viewModel.FilterHistory.Should().Equal("^(?!.*NotThisWord)", @"^(?!.*\bg?tests?/)");
+        viewModel.SetDiff(First, Second, CreateStatuses());
+        viewModel.Select(e => e.Item.Name == "src/Program.cs");
+        viewModel.Filter = @"\.cs$";
+        viewModel.RememberFilter();
+        viewModel.Filter = "src";
+        viewModel.RememberFilter();
+        viewModel.ApplyFilterCommand.Execute(@"\.cs$");
+        viewModel.FilterHistory.Take(2).Should().Equal(@"\.cs$", "src");
+        viewModel.FilterHistory.Should().HaveCount(4);
+        viewModel.SelectedEntry!.Item.Name.Should().Be("src/Program.cs");
+
+        foreach (string ignored in new[] { "(", "does-not-match", "", " " })
+        {
+            viewModel.Filter = ignored;
+            viewModel.RememberFilter();
+        }
+
+        viewModel.FilterHistory.Should().HaveCount(4);
+        viewModel.ClearFilterCommand.Execute(null);
+        viewModel.AllEntries.Should().HaveCount(4);
+        Create().FilterHistory.Should().HaveCount(2, "each list has its own history");
+    }
+
+    [Test]
+    public void Filter_history_is_bounded_and_moves_reused_filters_to_the_front()
+    {
+        FileStatusListViewModel viewModel = Create();
+        viewModel.SetDiff(First, Second, CreateStatuses());
+        for (int index = 0; index < 12; index++)
+        {
+            viewModel.Filter = $"src(?#filter{index})";
+            viewModel.RememberFilter();
+        }
+
+        viewModel.FilterHistory.Should().HaveCount(10);
+        viewModel.FilterHistory.Should().NotContain("src(?#filter0)");
+        viewModel.ApplyFilterCommand.Execute("src(?#filter4)");
+        viewModel.FilterHistory[0].Should().Be("src(?#filter4)");
+        viewModel.FilterHistory.Should().OnlyHaveUniqueItems().And.HaveCount(10);
+    }
+
+    [Test]
     public void Shows_a_tree_of_folders_and_selects_the_first_file()
     {
         FileStatusListViewModel viewModel = Create();

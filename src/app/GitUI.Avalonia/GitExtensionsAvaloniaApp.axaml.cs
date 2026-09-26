@@ -108,6 +108,11 @@ public partial class GitExtensionsAvaloniaApp : Application
             Resources["RevisionGridRowHeight"] = GetRevisionGridRowHeight(options.FontSize);
         }
 
+        foreach ((object key, object? value) in ContentThemePalette.Create(options.IsDarkTheme, options.Colors))
+        {
+            Resources[key] = value;
+        }
+
         if (options.Colors is { } colors)
         {
             ApplyColors(variant, colors);
@@ -146,11 +151,6 @@ public partial class GitExtensionsAvaloniaApp : Application
         if (TryGetColor(ThemeColors.Control, out Color control))
         {
             Resources["ControlBrush"] = new SolidColorBrush(control);
-        }
-
-        if (TryGetColor(ThemeColors.HotTrack, out Color link))
-        {
-            Resources["SystemControlHyperlinkTextBrush"] = new SolidColorBrush(link);
         }
 
         // AppColor values (diff colors, graph lanes, ...) for views to use as {DynamicResource AppColor.<name>}.

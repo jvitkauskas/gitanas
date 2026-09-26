@@ -121,6 +121,33 @@ public sealed class FileStatusListViewTests : HeadlessTest
     });
 
     [Test]
+    public Task Bulk_selection_is_published_once_and_restored_after_reloading() => OnUiThreadAsync(() =>
+    {
+        (Window window, FileStatusListView view, FileStatusListViewModel viewModel) = Show();
+        List<GitItemStatus> files = [.. Enumerable.Range(0, 1000).Select(i => new GitItemStatus($"file{i:D4}.txt") { IsChanged = true })];
+        viewModel.SetDiff(First, Second, files);
+        Dispatcher.UIThread.RunJobs();
+        int changes = 0;
+        viewModel.SelectionChanged += (_, _) => ++changes;
+
+        view.Tree.SelectAll();
+        viewModel.SelectedEntries.Should().HaveCount(files.Count);
+        changes.Should().Be(1, "a bulk selection must not publish every intermediate selection");
+
+        viewModel.SetDiff(First, Second, files);
+        changes = 0;
+        viewModel.Select(_ => true);
+        view.Tree.SelectedItems!.Count.Should().Be(files.Count);
+        changes.Should().Be(1);
+
+        viewModel.Select(e => e.Item.Name is "file0000.txt" or "file0001.txt" or "file0999.txt");
+        SelectedNames(view).Should().Equal("file0000.txt", "file0001.txt", "file0999.txt");
+        viewModel.Select(_ => false);
+        view.Tree.SelectedItems!.Count.Should().Be(0);
+        window.Close();
+    });
+
+    [Test]
     public Task Context_menu_shows_the_items_of_the_state_and_runs_their_commands() => OnUiThreadAsync(() =>
     {
         (Window window, FileStatusListView view, FileStatusListViewModel viewModel) = Show();

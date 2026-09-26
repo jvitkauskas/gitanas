@@ -6,6 +6,7 @@ using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using Avalonia.VisualTree;
+using GitUI.Presentation;
 
 namespace GitUI.Avalonia.Controls.FlatTree;
 
@@ -173,6 +174,7 @@ public sealed class FlatTreeList : IDisposable
         _syncing = true;
         try
         {
+            using IDisposable? update = (_selectedNodes as IBatchObservableCollection)?.BeginUpdate();
             foreach (FlatTreeRow row in e.RemovedItems.OfType<FlatTreeRow>())
             {
                 // A row removed by collapsing its parent: its node stays selected.
@@ -182,9 +184,10 @@ public sealed class FlatTreeList : IDisposable
                 }
             }
 
+            HashSet<object> selected = new(_selectedNodes.Cast<object>(), ReferenceEqualityComparer.Instance);
             foreach (FlatTreeRow row in e.AddedItems.OfType<FlatTreeRow>())
             {
-                if (!_selectedNodes.Contains(row.Node))
+                if (selected.Add(row.Node))
                 {
                     _selectedNodes.Add(row.Node);
                 }
@@ -224,18 +227,54 @@ public sealed class FlatTreeList : IDisposable
         _syncing = true;
         try
         {
-            FlatTreeRow[] rows = [.. _selectedNodes.Cast<object>().Select(_rows.RowOf).OfType<FlatTreeRow>()];
-            _list.Selection.BeginBatchUpdate();
-            _list.Selection.Clear();
-            foreach (FlatTreeRow row in rows)
+            HashSet<FlatTreeRow> rows = [];
+            FlatTreeRow? lastVisible = null;
+            foreach (object node in _selectedNodes)
             {
-                _list.Selection.Select(_rows.Rows.IndexOf(row));
+                if (_rows.RowOf(node) is { } row)
+                {
+                    rows.Add(row);
+                    lastVisible = row;
+                }
             }
 
-            _list.Selection.EndBatchUpdate();
-            if (rows.Length > 0)
+            _list.Selection.BeginBatchUpdate();
+            try
             {
-                _list.ScrollIntoView(rows[^1]);
+                _list.Selection.Clear();
+                for (int index = 0; index < _rows.Rows.Count; index++)
+                {
+                    if (!rows.Contains(_rows.Rows[index]))
+                    {
+                        continue;
+                    }
+
+                    int start = index;
+                    while (index + 1 < _rows.Rows.Count && rows.Contains(_rows.Rows[index + 1]))
+                    {
+                        ++index;
+                    }
+
+                    _list.Selection.SelectRange(start, index);
+                }
+            }
+            finally
+            {
+                _list.Selection.EndBatchUpdate();
+            }
+
+            if (lastVisible is { } last)
+            {
+                // Let the virtualizing panel lay out the replacement rows before jumping to a distant selection.
+                Dispatcher.UIThread.Post(
+                    () =>
+                    {
+                        if (ReferenceEquals(_rows.RowOf(last.Node), last) && _selectedNodes.Contains(last.Node))
+                        {
+                            _list.ScrollIntoView(last);
+                        }
+                    },
+                    DispatcherPriority.Background);
             }
         }
         finally

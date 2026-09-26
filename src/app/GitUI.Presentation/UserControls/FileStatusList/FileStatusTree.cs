@@ -639,6 +639,8 @@ public static class FileStatusTreeBuilder
     /// <summary>As <c>StatusSorter.PathFirstComparer</c>.</summary>
     private sealed class PathFirstComparer : IComparer<GitItemStatus>
     {
+        private readonly Dictionary<(string Left, string Right), int> _pathComparisons = [];
+
         public int Compare(GitItemStatus? l, GitItemStatus? r)
             => (l, r) switch
             {
@@ -648,21 +650,34 @@ public static class FileStatusTreeBuilder
                 _ => CompareNonNull(l, r)
             };
 
-        private static int CompareNonNull(GitItemStatus l, GitItemStatus r)
+        private int CompareNonNull(GitItemStatus l, GitItemStatus r)
         {
-            int pathComparison = (l.Path.Value, r.Path.Value) switch
+            // Files often share a directory. Reuse its comparison instead of repeatedly comparing every component.
+            int pathComparison = 0;
+            if (l.Path.Value != r.Path.Value && !_pathComparisons.TryGetValue((l.Path.Value, r.Path.Value), out pathComparison))
+            {
+                pathComparison = ComparePaths(l.Path, r.Path);
+                _pathComparisons.Add((l.Path.Value, r.Path.Value), pathComparison);
+            }
+
+            return pathComparison == 0 ? StringComparer.InvariantCulture.Compare(l.Name, r.Name) : pathComparison;
+        }
+
+        private static int ComparePaths(RelativePath l, RelativePath r)
+        {
+            int pathComparison = (l.Value, r.Value) switch
             {
                 ("", "") => 0,
                 (_, "") => -1,
                 ("", _) => 1,
-                _ => ComparePath(l.Path.Value.AsSpan(), r.Path.Value.AsSpan())
+                _ => ComparePath(l.Value.AsSpan(), r.Value.AsSpan())
             };
 
             return pathComparison switch
             {
-                -1 => StartsWith(r.Path, l.Path) ? 1 : -1,
-                1 => StartsWith(l.Path, r.Path) ? -1 : 1,
-                _ => StringComparer.InvariantCulture.Compare(l.Name, r.Name)
+                -1 => StartsWith(r, l) ? 1 : -1,
+                1 => StartsWith(l, r) ? -1 : 1,
+                _ => 0
             };
 
             static int ComparePath(ReadOnlySpan<char> l, ReadOnlySpan<char> r)

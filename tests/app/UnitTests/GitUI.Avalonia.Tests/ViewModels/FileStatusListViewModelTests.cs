@@ -21,6 +21,21 @@ public sealed class FileStatusListViewModelTests
     ];
 
     [Test]
+    public void Path_sorting_preserves_nested_folders_root_files_and_culturally_equal_paths()
+    {
+        FileStatusListViewModel viewModel = new(new FileStatusListStrings(), new FileStatusTreeOptions(DiffListSortType.FilePathFlat));
+        string[] paths = ["root.txt", "equal/z.txt", "a/z.txt", "a/deep/b.txt", "a/deep/a.txt", "a/b.txt", "equa\u00adl/a.txt", "b/a.txt"];
+        viewModel.SetDiff(First, Second, [.. paths.Select(path => new GitItemStatus(path) { IsChanged = true })]);
+
+        viewModel.AllEntries.Select(entry => entry.Item.Name).Should().Equal(
+            "a/deep/a.txt", "a/deep/b.txt", "a/b.txt", "a/z.txt", "b/a.txt", "equa\u00adl/a.txt", "equal/z.txt", "root.txt");
+        viewModel.Filter = "a.txt$";
+        viewModel.AllEntries.Select(entry => entry.Item.Name).Should().Equal("a/deep/a.txt", "b/a.txt", "equa\u00adl/a.txt");
+        viewModel.ClearFilterCommand.Execute(null);
+        viewModel.AllEntries.Should().HaveCount(paths.Length);
+    }
+
+    [Test]
     public void Filter_history_keeps_valid_matching_expressions_and_reuses_them_without_losing_selection()
     {
         FileStatusListViewModel viewModel = Create();

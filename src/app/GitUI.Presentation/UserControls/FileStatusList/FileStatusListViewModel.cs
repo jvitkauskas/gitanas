@@ -92,7 +92,7 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     public ObservableCollection<FileStatusNode> Nodes { get; } = [];
 
     /// <summary>The selected nodes (the view keeps them in sync with its selection).</summary>
-    public ObservableCollection<FileStatusNode> SelectedNodes { get; } = [];
+    public BatchObservableCollection<FileStatusNode> SelectedNodes { get; } = [];
 
     /// <summary>The selected files, in the order of the tree (as <c>FileStatusList.SelectedItems</c>).</summary>
     public IReadOnlyList<FileStatusEntry> SelectedEntries { get; private set; } = [];
@@ -849,6 +849,7 @@ public sealed partial class FileStatusListViewModel : ObservableObject
         _updatingSelection = true;
         try
         {
+            using IDisposable update = SelectedNodes.BeginUpdate();
             SelectedNodes.Clear();
             foreach (FileStatusNode node in nodes)
             {

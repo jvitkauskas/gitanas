@@ -188,6 +188,13 @@ The report distinguishes UI delays from background Git containment queries and r
 and unbounded-history costs. Release builds and all 18 test projects pass on Linux and Windows, including the
 191 native Windows UI tests. Benchmark tools and clones remain in the local `performance` QA directory.
 
+The [large-change-set follow-up](QA-Large-Changes-2026-09-26.md) tests 10,000-file commits and staging, filtered
+staging, mixed modifications/additions/deletions, and the kernel file tree. Batched selection notifications,
+range-based row selection and scrolling after layout remove a multi-minute freeze when staging a large selection.
+Caching directory comparisons also reduces file-tree rebuild time while retaining the existing ordering.
+Its report records comparison timings, regression validation and remaining synchronous work; the diagnostic
+artifacts live in the local `performance-large` QA directory.
+
 ## Rules
 
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` when an agent makes them. Do not commit the

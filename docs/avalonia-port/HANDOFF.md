@@ -159,6 +159,16 @@ pass. No new application blocker was confirmed. The report records VM graphics l
 Reusable VMs and evidence are retained under `/home/julius/VirtualMachines/gitextensions-qa`, with local launch
 instructions in its `README.md`; no VM disks or credentials belong in this repository.
 
+## Windows 10 LTSC VM (2026-09-26)
+
+The [Windows VM report](QA-VM-Windows-2026-09-26.md) records a fresh USB-media install, updated to 19044.7725,
+at source `4764ea0fb`: Release build and all 18 suites passed (25,726 passed, 40 skipped), including all 191
+native UI integration tests. Manual Git workflows, five external merge tools, WinMerge diff, Notepad++ through
+Git Bash, history/blame, native dialogs, modal repetition and live 100–200% scaling passed. The original ISO
+needed Windows updates to satisfy .NET's CET prerequisite; no application fix was necessary. The portable app
+left the normal qa settings/registry absent. The reusable `ge-qa-windows10` VM, evidence and cold checkpoint
+are retained locally; see its report for launch instructions and explicit coverage limits.
+
 ## Rules
 
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` when an agent makes them. Do not commit the

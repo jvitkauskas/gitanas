@@ -308,7 +308,14 @@ at `495ede8b5`: full Release builds and all 18 test-project invocations pass ind
 folder picking, live single-monitor scaling and five startup modes pass. No new application blocker was found;
 physical GPU behavior, mixed-DPI monitors and the remainder of the full QA checklist are not implied by this pass.
 
-The [Windows QA report of 2026-09-25](QA-Windows-2026-09-25.md) records the current click-through. Portable copies no
+The [Windows 10 LTSC VM pass](QA-VM-Windows-2026-09-26.md) adds a fresh Windows 19044.7725 guest at
+`4764ea0fb`: full Release build and all 18 suites pass (25,726 passed, 40 skipped, including 191 native UI tests).
+Manual commit/push/pull, five merge tools, WinMerge diff, Notepad++ through Git Bash, history/blame, native dialogs,
+modal repetition and live 100–200% scaling pass. Windows updates resolved the original media's .NET CET build
+prerequisite; no new application blocker was confirmed. The report distinguishes coverage from untested Windows
+integrations and physical/multiple-display behavior.
+
+The [Windows QA report of 2026-09-25](QA-Windows-2026-09-25.md) records the earlier click-through. Portable copies no
 longer register themselves as the installed application or create registry keys when reading absent settings;
 their checklist startup preference is local to the portable settings file. Saving unchanged shell-extension options
 does not write registry defaults. Current Windows installation layouts for Araxis, KDiff3, SemanticMerge, Zed and

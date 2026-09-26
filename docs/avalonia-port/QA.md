@@ -10,6 +10,8 @@ Extensions settings, the Windows registry, the real `~/.gitconfig`, real reposit
 
 Latest additional compositor coverage: [Ubuntu GNOME and Fedora KDE VM QA](QA-VM-Linux-2026-09-26.md), including
 full builds/tests, native Wayland workflows, live scaling and X11 fallback. See that report for explicit limits.
+Additional Windows coverage: [Windows 10 LTSC VM QA](QA-VM-Windows-2026-09-26.md), including the full build,
+all 18 test suites, five external merge tools, native dialogs and live 100–200% scaling.
 
 ## Setup
 

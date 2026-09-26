@@ -13,10 +13,10 @@ internal static partial class AvaloniaDialogs
 {
     /// <summary>
     ///  Shows the Avalonia port of <c>FormQuickGitRefSelector</c> at <paramref name="location"/> (in screen pixels, as
-    ///  <c>GetQuickItemSelectorLocation</c>).
+    ///  <c>GetQuickItemSelectorLocation</c>), or centered over its owner when no location is supplied.
     /// </summary>
     /// <param name="selected">The chosen ref, or <see langword="null"/> if cancelled (or there are no refs).</param>
-    public static bool TryShowQuickRefSelector(IWin32Window? owner, QuickRefAction action, IReadOnlyList<IGitRef> refs, Point location, out IGitRef? selected)
+    public static bool TryShowQuickRefSelector(IWin32Window? owner, QuickRefAction action, IReadOnlyList<IGitRef> refs, Point? location, out IGitRef? selected)
     {
         selected = null;
         QuickItemSelectorViewModel viewModel = QuickItemSelectorViewModel.ForRefs(ViewStrings.Load<QuickItemSelectorStrings>(), action, refs);
@@ -33,7 +33,7 @@ internal static partial class AvaloniaDialogs
         return true;
     }
 
-    private static object? ShowQuickItemSelector(IWin32Window? owner, QuickItemSelectorViewModel viewModel, Point location)
+    private static object? ShowQuickItemSelector(IWin32Window? owner, QuickItemSelectorViewModel viewModel, Point? location)
     {
         // As FormQuickItemSelector.Init: without items, the picker closes at once as cancelled.
         if (viewModel.Items.Count == 0)
@@ -45,7 +45,7 @@ internal static partial class AvaloniaDialogs
         QuickItemSelectorWindow window = new()
         {
             DataContext = viewModel,
-            StartupScreenPosition = new global::Avalonia.PixelPoint(location.X, location.Y),
+            StartupScreenPosition = location is { } point ? new global::Avalonia.PixelPoint(point.X, point.Y) : null,
         };
         return AvaloniaDialogHost.ShowDialog(window, owner?.Handle ?? 0) ? viewModel.SelectedValue : null;
     }

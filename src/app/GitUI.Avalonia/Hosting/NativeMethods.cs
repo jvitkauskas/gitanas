@@ -11,6 +11,7 @@ namespace GitUI.Avalonia.Hosting;
 internal static class NativeMethods
 {
     public const uint GA_ROOT = 2;
+    public const uint GW_OWNER = 4;
     public const int GWLP_HWNDPARENT = -8;
     public const uint WM_WINDOWPOSCHANGING = 0x0046;
     public const uint WM_NCHITTEST = 0x0084;
@@ -55,6 +56,9 @@ internal static class NativeMethods
 
     [DllImport("user32.dll")]
     public static extern nint GetAncestor(nint hwnd, uint gaFlags);
+
+    [DllImport("user32.dll")]
+    public static extern nint GetWindow(nint hWnd, uint uCmd);
 
     [DllImport("user32.dll", EntryPoint = "DefWindowProcW")]
     public static extern nint DefWindowProc(nint hWnd, uint msg, nint wParam, nint lParam);

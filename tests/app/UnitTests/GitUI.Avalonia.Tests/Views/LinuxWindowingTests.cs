@@ -53,6 +53,39 @@ public sealed class LinuxWindowingTests : HeadlessTest
 
     [Test]
     [Platform(Exclude = "Win")]
+    public Task Owner_lookup_follows_nested_dialogs_without_native_handles() => OnUiThreadAsync(() =>
+    {
+        DialogWindow owner = new();
+        DialogWindow unrelated = new();
+        DialogWindow child = new();
+        DialogWindow grandchild = new();
+        try
+        {
+            AvaloniaDialogHost.Show(owner, 0);
+            AvaloniaDialogHost.Show(child, owner.OwnerHandle);
+            AvaloniaDialogHost.Show(grandchild, child.OwnerHandle);
+            AvaloniaDialogHost.Show(unrelated, 0);
+
+            AvaloniaDialogHost.GetWindowAndOwnerHandles(grandchild.OwnerHandle)
+                .Should().Equal(grandchild.OwnerHandle, child.OwnerHandle, owner.OwnerHandle);
+            AvaloniaDialogHost.GetWindowAndOwnerHandles(owner.OwnerHandle).Should().Equal(owner.OwnerHandle);
+            AvaloniaDialogHost.GetWindowAndOwnerHandles(0).Should().BeEmpty();
+            AvaloniaDialogHost.GetWindowAndOwnerHandles(nint.MaxValue).Should().BeEmpty();
+
+            grandchild.Close();
+            AvaloniaDialogHost.GetWindowAndOwnerHandles(grandchild.OwnerHandle).Should().BeEmpty();
+        }
+        finally
+        {
+            grandchild.Close();
+            child.Close();
+            unrelated.Close();
+            owner.Close();
+        }
+    });
+
+    [Test]
+    [Platform(Exclude = "Win")]
     public Task A_modal_dialog_without_native_handles_keeps_its_owner() => OnUiThreadAsync(() =>
     {
         DialogWindow owner = new();

@@ -44,7 +44,7 @@ public static class ProcessDialogs
 
     /// <summary>Offers to cache the host key of the remote with PuTTY (<c>FormRemoteProcess.AskForCacheHostkey</c>).</summary>
     public static bool AskForCacheHostkey(IWin32Window owner, string remoteUrl)
-        => !string.IsNullOrEmpty(remoteUrl) && MessageBoxes.CacheHostkey(owner) && new Plink().Connect(remoteUrl);
+        => OperatingSystem.IsWindows() && !string.IsNullOrEmpty(remoteUrl) && MessageBoxes.CacheHostkey(owner) && new Plink().Connect(remoteUrl);
 
     /// <summary>Reports an operation that failed with its output (<c>FormStatus.ShowErrorDialog</c>).</summary>
     public static void ShowErrorDialog(IWin32Window owner, IGitUICommands commands, string text, params string[] output)

@@ -291,7 +291,9 @@ internal sealed class RepositoryHistoryUIService : IRepositoryHistoryUIService
         const int VK_SHIFT = 0x10;
         const int VK_CONTROL = 0x11;
         const int VK_MENU = 0x12;
-        return IsDown(VK_CONTROL) && !IsDown(VK_SHIFT) && !IsDown(VK_MENU);
+
+        // Polling the global keyboard state is Windows-only. Other platforms open the repository in this window.
+        return OperatingSystem.IsWindows() && IsDown(VK_CONTROL) && !IsDown(VK_SHIFT) && !IsDown(VK_MENU);
     }
 
     [DllImport("user32.dll")]

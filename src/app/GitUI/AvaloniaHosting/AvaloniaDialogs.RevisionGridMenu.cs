@@ -679,9 +679,9 @@ internal static partial class AvaloniaDialogs
                 return;
             }
 
-            // At the mouse pointer (the WinForms grid shows it at the selected row).
+            // At the mouse pointer on Windows; elsewhere let Avalonia position the picker over its owner.
             IWin32Window window = owner();
-            Point location = GetCursorPosition();
+            Point? location = GetCursorPosition();
             if (TryShowQuickRefSelector(window, actionLabel, gitRefs, location, out IGitRef? selectedRef) && selectedRef is not null)
             {
                 action(selectedRef);
@@ -1029,9 +1029,10 @@ internal static partial class AvaloniaDialogs
         grid.HighlightAuthoredRevisions = AppSettings.HighlightAuthoredRevisions;
     }
 
-    /// <summary>The position of the mouse pointer, in screen pixels (as <c>Cursor.Position</c>).</summary>
-    private static Point GetCursorPosition() => GetCursorPos(out Point point) ? point : Point.Empty;
+    /// <summary>The Windows mouse position, or no explicit position when global pointer coordinates are unavailable.</summary>
+    private static Point? GetCursorPosition() => OperatingSystem.IsWindows() && GetCursorPos(out Point point) ? point : null;
 
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     [System.Runtime.InteropServices.DllImport("user32.dll")]
     [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
     private static extern bool GetCursorPos(out Point point);

@@ -5,6 +5,7 @@ using Avalonia.Input;
 using Avalonia.Styling;
 using Avalonia.Threading;
 using GitUI.Avalonia.Controls.RevisionGrid;
+using GitUI.Avalonia.Hosting;
 using GitUI.Presentation.UserControls.RevisionGrid;
 using static GitUI.AvaloniaTests.ViewModels.QuickItemSelectorViewModelTests;
 
@@ -14,6 +15,32 @@ namespace GitUI.AvaloniaTests.Views;
 [TestFixture]
 public sealed class QuickItemSelectorViewTests : HeadlessTest
 {
+    [Test]
+    [Platform(Exclude = "Win")]
+    public Task Picker_without_global_pointer_position_uses_its_owner_and_accepts_a_ref() => OnUiThreadAsync(() =>
+    {
+        DialogWindow owner = new();
+        QuickItemSelectorViewModel viewModel = CreateRefs();
+        QuickItemSelectorWindow picker = new() { DataContext = viewModel };
+        try
+        {
+            AvaloniaDialogHost.Show(owner, 0);
+            picker.Opened += (_, _) => Dispatcher.UIThread.Post(() => viewModel.AcceptCommand.Execute(null));
+
+            AvaloniaDialogHost.ShowDialog(picker, owner.OwnerHandle).Should().BeTrue();
+
+            picker.StartupScreenPosition.Should().BeNull();
+            picker.WindowStartupLocation.Should().Be(WindowStartupLocation.CenterOwner);
+            viewModel.SelectedValue.Should().NotBeNull();
+            owner.IsVisible.Should().BeTrue();
+        }
+        finally
+        {
+            picker.Close();
+            owner.Close();
+        }
+    });
+
     [Test]
     public Task Opens_at_its_position_and_Enter_accepts_the_selected_ref() => OnUiThreadAsync(() =>
     {

@@ -42,6 +42,32 @@ public static class AvaloniaDialogHost
     }
 
     /// <summary>
+    ///  Enumerates the window containing <paramref name="handle"/>, then its owners, nearest first. Off Windows these
+    ///  are Avalonia window identities, including synthetic handles on Wayland, rather than Win32 handles.
+    /// </summary>
+    public static IEnumerable<nint> GetWindowAndOwnerHandles(nint handle)
+    {
+        if (OperatingSystem.IsWindows())
+        {
+            handle = handle == 0 ? 0 : NativeMethods.GetAncestor(handle, NativeMethods.GA_ROOT);
+            for (; handle != 0; handle = NativeMethods.GetWindow(handle, NativeMethods.GW_OWNER))
+            {
+                yield return handle;
+            }
+        }
+        else
+        {
+            for (Window? window = FindOpenWindow(handle); window is not null; window = window.Owner as Window)
+            {
+                if (window is DialogWindow dialog)
+                {
+                    yield return dialog.OwnerHandle;
+                }
+            }
+        }
+    }
+
+    /// <summary>
     ///  The handle of the active window of the application, else of the window opened last (the owner of a message box
     ///  shown without one, as the native message box takes the active window); 0 if no window is open.
     /// </summary>

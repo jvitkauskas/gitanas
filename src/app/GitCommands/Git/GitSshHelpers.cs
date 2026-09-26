@@ -9,6 +9,7 @@ public static class GitSshHelpers
         Environment.SetEnvironmentVariable("GIT_SSH", path?.Length is > 0 ? path : null, EnvironmentVariableTarget.Process);
     }
 
-    // Note that variants like TortoisePlink.exe are supported too
-    public static bool IsPlink => AppSettings.SshPath.EndsWith("plink.exe", StringComparison.CurrentCultureIgnoreCase);
+    // The PuTTY integration uses Windows processes and host-key storage. An imported path remains a custom SSH command
+    // on other platforms. Variants like TortoisePlink.exe are supported on Windows too.
+    public static bool IsPlink => OperatingSystem.IsWindows() && AppSettings.SshPath.EndsWith("plink.exe", StringComparison.CurrentCultureIgnoreCase);
 }

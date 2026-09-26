@@ -1,3 +1,4 @@
+using CommonTestUtils;
 using GitCommands.UserRepositoryHistory;
 using GitExtensions.Extensibility.Git;
 using GitUI;
@@ -6,7 +7,6 @@ using NSubstitute;
 
 namespace GitUITests;
 
-[Apartment(ApartmentState.STA)]
 public sealed class RepositoryHistoryUIServiceTests
 {
     private RepositoryHistoryUIService _service = null!;
@@ -90,10 +90,10 @@ public sealed class RepositoryHistoryUIServiceTests
     {
         List<Repository> repositoryHistory =
         [
-            new Repository(@"c:\") { Category = "D" },
-            new Repository(@"c:\") { Category = "A" },
-            new Repository(@"c:\") { Category = "C" },
-            new Repository(@"c:\") { Category = "B" }
+            new Repository(TestPaths.Native(@"c:\repos\D")) { Category = "D" },
+            new Repository(TestPaths.Native(@"c:\repos\A")) { Category = "A" },
+            new Repository(TestPaths.Native(@"c:\repos\C")) { Category = "C" },
+            new Repository(TestPaths.Native(@"c:\repos\B")) { Category = "B" }
         ];
 
         IReadOnlyList<RepositoryMenuItem> categories = _service.GetTestAccessor().GetFavouriteRepositoriesMenu(repositoryHistory);

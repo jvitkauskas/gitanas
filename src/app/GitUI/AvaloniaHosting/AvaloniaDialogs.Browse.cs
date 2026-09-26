@@ -90,8 +90,7 @@ internal static partial class AvaloniaDialogs
     /// </summary>
     public static bool TrySetBrowseWorkingDir(IWin32Window? owner, string path)
     {
-        nint handle = owner is null ? 0 : NativeMethods.GetAncestor(owner.Handle, NativeMethods.GA_ROOT);
-        for (; handle != 0; handle = NativeMethods.GetWindow(handle, NativeMethods.GW_OWNER))
+        foreach (nint handle in AvaloniaDialogHost.GetWindowAndOwnerHandles(owner?.Handle ?? 0))
         {
             if (_browseSessions.FirstOrDefault(s => s.Handle == handle) is { } session)
             {

@@ -71,7 +71,7 @@ internal static partial class AvaloniaDialogs
                     // As GitFound_Click.
                     if (!CheckSettingsLogic.SolveGitCommand())
                     {
-                        ShowMessage(strings.SolveGitCommandFailed.Text, strings.SolveGitCommandFailedCaption.Text, MessageBoxIcon.Error);
+                        ShowMessage((OperatingSystem.IsWindows() ? strings.SolveGitCommandFailed : strings.SolveGitCommandFailedUnix).Text, strings.SolveGitCommandFailedCaption.Text, MessageBoxIcon.Error);
                         actions.GotoPage("GitSettingsPage");
                         return;
                     }

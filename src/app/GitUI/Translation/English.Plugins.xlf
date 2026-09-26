@@ -45,7 +45,7 @@
         <target />
       </trans-unit>
       <trans-unit id="_msBuildArguments.Caption">
-        <source>msbuild.exe arguments</source>
+        <source>MSBuild arguments</source>
         <target />
       </trans-unit>
       <trans-unit id="_msBuildEnabled.Caption">
@@ -53,7 +53,7 @@
         <target />
       </trans-unit>
       <trans-unit id="_msBuildPath.Caption">
-        <source>Path to msbuild.exe</source>
+        <source>Path to MSBuild or dotnet</source>
         <target />
       </trans-unit>
     </body>

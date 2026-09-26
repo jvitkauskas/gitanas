@@ -679,6 +679,11 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <source>Locate git</source>
         <target />
       </trans-unit>
+      <trans-unit id="_solveGitCommandFailedUnix.Text">
+        <source>The command to run git could not be determined automatically.
+Please install Git using your package manager or set the correct command manually.</source>
+        <target />
+      </trans-unit>
       <trans-unit id="_sshClientNotFound.Text">
         <source>SSH client not found: {0}.</source>
         <target />
@@ -4841,6 +4846,14 @@ Do you want Git Extensions to help locate the correct folder?</source>
         <source>Please enter a HOME directory.</source>
         <target />
       </trans-unit>
+      <trans-unit id="_unixExplanation.Text">
+        <source>By default, HOME uses your user home directory. Choose a different directory only if Git is using the wrong home directory.</source>
+        <target />
+      </trans-unit>
+      <trans-unit id="_unixGitConfigFoundHome.Text">
+        <source>Located .gitconfig in $HOME ({0}). This setting has been chosen automatically.</source>
+        <target />
+      </trans-unit>
       <trans-unit id="defaultHome.Text">
         <source>&amp;Use default for HOME</source>
         <target />
@@ -7974,6 +7987,18 @@ Check if file is accessible.</source>
       </trans-unit>
       <trans-unit id="_envIsSetToString.Text">
         <source>{0} is set to: {1}</source>
+        <target />
+      </trans-unit>
+      <trans-unit id="_unixGitCommand.Text">
+        <source>Command used to run git</source>
+        <target />
+      </trans-unit>
+      <trans-unit id="_unixGlobalConfigPath.Text">
+        <source>HOME identifies your home directory. Git uses it to locate ~/.gitconfig. GIT_CONFIG_GLOBAL can override the global configuration file.</source>
+        <target />
+      </trans-unit>
+      <trans-unit id="_unixPathsInfo.Text">
+        <source>Set the command or path used to run Git.</source>
         <target />
       </trans-unit>
       <trans-unit id="downloadGitForWindows.Text">

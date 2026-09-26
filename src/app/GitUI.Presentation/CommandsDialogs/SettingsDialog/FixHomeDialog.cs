@@ -17,6 +17,8 @@ public sealed class FixHomeStrings : ViewStrings
             "\" {0} \"" + System.Environment.NewLine + System.Environment.NewLine + "Do you want Git Extensions to help locate the correct folder?");
         GitGlobalConfigNotFoundCaption = Add("_gitGlobalConfigNotFoundCaption", "Text", "Global config");
         Explanation = Add("label51", "Text", "The global config file located in the location stored environment variable %HOME%. \nBy default %HOME% will be set to %HOMEDRIVE%%HOMEPATH% if empty. \nChange the default behaviour only if you experience problems.");
+        UnixExplanation = Add("_unixExplanation", "Text", "By default, HOME uses your user home directory. Choose a different directory only if Git is using the wrong home directory.");
+        UnixGitConfigFoundHome = Add("_unixGitConfigFoundHome", "Text", "Located .gitconfig in $HOME ({0}). This setting has been chosen automatically.");
         Environment = Add("groupBox8", "Text", "Environment");
         DefaultHome = Add("defaultHome", "Text", "&Use default for HOME");
         UserProfileHome = Add("userprofileHome", "Text", "&Set HOME to USERPROFILE");
@@ -42,6 +44,10 @@ public sealed class FixHomeStrings : ViewStrings
     public TranslatedText GitGlobalConfigNotFoundCaption { get; }
 
     public TranslatedText Explanation { get; }
+
+    public TranslatedText UnixExplanation { get; }
+
+    public TranslatedText UnixGitConfigFoundHome { get; }
 
     public TranslatedText Environment { get; }
 
@@ -129,7 +135,7 @@ public sealed partial class FixHomeViewModel : DialogViewModel
             IsOtherHome = true;
             OtherHomeDir = environment.CustomHomeDir;
         }
-        else if (environment.UserProfileHomeDir)
+        else if (CanUseUserProfileHome && environment.UserProfileHomeDir)
         {
             IsUserProfileHome = true;
         }
@@ -140,6 +146,10 @@ public sealed partial class FixHomeViewModel : DialogViewModel
     }
 
     public FixHomeStrings Strings { get; }
+
+    public bool CanUseUserProfileHome => OperatingSystem.IsWindows();
+
+    public string ExplanationText => (CanUseUserProfileHome ? Strings.Explanation : Strings.UnixExplanation).Text;
 
     public string DefaultHomeText { get; }
 
@@ -163,15 +173,15 @@ public sealed partial class FixHomeViewModel : DialogViewModel
     /// </summary>
     public void SelectLocatedGitConfig()
     {
-        if (TryLocate(_environment.UserHome, Strings.GitConfigFoundHome))
+        if (TryLocate(_environment.UserHome, CanUseUserProfileHome ? Strings.GitConfigFoundHome : Strings.UnixGitConfigFoundHome))
         {
             Choose(defaultHome: true);
         }
-        else if (TryLocate(_environment.HomeDrivePath, Strings.GitConfigFoundHomeDrive))
+        else if (CanUseUserProfileHome && TryLocate(_environment.HomeDrivePath, Strings.GitConfigFoundHomeDrive))
         {
             Choose(defaultHome: true);
         }
-        else if (TryLocate(_environment.UserProfile, Strings.GitConfigFoundUserProfile))
+        else if (CanUseUserProfileHome && TryLocate(_environment.UserProfile, Strings.GitConfigFoundUserProfile))
         {
             Choose(userProfileHome: true);
         }
@@ -211,7 +221,7 @@ public sealed partial class FixHomeViewModel : DialogViewModel
     [RelayCommand]
     private async Task BrowseAsync()
     {
-        string? folder = await _fileDialogs.PickFolderAsync(_environment.UserProfile);
+        string? folder = await _fileDialogs.PickFolderAsync(CanUseUserProfileHome ? _environment.UserProfile : _environment.DefaultHomeDir);
         if (folder is not null)
         {
             OtherHomeDir = folder;

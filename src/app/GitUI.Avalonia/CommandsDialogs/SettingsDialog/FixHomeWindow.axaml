@@ -16,11 +16,11 @@
             BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
       <StackPanel Spacing="6">
         <TextBlock Text="{Binding Strings.Environment.Text}" FontWeight="SemiBold" />
-        <TextBlock Name="explanationText" Text="{Binding Strings.Explanation.Text}" TextWrapping="Wrap" Margin="0,0,0,4" />
+        <TextBlock Name="explanationText" Text="{Binding ExplanationText}" TextWrapping="Wrap" Margin="0,0,0,4" />
         <RadioButton Name="defaultHomeRadioButton" GroupName="home"
                      Content="{Binding DefaultHomeText}" IsChecked="{Binding IsDefaultHome}" />
         <RadioButton Name="userProfileHomeRadioButton" GroupName="home"
-                     Content="{Binding UserProfileHomeText}" IsChecked="{Binding IsUserProfileHome}" />
+                     Content="{Binding UserProfileHomeText}" IsChecked="{Binding IsUserProfileHome}" IsVisible="{Binding CanUseUserProfileHome}" />
         <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="8">
           <RadioButton Name="otherHomeRadioButton" GroupName="home"
                        Content="{Binding Strings.OtherHome.AccessKeyText}" IsChecked="{Binding IsOtherHome}" />

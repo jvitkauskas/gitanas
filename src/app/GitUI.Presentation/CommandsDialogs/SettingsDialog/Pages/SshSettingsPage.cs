@@ -130,7 +130,7 @@ public sealed partial class SshSettingsPageViewModel(SshSettingsPageStrings stri
         {
             IsOpenSsh = true;
         }
-        else if (sshPath.EndsWith("plink.exe", StringComparison.CurrentCultureIgnoreCase))
+        else if (CanUsePutty && sshPath.EndsWith("plink.exe", StringComparison.CurrentCultureIgnoreCase))
         {
             IsPutty = true;
         }

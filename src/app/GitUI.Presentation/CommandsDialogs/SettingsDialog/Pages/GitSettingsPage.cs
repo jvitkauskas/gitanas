@@ -17,6 +17,9 @@ public sealed class GitSettingsPageStrings : ViewStrings
         EnvIsNotSet = Add("_envIsNotSetString", "Text", "{0} is not set.");
         Paths = Add("gbPaths", "Text", "Paths");
         PathsInfo = Add("label50", "Text", "Set the correct paths to Git for Windows. (WSL Git will automatically be used for WSL repositories.)");
+        UnixPathsInfo = Add("_unixPathsInfo", "Text", "Set the command or path used to run Git.");
+        UnixGitCommand = Add("_unixGitCommand", "Text", "Command used to run git");
+        UnixGlobalConfigPath = Add("_unixGlobalConfigPath", "Text", "HOME identifies your home directory. Git uses it to locate ~/.gitconfig. GIT_CONFIG_GLOBAL can override the global configuration file.");
         GitCommand = Add("lblGitCommand", "Text", "Command used to run git (git.cmd or git.exe)");
         BrowseGitPath = Add("BrowseGitPath", "Text", "Browse");
         ShPath = Add("lblShPath", "Text", "Path to linux tools (sh). Leave empty when it is in the path.");
@@ -37,6 +40,12 @@ public sealed class GitSettingsPageStrings : ViewStrings
     public TranslatedText Paths { get; }
 
     public TranslatedText PathsInfo { get; }
+
+    public TranslatedText UnixPathsInfo { get; }
+
+    public TranslatedText UnixGitCommand { get; }
+
+    public TranslatedText UnixGlobalConfigPath { get; }
 
     public TranslatedText GitCommand { get; }
 
@@ -92,6 +101,14 @@ public sealed partial class GitSettingsPageViewModel(GitSettingsPageStrings stri
 
     private bool _showingPaths;
 
+    public string PathsInfoText => (OperatingSystem.IsWindows() ? Strings.PathsInfo : Strings.UnixPathsInfo).Text;
+
+    public string GitCommandText => (OperatingSystem.IsWindows() ? Strings.GitCommand : Strings.UnixGitCommand).AccessKeyText;
+
+    public string GlobalConfigPathText => (OperatingSystem.IsWindows() ? Strings.GlobalConfigPath : Strings.UnixGlobalConfigPath).Text;
+
+    private static string EnvironmentVariableText(string name) => OperatingSystem.IsWindows() ? $"%{name}%" : $"${name}";
+
     public GitSettingsPageStrings Strings { get; } = strings;
 
     public override string Title => Strings.Title.Text;
@@ -125,12 +142,12 @@ public sealed partial class GitSettingsPageViewModel(GitSettingsPageStrings stri
         string additionalText = "";
         if (envValue is null)
         {
-            additionalText = $"    ({string.Format(Strings.EnvIsNotSet.Text, $"%{envName}%")})";
+            additionalText = $"    ({string.Format(Strings.EnvIsNotSet.Text, EnvironmentVariableText(envName))})";
             envValue = homeDir;
             envName = "HOME";
         }
 
-        HomeIsSetTo = string.Format(Strings.EnvIsSetTo.Text, $"%{envName}%", envValue) + additionalText;
+        HomeIsSetTo = string.Format(Strings.EnvIsSetTo.Text, EnvironmentVariableText(envName), envValue) + additionalText;
 
         ShowPaths();
 
@@ -186,7 +203,7 @@ public sealed partial class GitSettingsPageViewModel(GitSettingsPageStrings stri
 
         string? path = await fileDialogs.PickFileAsync(
             "",
-            FileDialogFilter.Parse("Git.cmd (git.cmd)|git.cmd|Git.exe (git.exe)|git.exe|Git (git)|git"),
+            FileDialogFilter.Parse(OperatingSystem.IsWindows() ? "Git.cmd (git.cmd)|git.cmd|Git.exe (git.exe)|git.exe|Git (git)|git" : "Git (git)|git|All files (*)|*"),
             GetDirectory(host.GitCommandValue));
         if (path is not null)
         {
@@ -208,7 +225,7 @@ public sealed partial class GitSettingsPageViewModel(GitSettingsPageStrings stri
 
     /// <summary>As <c>downloadGitForWindows_LinkClicked</c>.</summary>
     [RelayCommand]
-    private void DownloadGit() => host.OpenUrl(DownloadGitUrl);
+    private void DownloadGit() => host.OpenUrl(OperatingSystem.IsWindows() ? DownloadGitUrl : "https://git-scm.com/install/");
 
     /// <summary>As <c>ChangeHomeButton_Click</c>: the settings are saved, HOME changed, and the settings loaded again.</summary>
     [RelayCommand]

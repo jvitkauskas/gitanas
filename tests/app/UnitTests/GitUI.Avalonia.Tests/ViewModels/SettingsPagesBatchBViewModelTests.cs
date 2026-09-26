@@ -127,7 +127,9 @@ public sealed class SettingsPagesBatchBViewModelTests
         SettingsDialogViewModel dialog = CreateDialog(page, new FakeSources().GlobalOnly);
         dialog.Open(page.PageName);
 
-        page.HomeIsSetTo.Should().Be(@"%HOME% is set to: C:\Users\me    (%GIT_CONFIG_GLOBAL% is not set.)");
+        page.HomeIsSetTo.Should().Be(OperatingSystem.IsWindows()
+            ? @"%HOME% is set to: C:\Users\me    (%GIT_CONFIG_GLOBAL% is not set.)"
+            : @"$HOME is set to: C:\Users\me    ($GIT_CONFIG_GLOBAL is not set.)");
         page.GitPath.Should().Be("git");
         host.SolvedGitCommands.Should().BeEmpty("the paths shown are not validated");
 
@@ -143,7 +145,27 @@ public sealed class SettingsPagesBatchBViewModelTests
 
         host.GitEnvironment = (@"D:\config", @"C:\Users\me");
         dialog.LoadAll();
-        page.HomeIsSetTo.Should().Be(@"%GIT_CONFIG_GLOBAL% is set to: D:\config");
+        page.HomeIsSetTo.Should().Be(OperatingSystem.IsWindows()
+            ? @"%GIT_CONFIG_GLOBAL% is set to: D:\config"
+            : @"$GIT_CONFIG_GLOBAL is set to: D:\config");
+    });
+
+    [Test]
+    public void An_imported_PuTTY_path_remains_editable_on_other_platforms() => WithAppSettings(() =>
+    {
+        FakePagesHost host = new() { SshPath = @"C:\PuTTY\plink.exe" };
+        SshSettingsPageViewModel page = new(new SshSettingsPageStrings(), host, new SmallDialogViewModelTests.FakeFileDialogs());
+        SettingsDialogViewModel dialog = CreateDialog(page, new FakeSources().GlobalOnly);
+        dialog.Open(page.PageName);
+
+        page.IsPutty.Should().Be(OperatingSystem.IsWindows());
+        page.IsOther.Should().Be(!OperatingSystem.IsWindows());
+        if (!OperatingSystem.IsWindows())
+        {
+            page.OtherSsh.Should().Be(host.SshPath, "the unsupported path must stay visible for correction");
+            dialog.SaveAll();
+            host.SshPath.Should().Be(@"C:\PuTTY\plink.exe", "opening settings must not silently change the configured SSH command");
+        }
     });
 
     [Test]

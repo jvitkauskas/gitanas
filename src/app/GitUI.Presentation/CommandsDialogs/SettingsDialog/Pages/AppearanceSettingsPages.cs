@@ -160,6 +160,8 @@ public sealed partial class AppearanceSettingsPageViewModel : SettingsPageWithSe
     [ObservableProperty]
     public partial bool ShowCurrentBranchInVisualStudio { get; set; }
 
+    public bool CanConfigureVisualStudio => OperatingSystem.IsWindows();
+
     [ObservableProperty]
     public partial bool EnableAutoScale { get; set; }
 
@@ -253,7 +255,7 @@ public sealed partial class AppearanceSettingsPageViewModel : SettingsPageWithSe
     {
         AppSettings.RelativeDate = ShowRelativeDate;
         AppSettings.ShowRepoCurrentBranch = ShowRepoCurrentBranch;
-        if (AppSettings.ShowCurrentBranchInVisualStudio != ShowCurrentBranchInVisualStudio)
+        if (CanConfigureVisualStudio && AppSettings.ShowCurrentBranchInVisualStudio != ShowCurrentBranchInVisualStudio)
         {
             // Stored in the registry, not in the settings: written only when changed.
             AppSettings.ShowCurrentBranchInVisualStudio = ShowCurrentBranchInVisualStudio;

@@ -47,7 +47,7 @@
     <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Commit.PlainText}">
       <CheckBox Name="commitAndPushForcedWhenAmend" Content="{Binding Strings.CommitAndPushForcedWhenAmend.AccessKeyText}" IsChecked="{Binding CommitAndPushForcedWhenAmend}" />
     </HeaderedContentControl>
-    <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Updates.PlainText}">
+    <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Updates.PlainText}" IsVisible="{Binding CanConfigureUpdates}">
       <StackPanel Spacing="4">
         <CheckBox Name="checkForUpdates" Content="{Binding Strings.CheckForUpdates.AccessKeyText}" IsChecked="{Binding CheckForUpdates}" />
         <CheckBox Name="checkForRCVersions" Content="{Binding Strings.CheckForRCVersions.AccessKeyText}" IsChecked="{Binding CheckForRCVersions}" />

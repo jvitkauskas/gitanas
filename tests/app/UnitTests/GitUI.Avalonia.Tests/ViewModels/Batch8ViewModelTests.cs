@@ -24,7 +24,9 @@ public sealed class Batch8ViewModelTests
     public void FixHome_starts_from_the_settings()
     {
         Create(Environment).IsDefaultHome.Should().BeTrue();
-        Create(Environment with { UserProfileHomeDir = true }).IsUserProfileHome.Should().BeTrue();
+        FixHomeViewModel userProfile = Create(Environment with { UserProfileHomeDir = true });
+        userProfile.IsUserProfileHome.Should().Be(OperatingSystem.IsWindows());
+        userProfile.IsDefaultHome.Should().Be(!OperatingSystem.IsWindows());
 
         FixHomeViewModel other = Create(Environment with { CustomHomeDir = @"D:\home", UserProfileHomeDir = true });
         other.IsOtherHome.Should().BeTrue();
@@ -44,6 +46,19 @@ public sealed class Batch8ViewModelTests
         FixHomeViewModel viewModel = Create(Environment with { CustomHomeDir = @"D:\custom" }, host, messageBoxes);
 
         viewModel.SelectLocatedGitConfig();
+
+        if (!OperatingSystem.IsWindows() && (configLocation == Environment.HomeDrivePath || configLocation == Environment.UserProfile))
+        {
+            viewModel.IsOtherHome.Should().BeTrue();
+            viewModel.OtherHomeDir.Should().Be(@"D:\custom", "Windows-only locations must not override the current choice");
+            messageBoxes.Informations.Should().BeEmpty();
+            return;
+        }
+
+        if (!OperatingSystem.IsWindows() && configLocation == Environment.UserHome)
+        {
+            expectedMessage = "$HOME";
+        }
 
         (expectedChoice switch
         {

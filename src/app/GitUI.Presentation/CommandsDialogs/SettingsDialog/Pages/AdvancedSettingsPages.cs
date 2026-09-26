@@ -77,6 +77,9 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
 
     public AdvancedSettingsPageStrings Strings { get; }
 
+    // The current release feed supplies Windows installers.
+    public bool CanConfigureUpdates => OperatingSystem.IsWindows();
+
     public override string Title => Strings.Title.Text;
 
     public override string PageName => "AdvancedSettingsPage";
@@ -139,8 +142,12 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
         AppSettings.UseDefaultCheckoutBranchAction = UseLocalChangesAction;
         AppSettings.DontShowHelpImages = DontShowHelpImages;
         AppSettings.AlwaysShowAdvOpt = AlwaysShowAdvOpt;
-        AppSettings.CheckForUpdates = CheckForUpdates;
-        AppSettings.CheckForReleaseCandidates = CheckForRCVersions;
+        if (CanConfigureUpdates)
+        {
+            AppSettings.CheckForUpdates = CheckForUpdates;
+            AppSettings.CheckForReleaseCandidates = CheckForRCVersions;
+        }
+
         AppSettings.UseConsoleEmulatorForCommands.Value = UseConsoleEmulator;
         AppSettings.AutoNormaliseBranchName = AutoNormaliseBranchName;
         AppSettings.AutoNormaliseSymbol = (AutoNormaliseSymbol ?? AutoNormaliseSymbols[0]).Value;

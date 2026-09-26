@@ -29,6 +29,7 @@ public sealed class ChecklistSettingsPageStrings : ViewStrings
         ShellExtRegistered = Add("_shellExtRegistered", "Text", "Shell extensions registered properly.");
         ShellExtNoInstalled = Add("_shellExtNoInstalled", "Text", "Shell extensions are not installed. Run the installer to install the shell extensions.");
         ShellExtNeedsToBeRegistered = Add("_shellExtNeedsToBeRegistered", "Text", "{0} needs to be registered in order to use the shell extensions.");
+        SolveGitCommandFailedUnix = Add("_solveGitCommandFailedUnix", "Text", "The command to run git could not be determined automatically.\nPlease install Git using your package manager or set the correct command manually.");
         RegistryKeyGitExtensionsMissing = Add("_registryKeyGitExtensionsMissing", "Text", @"Registry entry missing [Software\GitExtensions\InstallDir].");
         RegistryKeyGitExtensionsFaulty = Add("_registryKeyGitExtensionsFaulty", "Text", @"Invalid installation directory stored in [Software\GitExtensions\InstallDir].");
         RegistryKeyGitExtensionsCorrect = Add("_registryKeyGitExtensionsCorrect", "Text", "Git Extensions is properly registered.");
@@ -83,6 +84,8 @@ public sealed class ChecklistSettingsPageStrings : ViewStrings
     public TranslatedText GitCanBeRunCaption { get; }
 
     public TranslatedText SolveGitCommandFailed { get; }
+
+    public TranslatedText SolveGitCommandFailedUnix { get; }
 
     public TranslatedText ShellExtRegistered { get; }
 

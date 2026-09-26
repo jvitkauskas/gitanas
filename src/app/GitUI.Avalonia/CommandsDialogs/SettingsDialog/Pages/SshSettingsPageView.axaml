@@ -11,7 +11,7 @@
                      IsVisible="{Binding CanUsePutty}" />
         <RadioButton Name="openSsh" Grid.Row="1" GroupName="sshClient" Content="{Binding Strings.OpenSsh.AccessKeyText}" IsChecked="{Binding IsOpenSsh}" />
         <!-- Equivalent of label18. -->
-        <Border Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Classes="info" VerticalAlignment="Center">
+        <Border Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Classes="info" VerticalAlignment="Center" IsVisible="{Binding CanUsePutty}">
           <TextBlock Name="sshInfo" Text="{Binding Strings.SshInfo.Text}" TextWrapping="Wrap" />
         </Border>
         <RadioButton Name="other" Grid.Row="2" GroupName="sshClient" Content="{Binding Strings.Other.AccessKeyText}" IsChecked="{Binding IsOther}" />

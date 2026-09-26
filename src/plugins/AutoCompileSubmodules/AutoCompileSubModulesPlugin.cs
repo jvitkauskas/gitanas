@@ -27,8 +27,8 @@ public class AutoCompileSubModulesPlugin : GitPluginBase, IGitPluginForRepositor
     }
 
     private readonly BoolSetting _msBuildEnabled = new("Enabled", false);
-    private readonly StringSetting _msBuildPath = new("Path to msbuild.exe", FindMsBuild());
-    private readonly StringSetting _msBuildArguments = new("msbuild.exe arguments", "/p:Configuration=Debug");
+    private readonly StringSetting _msBuildPath = new("Path to msbuild.exe", "Path to MSBuild or dotnet", FindMsBuild());
+    private readonly StringSetting _msBuildArguments = new("msbuild.exe arguments", "MSBuild arguments", "/p:Configuration=Debug");
 
     private const string DefaultMsBuildPath = @"C:\Windows\Microsoft.NET\Framework\v3.5\msbuild.exe";
 

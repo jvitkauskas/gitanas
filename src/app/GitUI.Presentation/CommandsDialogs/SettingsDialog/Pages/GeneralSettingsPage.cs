@@ -154,6 +154,8 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
 
     public override IEnumerable<string> SearchKeywords => Strings.Texts;
 
+    public bool CanShowGitConsoleWindow => OperatingSystem.IsWindows();
+
     public IReadOnlyList<string> CloneDestinations { get; }
 
     /// <summary>The items of <c>cboDefaultPullAction</c>.</summary>
@@ -288,7 +290,11 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
         AppSettings.ShowGitStatusInBrowseToolbar = ShowGitStatusInToolbar;
         AppSettings.ShowGitStatusForArtificialCommits = ShowGitStatusForArtificialCommits;
         AppSettings.CloseProcessDialog = CloseProcessDialog;
-        AppSettings.ShowGitCommandLine = ShowGitCommandLine;
+        if (CanShowGitConsoleWindow)
+        {
+            AppSettings.ShowGitCommandLine = ShowGitCommandLine;
+        }
+
         AppSettings.MaxRevisionGraphCommits = IsCommitsLimited ? (int)MaxCommits : 0;
         AppSettings.RevisionGridQuickSearchTimeout = (int)QuickSearchTimeout;
         AppSettings.ShowStashCount = ShowStashCountInBrowseWindow;

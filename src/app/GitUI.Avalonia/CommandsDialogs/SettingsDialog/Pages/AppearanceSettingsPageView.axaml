@@ -9,8 +9,7 @@
       <StackPanel Spacing="4">
         <CheckBox Name="showRelativeDate" Content="{Binding Strings.ShowRelativeDate.AccessKeyText}" IsChecked="{Binding ShowRelativeDate}" />
         <CheckBox Name="showRepoCurrentBranch" Content="{Binding Strings.ShowRepoCurrentBranch.AccessKeyText}" IsChecked="{Binding ShowRepoCurrentBranch}" />
-        <CheckBox Name="showCurrentBranchInVisualStudio" Content="{Binding Strings.ShowCurrentBranchInVisualStudio.AccessKeyText}" IsChecked="{Binding ShowCurrentBranchInVisualStudio}" />
-        <CheckBox Name="enableAutoScale" Content="{Binding Strings.EnableAutoScale.AccessKeyText}" IsChecked="{Binding EnableAutoScale}" />
+        <CheckBox Name="showCurrentBranchInVisualStudio" Content="{Binding Strings.ShowCurrentBranchInVisualStudio.AccessKeyText}" IsChecked="{Binding ShowCurrentBranchInVisualStudio}" IsVisible="{Binding CanConfigureVisualStudio}" />
         <Grid ColumnSpacing="8">
           <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" SharedSizeGroup="label" />

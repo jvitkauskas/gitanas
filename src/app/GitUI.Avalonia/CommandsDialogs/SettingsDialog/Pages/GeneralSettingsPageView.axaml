@@ -24,7 +24,7 @@
     <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Behaviour.PlainText}">
       <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" ColumnSpacing="8" RowSpacing="4">
         <CheckBox Name="closeProcessDialog" Grid.ColumnSpan="3" Content="{Binding Strings.CloseProcessDialog.AccessKeyText}" IsChecked="{Binding CloseProcessDialog}" />
-        <CheckBox Name="showGitCommandLine" Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding Strings.ShowGitCommandLine.AccessKeyText}" IsChecked="{Binding ShowGitCommandLine}" />
+        <CheckBox Name="showGitCommandLine" Grid.Row="1" Grid.ColumnSpan="3" Content="{Binding Strings.ShowGitCommandLine.AccessKeyText}" IsChecked="{Binding ShowGitCommandLine}" IsVisible="{Binding CanShowGitConsoleWindow}" />
         <CheckBox Name="useHistogramDiffAlgorithm" Grid.Row="2" Grid.ColumnSpan="3" Content="{Binding Strings.UseHistogramDiffAlgorithm.AccessKeyText}" IsChecked="{Binding UseHistogramDiffAlgorithm}" />
         <CheckBox Name="stashUntrackedFiles" Grid.Row="3" Grid.ColumnSpan="3" Content="{Binding Strings.StashUntrackedFiles.AccessKeyText}" IsChecked="{Binding StashUntrackedFiles}" />
         <CheckBox Name="updateModules" Grid.Row="4" Grid.ColumnSpan="3" Content="{Binding Strings.UpdateModules.AccessKeyText}" IsThreeState="True" IsChecked="{Binding UpdateModules}" />

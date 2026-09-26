@@ -7,8 +7,8 @@
   <StackPanel>
     <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Paths.PlainText}">
       <Grid Classes="form" ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto" ColumnSpacing="6" RowSpacing="4">
-        <TextBlock Grid.ColumnSpan="3" Text="{Binding Strings.PathsInfo.Text}" TextWrapping="Wrap" />
-        <Label Grid.Row="1" Content="{Binding Strings.GitCommand.AccessKeyText}" Target="gitPath" />
+        <TextBlock Grid.ColumnSpan="3" Text="{Binding PathsInfoText}" TextWrapping="Wrap" />
+        <Label Grid.Row="1" Content="{Binding GitCommandText}" Target="gitPath" />
         <TextBox Name="gitPath" Grid.Row="1" Grid.Column="1" MaxLength="300" Text="{Binding GitPath}" />
         <Button Name="browseGitPath" Grid.Row="1" Grid.Column="2" Content="{Binding Strings.BrowseGitPath.AccessKeyText}" Command="{Binding BrowseGitPathCommand}" />
         <Label Grid.Row="2" Content="{Binding Strings.ShPath.AccessKeyText}" Target="linuxToolsDir" IsVisible="{Binding ShowLinuxToolsDir}" />
@@ -22,7 +22,7 @@
     </HeaderedContentControl>
     <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Environment.PlainText}">
       <StackPanel Spacing="4">
-        <TextBlock Name="globalConfigPath" Text="{Binding Strings.GlobalConfigPath.Text}" TextWrapping="Wrap" Margin="0,0,0,16" />
+        <TextBlock Name="globalConfigPath" Text="{Binding GlobalConfigPathText}" TextWrapping="Wrap" Margin="0,0,0,16" />
         <TextBlock Name="homeIsSetTo" Text="{Binding HomeIsSetTo}" TextWrapping="Wrap" Margin="0,0,0,4" />
         <Button Name="changeHome" HorizontalAlignment="Left" Content="{Binding Strings.ChangeHome.AccessKeyText}" Command="{Binding ChangeHomeCommand}" />
       </StackPanel>

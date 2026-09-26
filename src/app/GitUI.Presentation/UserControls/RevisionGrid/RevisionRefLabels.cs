@@ -49,8 +49,19 @@ public static class RevisionRefLabels
     /// <param name="aheadBehind">The ahead / behind data by local branch (<c>IAheadBehindDataProvider.GetData</c>), if shown.</param>
     public static List<RevisionRefItem> Build(GitRevision revision, RevisionGridDisplayOptions options, string? currentBranch, IReadOnlyDictionary<string, AheadBehindData>? aheadBehind)
     {
-        AheadBehindLookup lookup = new(aheadBehind);
+        // Most commits have no references. Avoid sorting and rebuilding the tracking lookup for every history row.
+        if (revision.Refs.Count == 0)
+        {
+            return [];
+        }
+
         List<IGitRef> gitRefs = SortRefs(revision.Refs.Where(r => r.IsTag ? options.ShowTags : !r.IsRemote || options.ShowRemoteBranches));
+        if (gitRefs.Count == 0)
+        {
+            return [];
+        }
+
+        AheadBehindLookup lookup = new(aheadBehind);
         Dictionary<string, IGitRef> trackedRemotes = BuildTrackedRemoteMap(gitRefs);
 
         // As OnCellPainting: with a single local branch on the commit, a remote branch of the same name shows its remote only.

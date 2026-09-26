@@ -219,7 +219,8 @@ public partial class RevisionGridView : UserControl, IHotkeyControl
             _laneCountScannedTo = 0;
         }
 
-        for (int index = _laneCountScannedTo; index < _viewModel.CachedGraphRowCount; index++)
+        // Rendering caps the width at MaxLanes. Beyond that, querying more rows only builds unused lane dictionaries.
+        for (int index = _laneCountScannedTo; index < _viewModel.CachedGraphRowCount && _maxLaneCount < RevisionGraph.MaxLanes; index++)
         {
             if (graph.GetSegmentsForRow(index) is { } row)
             {

@@ -179,6 +179,15 @@ comparison recurred once; the new protocol trace captures parent destruction bef
 UI trigger and fix remain open. Do not conflate it with the fixed key-repeat
 issue or claim the existing vendored backend fixes popup teardown.
 
+## Large-repository performance (2026-09-26)
+
+The [performance investigation](QA-Performance-2026-09-26.md) uses full Git and Linux kernel clones on native
+Wayland. History rows skip empty reference-label work and defer date formatting. Graph-column width scanning
+stops at the renderer's existing lane limit, eliminating the measured multi-second freeze on deep history jumps.
+The report distinguishes UI delays from background Git containment queries and records the remaining file-tree
+and unbounded-history costs. Release builds and all 18 test projects pass on Linux and Windows, including the
+191 native Windows UI tests. Benchmark tools and clones remain in the local `performance` QA directory.
+
 ## Rules
 
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` when an agent makes them. Do not commit the

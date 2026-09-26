@@ -12,6 +12,19 @@ public sealed class RevisionRefLabelsTests
 {
     private static readonly RevisionGridDisplayOptions _options = new(RelativeDate: false, ShowAuthorDate: false);
 
+    [TestCase(false)]
+    [TestCase(true)]
+    public void Commits_without_visible_references_do_not_read_branch_tracking_data(bool hiddenReferences)
+    {
+        IReadOnlyDictionary<string, AheadBehindData> aheadBehind = Substitute.For<IReadOnlyDictionary<string, AheadBehindData>>();
+        GitRevision revision = hiddenReferences ? Revision(Tag("v1.0"), Remote("origin", "main")) : Revision();
+
+        List<RevisionRefItem> items = RevisionRefLabels.Build(revision, _options with { ShowTags = false, ShowRemoteBranches = false }, currentBranch: null, aheadBehind);
+
+        items.Should().BeEmpty();
+        aheadBehind.ReceivedCalls().Should().BeEmpty("unlabelled history rows need no branch tracking lookups");
+    }
+
     [Test]
     public void A_branch_at_the_remote_branch_it_tracks_shows_it_nestled_and_another_remote_by_its_name()
     {

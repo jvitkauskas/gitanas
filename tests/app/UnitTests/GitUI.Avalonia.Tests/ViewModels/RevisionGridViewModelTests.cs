@@ -13,6 +13,24 @@ public sealed class RevisionGridViewModelTests
 {
     private static readonly RevisionGridDisplayOptions _options = new(RelativeDate: false, ShowAuthorDate: false);
 
+    [TestCase(false, false)]
+    [TestCase(false, true)]
+    [TestCase(true, false)]
+    [TestCase(true, true)]
+    public void Row_date_preserves_the_selected_timestamp_and_display_options(bool authorDate, bool relativeDate)
+    {
+        DateTime author = new(2020, 1, 2, 3, 4, 5);
+        DateTime commit = new(2022, 6, 7, 8, 9, 10);
+        GitRevision revision = new(ObjectId.Random()) { AuthorUnixTime = new DateTimeOffset(author).ToUnixTimeSeconds(), CommitUnixTime = new DateTimeOffset(commit).ToUnixTimeSeconds() };
+        RevisionGridRow row = new(0, revision, new RevisionGridDisplayOptions(relativeDate, authorDate), currentBranch: null);
+
+        // Formatting is deferred, but the timestamp remains the one supplied when the history row was created.
+        revision.AuthorUnixTime = 0;
+        revision.CommitUnixTime = 0;
+
+        row.Date.Should().Be(RevisionGridRow.FormatDate(authorDate ? author : commit, relativeDate));
+    }
+
     [Test]
     public void Adds_the_rows_of_each_batch_and_selects_the_preselected_revision_once_loaded()
     {

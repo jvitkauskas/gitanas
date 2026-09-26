@@ -82,13 +82,18 @@ public sealed record RevisionGridDisplayOptions(bool RelativeDate, bool ShowAuth
 /// <summary>A row of the revision grid: a revision and its row in the <see cref="RevisionGraph"/>.</summary>
 public sealed partial class RevisionGridRow : ObservableObject
 {
+    private readonly DateTime _date;
+    private readonly bool _relativeDate;
+    private string? _formattedDate;
+
     /// <param name="aheadBehind">The ahead / behind data by local branch (<c>IAheadBehindDataProvider.GetData</c>), if shown.</param>
     public RevisionGridRow(int index, GitRevision revision, RevisionGridDisplayOptions options, string? currentBranch, IReadOnlyList<RevisionRefItem>? superprojectRefs = null, IReadOnlyDictionary<string, GitCommands.Git.AheadBehindData>? aheadBehind = null)
     {
         Index = index;
         Revision = revision;
         ShortId = revision.IsArtificial ? "" : revision.ObjectId.ToShortString();
-        Date = FormatDate(options.ShowAuthorDate ? revision.AuthorDate : revision.CommitDate, options.RelativeDate);
+        _date = options.ShowAuthorDate ? revision.AuthorDate : revision.CommitDate;
+        _relativeDate = options.RelativeDate;
         List<RevisionRefItem> refs = RevisionRefLabels.Build(revision, options, currentBranch, aheadBehind);
 
         // As MessageColumnProvider.OnCellPainting: after the references, the label of a stash (its reflog selector without
@@ -147,7 +152,8 @@ public sealed partial class RevisionGridRow : ObservableObject
     /// <summary>The body of the message, shown after the subject (<c>ShowCommitBodyInRevisionGrid</c>); empty if not shown.</summary>
     public string Body { get; } = "";
 
-    public string Date { get; }
+    // The grid only reads dates for visible rows; formatting the entire history delays loading large repositories.
+    public string Date => _formattedDate ??= FormatDate(_date, _relativeDate);
 
     public string ShortId { get; }
 

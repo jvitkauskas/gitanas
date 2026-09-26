@@ -15,6 +15,8 @@ all 18 test suites, five external merge tools, native dialogs and live 100–200
 The [UI comparison follow-up](QA-UI-Improvements-2026-09-26.md) covers responsive Commit commands,
 file-filter history, theme contrast and content panes on Ubuntu Wayland and Windows, plus an unresolved
 intermittent Wayland popup-order crash observed during the preceding comparison.
+The [large-repository performance investigation](QA-Performance-2026-09-26.md) covers full Git and Linux kernel
+clones, native Wayland timing/profiling, history-loading optimizations and the deep-history graph-width fix.
 
 ## Setup
 

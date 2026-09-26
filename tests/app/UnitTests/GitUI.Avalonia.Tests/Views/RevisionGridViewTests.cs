@@ -71,6 +71,27 @@ public sealed class RevisionGridViewTests : HeadlessTest
     });
 
     [Test]
+    public Task Graph_width_stops_at_the_rendering_limit_and_resets_when_history_is_reloaded() => OnUiThreadAsync(() =>
+    {
+        GitRevision root = Revision("Root", "Alice", daysAgo: 3);
+        GitRevision[] branches = [.. Enumerable.Range(0, 60).Select(i => Revision($"Branch {i}", "Alice", daysAgo: 2, root))];
+        GitRevision merge = Revision("Merge", "Alice", daysAgo: 1, branches);
+        List<GitRevision> history = [merge, .. branches, root];
+        (Window window, RevisionGridViewModel viewModel) = Show(history);
+        DataGrid grid = window.GetVisualDescendants().OfType<DataGrid>().Single();
+
+        grid.Columns[0].Width.Value.Should().Be(RevisionGraphRenderer.GetWidth(branches.Length) + 4);
+
+        history.Clear();
+        history.Add(root);
+        viewModel.Load();
+        Dispatcher.UIThread.RunJobs();
+
+        grid.Columns[0].Width.Value.Should().Be(RevisionGraphRenderer.GetWidth(1) + 4);
+        window.Close();
+    });
+
+    [Test]
     public Task Copy_puts_the_hash_of_the_selected_revision_on_the_clipboard() => OnUiThreadAsync(() =>
     {
         List<GitRevision> history = CreateHistory();

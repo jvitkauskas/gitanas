@@ -64,8 +64,9 @@ def build_disk_image(app, archive, preview):
         # required to produce an otherwise verified disk image.
         preview.mkdir(parents=True, exist_ok=True)
         script = '''on run argv
+            set diskFolder to (POSIX file (item 1 of argv)) as alias
             tell application "Finder"
-                open (POSIX file (item 1 of argv))
+                open diskFolder
                 activate
             end tell
             delay 3

@@ -78,6 +78,7 @@ public sealed class ResolveConflictsStrings : ViewStrings
         FileChangeLocallyAndRemotely = Add("_fileChangeLocallyAndRemotely", "Text", "The file has been changed both locally ({0}) and remotely ({1}). Merge the changes.");
         FileCreatedLocallyAndRemotely = Add("_fileCreatedLocallyAndRemotely", "Text", "A file with the same name has been created locally ({0}) and remotely ({1}). Choose the file you want to keep or merge the files.");
         FileCreatedLocallyAndRemotelyLong = Add("_fileCreatedLocallyAndRemotelyLong", "Text", "File '{0}' does not have a base revision." + Environment.NewLine + "A file with the same name has been created locally ({1}) and remotely ({2}) causing this conflict." + Environment.NewLine + Environment.NewLine + "Choose the file you want to keep, merge the files or delete the file?");
+        FileDeletedLocallyAndRemotely = Add("_fileDeletedLocallyAndRemotely", "Text", "The file has been deleted both locally ({0}) and remotely ({1}).");
         FileDeletedLocallyAndModifiedRemotely = Add("_fileDeletedLocallyAndModifiedRemotely", "Text", "The file has been deleted locally ({0}) and modified remotely ({1}). Choose to delete the file or keep the modified version.");
         FileDeletedLocallyAndModifiedRemotelyLong = Add("_fileDeletedLocallyAndModifiedRemotelyLong", "Text", "File '{0}' does not have a local revision." + Environment.NewLine + "The file has been deleted locally ({1}) but modified remotely ({2})." + Environment.NewLine + Environment.NewLine + "Choose to delete the file or keep the modified version.");
         FileIsBinary = Add("_fileIsBinary", "Text", "The selected file appears to be a binary file." + Environment.NewLine + "Are you sure you want to open this file in {0}?");
@@ -240,6 +241,8 @@ public sealed class ResolveConflictsStrings : ViewStrings
 
     public TranslatedText FileCreatedLocallyAndRemotelyLong { get; }
 
+    public TranslatedText FileDeletedLocallyAndRemotely { get; }
+
     public TranslatedText FileDeletedLocallyAndModifiedRemotely { get; }
 
     public TranslatedText FileDeletedLocallyAndModifiedRemotelyLong { get; }
@@ -336,6 +339,7 @@ public enum ConflictResolutionChoice
 /// <param name="ApplyToAllText">The text of the "apply to all" check box; empty to hide it.</param>
 public sealed record SolveConflictQuestion(
     string Text,
+    string Heading,
     string Caption,
     string ApplyToAllText,
     string KeepLocalText,
@@ -1154,7 +1158,10 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
             (false, true, true) => string.Format(Strings.FileCreatedLocallyAndRemotely.Text, localSide, remoteSide),
             (true, false, true) => string.Format(Strings.FileDeletedLocallyAndModifiedRemotely.Text, localSide, remoteSide),
             (true, true, false) => string.Format(Strings.FileModifiedLocallyAndDeletedRemotely.Text, localSide, remoteSide),
-            _ => ConflictDescription
+            (true, false, false) => string.Format(Strings.FileDeletedLocallyAndRemotely.Text, localSide, remoteSide),
+
+            // Do not retain the description of the previously selected file.
+            _ => string.Empty
         };
 
         string baseFileName = baseFileExists ? item.Base.Filename : Strings.NoBase.Text;
@@ -1430,13 +1437,13 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
     }
 
     /// <summary>As <c>OpenSolveMergeConflictDialogAndExecuteSelectedMergeAction</c>: asks, unless "apply to all" was checked.</summary>
-    private void AskAndSolve(Action<ConflictResolutionChoice> selectedMergeAction, string text, string applyToAllText,
+    private void AskAndSolve(Action<ConflictResolutionChoice> selectedMergeAction, string text, string heading, string applyToAllText,
         string keepLocalText, string keepRemoteText, string keepBaseText)
     {
         if (!_solveMergeConflictApplyToAll)
         {
             SolveConflictAnswer answer = _host.AskSolveConflict(new SolveConflictQuestion(
-                text, Strings.SolveMergeConflictDialogCaption.Text, applyToAllText, keepLocalText, keepRemoteText, keepBaseText));
+                text, heading, Strings.SolveMergeConflictDialogCaption.Text, applyToAllText, keepLocalText, keepRemoteText, keepBaseText));
             _solveMergeConflictDialogResult = answer.Choice;
             _solveMergeConflictApplyToAll = answer.ApplyToAll;
         }
@@ -1463,6 +1470,7 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
                 }
             },
             string.Format(Strings.FileBinaryChooseLocalBaseRemote.Text, item.Local.Filename, GetLocalSideString(), GetRemoteSideString()),
+            item.Filename,
             _solveMergeConflictDialogCheckboxText,
             $"{Strings.ChooseLocalButtonText.Text} ({GetLocalSideString()})",
             $"{Strings.ChooseRemoteButtonText.Text} ({GetRemoteSideString()})",
@@ -1494,6 +1502,7 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
                 }
             },
             string.Format(Strings.FileCreatedLocallyAndRemotelyLong.Text, item.Filename, GetLocalSideString(), GetRemoteSideString()),
+            item.Filename,
             _solveMergeConflictDialogCheckboxText,
             $"{Strings.ChooseLocalButtonText.Text} ({GetLocalSideString()})",
             $"{Strings.ChooseRemoteButtonText.Text} ({GetRemoteSideString()})",
@@ -1544,6 +1553,7 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
                 _filesDeletedLocallyAndModifiedRemotelySolved--;
             },
             dialogText,
+            item.Filename,
             _filesDeletedLocallyAndModifiedRemotelySolved > 1 ? string.Format(Strings.SolveMergeConflictApplyToAllCheckBoxText.Text, item.Filename, _filesDeletedLocallyAndModifiedRemotelySolved - 1) : "",
             $"{Strings.DeleteFileButtonText.Text} ({GetLocalSideString()})",
             $"{Strings.KeepModifiedButtonText.Text} ({GetRemoteSideString()})",
@@ -1594,6 +1604,7 @@ public sealed partial class ResolveConflictsViewModel : DialogViewModel
                 _filesModifiedLocallyAndDeletedRemotelySolved--;
             },
             dialogText,
+            item.Filename,
             _filesModifiedLocallyAndDeletedRemotelySolved > 1 ? string.Format(Strings.SolveMergeConflictApplyToAllCheckBoxText.Text, item.Filename, _filesModifiedLocallyAndDeletedRemotelySolved - 1) : "",
             $"{Strings.KeepModifiedButtonText.Text} ({GetLocalSideString()})",
             $"{Strings.DeleteFileButtonText.Text} ({GetRemoteSideString()})",

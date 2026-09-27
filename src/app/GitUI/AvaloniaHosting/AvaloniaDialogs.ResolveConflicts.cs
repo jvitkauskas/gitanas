@@ -232,6 +232,7 @@ internal static partial class AvaloniaDialogs
             TaskDialogPage page = new()
             {
                 Text = question.Text,
+                Heading = question.Heading,
                 Caption = question.Caption,
                 Buttons = { TaskDialogButton.Cancel },
                 Icon = TaskDialogIcon.Error,

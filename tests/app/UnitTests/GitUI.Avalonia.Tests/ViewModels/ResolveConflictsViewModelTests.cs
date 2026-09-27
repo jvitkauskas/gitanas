@@ -68,6 +68,69 @@ public sealed class ResolveConflictsViewModelTests
         viewModel.CanOpenLocal.Should().BeFalse();
     }
 
+    [TestCase(false, "ours", "theirs")]
+    [TestCase(true, "theirs", "ours")]
+    public void A_file_deleted_on_both_sides_has_its_own_description(bool isRebasing, string localSide, string remoteSide)
+    {
+        FakeResolveConflictsHost host = new()
+        {
+            IsRebasing = isRebasing,
+            Conflicts = [Conflict("a.txt"), Conflict("deleted.txt", hasLocal: false, hasRemote: false)]
+        };
+        ResolveConflictsViewModel viewModel = Create(host);
+        viewModel.InitializeView();
+
+        viewModel.SelectedConflicts = [viewModel.Conflicts[1]];
+
+        viewModel.ConflictDescription.Should().Be($"The file has been deleted both locally ({localSide}) and remotely ({remoteSide}).");
+        viewModel.BaseFileName.Should().Be("deleted.txt");
+        viewModel.LocalFileName.Should().Be("deleted");
+        viewModel.RemoteFileName.Should().Be("deleted");
+    }
+
+    [TestCase(true, false)]
+    [TestCase(false, true)]
+    public void An_unhandled_conflict_clears_the_previous_description(bool hasLocal, bool hasRemote)
+    {
+        FakeResolveConflictsHost host = new()
+        {
+            Conflicts = [Conflict("a.txt"), Conflict("other.txt", hasBase: false, hasLocal: hasLocal, hasRemote: hasRemote)]
+        };
+        ResolveConflictsViewModel viewModel = Create(host);
+        viewModel.InitializeView();
+        viewModel.ConflictDescription.Should().NotBeEmpty();
+
+        viewModel.SelectedConflicts = [viewModel.Conflicts[1]];
+
+        viewModel.ConflictDescription.Should().BeEmpty();
+    }
+
+    [TestCase(false)]
+    [TestCase(true)]
+    public async Task Merge_names_files_deleted_on_both_sides_even_after_other_conflicts(bool mixedSelection)
+    {
+        FakeResolveConflictsHost host = new()
+        {
+            Conflicts = [Conflict("deleted.txt", hasLocal: false, hasRemote: false)]
+        };
+        if (mixedSelection)
+        {
+            host.Conflicts.Insert(0, Conflict("a.txt", hasLocal: false));
+        }
+
+        ResolveConflictsViewModel viewModel = Create(host);
+        viewModel.InitializeView();
+        viewModel.SelectedConflicts = [.. viewModel.Conflicts];
+
+        await viewModel.MergeCommand.ExecuteAsync(null);
+
+        host.Questions.Select(question => question.Heading).Should().Equal(mixedSelection ? ["a.txt", "deleted.txt"] : ["deleted.txt"]);
+        host.Questions.Last().Text.Should().BeEmpty("this conflict is not counted among the modified/deleted conflicts");
+        host.Questions.Last().ApplyToAllText.Should().BeEmpty();
+        host.Calls.Should().NotContain(call => call.StartsWith("choose") || call.StartsWith("remove") || call.StartsWith("stage"),
+            "cancelling the prompts must not change the files");
+    }
+
     [Test]
     public void A_submodule_shows_the_commits_of_the_sides()
     {
@@ -280,6 +343,7 @@ public sealed class ResolveConflictsViewModelTests
         messageBoxes.Questions.Should().Equal("The selected file appears to be a binary file." + Environment.NewLine + "Are you sure you want to open this file in kdiff3?");
         host.Questions.Should().ContainSingle().Which.Should().Be(new SolveConflictQuestion(
             "File 'image.png' appears to be binary." + Environment.NewLine + "Choose to keep the local 'ours', remote 'theirs' or base file.",
+            "image.png",
             "Solve merge conflict",
             "",
             "Choose local (ours)",
@@ -400,6 +464,7 @@ public sealed class ResolveConflictsViewModelTests
             "File 'a.txt' does not have a base revision." + Environment.NewLine
                 + "A file with the same name has been created locally (ours) and remotely (theirs) causing this conflict." + Environment.NewLine + Environment.NewLine
                 + "Choose the file you want to keep, merge the files or delete the file?",
+            "a.txt",
             "Solve merge conflict",
             "",
             "Choose local (ours)",
@@ -423,6 +488,7 @@ public sealed class ResolveConflictsViewModelTests
             "'a.txt' and 2 other selected file(s) do not have a local revision." + Environment.NewLine
                 + "The files have been deleted locally, but modified remotely" + Environment.NewLine + Environment.NewLine
                 + "Choose to delete the files or keep the modified versions.",
+            "a.txt",
             "Solve merge conflict",
             "Apply to 'a.txt' and 2 other file(s)",
             "Delete file (ours)",
@@ -445,6 +511,7 @@ public sealed class ResolveConflictsViewModelTests
             "File 'a.txt' does not have a remote revision." + Environment.NewLine
             + "The file has been modified locally (ours) but deleted remotely (theirs)." + Environment.NewLine + Environment.NewLine
             + "Choose to delete the file or keep the modified version.");
+        host.Questions[0].Heading.Should().Be("a.txt");
         host.Questions[0].KeepLocalText.Should().Be("Keep modified (ours)");
         host.Questions[0].KeepRemoteText.Should().Be("Delete file (theirs)");
         host.Calls.Should().StartWith("remove a.txt");

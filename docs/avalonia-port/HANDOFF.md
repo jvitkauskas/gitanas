@@ -195,6 +195,13 @@ Caching directory comparisons also reduces file-tree rebuild time while retainin
 Its report records comparison timings, regression validation and remaining synchronous work; the diagnostic
 artifacts live in the local `performance-large` QA directory.
 
+## Upstream review (2026-09-27)
+
+The [upstream master review](UPSTREAM-SYNC-2026-09-27.md) accounts for both commits through `e265607b6`.
+The conflict-dialog fix from `a4d51838f` is adapted to the Avalonia presentation and host layers: filename headings,
+a deleted-on-both-sides description and clearing stale descriptions. The Select all optimization already has its
+Avalonia equivalent in `af72747eb`; the WinForms code is not reintroduced.
+
 ## Rules
 
 - Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` when an agent makes them. Do not commit the

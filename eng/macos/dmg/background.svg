@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="500" viewBox="0 0 720 500">
+  <defs>
+    <linearGradient id="paper" x2="0" y2="1">
+      <stop stop-color="#fcfcfd"/>
+      <stop offset="1" stop-color="#f0f2f5"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="500" fill="url(#paper)"/>
+  <rect x="330" y="24" width="60" height="4" rx="2" fill="#dc622f"/>
+  <g font-family="Inter, sans-serif" text-anchor="middle">
+    <text x="360" y="70" font-family="Inter Display, Inter, sans-serif" font-size="36" letter-spacing="-0.8" font-weight="600" fill="#24282f">Gitanas</text>
+    <text x="360" y="101" font-size="18" fill="#575e68">Drag Gitanas to Applications</text>
+  </g>
+  <!-- Finder draws the real app and Applications icons at (184, 210) and (536, 210). -->
+  <path d="M323 210 H395 M381 196 L395 210 L381 224" fill="none" stroke="#dc622f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="36" y="328" width="648" height="140" rx="14" fill="#ffffff" stroke="#dce0e6"/>
+  <g font-family="Inter, sans-serif" fill="#303640">
+    <text x="60" y="360" font-size="19" font-weight="600">First launch</text>
+    <text x="60" y="390" font-size="16">Open Gitanas from Applications. If macOS blocks it, go to</text>
+    <text x="60" y="416" font-size="16" font-weight="600">System Settings → Privacy &amp; Security → Open Anyway,</text>
+    <text x="60" y="442" font-size="16">then confirm.</text>
+  </g>
+</svg>

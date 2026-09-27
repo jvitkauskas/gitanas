@@ -2,13 +2,11 @@
 """Assemble a published Gitanas app; sign and archive it on macOS."""
 
 import argparse
-import hashlib
 import json
 import plistlib
 import shutil
 import subprocess
 import sys
-import tempfile
 from pathlib import Path
 
 
@@ -144,15 +142,10 @@ def package(args):
 
     dist = work / 'dist'
     dist.mkdir(exist_ok=True)
-    archive = dist / f'Gitanas-{args.version}-{args.rid}.zip'
-    run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(app), str(archive))
-    with tempfile.TemporaryDirectory() as unpacked:
-        run('ditto', '-x', '-k', str(archive), unpacked)
-        run('codesign', '--verify', '--deep', '--strict', '--verbose=2',
-            str(Path(unpacked) / 'Gitanas.app'))
-    digest = hashlib.sha256(archive.read_bytes()).hexdigest()
-    archive.with_suffix('.zip.sha256').write_text(f'{digest}  {archive.name}\n')
-    print(f'Created {archive} ({archive.stat().st_size // 1024 // 1024} MiB)')
+    from dmg_package import build_disk_image
+
+    archive = dist / f'Gitanas-{args.version}-{args.rid}.dmg'
+    build_disk_image(app, archive, work / 'preview')
 
 
 if __name__ == '__main__':

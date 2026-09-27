@@ -70,7 +70,14 @@ jobs:
           cd eng
           dotnet run set_version_to.cs -- -v "${version%%-*}" -t "$version"
 
-      - name: Build, bundle, and ad-hoc sign
+      - name: Install macOS disk image tools
+        if: runner.os == 'macOS'
+        run: |
+          python3 -m venv "$RUNNER_TEMP/dmg-tools"
+          "$RUNNER_TEMP/dmg-tools/bin/python" -m pip install --require-hashes -r eng/macos/requirements-dmg.txt
+          echo "$RUNNER_TEMP/dmg-tools/bin" >> "$GITHUB_PATH"
+
+      - name: Build, sign, and package macOS DMG
         if: runner.os == 'macOS'
         env:
           RID: ${{ matrix.rid }}
@@ -148,7 +155,7 @@ jobs:
           import time
           from pathlib import Path
 
-          app = Path('artifacts/macos') / os.environ['RID'] / 'Gitanas.app/Contents/MacOS/Gitanas'
+          app = Path('artifacts/macos') / os.environ['RID'] / 'dmg-installed/Gitanas.app/Contents/MacOS/Gitanas'
           with tempfile.TemporaryDirectory() as cwd:
               process = subprocess.Popen([str(app.resolve())], cwd=cwd)
               try:
@@ -164,6 +171,15 @@ jobs:
                           process.kill()
                           process.wait()
           PY
+
+      - name: Upload macOS Finder preview
+        if: runner.os == 'macOS' && (success() || failure())
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: dmg-preview-${{ matrix.rid }}
+          path: artifacts/macos/${{ matrix.rid }}/preview/*.png
+          if-no-files-found: warn
+          retention-days: 14
 
       - name: Upload release files
         if: success() || failure()
@@ -211,7 +227,7 @@ jobs:
           - **osx-x64**: Intel Macs.
           - Requires macOS 14 or later. The .NET runtime is included; install Git separately.
 
-          Extract the ZIP and drag **Gitanas.app** to Applications. These builds are ad-hoc signed, not notarized by Apple. After the first blocked launch, use **System Settings → Privacy & Security → Open Anyway** if you trust this download.
+          Open the DMG and drag **Gitanas** onto **Applications**. Open Gitanas from Applications. If macOS blocks it, go to **System Settings → Privacy & Security → Open Anyway**, then confirm. These builds are ad-hoc signed, not notarized by Apple.
 
           ## Linux downloads
 
@@ -229,5 +245,5 @@ jobs:
             gh release create "$RELEASE_TAG" --verify-tag --draft \
               --title "Gitanas $RELEASE_TAG" --notes-file notes.md "${prerelease[@]}"
           fi
-          gh release upload "$RELEASE_TAG" dist/*.zip dist/*.tar.gz dist/*.sha256 --clobber
+          gh release upload "$RELEASE_TAG" dist/*.zip dist/*.dmg dist/*.tar.gz dist/*.sha256 --clobber
           gh release edit "$RELEASE_TAG" --draft=false

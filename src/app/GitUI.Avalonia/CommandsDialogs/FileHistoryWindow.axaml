@@ -185,7 +185,7 @@
           <TabItem.Header>
             <StackPanel Orientation="Horizontal" Spacing="4">
               <Panel Width="16" Height="16">
-                <Image Source="avares://GitUI.Avalonia/Assets/Integration.png" IsVisible="{Binding BuildReportIcon, Converter={x:Static ObjectConverters.IsNull}}" />
+                <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/Integration.png" IsVisible="{Binding BuildReportIcon, Converter={x:Static ObjectConverters.IsNull}}" />
                 <Image Name="buildReportIcon" Source="{Binding BuildReportIcon, Converter={x:Static rg:AvatarConverter.Instance}}"
                        IsVisible="{Binding BuildReportIcon, Converter={x:Static ObjectConverters.IsNotNull}}" />
               </Panel>

@@ -33,6 +33,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- The icons of the Modern theme, generated from Octicons by eng/ModernIcons (Hosting/ModernIconLoader.cs). -->
+    <AvaloniaResource Include="Assets\Modern\**\*.png" />
     <!-- Shared with the WinForms UI rather than copied, so upstream asset updates apply to both. -->
     <AvaloniaResource Include="..\..\..\setup\assets\Logo\git-extensions-logo-256px.png" Link="Assets\git-extensions-logo-256px.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\Donate.png" Link="Assets\Donate.png" />
@@ -286,6 +288,8 @@
     <AvaloniaResource Include="..\GitUI\Resources\Icons\PullFetchPrune.png" Link="Assets\PullFetchPrune.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\Globe.png" Link="Assets\Globe.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\RepoStateDirtySubmodules.png" Link="Assets\RepoStateDirtySubmodules.png" />
+    <AvaloniaResource Include="..\GitUI\Resources\Icons\RepoStateMixed.png" Link="Assets\RepoStateMixed.png" />
+    <AvaloniaResource Include="..\GitUI\Resources\Icons\RepoStateUntrackedOnly.png" Link="Assets\RepoStateUntrackedOnly.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\CollapseAll.png" Link="Assets\CollapseAll.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\ExpandAll.png" Link="Assets\ExpandAll.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\TreeCollapseAll.png" Link="Assets\TreeCollapseAll.png" />

@@ -78,7 +78,7 @@ internal static partial class AvaloniaDialogs
                 UpdateStatusInTaskbar(statusImage, color);
             }
 
-            _workingDirectoryStatusChanged?.Invoke(this, new BrowseWorkingDirectoryStatus(showCount ? status?.Count : null, EmbeddedIcons.Get(image), countArtificial ? status : null));
+            _workingDirectoryStatusChanged?.Invoke(this, new BrowseWorkingDirectoryStatus(showCount ? status?.Count : null, EmbeddedIcons.ForAvalonia(image), countArtificial ? status : null));
         }
 
         /// <summary>The commands of this repository, which don't change (another repository gets another session).</summary>

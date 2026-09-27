@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Frozen;
+using Avalonia.Platform;
 
 namespace GitUI;
 
@@ -42,6 +43,17 @@ internal static class EmbeddedIcons
 
     /// <summary>The icon of the image <paramref name="name"/> of <c>Images</c>, or <see langword="null"/> if there is none.</summary>
     public static byte[]? TryGet(string name) => _icons.GetOrAdd(name, Read);
+
+    /// <summary>
+    ///  The icon <paramref name="name"/> for the Avalonia views: the name of their asset when GitUI.Avalonia has one (which a
+    ///  control theme may replace, as Modern does), else its PNG data.
+    /// </summary>
+    public static object? ForAvalonia(string name)
+        => AssetLoader.Exists(new Uri($"avares://GitUI.Avalonia/Assets/{name}.png")) ? name : TryGet(name);
+
+    /// <summary>As <see cref="ForAvalonia(string)"/>, for an icon of <see cref="Get"/>.</summary>
+    public static object ForAvalonia(byte[] icon)
+        => _icons.FirstOrDefault(pair => ReferenceEquals(pair.Value, icon)).Key is { } name ? ForAvalonia(name) ?? icon : icon;
 
     private static byte[]? Read(string name)
     {

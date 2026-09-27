@@ -25,13 +25,13 @@
     <StackPanel Orientation="Horizontal" Spacing="1">
       <ToggleButton Name="showNonPrintingCharsButton" ToolTip.Tip="{Binding Strings.ShowNonPrintingChars.Text}"
                     IsChecked="{Binding ShowNonPrintingChars}">
-        <Image Source="avares://GitUI.Avalonia/Assets/ShowWhitespace.png" />
+        <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/ShowWhitespace.png" />
       </ToggleButton>
       <ComboBox Name="encodingComboBox" MinWidth="120" MaxWidth="200" Padding="4,1" VerticalAlignment="Center"
                 IsVisible="{Binding HasEncodings}" IsEnabled="{Binding CanChangeEncoding}"
                 ItemsSource="{Binding Encodings}" SelectedItem="{Binding SelectedEncoding}" />
       <Button Name="settingsButton" ToolTip.Tip="{Binding Strings.Settings.Text}" Command="{Binding OpenSettingsCommand}">
-        <Image Source="avares://GitUI.Avalonia/Assets/Settings.png" />
+        <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/Settings.png" />
       </Button>
     </StackPanel>
   </Border>

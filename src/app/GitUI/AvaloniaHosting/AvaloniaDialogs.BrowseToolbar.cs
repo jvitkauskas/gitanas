@@ -109,7 +109,7 @@ internal static partial class AvaloniaDialogs
         {
             List<BrowseShell> shells = [.. _commands.GetRequiredService<IShellProvider>().GetShells()
                 .Where(shell => shell.HasExecutable)
-                .Select(shell => new BrowseShell(shell.Name, shell.Icon, shell))];
+                .Select(shell => new BrowseShell(shell.Name, EmbeddedIcons.ForAvalonia(shell.Icon), shell))];
             int defaultShell = shells.FindIndex(shell => string.Equals(shell.Name, BashShell.ShellName, StringComparison.InvariantCultureIgnoreCase));
             if (defaultShell > 0)
             {

@@ -34,17 +34,17 @@
         <ContextMenu Name="reflogContextMenu">
           <MenuItem Name="copyShaMenuItem" Header="{Binding Strings.CopySha.AccessKeyText}" Command="{Binding CopyShaCommand}">
             <MenuItem.Icon>
-              <Image Source="avares://GitUI.Avalonia/Assets/CommitId.png" />
+              <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/CommitId.png" />
             </MenuItem.Icon>
           </MenuItem>
           <MenuItem Name="createBranchMenuItem" Header="{Binding Strings.CreateBranch.AccessKeyText}" Command="{Binding CreateBranchCommand}">
             <MenuItem.Icon>
-              <Image Source="avares://GitUI.Avalonia/Assets/BranchCreate.png" />
+              <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/BranchCreate.png" />
             </MenuItem.Icon>
           </MenuItem>
           <MenuItem Name="resetMenuItem" Header="{Binding Strings.ResetCurrentBranch.AccessKeyText}" Command="{Binding ResetCurrentBranchCommand}">
             <MenuItem.Icon>
-              <Image Source="avares://GitUI.Avalonia/Assets/ResetCurrentBranchToHere.png" />
+              <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/ResetCurrentBranchToHere.png" />
             </MenuItem.Icon>
           </MenuItem>
         </ContextMenu>

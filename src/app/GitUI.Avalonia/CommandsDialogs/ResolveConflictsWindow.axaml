@@ -67,7 +67,7 @@
             <MenuItem Name="showInFolderMenuItem" Header="{Binding Strings.ShowInFolder.PlainText}" Command="{Binding ShowInFolderCommand}"
                       IsEnabled="{Binding IsSingleFileSelected}">
               <MenuItem.Icon>
-                <Image Source="avares://GitUI.Avalonia/Assets/BrowseFileExplorer.png" />
+                <Image Width="16" Height="16" Source="avares://GitUI.Avalonia/Assets/BrowseFileExplorer.png" />
               </MenuItem.Icon>
             </MenuItem>
             <Separator />

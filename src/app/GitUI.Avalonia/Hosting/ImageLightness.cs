@@ -27,7 +27,7 @@ public static class ImageLightness
     /// <summary>The image for the theme: adapted (once) on a dark theme, else itself.</summary>
     public static IImage? ForTheme(IImage? image, ThemeVariant? theme)
     {
-        if (image is not Bitmap bitmap || theme != ThemeVariant.Dark)
+        if (image is not Bitmap bitmap || theme != ThemeVariant.Dark || IsModernIcon(bitmap))
         {
             return image;
         }
@@ -38,6 +38,31 @@ public static class ImageLightness
             _originals.AddOrUpdate(adapted, source);
             return adapted;
         });
+    }
+
+    /// <summary>
+    ///  Whether <paramref name="bitmap"/> is an icon of the Modern theme (<see cref="ModernIconLoader"/>), drawn for its theme
+    ///  variant already: eng/ModernIcons marks them with the alphas 1, 2 and 3 in the top left corner.
+    /// </summary>
+    internal static bool IsModernIcon(Bitmap bitmap)
+    {
+        if (!GitExtensionsAvaloniaApp.IsModern || bitmap.PixelSize.Width < 2 || bitmap.PixelSize.Height < 2)
+        {
+            return false;
+        }
+
+        byte[] pixels = new byte[2 * 2 * 4];
+        GCHandle handle = GCHandle.Alloc(pixels, GCHandleType.Pinned);
+        try
+        {
+            bitmap.CopyPixels(new PixelRect(0, 0, 2, 2), handle.AddrOfPinnedObject(), pixels.Length, 2 * 4);
+        }
+        finally
+        {
+            handle.Free();
+        }
+
+        return pixels[3] == 1 && pixels[7] == 2 && pixels[11] == 3;
     }
 
     /// <summary>As <c>LightnessCorrection</c>: the lightness mapped onto <paramref name="text"/>..<paramref name="background"/>.</summary>

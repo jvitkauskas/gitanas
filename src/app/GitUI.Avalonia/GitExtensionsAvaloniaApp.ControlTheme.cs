@@ -4,6 +4,7 @@ using Avalonia.Themes.Fluent;
 using Avalonia.Themes.Simple;
 using Classic.Avalonia.Theme;
 using GitCommands;
+using GitUI.Avalonia.Hosting;
 
 namespace GitUI.Avalonia;
 
@@ -75,6 +76,7 @@ public partial class GitExtensionsAvaloniaApp
         if (IsModern)
         {
             Styles.Add(Include("avares://GitUI.Avalonia/Themes/Modern.axaml"));
+            ModernIconLoader.Install();
         }
 
         static StyleInclude Include(string source)

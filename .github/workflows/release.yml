@@ -215,16 +215,16 @@ jobs:
           cat > notes.md <<'NOTES'
           ## Windows downloads
 
-          - **win-x64-framework-dependent**: 64-bit Intel/AMD Windows.
-          - **win-arm64-framework-dependent**: Windows on ARM.
+          - **windows-x64-framework-dependent**: 64-bit Intel/AMD Windows.
+          - **windows-arm64-framework-dependent**: Windows on ARM.
           - Requires the matching architecture's **.NET 10 Runtime** (`Microsoft.NETCore.App`), installed separately. The SDK and Desktop Runtime are not required.
 
           Extract the entire ZIP into a writable folder and run **Gitanas.exe**. If .NET is missing, the launcher offers a download link; install the runtime and start the app again. These ZIPs store settings alongside the application. Install Git separately. Windows binaries are unsigned.
 
           ## macOS downloads
 
-          - **osx-arm64**: Apple Silicon Macs (M1 and later).
-          - **osx-x64**: Intel Macs.
+          - **macos-arm64**: Apple Silicon Macs (M1 and later).
+          - **macos-x64**: Intel Macs.
           - Requires macOS 14 or later. The .NET runtime is included; install Git separately.
 
           Open the DMG and drag **Gitanas** onto **Applications**. Open Gitanas from Applications. If macOS blocks it, go to **System Settings → Privacy & Security → Open Anyway**, then confirm. These builds are ad-hoc signed, not notarized by Apple.

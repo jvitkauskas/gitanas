@@ -9,8 +9,8 @@ and successful startup.
 
 When **all six Linux/Windows/macOS** builds succeed, the workflow creates a GitHub release and attaches:
 
-- `Gitanas-<version>-osx-arm64.dmg` for Apple Silicon.
-- `Gitanas-<version>-osx-x64.dmg` for Intel.
+- `Gitanas-<version>-macos-arm64.dmg` for Apple Silicon.
+- `Gitanas-<version>-macos-x64.dmg` for Intel.
 - A SHA-256 checksum file for each DMG.
 
 Tags with a suffix such as `-preview.1` produce prereleases. The workflow first

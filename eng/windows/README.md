@@ -1,14 +1,14 @@
 # Windows release ZIPs
 
-The **Release builds** workflow produces `win-x64` and `win-arm64`
+The **Release builds** workflow produces `windows-x64` and `windows-arm64`
 framework-dependent ZIPs alongside the Linux archives and macOS bundles on version tags. The
 release is published only after all six builds and startup checks succeed.
 Manual workflow runs upload artifacts without creating a release.
 
 ## Installation
 
-1. Choose `Gitanas-<version>-win-x64-framework-dependent.zip` for Intel/AMD
-   Windows, or `Gitanas-<version>-win-arm64-framework-dependent.zip` for Windows
+1. Choose `Gitanas-<version>-windows-x64-framework-dependent.zip` for Intel/AMD
+   Windows, or `Gitanas-<version>-windows-arm64-framework-dependent.zip` for Windows
    on ARM.
 2. Extract the entire ZIP into a writable folder.
 3. Run `Gitanas/Gitanas.exe`. If the matching .NET runtime is missing, the native

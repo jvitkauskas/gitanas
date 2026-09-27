@@ -145,7 +145,7 @@ def assemble(work, rid, version):
 
     dist = work / 'dist'
     dist.mkdir()
-    archive = dist / f'Gitanas-{version}-{rid}-framework-dependent.zip'
+    archive = dist / f'Gitanas-{version}-windows-{rid.removeprefix("win-")}-framework-dependent.zip'
     with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as output:
         for path in sorted(package.rglob('*')):
             if path.is_file():

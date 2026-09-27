@@ -144,7 +144,7 @@ def package(args):
     dist.mkdir(exist_ok=True)
     from dmg_package import build_disk_image
 
-    archive = dist / f'Gitanas-{args.version}-{args.rid}.dmg'
+    archive = dist / f'Gitanas-{args.version}-macos-{args.rid.removeprefix("osx-")}.dmg'
     build_disk_image(app, archive, work / 'preview')
 
 

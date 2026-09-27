@@ -4,6 +4,8 @@ Gitanas is an experimental unofficial cross-platform port of
 [Git Extensions](https://github.com/gitextensions/gitextensions), with a desktop
 interface built using Avalonia for Linux, Windows and macOS.
 
+<img width="1512" height="982" alt="Screenshot 2026-09-27 at 22 54 37" src="https://github.com/user-attachments/assets/d3727568-e96a-4b2c-967a-04564f9f7fd1" />
+
 ## Status
 
 The port includes repository browsing, commit history, diffs, staging and commits,

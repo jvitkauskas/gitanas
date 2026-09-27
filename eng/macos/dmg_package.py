@@ -25,7 +25,8 @@ def build_disk_image(app, archive, preview):
         'symlinks': {'Applications': '/Applications'},
         'icon': str(app / 'Contents/Resources/gitanas.icns'),
         'background': str(artwork / 'background.png'),
-        'hide_extensions': ['Gitanas.app'],
+        # Hiding the extension with SetFile adds com.apple.FinderInfo to the
+        # signed bundle, which codesign --strict rejects. Leave it untouched.
         'icon_locations': locations,
         'window_rect': ((160, 160), (720, 500)),
         'default_view': 'icon-view',

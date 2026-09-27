@@ -242,11 +242,6 @@ Klicka på informationsikonen för mer information.</target>
         <target>&amp;Språk</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Hjälp till att översätta</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Avatarleverantör</target>
@@ -1591,11 +1586,6 @@ Se till att Git for Windows är installerat eller ange rätt kommando manuellt.<
         <target>Utveckla</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Donera</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Ärenden</target>
@@ -1604,11 +1594,6 @@ Se till att Git for Windows är installerat eller ange rätt kommando manuellt.<
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Öppna arkiv</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Översätt</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3743,11 +3728,6 @@ Vill du fortsätta?</target>
         <target>Ta bort t&amp;agg...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Donera</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Redigera .git&amp;attributes</target>
@@ -4131,11 +4111,6 @@ Vill du fortsätta?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Verktyg</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Översätt</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5960,33 +5935,6 @@ Att ta bort en gren kan även leda till att incheckningar tas bort!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Jämför</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="sv">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Donera</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Vi har ett dedikerat team av medarbetare som lägger ner mycket tid på att underhålla appen, arbeta med nya funktioner och rätta buggar. Du kan stödja projektet genom att bidra ekonomiskt. Donationer används för att täcka driftskostnader och för att få de resurser som behövs för att hålla projektet igång. Vi använder också donationer för att tacka medarbetare för deras insatser.
-
-Klicka på knappen nedan för mer information om hur du kan donera.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Vi har ett dedikerat team av medarbetare som lägger ner mycket tid på att underhålla appen, arbeta med nya funktioner och rätta buggar. Du kan stödja projektet genom att bidra ekonomiskt. Donationer används för att täcka driftskostnader och för att få de resurser som behövs för att hålla projektet igång. Vi använder också donationer för att tacka medarbetare för deras insatser.
-
-Klicka på knappen nedan för mer information om hur du kan donera.</target>
         
       </trans-unit>
     </body>

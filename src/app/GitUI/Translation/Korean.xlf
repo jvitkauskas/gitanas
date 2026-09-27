@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>언어 (&amp;L)</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>다국어 번역 지원</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>아바타 제공자</target>
@@ -1591,11 +1586,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>개발</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>기부</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>이슈</target>
@@ -1604,11 +1594,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>리포지토리 열기</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>번역</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3741,11 +3726,6 @@ Do you want to continue?</source>
         <target>태그 삭제...(&amp;D)</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>기부 (&amp;D)</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>.gitattributes 편집 (&amp;A)</target>
@@ -4129,11 +4109,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>도구 (&amp;T)</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>번역 (&amp;T)</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5958,33 +5933,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>비교</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="ko">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>이 프로젝트에 기부</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>앱을 유지 관리하고 새로운 기능을 연구하고 버그를 수정하는 데 많은 시간을 소비하는 협력자 전담 팀이 있습니다. 재정적으로 기부함으로써 이 프로젝트를 지원할 수 있습니다. 기부는 운영비를 충당하고 프로젝트가 계속 진행되는 데 필요한 자원을 얻기 위해 사용될 것입니다. 우리는 협력자들의 공헌에 감사를 표하기 위해 기부를 사용할 것입니다.
-
-기부에 대한 자세한 정보를 보려면 아래 버튼을 클릭하십시오.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>앱을 유지 관리하고 새로운 기능을 연구하고 버그를 수정하는 데 많은 시간을 소비하는 협력자 전담 팀이 있습니다. 재정적으로 기부함으로써 이 프로젝트를 지원할 수 있습니다. 기부는 운영비를 충당하고 프로젝트가 계속 진행되는 데 필요한 자원을 얻기 위해 사용될 것입니다. 우리는 협력자들의 공헌에 감사를 표하기 위해 기부를 사용할 것입니다.
-
-기부에 대한 자세한 정보를 보려면 아래 버튼을 클릭하십시오.</target>
         
       </trans-unit>
     </body>

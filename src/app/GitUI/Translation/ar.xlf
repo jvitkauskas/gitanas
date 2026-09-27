@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>&amp;اللغة</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>ساعد في الترجمة</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>مزوّد الصور الرمزية</target>
@@ -1591,11 +1586,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>التطوير</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>تبرّع</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>المشكلات</target>
@@ -1604,11 +1594,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>افتح مستودعًا</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>ترجم</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3743,11 +3728,6 @@ Do you want to continue?</source>
         <target>&amp;احذف الوسم...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;تبرّع</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>&amp;حرّر .gitattributes</target>
@@ -4131,11 +4111,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;أدوات</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;ترجم</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5960,33 +5935,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>قارن</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="ar">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>تبرّع</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>لدينا فريق متفانٍ من المساهمين يقضون وقتًا طويلاً في صيانة التطبيق والعمل على ميزات جديدة وإصلاح الأخطاء. يمكنك دعم المشروع بتقديم مساهمة مالية. ستُستخدم التبرعات لتغطية تكاليف التشغيل والحصول على الموارد اللازمة لاستمرار المشروع. سنستخدم التبرعات أيضًا لشكر المساهمين على جهودهم.
-
-انقر على الزر أدناه للحصول على مزيد من المعلومات حول كيفية التبرع.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>لدينا فريق متفانٍ من المساهمين يقضون وقتًا طويلاً في صيانة التطبيق والعمل على ميزات جديدة وإصلاح الأخطاء. يمكنك دعم المشروع بتقديم مساهمة مالية. ستُستخدم التبرعات لتغطية تكاليف التشغيل والحصول على الموارد اللازمة لاستمرار المشروع. سنستخدم التبرعات أيضًا لشكر المساهمين على جهودهم.
-
-انقر على الزر أدناه للحصول على مزيد من المعلومات حول كيفية التبرع.</target>
         
       </trans-unit>
     </body>

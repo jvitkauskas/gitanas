@@ -68,7 +68,7 @@ public sealed class EmbeddedIconsTests
     public void Names_are_found_ignoring_case_and_unknown_ones_are_not()
     {
         EmbeddedIcons.TryGet("puttygen").Should().BeSameAs(EmbeddedIcons.TryGet("PuttyGen"));
-        EmbeddedIcons.Get("DonateBadge").Should().NotBeEmpty();
+        EmbeddedIcons.Get("BranchLocalRoot").Should().NotBeEmpty();
         EmbeddedIcons.TryGet("NoSuchIcon").Should().BeNull();
         ((Action)(() => EmbeddedIcons.Get("NoSuchIcon"))).Should().Throw<ArgumentException>();
     }

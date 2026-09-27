@@ -97,10 +97,9 @@ public sealed class SettingsPagesBatchAViewModelTests
             AppSettings.TruncatePathMethod.Should().Be(TruncatePathMethod.FileNameOnly);
 
             page.ClearImageCacheCommand.Execute(null);
-            page.OpenHelpTranslateCommand.Execute(null);
             page.OpenSettingsManualCommand.Execute("author-images-avatar-provider");
             host.AvatarCacheClears.Should().Be(1);
-            host.Urls.Should().Equal(AppearanceSettingsPageViewModel.TranslationsWikiUrl, "settings#author-images-avatar-provider");
+            host.Urls.Should().Equal("settings#author-images-avatar-provider");
             AppSettings.ShowCurrentBranchInVisualStudio.Should().Be(showCurrentBranchInVisualStudio);
         }
         finally

@@ -41,7 +41,6 @@ public sealed class AppearanceSettingsPageStrings : ViewStrings
         ClearImageCache = Add("ClearImageCache", "Text", "Clear image cache");
         Languages = Add("gbLanguages", "Text", "&Language");
         Language = Add("lblLanguage", "Text", "Language (restart required)");
-        HelpTranslate = Add("helpTranslate", "Text", "Help translate");
         SpellingDictionary = Add("lblSpellingDictionary", "Text", "Dictionary for spelling checker");
         DownloadDictionary = Add("downloadDictionary", "Text", "Download dictionary");
     }
@@ -96,8 +95,6 @@ public sealed class AppearanceSettingsPageStrings : ViewStrings
 
     public TranslatedText Language { get; }
 
-    public TranslatedText HelpTranslate { get; }
-
     public TranslatedText SpellingDictionary { get; }
 
     public TranslatedText DownloadDictionary { get; }
@@ -116,9 +113,6 @@ public interface IAppearanceSettingsPageHost : ISettingsPageServices
 /// <summary>Port of <c>AppearanceSettingsPage</c> (global settings).</summary>
 public sealed partial class AppearanceSettingsPageViewModel : SettingsPageWithServicesViewModel
 {
-    /// <summary>As <c>_translationsWikiURL</c>.</summary>
-    public const string TranslationsWikiUrl = "https://github.com/jvitkauskas/gitanas/blob/main/CONTRIBUTING.md";
-
     /// <summary>As <c>_spellingWikiURL</c>.</summary>
     public const string SpellingWikiUrl = "https://github.com/gitextensions/gitextensions/wiki/Spelling";
 
@@ -320,9 +314,6 @@ public sealed partial class AppearanceSettingsPageViewModel : SettingsPageWithSe
 
     [RelayCommand]
     private void ClearImageCache() => _host.ClearAvatarCache();
-
-    [RelayCommand]
-    private void OpenHelpTranslate() => Services.OpenUrl(TranslationsWikiUrl);
 
     [RelayCommand]
     private void OpenDownloadDictionary() => Services.OpenUrl(SpellingWikiUrl);

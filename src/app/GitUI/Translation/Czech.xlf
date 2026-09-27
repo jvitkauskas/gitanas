@@ -243,11 +243,6 @@ Pro další podrobnosti klikněte na tuto informační ikonu.</target>
         <target>Jazyk (&amp;L)</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Pomoci s překladem</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Poskytovatel avataru</target>
@@ -1592,11 +1587,6 @@ Ujistěte se prosím, že je nainstalován Git for Windows, nebo nastavte správ
         <target>Vyvíjet</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Přispět</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Problémy</target>
@@ -1605,11 +1595,6 @@ Ujistěte se prosím, že je nainstalován Git for Windows, nebo nastavte správ
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Otevřít repozitář</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Přeložit</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3743,11 +3728,6 @@ Chcete pokračovat?</target>
         <target>Odstranit značku... (&amp;D)</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>Přispět (&amp;D)</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Upravit .gitattributes (&amp;A)</target>
@@ -4131,11 +4111,6 @@ Chcete pokračovat?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>Nás&amp;troje</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>Přeložit (&amp;T)</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5958,33 +5933,6 @@ Odstranění větve může způsobit i odstranění odevzdání!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Porovnat</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="cs">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Přispět</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Máme oddaný tým spolupracovníků, kteří tráví spoustu času údržbou aplikace, prací na nových funkcích a opravou chyb. Projekt můžete podpořit finančním příspěvkem. Dary budou použity na pokrytí provozních nákladů a získání zdrojů potřebných k udržení chodu projektu. Dary také použijeme k poděkování spolupracovníkům za jejich úsilí.
-
-Kliknutím na tlačítko níže získáte více informací o možnostech přispění.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Máme oddaný tým spolupracovníků, kteří tráví spoustu času údržbou aplikace, prací na nových funkcích a opravou chyb. Projekt můžete podpořit finančním příspěvkem. Dary budou použity na pokrytí provozních nákladů a získání zdrojů potřebných k udržení chodu projektu. Dary také použijeme k poděkování spolupracovníkům za jejich úsilí.
-
-Kliknutím na tlačítko níže získáte více informací o možnostech přispění.</target>
         
       </trans-unit>
     </body>

@@ -241,11 +241,6 @@ Click en este icono para más información.</target>
         <target>&amp;Idioma</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Ayudar a traducir</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Proveedor de Avatar</target>
@@ -1590,11 +1585,6 @@ Por favor, verifica que Git para Windows se ha instalado o establece el comando 
         <target>Desarrollar</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Donar</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Problemas</target>
@@ -1603,11 +1593,6 @@ Por favor, verifica que Git para Windows se ha instalado o establece el comando 
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Abrir repositorio</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Traducir</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3740,11 +3725,6 @@ Do you want to continue?</source>
         <target>&amp;Eliminar etiqueta...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Donar</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Editar .git&amp;attributes</target>
@@ -4129,11 +4109,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Herramientas</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Traducir</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5956,33 +5931,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Comparar</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="es">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Donar</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Tenemos un equipo dedicado de colaboradores que dedica mucho tiempo a mantener la aplicación, a trabajar en nuevas características y a corregir errores. Puede apoyar el proyecto haciendo una contribución financiera. Las donaciones se utilizarán para cubrir los costos de funcionamiento y para obtener los recursos necesarios para mantener el proyecto en ejecución. También utilizaremos donaciones para agradecer a los colaboradores por sus esfuerzos.
-
-Haga clic en el botón de abajo para obtener más información sobre cómo hacer una donación.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Tenemos un equipo dedicado de colaboradores que dedica mucho tiempo a mantener la aplicación, a trabajar en nuevas características y a corregir errores. Puede apoyar el proyecto haciendo una contribución financiera. Las donaciones se utilizarán para cubrir los costos de funcionamiento y para obtener los recursos necesarios para mantener el proyecto en ejecución. También utilizaremos donaciones para agradecer a los colaboradores por sus esfuerzos.
-
-Haga clic en el botón de abajo para obtener más información sobre cómo hacer una donación.</target>
         
       </trans-unit>
     </body>

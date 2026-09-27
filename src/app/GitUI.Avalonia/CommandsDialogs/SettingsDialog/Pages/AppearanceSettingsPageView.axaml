@@ -64,9 +64,6 @@
         </Grid.ColumnDefinitions>
         <Label VerticalAlignment="Center" Content="{Binding Strings.Language.AccessKeyText}" Target="language" />
         <ComboBox Name="language" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Languages}" SelectedItem="{Binding Language}" />
-        <Button Name="helpTranslate" Grid.Column="2" Classes="link" VerticalAlignment="Center" Command="{Binding OpenHelpTranslateCommand}">
-          <TextBlock Text="{Binding Strings.HelpTranslate.PlainText}" />
-        </Button>
         <Label Grid.Row="1" VerticalAlignment="Center" Content="{Binding Strings.SpellingDictionary.AccessKeyText}" Target="dictionary" />
         <ComboBox Name="dictionary" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Dictionaries}" SelectedItem="{Binding Dictionary}"
                   DropDownOpened="Dictionary_DropDownOpened" />

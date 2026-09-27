@@ -25,7 +25,6 @@ public sealed partial class AboutViewModel : DialogViewModel
 
     private readonly IAboutDialogHost _host;
     private readonly IReadOnlyList<string> _contributors;
-    private readonly string _donationUrl;
     private readonly Random _random;
     private readonly string _thanksToContributorsText;
 
@@ -34,7 +33,6 @@ public sealed partial class AboutViewModel : DialogViewModel
         string productName,
         string environmentInfo,
         IReadOnlyList<string> contributors,
-        string donationUrl,
         IAboutDialogHost host,
         Random? random = null)
     {
@@ -42,7 +40,6 @@ public sealed partial class AboutViewModel : DialogViewModel
         ProductName = productName;
         EnvironmentInfo = environmentInfo;
         _contributors = contributors;
-        _donationUrl = donationUrl;
         _host = host;
         _random = random ?? new Random();
         _thanksToContributorsText = string.Format(strings.ThanksToContributors.Text, contributors.Count);
@@ -75,9 +72,6 @@ public sealed partial class AboutViewModel : DialogViewModel
 
     [RelayCommand]
     private void OpenIconsAuthor() => _host.OpenUrl(IconsAuthorUrl);
-
-    [RelayCommand]
-    private void Donate() => _host.OpenUrl(_donationUrl);
 
     [RelayCommand]
     private void ShowContributors() => _host.ShowContributors();

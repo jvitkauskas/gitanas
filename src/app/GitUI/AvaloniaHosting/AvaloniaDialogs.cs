@@ -40,7 +40,6 @@ internal static partial class AvaloniaDialogs
                     AppSettings.ApplicationName,
                     UserEnvironmentInformation.GetInformation().Replace("- ", "").TrimEnd(),
                     GetContributors(),
-                    DonationUrl,
                     new AboutDialogHost(window));
                 return window;
             },
@@ -170,7 +169,4 @@ internal static partial class AvaloniaDialogs
 
         public void CopyEnvironmentInfo() => AvaloniaUi.RunInHostContext(UserEnvironmentInformation.CopyInformation);
     }
-
-    /// <summary>The donation page (<c>FormDonate.DonationUrl</c>).</summary>
-    internal const string DonationUrl = @"https://opencollective.com/gitextensions";
 }

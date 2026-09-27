@@ -733,26 +733,6 @@ public class Images {
     /// <summary>
     ///   Looks up a localized resource of type System.Drawing.Bitmap.
     /// </summary>
-    public static System.Drawing.Bitmap DollarSign {
-        get {
-            object obj = ResourceManager.GetObject("DollarSign", resourceCulture);
-            return ((System.Drawing.Bitmap)(obj));
-        }
-    }
-    
-    /// <summary>
-    ///   Looks up a localized resource of type System.Drawing.Bitmap.
-    /// </summary>
-    public static System.Drawing.Bitmap DonateBadge {
-        get {
-            object obj = ResourceManager.GetObject("DonateBadge", resourceCulture);
-            return ((System.Drawing.Bitmap)(obj));
-        }
-    }
-    
-    /// <summary>
-    ///   Looks up a localized resource of type System.Drawing.Bitmap.
-    /// </summary>
     public static System.Drawing.Bitmap EditColor {
         get {
             object obj = ResourceManager.GetObject("EditColor", resourceCulture);
@@ -2516,16 +2496,6 @@ public class Images {
     public static System.Drawing.Bitmap TagWarning {
         get {
             object obj = ResourceManager.GetObject("TagWarning", resourceCulture);
-            return ((System.Drawing.Bitmap)(obj));
-        }
-    }
-    
-    /// <summary>
-    ///   Looks up a localized resource of type System.Drawing.Bitmap.
-    /// </summary>
-    public static System.Drawing.Bitmap Translate {
-        get {
-            object obj = ResourceManager.GetObject("Translate", resourceCulture);
             return ((System.Drawing.Bitmap)(obj));
         }
     }

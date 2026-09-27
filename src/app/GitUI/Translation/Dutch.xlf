@@ -241,11 +241,6 @@ Klik op dit info-pictogram voor meer details.</target>
         <target>Ta&amp;al</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Help met vertalen</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Avatar aanbieder</target>
@@ -1590,11 +1585,6 @@ Zorg ervoor dat Git for Windows is geïnstalleerd of stel de juiste opdracht han
         <target>Coderen</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Doneer</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Problemen</target>
@@ -1603,11 +1593,6 @@ Zorg ervoor dat Git for Windows is geïnstalleerd of stel de juiste opdracht han
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Open opslagplaats</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Vertaal</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3742,11 +3727,6 @@ Wilt u doorgaan?</target>
         <target>&amp;Verwijder label...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Doneer</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Bewerk .git&amp;attributes</target>
@@ -4130,11 +4110,6 @@ Wilt u doorgaan?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Tools</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>Ver&amp;talen</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5958,33 +5933,6 @@ Door het verwijderen van branches kunnen ook commits verloren gaan!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Vergelijk</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="nl">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Doneer</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>We hebben een toegewijd team van medewerkers dat veel tijd besteedt aan het onderhouden van de app, het werken aan nieuwe functies en het oplossen van bugs. U kunt het project steunen door een financiële bijdrage te leveren. Donaties worden gebruikt om de lopende kosten te dekken en de benodigde middelen te krijgen om het project draaiende te houden. We gebruiken donaties ook om medewerkers te bedanken voor hun inspanningen.
-
-Klik op de knop hieronder voor meer informatie over het doen van een donatie.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>We hebben een toegewijd team van medewerkers dat veel tijd besteedt aan het onderhouden van de app, het werken aan nieuwe functies en het oplossen van bugs. U kunt het project steunen door een financiële bijdrage te leveren. Donaties worden gebruikt om de lopende kosten te dekken en de benodigde middelen te krijgen om het project draaiende te houden. We gebruiken donaties ook om medewerkers te bedanken voor hun inspanningen.
-
-Klik op de knop hieronder voor meer informatie over het doen van een donatie.</target>
         
       </trans-unit>
     </body>

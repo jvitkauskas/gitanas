@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>言語(&amp;L)</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>翻訳に参加する</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>アバタープロバイダー</target>
@@ -1591,11 +1586,6 @@ Git for Windows がインストールされていることを確認するか、�
         <target>開発</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>寄付</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>問題点</target>
@@ -1604,11 +1594,6 @@ Git for Windows がインストールされていることを確認するか、�
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>リポジトリを開く</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>翻訳</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3741,11 +3726,6 @@ Do you want to continue?</source>
         <target>タグを削除(&amp;D)...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>寄付(&amp;D)</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>.gitattributes を編集(&amp;A)</target>
@@ -4129,11 +4109,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>ツール(&amp;T)</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>翻訳(&amp;T)</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5958,33 +5933,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>比較</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="ja">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>寄付</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>私たちには、アプリケーションの保守、新機能の開発、バグ修正に多くの時間を費やしている熱心な共同作業者チームがあります。ユーザーは、寄付によってプロジェクトを支援できます。寄付はランニングコストの補填や、プロジェクトを継続するために必要なリソースの取得に利用されます。また、共同作業者の貢献に報いるためにも使用されます。
-
-寄付についての詳細は、下のボタンをクリックしてください。</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>私たちには、アプリケーションの保守、新機能の開発、バグ修正に多くの時間を費やしている熱心な共同作業者チームがあります。ユーザーは、寄付によってプロジェクトを支援できます。寄付はランニングコストの補填や、プロジェクトを継続するために必要なリソースの取得に利用されます。また、共同作業者の貢献に報いるためにも使用されます。
-
-寄付についての詳細は、下のボタンをクリックしてください。</target>
         
       </trans-unit>
     </body>

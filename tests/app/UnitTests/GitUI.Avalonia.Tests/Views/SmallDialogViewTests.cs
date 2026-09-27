@@ -24,7 +24,6 @@ public sealed class SmallDialogViewTests : HeadlessTest
 
         Capture(new CommandlineHelpWindow { DataContext = new CommandlineHelpViewModel(new CommandlineHelpStrings(), "[path]\nbrowse [path]\ncommit [--quiet]\npush [--quiet]") }, $"commandline-help-{theme}");
         Capture(new AddFilesWindow { DataContext = new AddFilesViewModel(new AddFilesStrings(), "*.cs", _ => true) }, $"add-files-{theme}");
-        Capture(new DonateWindow { DataContext = new DonateViewModel(new DonateStrings(), "https://example.org", _ => { }) }, $"donate-{theme}");
         Capture(new ContributorsWindow { DataContext = new ContributorsViewModel("Alice, Bob", "Carol, Dan", "Eve", "Frank") }, $"contributors-{theme}");
         Capture(new ResetChangesWindow { DataContext = new ResetChangesViewModel(new ResetChangesStrings(), true, true, null) }, $"reset-changes-{theme}");
         Capture(

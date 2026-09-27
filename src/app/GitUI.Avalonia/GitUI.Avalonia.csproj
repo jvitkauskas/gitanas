@@ -33,7 +33,6 @@
     <AvaloniaResource Include="Assets\Modern\**\*.png" />
     <!-- Modern light aliases preserve public asset URIs; the loader supplies dark variants. -->
     <AvaloniaResource Include="..\..\..\setup\assets\Logo\gitanas\gitanas-256.png" Link="Assets\GitanasLogo256.png" />
-    <AvaloniaResource Include="..\GitUI\Resources\Icons\Donate.png" Link="Assets\Donate.png" />
     <!-- Menu icons and third-party product logos. -->
     <AvaloniaResource Include="..\GitUI\Resources\Icons\GitGui.png" Link="Assets\GitGui.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\Gitk.png" Link="Assets\Gitk.png" />
@@ -216,7 +215,6 @@
     <AvaloniaResource Include="Assets\Modern\Light\LayoutSidebarTopRight.png" Link="Assets\LayoutSidebarTopRight.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\GitForWindows.png" Link="Assets\GitForWindows.png" />
     <AvaloniaResource Include="Assets\Modern\Light\Changelog.png" Link="Assets\Changelog.png" />
-    <AvaloniaResource Include="Assets\Modern\Light\Translate.png" Link="Assets\Translate.png" />
     <AvaloniaResource Include="Assets\Modern\Light\BugReport.png" Link="Assets\BugReport.png" />
     <AvaloniaResource Include="Assets\Modern\Light\Console.png" Link="Assets\Console.png" />
     <AvaloniaResource Include="Assets\Modern\Light\GeneralSettings.png" Link="Assets\GeneralSettings.png" />
@@ -244,7 +242,6 @@
     <AvaloniaResource Include="Assets\Modern\Light\Pin.png" Link="Assets\Pin.png" />
     <AvaloniaResource Include="Assets\Modern\Light\CloneRepoGitHub.png" Link="Assets\CloneRepoGitHub.png" />
     <AvaloniaResource Include="Assets\Modern\Light\Develop.png" Link="Assets\Develop.png" />
-    <AvaloniaResource Include="..\GitUI\Resources\Icons\DollarSign.png" Link="Assets\DollarSign.png" />
     <AvaloniaResource Include="Assets\Modern\Light\Bug.png" Link="Assets\Bug.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Backgrounds\DashboardBackgroundBlue.png" Link="Assets\DashboardBackgroundBlue.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Backgrounds\DashboardBackgroundGrey.png" Link="Assets\DashboardBackgroundGrey.png" />

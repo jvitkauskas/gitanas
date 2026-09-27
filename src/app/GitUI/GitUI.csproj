@@ -253,7 +253,6 @@
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\TagMany.png" LogicalName="GitUI.Icons.TagMany.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\TagOk.png" LogicalName="GitUI.Icons.TagOk.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\TagWarning.png" LogicalName="GitUI.Icons.TagWarning.png" />
-    <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\Translate.png" LogicalName="GitUI.Icons.Translate.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\TreeCollapseAll.png" LogicalName="GitUI.Icons.TreeCollapseAll.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\Unmerged.png" LogicalName="GitUI.Icons.Unmerged.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\Unstage.png" LogicalName="GitUI.Icons.Unstage.png" />

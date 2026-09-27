@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>&amp;שפה</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>עזרה בתרגום</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>ספק תמונת פרופיל</target>
@@ -1591,11 +1586,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>פיתוח</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>תרומה כספית</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>בעיות</target>
@@ -1604,11 +1594,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>פתיחת מאגר</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>תרגום</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3744,11 +3729,6 @@ Do you want to continue?</source>
         <target>&amp;מחיקת תגית...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;תרומה</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>&amp;עריכת .gitattributes</target>
@@ -4132,11 +4112,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;כלים</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;תרגום</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5961,33 +5936,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>השוואה</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="he">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>תרומה</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>יש לנו צוות ייעודי של משתפי פעולה שמשקיע זמן רב בתחזוקת האפליקציה, בפיתוח תכונות חדשות ובתיקון באגים. באפשרותך לתמוך בפרויקט באמצעות תרומה כספית. התרומות ישמשו לכיסוי עלויות התפעול ולהשגת המשאבים הדרושים כדי להמשיך ולהפעיל את הפרויקט. כמו כן נשתמש בתרומות כדי להודות למשתפי הפעולה על מאמציהם.
-
-לחצו על הכפתור למטה כדי לקבל מידע נוסף על ביצוע תרומה.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>יש לנו צוות ייעודי של משתפי פעולה שמשקיע זמן רב בתחזוקת האפליקציה, בפיתוח תכונות חדשות ובתיקון באגים. באפשרותך לתמוך בפרויקט באמצעות תרומה כספית. התרומות ישמשו לכיסוי עלויות התפעול ולהשגת המשאבים הדרושים כדי להמשיך ולהפעיל את הפרויקט. כמו כן נשתמש בתרומות כדי להודות למשתפי הפעולה על מאמציהם.
-
-לחצו על הכפתור למטה כדי לקבל מידע נוסף על ביצוע תרומה.</target>
         
       </trans-unit>
     </body>

@@ -29,7 +29,3 @@ body:
         - .NET version: 
     validations:
       required: true
-  - type: markdown
-    attributes:
-      value: |
-        ❤️ Git Extensions? Please consider supporting our collective: https://opencollective.com/gitextensions

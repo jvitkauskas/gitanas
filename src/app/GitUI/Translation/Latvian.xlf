@@ -241,11 +241,6 @@ Noklikšķiniet uz šīs informācijas ikonas, lai uzzinātu vairāk.</target>
         <target>&amp;Valoda</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Palīdzības tulkošana</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Avatara piegādātājs</target>
@@ -1588,11 +1583,6 @@ Lūdzu, pārliecinieties, ka Git for Windows ir instalēts, vai manuāli iestati
         <target>Attīstīt</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Ziedot</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Jautājumi</target>
@@ -1601,11 +1591,6 @@ Lūdzu, pārliecinieties, ka Git for Windows ir instalēts, vai manuāli iestati
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Atvērt repozitoriju</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Tulkot</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3736,11 +3721,6 @@ Do you want to continue?</source>
         <target>&amp;Dzēst tagu...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Ziedot</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Rediģēt .git&amp;attributes</target>
@@ -4124,11 +4104,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Rīki</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Tulkot</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5937,29 +5912,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Salīdzināt</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="lv">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Ziedot</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Mums ir īpaša sadarbības grupa, kas pavada daudz laika, uzturot lietotni, strādājot ar jaunām funkcijām un labojot kļūdas. Projektu var atbalstīt, veicot finansiālu ieguldījumu. Ziedojumi tiks izmantoti tekošo izdevumu segšanai un projekta turpināšanai nepieciešamo līdzekļu iegūšanai. Mēs arī izmantosim ziedojumus, lai pateiktos sadarbības dalībniekiem par ieguldīto darbu. Noklikšķiniet uz šīs pogas, lai iegūtu papildinformāciju par ziedojuma veikšanu.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Mums ir īpaša sadarbības grupa, kas pavada daudz laika, uzturot lietotni, strādājot ar jaunām funkcijām un labojot kļūdas. Projektu var atbalstīt, veicot finansiālu ieguldījumu. Ziedojumi tiks izmantoti tekošo izdevumu segšanai un projekta turpināšanai nepieciešamo līdzekļu iegūšanai. Mēs arī izmantosim ziedojumus, lai pateiktos sadarbības dalībniekiem par ieguldīto darbu. Noklikšķiniet uz šīs pogas, lai iegūtu papildinformāciju par ziedojuma veikšanu.</target>
         
       </trans-unit>
     </body>

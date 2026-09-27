@@ -36,21 +36,19 @@ public sealed class AboutViewModelTests
         AboutViewModel viewModel = CreateViewModel(["Alice"]);
 
         viewModel.OpenHomepageCommand.Execute(null);
-        viewModel.DonateCommand.Execute(null);
         viewModel.OpenIconsAuthorCommand.Execute(null);
         viewModel.ShowContributorsCommand.Execute(null);
         viewModel.CopyEnvironmentInfoCommand.Execute(null);
 
         _host.Actions.Should().Equal(
             $"url:{AboutViewModel.HomepageUrl}",
-            "url:https://donate.example",
             $"url:{AboutViewModel.IconsAuthorUrl}",
             "contributors",
             "copy");
     }
 
     private AboutViewModel CreateViewModel(IReadOnlyList<string> contributors, Random? random = null)
-        => new(new AboutStrings(), "Gitanas", "Gitanas 1.0", contributors, "https://donate.example", _host, random);
+        => new(new AboutStrings(), "Gitanas", "Gitanas 1.0", contributors, _host, random);
 
     private sealed class RecordingHost : IAboutDialogHost
     {

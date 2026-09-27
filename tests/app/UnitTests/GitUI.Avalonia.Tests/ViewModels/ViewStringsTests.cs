@@ -56,7 +56,6 @@ public sealed class ViewStringsTests
         yield return new TestCaseData(new BuildReportStrings()).SetArgDisplayNames(nameof(BuildReportStrings));
         yield return new TestCaseData(new CommandlineHelpStrings()).SetArgDisplayNames(nameof(CommandlineHelpStrings));
         yield return new TestCaseData(new AddFilesStrings()).SetArgDisplayNames(nameof(AddFilesStrings));
-        yield return new TestCaseData(new DonateStrings()).SetArgDisplayNames(nameof(DonateStrings));
         yield return new TestCaseData(new ResetChangesStrings()).SetArgDisplayNames(nameof(ResetChangesStrings));
         yield return new TestCaseData(new DeleteTagStrings()).SetArgDisplayNames(nameof(DeleteTagStrings));
         yield return new TestCaseData(new InitStrings()).SetArgDisplayNames(nameof(InitStrings));

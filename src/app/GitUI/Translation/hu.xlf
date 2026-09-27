@@ -242,11 +242,6 @@ Kattintson erre az info ikonra a részletekért.</target>
         <target>&amp;Nyelv</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Segítség a fordításban</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Avatar szolgáltató</target>
@@ -1591,11 +1586,6 @@ Győződjön meg róla, hogy a Git for Windows telepítve van, vagy állítsa be
         <target>Develop</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Adományozás</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Problémák</target>
@@ -1604,11 +1594,6 @@ Győződjön meg róla, hogy a Git for Windows telepítve van, vagy állítsa be
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Tároló megnyitása</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Fordítás</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3743,11 +3728,6 @@ Szeretné folytatni?</target>
         <target>Címke &amp;törlése…</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Adományozás</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>.git&amp;attributes szerkesztése</target>
@@ -4131,11 +4111,6 @@ Szeretné folytatni?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Eszközök</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Fordítás</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5960,33 +5935,6 @@ A branch törlése kommitok törlését is okozhatja!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Összehasonlítás</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="hu">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Adományozás</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Van egy elkötelezett közreműködői csapatunk, amely sok időt tölt az alkalmazás karbantartásával, új funkciók fejlesztésével és hibák javításával. Ön is támogathatja a projektet pénzügyi hozzájárulással. Az adományokat a működési költségek fedezésére és a projekt fenntartásához szükséges erőforrások megszerzésére használjuk fel. Az adományokat arra is felhasználjuk, hogy megköszönjük a közreműködők erőfeszítéseit.
-
-Kattintson az alábbi gombra további információkért az adományozásról.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Van egy elkötelezett közreműködői csapatunk, amely sok időt tölt az alkalmazás karbantartásával, új funkciók fejlesztésével és hibák javításával. Ön is támogathatja a projektet pénzügyi hozzájárulással. Az adományokat a működési költségek fedezésére és a projekt fenntartásához szükséges erőforrások megszerzésére használjuk fel. Az adományokat arra is felhasználjuk, hogy megköszönjük a közreműködők erőfeszítéseit.
-
-Kattintson az alábbi gombra további információkért az adományozásról.</target>
         
       </trans-unit>
     </body>

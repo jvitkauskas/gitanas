@@ -242,11 +242,6 @@ Napsauta tätä infokuvaketta saadaksesi lisätietoja.</target>
         <target>&amp;Kieli</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Auta kääntämisessä</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Avatar-tarjoaja</target>
@@ -1593,11 +1588,6 @@ Varmista, että Git for Windows on asennettu tai aseta oikea komento manuaalises
         <target>Kehitä</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Lahjoita</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Ongelmat</target>
@@ -1606,11 +1596,6 @@ Varmista, että Git for Windows on asennettu tai aseta oikea komento manuaalises
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Avaa tietovarasto</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Käännä</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3745,11 +3730,6 @@ Haluatko jatkaa?</target>
         <target>&amp;Poista tagi...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Lahjoita</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Muokkaa .git&amp;attributes-tiedostoa</target>
@@ -4133,11 +4113,6 @@ Haluatko jatkaa?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Työkalut</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Käännä</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5962,33 +5937,6 @@ Haaran poistaminen voi poistaa myös kommitteja!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Compare</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="fi">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Lahjoita</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Meillä on omistautunut avustajaryhmä, joka käyttää paljon aikaa sovelluksen ylläpitoon, uusien ominaisuuksien kehittämiseen ja virheiden korjaamiseen. Voit tukea projektia tekemällä taloudellisen lahjoituksen. Lahjoituksia käytetään käyttökulujen kattamiseen ja projektin ylläpitoon tarvittavien resurssien hankkimiseen. Käytämme lahjoituksia myös avustajien työn palkitsemiseen.
-
-Saat lisätietoja lahjoittamisesta napsauttamalla alla olevaa painiketta.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Meillä on omistautunut avustajaryhmä, joka käyttää paljon aikaa sovelluksen ylläpitoon, uusien ominaisuuksien kehittämiseen ja virheiden korjaamiseen. Voit tukea projektia tekemällä taloudellisen lahjoituksen. Lahjoituksia käytetään käyttökulujen kattamiseen ja projektin ylläpitoon tarvittavien resurssien hankkimiseen. Käytämme lahjoituksia myös avustajien työn palkitsemiseen.
-
-Saat lisätietoja lahjoittamisesta napsauttamalla alla olevaa painiketta.</target>
         
       </trans-unit>
     </body>

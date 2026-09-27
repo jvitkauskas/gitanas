@@ -147,11 +147,11 @@ public sealed class DashboardViewModelTests
 
         viewModel.StartLinks.Select(l => (l.Text, l.Icon)).Should().Equal(
             ("Create new repository", "RepoCreate"), ("Open repository", "RepoOpen"), ("Clone repository", "CloneRepoGit"), ("Clone GitHub repository", "CloneRepoGitHub"));
-        viewModel.ContributeLinks.Select(l => l.Text).Should().Equal("Develop", "Support Git Extensions", "Translate", "Issues");
+        viewModel.ContributeLinks.Select(l => l.Text).Should().Equal("Develop", "Issues");
 
         viewModel.StartLinks[1].Command.Execute(null);
         viewModel.StartLinks[3].Command.Execute(null);
-        viewModel.ContributeLinks[3].Command.Execute(null);
+        viewModel.ContributeLinks[1].Command.Execute(null);
         host.Links.Should().Equal(DashboardLink.OpenRepository, DashboardLink.Issues);
         host.Forks.Should().Equal(0);
     }

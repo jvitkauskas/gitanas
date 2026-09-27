@@ -41,25 +41,6 @@ public sealed class AddFilesStrings : ViewStrings
     public TranslatedText AddFiles { get; }
 }
 
-/// <summary>Strings of the donation dialog; ids match <c>FormDonate</c>.</summary>
-public sealed class DonateStrings : ViewStrings
-{
-    public DonateStrings()
-        : base("SupportUpstreamDialog")
-    {
-        Title = Add("$this", "Text", "Support Git Extensions");
-        Text = Add(
-            "_donateText",
-            "Text",
-            "Gitanas is based on Git Extensions. You can support the original Git Extensions project by making a donation. "
-            + "The button below opens the Git Extensions Open Collective page; donations go to the upstream project.");
-    }
-
-    public TranslatedText Title { get; }
-
-    public TranslatedText Text { get; }
-}
-
 /// <summary>Strings of the reset changes confirmation; ids match <c>FormResetChanges</c>.</summary>
 public sealed class ResetChangesStrings : ViewStrings
 {

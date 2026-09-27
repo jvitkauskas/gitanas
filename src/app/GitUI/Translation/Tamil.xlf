@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>மொழி</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>மொழிபெயர்ப்பதற்கு உதவு</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>உருவபட வழங்குநர்</target>
@@ -1587,11 +1582,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>உருவாக்கு</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>நன்கொடை</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>சிக்கல்கள்</target>
@@ -1600,11 +1590,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>திறந்த களஞ்சியம்</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>மொழிபெயர்</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3737,11 +3722,6 @@ Do you want to continue?</source>
         <target>குறிச்சொல் &amp;நீக்கு...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;நன்கொடை</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>திருத்து .அறிவிலி&amp;பண்புக்கூறுகள்</target>
@@ -4125,11 +4105,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;கருவிகள்</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;மொழிபெயர்</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5954,33 +5929,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>ஒப்பிடு</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="ta">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>நன்கொடை</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>எங்களிடம் ஒரு பிரத்யேக கூட்டுப்பணியாளர் குழு உள்ளது, அவர்கள் பயன்பாட்டைப் பராமரிப்பதிலும், புதிய அம்சங்களில் பணியாற்றுவதிலும், பிழைகளைச் சரிசெய்வதிலும் அதிக நேரத்தைச் செலவிடுகிறார்கள். நிதிப் பங்களிப்பை வழங்குவதன் மூலம் நீங்கள் திட்டத்திற்கு ஆதரவளிக்கலாம். நன்கொடைகள் இயங்கும் செலவுகளை ஈடுகட்டவும், திட்டம் இயங்குவதற்குத் தேவையான ஆதாரங்களைப் பெறவும் பயன்படுத்தப்படும். கூட்டுப்பணியாளர்களின் முயற்சிகளுக்கு நன்றி தெரிவிக்க நன்கொடைகளைப் பயன்படுத்துவோம்.
-
-நன்கொடை வழங்குவது பற்றிய கூடுதல் தகவலைப் பெற கீழே உள்ள பொத்தானைக் சொடுக்கவும்.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>எங்களிடம் ஒரு பிரத்யேக கூட்டுப்பணியாளர் குழு உள்ளது, அவர்கள் பயன்பாட்டைப் பராமரிப்பதிலும், புதிய அம்சங்களில் பணியாற்றுவதிலும், பிழைகளைச் சரிசெய்வதிலும் அதிக நேரத்தைச் செலவிடுகிறார்கள். நிதிப் பங்களிப்பை வழங்குவதன் மூலம் நீங்கள் திட்டத்திற்கு ஆதரவளிக்கலாம். நன்கொடைகள் இயங்கும் செலவுகளை ஈடுகட்டவும், திட்டம் இயங்குவதற்குத் தேவையான ஆதாரங்களைப் பெறவும் பயன்படுத்தப்படும். கூட்டுப்பணியாளர்களின் முயற்சிகளுக்கு நன்றி தெரிவிக்க நன்கொடைகளைப் பயன்படுத்துவோம்.
-
-நன்கொடை வழங்குவது பற்றிய கூடுதல் தகவலைப் பெற கீழே உள்ள பொத்தானைக் சொடுக்கவும்.</target>
         
       </trans-unit>
     </body>

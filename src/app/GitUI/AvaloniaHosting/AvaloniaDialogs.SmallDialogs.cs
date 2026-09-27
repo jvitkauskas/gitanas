@@ -53,17 +53,6 @@ internal static partial class AvaloniaDialogs
         return true;
     }
 
-    public static bool TryShowDonate(IWin32Window? owner)
-    {
-        ShowDialog(
-            () => new DonateWindow
-            {
-                DataContext = new DonateViewModel(ViewStrings.Load<DonateStrings>(), DonationUrl, url => AvaloniaUi.RunInHostContext(() => OsShellUtil.OpenUrlInDefaultBrowser(url))),
-            },
-            owner);
-        return true;
-    }
-
     public static bool TryShowContributors(IWin32Window? owner)
     {
         ShowDialog(

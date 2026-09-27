@@ -16,10 +16,8 @@ public sealed class DashboardStrings : ViewStrings
         CloneRepository = Add("_cloneRepository", "Text", "Clone repository");
         CreateRepository = Add("_createRepository", "Text", "Create new repository");
         Develop = Add("_develop", "Text", "Develop");
-        Donate = Add("_supportUpstream", "Text", "Support Git Extensions");
         Issues = Add("_issues", "Text", "Issues");
         OpenRepository = Add("_openRepository", "Text", "Open repository");
-        Translate = Add("_translate", "Text", "Translate");
         Contribute = Add("lblContribute", "Text", "Contribute");
     }
 
@@ -31,13 +29,9 @@ public sealed class DashboardStrings : ViewStrings
 
     public TranslatedText Develop { get; }
 
-    public TranslatedText Donate { get; }
-
     public TranslatedText Issues { get; }
 
     public TranslatedText OpenRepository { get; }
-
-    public TranslatedText Translate { get; }
 
     public TranslatedText Contribute { get; }
 }
@@ -125,8 +119,6 @@ public enum DashboardLink
     OpenRepository,
     CloneRepository,
     Develop,
-    Donate,
-    Translate,
     Issues,
 }
 
@@ -259,8 +251,6 @@ public sealed partial class DashboardViewModel : ObservableObject
         ContributeLinks =
         [
             new(strings.Develop.Text, "Develop", new RelayCommand(() => _host.Run(DashboardLink.Develop))) { AdaptsLightness = true },
-            new(strings.Donate.Text, "DollarSign", new RelayCommand(() => _host.Run(DashboardLink.Donate))),
-            new(strings.Translate.Text, "Translate", new RelayCommand(() => _host.Run(DashboardLink.Translate))) { AdaptsLightness = true },
             new(strings.Issues.Text, "Bug", new RelayCommand(() => _host.Run(DashboardLink.Issues))),
         ];
         StartLinks = CreateStartLinks();

@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>&amp;Язык</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Помочь перевести</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Поставщик аватара</target>
@@ -1591,11 +1586,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>Разработка</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Пожертвовать</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Сообщить об ошибке</target>
@@ -1604,11 +1594,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Открыть репозиторий</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Перевод</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3742,11 +3727,6 @@ Do you want to continue?</source>
         <target>&amp;Удалить метку…</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Пожертвовать</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Пр&amp;авить .gitattributes</target>
@@ -4130,11 +4110,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Инструменты</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Перевод</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5959,33 +5934,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Сравнение</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="ru">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Пожертвовать</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>У нас есть преданная команда разработчиков, которая проводит много времени, поддерживая приложение, работая над новыми функциями и исправляя ошибки. Вы можете поддержать проект, внося финансовые пожертвования. Они будут использоваться для покрытия текущих расходов и получения ресурсов, необходимых для поддержания работы проекта. Мы также будем использовать эти пожертвования, чтобы отблагодарить разработчиков за их усилия.
-
-Нажмите на кнопку ниже, чтобы узнать как можно сделать пожертвование.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>У нас есть преданная команда разработчиков, которая проводит много времени, поддерживая приложение, работая над новыми функциями и исправляя ошибки. Вы можете поддержать проект, внося финансовые пожертвования. Они будут использоваться для покрытия текущих расходов и получения ресурсов, необходимых для поддержания работы проекта. Мы также будем использовать эти пожертвования, чтобы отблагодарить разработчиков за их усилия.
-
-Нажмите на кнопку ниже, чтобы узнать как можно сделать пожертвование.</target>
         
       </trans-unit>
     </body>

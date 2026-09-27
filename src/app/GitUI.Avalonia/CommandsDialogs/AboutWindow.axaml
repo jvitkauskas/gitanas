@@ -10,17 +10,12 @@
                 CanResize="False">
   <Grid ColumnDefinitions="176,*" Margin="0,0,12,12">
 
-    <!-- Left: logo, call to action, donation badge -->
+    <!-- Left: logo and call to action -->
     <StackPanel Spacing="12" Margin="12">
       <Image Source="avares://GitUI.Avalonia/Assets/GitanasLogo256.png"
              Width="128" Height="128" HorizontalAlignment="Center" />
       <TextBlock Text="{Binding Strings.GetInvolved.Text}"
                  TextWrapping="Wrap" TextAlignment="Center" />
-      <Button Name="donateButton" Classes="link" HorizontalAlignment="Center"
-              Command="{Binding DonateCommand}"
-              AutomationProperties.Name="Support Git Extensions" ToolTip.Tip="Support the original Git Extensions project">
-        <TextBlock Text="Support Git Extensions" TextWrapping="Wrap" TextAlignment="Center" />
-      </Button>
     </StackPanel>
 
     <!-- Right: product, credits, environment, warranty -->

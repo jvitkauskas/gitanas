@@ -242,11 +242,6 @@ Click this info icon for more details.</source>
         <target>語言(&amp;L)</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>協助翻譯</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>頭像提供者</target>
@@ -1591,11 +1586,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
         <target>開發</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>捐款</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>議題</target>
@@ -1604,11 +1594,6 @@ Please make sure that Git for Windows is installed or set the correct command ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>開啟存放庫</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>翻譯</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3738,11 +3723,6 @@ Do you want to continue?</source>
         <target>刪除標籤(&amp;D)...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>捐款(&amp;D)</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>編輯 .gitattributes(&amp;A)</target>
@@ -4126,11 +4106,6 @@ Do you want to continue?</source>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>工具(&amp;T)</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>翻譯(&amp;T)</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5955,33 +5930,6 @@ Deleting a branch can cause commits to be deleted too!</source>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>比較 (Compare)</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="zh-Hant">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>捐款</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>我們有一支專屬的協作團隊，他們花費大量時間維護應用程式、開發新功能並修復錯誤。您可以透過捐款來支援這個專案。捐款將用於支付執行成本，並取得維持專案運作所需的資源。我們也會用捐款來感謝協作者的付出。
-
-請按一下下方按鈕以獲取更多捐款資訊。</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>我們有一支專屬的協作團隊，他們花費大量時間維護應用程式、開發新功能並修復錯誤。您可以透過捐款來支援這個專案。捐款將用於支付執行成本，並取得維持專案運作所需的資源。我們也會用捐款來感謝協作者的付出。
-
-請按一下下方按鈕以獲取更多捐款資訊。</target>
         
       </trans-unit>
     </body>

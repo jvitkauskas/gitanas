@@ -124,8 +124,6 @@ public sealed class BrowseStrings : ViewStrings
         HelpMenu = Add("helpToolStripMenuItem", "Text", "&Help");
         UserManual = Add("userManualToolStripMenuItem", "Text", "User &manual");
         Changelog = Add("changelogToolStripMenuItem", "Text", "&Changelog");
-        Translate = Add("translateToolStripMenuItem", "Text", "&Translate");
-        Donate = Add("supportUpstreamToolStripMenuItem", "Text", "Support Git Extensions");
         ReportAnIssue = Add("reportAnIssueToolStripMenuItem", "Text", "&Report an issue");
         About = Add("aboutToolStripMenuItem", "Text", "&About");
     }
@@ -313,10 +311,6 @@ public sealed class BrowseStrings : ViewStrings
 
     public TranslatedText Changelog { get; }
 
-    public TranslatedText Translate { get; }
-
-    public TranslatedText Donate { get; }
-
     public TranslatedText ReportAnIssue { get; }
 
     public TranslatedText About { get; }
@@ -403,8 +397,6 @@ public enum BrowseCommand
     Settings,
     UserManual,
     Changelog,
-    Translate,
-    Donate,
     ReportAnIssue,
     About,
 
@@ -906,8 +898,6 @@ public sealed partial class BrowseViewModel : DialogViewModel
             new(s.UserManual.AccessKeyText, BrowseCommand.UserManual, "GotoManual"),
             new(s.Changelog.AccessKeyText, BrowseCommand.Changelog, "Changelog"),
             BrowseMenuItem.Separator,
-            new(s.Translate.AccessKeyText, BrowseCommand.Translate, "Translate"),
-            new(s.Donate.AccessKeyText, BrowseCommand.Donate, "DollarSign"),
             new(s.ReportAnIssue.AccessKeyText, BrowseCommand.ReportAnIssue, "BugReport"),
             BrowseMenuItem.Separator,
             new(s.About.AccessKeyText, BrowseCommand.About, "Information"),

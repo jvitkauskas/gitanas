@@ -489,3 +489,18 @@ Validation: the Release solution build passed with no warnings or errors. All
 passed; two Windows-only UI cases and one Windows-only icon case were skipped.
 Translation files parse, and the source scan finds no remaining application updater
 entry points or release-feed requests.
+
+### Donation and translation-contribution links removed (2026-09-27)
+
+Removed donation and translation-contribution actions from the dashboard, Help
+menu, About window and Appearance settings. Deleted the unused donation dialog,
+commands, icons and translated labels. Removed the upstream sponsor configuration
+and donation prompts in the GitHub issue templates. Language selection, existing
+translations and contributor credits remain available.
+
+Validation: the Release solution build passed (five existing Avalonia obsolete
+property warnings). All 1,280 Avalonia tests and two embedded-icon checks passed;
+two Windows-only UI cases and one Windows-only icon case were skipped. Inspected
+fresh dashboard, About and Appearance screenshots in light and dark themes.
+Translation XML parses and no donation or translation-contribution actions remain
+in the application source.

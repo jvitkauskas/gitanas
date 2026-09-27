@@ -236,7 +236,6 @@ Warning = alert orange
 Book = book
 GotoManual = question
 Changelog = note
-Translate = comment-discussion
 BugReport = bug
 Bug = bug
 Develop = code

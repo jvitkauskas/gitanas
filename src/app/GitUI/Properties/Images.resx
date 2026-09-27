@@ -211,9 +211,6 @@
   <data name="SaveAs" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\SaveAs.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DonateBadge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\Donate.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Stash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\Stash.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -523,9 +520,6 @@
   <data name="Develop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\Develop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DollarSign" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icons\DollarSign.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="EditFilter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\EditFilter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -675,9 +669,6 @@
   </data>
   <data name="StopTrackingFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\StopTrackingFile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Translate" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\GitUI.Avalonia\Assets\Modern\Light\Translate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TreeCollapseAll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\GitUI.Avalonia\Assets\Modern\Light\TreeCollapseAll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

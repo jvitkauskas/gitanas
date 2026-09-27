@@ -19,7 +19,6 @@ internal static class EmbeddedIcons
     {
         ["BranchLocalRoot"] = "LocalBranchRoot",
         ["BranchRemoteRoot"] = "RemoteBranchRoot",
-        ["DonateBadge"] = "Donate",
         ["UiScrollBar"] = "ui-scroll-bar",
     }.ToFrozenDictionary(StringComparer.OrdinalIgnoreCase);
 

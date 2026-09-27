@@ -242,11 +242,6 @@ Klik ikon info ini untuk detail lebih lanjut.</target>
         <target>&amp;Bahasa</target>
         
       </trans-unit>
-      <trans-unit id="helpTranslate.Text">
-        <source>Help translate</source>
-        <target>Bantu menerjemahkan</target>
-        
-      </trans-unit>
       <trans-unit id="lblAvatarProvider.Text">
         <source>Avatar provider</source>
         <target>Penyedia avatar</target>
@@ -1591,11 +1586,6 @@ Pastikan Git for Windows sudah terpasang atau atur perintah yang benar secara ma
         <target>Kembangkan</target>
         
       </trans-unit>
-      <trans-unit id="_donate.Text">
-        <source>Donate</source>
-        <target>Donasi</target>
-        
-      </trans-unit>
       <trans-unit id="_issues.Text">
         <source>Issues</source>
         <target>Issues</target>
@@ -1604,11 +1594,6 @@ Pastikan Git for Windows sudah terpasang atau atur perintah yang benar secara ma
       <trans-unit id="_openRepository.Text">
         <source>Open repository</source>
         <target>Buka repositori</target>
-        
-      </trans-unit>
-      <trans-unit id="_translate.Text">
-        <source>Translate</source>
-        <target>Terjemahkan</target>
         
       </trans-unit>
       <trans-unit id="lblContribute.Text">
@@ -3743,11 +3728,6 @@ Lanjutkan?</target>
         <target>&amp;Hapus tag...</target>
         
       </trans-unit>
-      <trans-unit id="donateToolStripMenuItem.Text">
-        <source>&amp;Donate</source>
-        <target>&amp;Donasi</target>
-        
-      </trans-unit>
       <trans-unit id="editGitAttributesToolStripMenuItem.Text">
         <source>Edit .git&amp;attributes</source>
         <target>Sunting .git&amp;attributes</target>
@@ -4131,11 +4111,6 @@ Lanjutkan?</target>
       <trans-unit id="toolsToolStripMenuItem.Text">
         <source>&amp;Tools</source>
         <target>&amp;Alat</target>
-        
-      </trans-unit>
-      <trans-unit id="translateToolStripMenuItem.Text">
-        <source>&amp;Translate</source>
-        <target>&amp;Terjemahkan</target>
         
       </trans-unit>
       <trans-unit id="tsbtnAdvancedFilter.ToolTipText">
@@ -5960,33 +5935,6 @@ Menghapus cabang dapat menyebabkan komit ikut terhapus!</target>
       <trans-unit id="secondCommitGroup.Text">
         <source>Compare</source>
         <target>Bandingkan</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormDonate" source-language="en" target-language="id">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Donate</source>
-        <target>Donasi</target>
-        
-      </trans-unit>
-      <trans-unit id="_donateText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Tim kolaborator berdedikasi menghabiskan banyak waktu untuk memelihara aplikasi ini, mengerjakan fitur baru, dan memperbaiki bug. Proyek ini dapat didukung melalui kontribusi finansial. Donasi akan digunakan untuk menutup biaya operasional dan mendapatkan sumber daya yang diperlukan agar proyek tetap berjalan. Donasi juga akan digunakan untuk mengapresiasi kerja keras para kolaborator.
-
-Klik tombol di bawah untuk informasi lebih lanjut tentang cara berdonasi.</target>
-        
-      </trans-unit>
-      <trans-unit id="lblText.Text">
-        <source>We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs.You can support the project by making a financial contribution. Donations will be used to cover running costs and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.
-
-Click on the button below to get more information about making a donation.</source>
-        <target>Tim kolaborator berdedikasi menghabiskan banyak waktu untuk memelihara aplikasi ini, mengerjakan fitur baru, dan memperbaiki bug. Proyek ini dapat didukung melalui kontribusi finansial. Donasi akan digunakan untuk menutup biaya operasional dan mendapatkan sumber daya yang diperlukan agar proyek tetap berjalan. Donasi juga akan digunakan untuk mengapresiasi kerja keras para kolaborator.
-
-Klik tombol di bawah untuk informasi lebih lanjut tentang cara berdonasi.</target>
         
       </trans-unit>
     </body>

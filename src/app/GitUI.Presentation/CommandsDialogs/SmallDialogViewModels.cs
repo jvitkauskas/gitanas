@@ -49,15 +49,6 @@ public sealed partial class AddFilesViewModel : DialogViewModel
     private string ForceArgument => Force ? " -f" : "";
 }
 
-/// <summary>View model of the donation dialog (port of <c>FormDonate</c>).</summary>
-public sealed partial class DonateViewModel(DonateStrings strings, string donationUrl, Action<string> openUrl) : DialogViewModel
-{
-    public DonateStrings Strings { get; } = strings;
-
-    [RelayCommand]
-    private void Donate() => openUrl(donationUrl);
-}
-
 /// <summary>
 ///  View model of the contributors dialog (port of <c>FormContributors</c>). Its strings are not in the translations
 ///  (as for the WinForms form), so they are constants.

@@ -24,6 +24,7 @@ public partial class BrowseWindow : DialogWindow
     public BrowseWindow()
     {
         InitializeComponent();
+        ApplyModernLayout();
 
         foreach (Control child in toolbar.Children)
         {

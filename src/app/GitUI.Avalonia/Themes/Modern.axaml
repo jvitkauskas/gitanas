@@ -1,0 +1,69 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <!--
+    The Modern control theme (docs/avalonia-port/MODERN.md): Fluent with a design of its own, after the styles of the
+    application (it restyles them, e.g. the tabs). The layout of the main window is in ModernBrowse.axaml.
+  -->
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="ModernContentBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="ModernSidebarBrush" Color="#C8EBEBEF" />
+          <SolidColorBrush x:Key="ModernToolbarBrush" Color="#F0F6F6F8" />
+          <SolidColorBrush x:Key="ModernSeparatorBrush" Color="#1F000000" />
+          <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#8A000000" />
+          <SolidColorBrush x:Key="ModernHoverBrush" Color="#0F000000" />
+          <SolidColorBrush x:Key="ModernTrackBrush" Color="#0D000000" />
+          <SolidColorBrush x:Key="ModernSegmentBrush" Color="#FFFFFF" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="ModernContentBrush" Color="#1E1E20" />
+          <SolidColorBrush x:Key="ModernSidebarBrush" Color="#B0262629" />
+          <SolidColorBrush x:Key="ModernToolbarBrush" Color="#F02A2A2D" />
+          <SolidColorBrush x:Key="ModernSeparatorBrush" Color="#33FFFFFF" />
+          <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#8CFFFFFF" />
+          <SolidColorBrush x:Key="ModernHoverBrush" Color="#14FFFFFF" />
+          <SolidColorBrush x:Key="ModernTrackBrush" Color="#14FFFFFF" />
+          <SolidColorBrush x:Key="ModernSegmentBrush" Color="#4A4A4F" />
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+
+  <!-- Tabs as the segments of a segmented control: flat, rounded, the selected one raised (instead of the WinForms tabs). -->
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem">
+    <Setter Property="Background" Value="Transparent" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="CornerRadius" Value="6" />
+    <Setter Property="Margin" Value="0,0,2,0" />
+    <Setter Property="Padding" Value="12,0" />
+    <Setter Property="MinHeight" Value="26" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem:pointerover /template/ Border#PART_LayoutRoot">
+    <Setter Property="Background" Value="{DynamicResource ModernHoverBrush}" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem:selected /template/ Border#PART_LayoutRoot">
+    <Setter Property="Background" Value="{DynamicResource ModernSegmentBrush}" />
+    <Setter Property="BoxShadow" Value="0 1 2 0 #30000000" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) /template/ ItemsPresenter#PART_ItemsPresenter">
+    <Setter Property="Margin" Value="8,4" />
+  </Style>
+
+  <!-- The headers of the lists as the section headers of macOS: small, semibold, secondary. -->
+  <Style Selector="DataGridColumnHeader">
+    <Setter Property="FontSize" Value="11" />
+    <Setter Property="FontWeight" Value="SemiBold" />
+    <Setter Property="Foreground" Value="{DynamicResource ModernSecondaryTextBrush}" />
+    <Setter Property="Background" Value="Transparent" />
+  </Style>
+
+  <!-- Rounded selections and hover in the lists and trees. -->
+  <Style Selector="ListBoxItem">
+    <Setter Property="CornerRadius" Value="5" />
+  </Style>
+  <Style Selector="TreeViewItem">
+    <Setter Property="CornerRadius" Value="5" />
+  </Style>
+</Styles>

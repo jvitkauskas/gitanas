@@ -1,0 +1,68 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:lp="using:GitUI.Avalonia.Controls.LeftPanel">
+  <!--
+    The main window of the Modern theme (docs/avalonia-port/MODERN.md), added to the styles of the window by
+    BrowseWindow.ApplyModernLayout, after its own: the toolbar in the title bar with labeled buttons, the sidebar, the filters
+    above the history, no frames around the panes.
+  -->
+  <Style Selector="Border.modernToolbar">
+    <Setter Property="Background" Value="{DynamicResource ModernToolbarBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ModernSeparatorBrush}" />
+    <Setter Property="BorderThickness" Value="0,0,0,1" />
+    <Setter Property="MinHeight" Value="52" />
+    <Setter Property="Padding" Value="8,2" />
+  </Style>
+  <Style Selector="Border.modernToolbar WrapPanel#toolbar">
+    <Setter Property="VerticalAlignment" Value="Center" />
+    <Setter Property="Margin" Value="0" />
+  </Style>
+  <Style Selector="Border.modernFilters">
+    <Setter Property="BorderBrush" Value="{DynamicResource ModernSeparatorBrush}" />
+    <Setter Property="BorderThickness" Value="0,0,0,1" />
+    <Setter Property="Padding" Value="10,4" />
+  </Style>
+  <Style Selector="Border.modernSidebar">
+    <Setter Property="Background" Value="{DynamicResource ModernSidebarBrush}" />
+  </Style>
+  <Style Selector="Grid.modernContent">
+    <Setter Property="Background" Value="{DynamicResource ModernContentBrush}" />
+  </Style>
+
+  <!-- The buttons of the toolbar: rounded when hovered, the main ones with their label under the icon (as Fork and Xcode). -->
+  <Style Selector="Button.toolbar, SplitButton.toolbar, ToggleButton.toolbar, DropDownButton.toolbar">
+    <Setter Property="Padding" Value="7,3" />
+    <Setter Property="CornerRadius" Value="6" />
+    <Setter Property="VerticalAlignment" Value="Center" />
+  </Style>
+  <Style Selector="StackPanel.toolContent">
+    <Setter Property="Orientation" Value="Vertical" />
+    <Setter Property="Spacing" Value="1" />
+  </Style>
+  <Style Selector="StackPanel.toolContent > Image">
+    <Setter Property="HorizontalAlignment" Value="Center" />
+  </Style>
+  <Style Selector="TextBlock.toolLabel, StackPanel.toolContent.commit > TextBlock">
+    <Setter Property="IsVisible" Value="True" />
+    <Setter Property="FontSize" Value="11" />
+    <Setter Property="Foreground" Value="{DynamicResource ModernSecondaryTextBrush}" />
+    <Setter Property="HorizontalAlignment" Value="Center" />
+  </Style>
+  <Style Selector="Separator.toolbar">
+    <Setter Property="Height" Value="26" />
+    <Setter Property="Background" Value="{DynamicResource ModernSeparatorBrush}" />
+  </Style>
+
+  <!-- No frames around the panes: separated by the splitters and the backgrounds. -->
+  <Style Selector="Border.frame">
+    <Setter Property="BorderThickness" Value="0" />
+  </Style>
+
+  <!-- The sidebar: the tree on the translucent material, its selection rounded and gray. -->
+  <Style Selector="lp|LeftPanelView ListBoxItem">
+    <Setter Property="Margin" Value="6,0" />
+  </Style>
+  <Style Selector="lp|LeftPanelView ListBoxItem:selected /template/ ContentPresenter">
+    <Setter Property="Background" Value="{DynamicResource ModernHoverBrush}" />
+  </Style>
+</Styles>

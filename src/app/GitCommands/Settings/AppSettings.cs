@@ -1512,8 +1512,11 @@ public static partial class AppSettings
         }
     }
 
-    /// <summary>The control themes of the Avalonia UI, the default (Fluent) first; the others are community themes.</summary>
-    public static IReadOnlyList<string> AvaloniaControlThemes { get; } = ["fluent", "simple", "classic"];
+    /// <summary>
+    ///  The control themes of the Avalonia UI, the default (Fluent) first; Modern is Fluent with the design of its own and the
+    ///  layout of the main window of docs/avalonia-port/MODERN.md; the others are community themes.
+    /// </summary>
+    public static IReadOnlyList<string> AvaloniaControlThemes { get; } = ["fluent", "modern", "simple", "classic"];
 
     /// <summary>
     ///  The control theme of the Avalonia UI, one of <see cref="AvaloniaControlThemes"/> (the default for another name, e.g. of

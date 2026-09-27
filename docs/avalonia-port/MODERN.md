@@ -1,0 +1,37 @@
+# The Modern theme
+
+A design of its own for the Avalonia UI, from the proofs of concept in `poc/ui-toolkits` (`AvaloniaStyled`, `AvaloniaFull`
+and its `FUNCTIONALITY.md`). It is a control theme like Simple and Classic: Settings › Colors › Controls › **Modern**
+(`AppSettings.AvaloniaControlTheme = "modern"`), or `GE_AVALONIA_THEME=modern` to try it. The default stays Fluent, the
+look of the WinForms release.
+
+## What it does now
+
+- **Controls** (`Themes/Modern.axaml`, after the styles of the application): the tabs as the segments of a segmented control,
+  the column headers as the section headers of macOS, rounded selections in the lists and trees, and the brushes of the
+  design (`Modern*Brush`, light and dark).
+- **Main window** (`BrowseWindow.Modern.cs`, `Themes/ModernBrowse.axaml`), with the same controls, bindings and commands,
+  moved and restyled:
+  - the toolbar above the history, in the title bar on macOS (the window extends under it; the window buttons get their
+    room when the left panel is hidden), with the labels of Pull, Push, Commit and Stash under their icons;
+  - the left panel as a full-height sidebar on the translucent material of the window (vibrancy on macOS);
+  - the filters in a bar of their own above the history;
+  - no frames around the panes.
+
+`BrowseViewTests.The_Modern_theme_moves_the_toolbar_and_the_filters_above_the_history` checks the layout and that the
+moved toolbar still runs its commands.
+
+## Next, from AvaloniaFull
+
+In the order of their value for the effort:
+
+1. The branch picker in the middle of the title bar (the branch button with its ahead and behind), the repository
+   switcher at the top of the sidebar (the working directory button and the dashboard's lists).
+2. The sidebar's section headers in small caps, colored line icons, the counts as badges (a restyle of `LeftPanelView`).
+3. The commit filter in the toolbar with its scope menu instead of the Branches and Filter boxes; the chips of the history
+   (All Branches, First Parent, Reflog, Display) instead of the filter toolbar's buttons.
+4. The GPG and build report tabs as badges of the commit header, the Console and Output tabs in a drawer.
+5. The grouped context menu of the revision grid (Checkout ▸, Rebase ▸, Rewrite History ▸, Compare ▸, Copy ▸, Bisect ▸).
+6. The commit dialog in the window (Workspace › Changes).
+
+Checked on macOS, light and dark. Not checked on Windows (the title bar stays the system's there) and Linux.

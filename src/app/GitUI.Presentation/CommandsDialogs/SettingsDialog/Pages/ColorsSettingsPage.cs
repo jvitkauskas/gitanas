@@ -267,6 +267,7 @@ public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServic
     private static string FormatControlTheme(string name) => name switch
     {
         "fluent" => "Fluent",
+        "modern" => "Modern",
         "classic" => "Classic",
         "simple" => "Simple",
         _ => name,

@@ -8,6 +8,7 @@ using Avalonia.VisualTree;
 using GitCommands.Git.Gpg;
 using GitExtensions.Extensibility.BuildServerIntegration;
 using GitExtensions.Extensibility.Git;
+using GitUI.Avalonia;
 using GitUI.Avalonia.CommandsDialogs.BrowseDialog;
 using GitUI.Avalonia.Controls.RevisionGrid;
 using GitUI.AvaloniaTests.ViewModels;
@@ -89,6 +90,38 @@ public sealed class BrowseViewTests : HeadlessTest
         host.Runs[0].Command.Should().Be(BrowseCommand.ViewSelectedRevisions);
         host.Runs[0].Selection.LatestSelectedFirst.Select(r => r.ObjectId).Should().Equal(viewModel.Grid.Rows[2].ObjectId);
         window.Close();
+    });
+
+    [Test]
+    public Task The_Modern_theme_moves_the_toolbar_and_the_filters_above_the_history() => OnUiThreadAsync(() =>
+    {
+        GitExtensionsAvaloniaApp.IsModern = true;
+        try
+        {
+            (BrowseWindow window, BrowseViewModel viewModel, FakeBrowseHost host) = Show();
+            WrapPanel toolbar = window.FindControl<WrapPanel>("toolbar")!;
+            Panel filters = window.FindControl<Panel>("filterToolBarHost")!;
+            Grid contentGrid = window.FindControl<Grid>("contentGrid")!;
+
+            window.Classes.Should().Contain("modern");
+            (toolbar.Parent as Border)!.Classes.Should().Contain("modernToolbar");
+            (filters.Parent as Border)!.Classes.Should().Contain("modernFilters");
+            Grid content = (Grid)contentGrid.Parent!;
+            Grid.GetRow((Control)toolbar.Parent!).Should().Be(0);
+            Grid.GetRow((Control)filters.Parent!).Should().Be(1);
+            Grid.GetRow(contentGrid).Should().Be(2);
+            Grid.GetColumn(content).Should().Be(2, "the content keeps its column beside the sidebar");
+            contentGrid.RowDefinitions.Should().HaveCount(3, "the rows of the grid and the tabs are unchanged");
+
+            // The same controls, still bound: a command of the moved toolbar runs.
+            window.FindControl<Button>("pushButton")!.Command!.Execute(BrowseCommand.Push);
+            host.Runs[^1].Command.Should().Be(BrowseCommand.Push);
+            window.Close();
+        }
+        finally
+        {
+            GitExtensionsAvaloniaApp.IsModern = false;
+        }
     });
 
     [Test]

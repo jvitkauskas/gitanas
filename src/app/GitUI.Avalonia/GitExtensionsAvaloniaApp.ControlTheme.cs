@@ -21,6 +21,12 @@ public partial class GitExtensionsAvaloniaApp
     private bool _usesFluentControls;
 
     /// <summary>
+    ///  Whether the control theme is Modern: the windows use its layout too (the main window's toolbar in the title bar, the
+    ///  sidebar, the filters above the history), see <c>BrowseWindow.ApplyModernLayout</c>.
+    /// </summary>
+    public static bool IsModern { get; internal set; }
+
+    /// <summary>
     ///  The control theme to use: <see cref="ControlThemeVariable"/> when set (to try one without changing the settings), else
     ///  <paramref name="setting"/>, else Fluent (also for an unknown name).
     /// </summary>
@@ -40,12 +46,14 @@ public partial class GitExtensionsAvaloniaApp
     internal void AddControlTheme(string name)
     {
         _usesFluentControls = name is not ("simple" or "classic");
+        IsModern = name == "modern";
         const string colorPickerSimple = "avares://Avalonia.Controls.ColorPicker/Themes/Simple/Simple.xaml";
         const string dataGridSimple = "avares://Avalonia.Controls.DataGrid/Themes/Simple.xaml";
         IStyle[] community = name switch
         {
             "simple" => [new SimpleTheme(), Include(colorPickerSimple), Include(dataGridSimple), Include("avares://GitUI.Avalonia/Themes/Simple.axaml")],
             "classic" => [new ClassicTheme { FontAliasing = false }, Include("avares://Classic.Avalonia.Theme.ColorPicker/Classic.axaml"), Include("avares://Classic.Avalonia.Theme.DataGrid/Classic.axaml"), Include("avares://GitUI.Avalonia/Themes/Classic.axaml")],
+            "modern" => [Include("avares://GitUI.Avalonia/Themes/Fluent.axaml")],
             _ => [Include("avares://GitUI.Avalonia/Themes/Fluent.axaml")],
         };
 
@@ -61,6 +69,12 @@ public partial class GitExtensionsAvaloniaApp
         for (int i = 0; i < styles.Length; i++)
         {
             Styles.Insert(i, styles[i]);
+        }
+
+        // Modern restyles the styles of the application too (e.g. the tabs): after them.
+        if (IsModern)
+        {
+            Styles.Add(Include("avares://GitUI.Avalonia/Themes/Modern.axaml"));
         }
 
         static StyleInclude Include(string source)

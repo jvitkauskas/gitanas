@@ -22,6 +22,14 @@
       <Setter Property="Background" Value="Transparent" />
       <Setter Property="BorderThickness" Value="0" />
     </Style>
+    <!-- The labels of the buttons, shown by the Modern theme only (Themes/Modern.axaml). -->
+    <Style Selector="StackPanel.toolContent">
+      <Setter Property="Orientation" Value="Horizontal" />
+      <Setter Property="Spacing" Value="4" />
+    </Style>
+    <Style Selector="TextBlock.toolLabel">
+      <Setter Property="IsVisible" Value="False" />
+    </Style>
   </Window.Styles>
   <!--
     Equivalent of FormBrowse: the main menu, the main toolbar (ToolStripMain), the grid and the tabs of the selected commit;
@@ -80,23 +88,32 @@
       <Separator Classes="toolbar" />
       <StackPanel Name="fetchPullShortcuts" Orientation="Horizontal" Spacing="2" />
       <SplitButton Name="pullButton" ToolTip.Tip="{Binding PullButtonToolTip}" Classes="toolbar" Command="{Binding RunCommand}" CommandParameter="{x:Static vm:BrowseCommand.PullDefault}" IsVisible="{Binding ToolbarItems[toolStripButtonPull]}">
-        <!-- As toolStripButtonPull: the icon only (its tooltip names the pull action). -->
-        <Image Source="{Binding PullButtonIcon, Converter={x:Static s:SettingsIconConverter.Instance}}" Width="16" Height="16" />
+        <!-- As toolStripButtonPull: the icon only (its tooltip names the pull action); the Modern theme adds the label. -->
+        <StackPanel Classes="toolContent">
+          <Image Source="{Binding PullButtonIcon, Converter={x:Static s:SettingsIconConverter.Instance}}" Width="16" Height="16" />
+          <TextBlock Classes="toolLabel" Text="{Binding Strings.PullButton.Text}" />
+        </StackPanel>
       </SplitButton>
       <Button Name="pushButton" Classes="toolbar" Command="{Binding RunCommand}" CommandParameter="{x:Static vm:BrowseCommand.Push}" IsVisible="{Binding ToolbarItems[toolStripButtonPush]}"
               ToolTip.Tip="{Binding Strings.PushButton.Text}">
-        <!-- As toolStripButtonPush: the icon only. -->
-        <Image Source="avares://GitUI.Avalonia/Assets/Push.png" Width="16" Height="16" />
+        <!-- As toolStripButtonPush: the icon only; the Modern theme adds the label. -->
+        <StackPanel Classes="toolContent">
+          <Image Source="avares://GitUI.Avalonia/Assets/Push.png" Width="16" Height="16" />
+          <TextBlock Classes="toolLabel" Text="{Binding Strings.PushButton.Text}" />
+        </StackPanel>
       </Button>
       <!-- As ToolStripMain: Pull, Push, Commit, Stash. -->
       <Button Name="commitButton" Classes="toolbar" Command="{Binding RunCommand}" CommandParameter="{x:Static vm:BrowseCommand.Commit}" IsVisible="{Binding ToolbarItems[toolStripButtonCommit]}">
-        <StackPanel Orientation="Horizontal" Spacing="4">
+        <StackPanel Classes="toolContent commit">
           <Image Name="commitButtonIcon" Source="{Binding CommitButtonIcon, Converter={x:Static s:SettingsIconConverter.Instance}}" Width="16" Height="16" />
           <TextBlock Name="commitButtonText" Text="{Binding CommitButtonText}" VerticalAlignment="Center" />
         </StackPanel>
       </Button>
       <SplitButton Name="stashButton" Classes="toolbar" Command="{Binding RunCommand}" CommandParameter="{x:Static vm:BrowseCommand.ManageStashes}" ToolTip.Tip="{Binding Strings.ManageStashesToolTip.Text}" IsVisible="{Binding ToolbarItems[toolStripSplitStash]}">
-        <Image Source="avares://GitUI.Avalonia/Assets/Stash.png" Width="16" Height="16" />
+        <StackPanel Classes="toolContent">
+          <Image Source="avares://GitUI.Avalonia/Assets/Stash.png" Width="16" Height="16" />
+          <TextBlock Classes="toolLabel" Text="{Binding Strings.StashChanges.PlainText}" />
+        </StackPanel>
       </SplitButton>
       <Separator Classes="toolbar" />
       <Button Name="fileExplorerButton" Classes="toolbar" Command="{Binding RunCommand}" CommandParameter="{x:Static vm:BrowseCommand.FileExplorer}" ToolTip.Tip="{Binding Strings.FileExplorerToolTip.Text}" IsVisible="{Binding ToolbarItems[toolStripFileExplorer]}">
@@ -151,7 +168,7 @@
       <Grid Name="gridArea" ColumnDefinitions="0,Auto,*,Auto,0" IsVisible="{Binding !IsDashboard}">
         <ContentControl Name="leftCommitInfoHost" IsVisible="False" />
         <GridSplitter Name="leftCommitInfoSplitter" Grid.Column="1" Width="5" ResizeDirection="Columns" Background="Transparent" IsVisible="False" />
-        <Border Grid.Column="2" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+        <Border Grid.Column="2" Classes="frame" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
           <rg:RevisionGridView Name="revisionGrid" DataContext="{Binding Grid}" />
         </Border>
         <GridSplitter Name="rightCommitInfoSplitter" Grid.Column="3" Width="5" ResizeDirection="Columns" Background="Transparent" IsVisible="False" />
@@ -166,7 +183,7 @@
               <TextBlock Text="{Binding Strings.CommitTab.PlainText}" />
             </StackPanel>
           </TabItem.Header>
-          <Border Name="commitInfoBorder" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+          <Border Name="commitInfoBorder" Classes="frame" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
             <c:CommitInfoView Name="commitInfo" DataContext="{Binding CommitInfo}" />
           </Border>
         </TabItem>
@@ -181,7 +198,7 @@
           <h:HotkeyGrid Name="diffPanel" ColumnDefinitions="300,Auto,*">
             <fs:FileStatusListView Name="diffFiles" DataContext="{Binding Files}" />
             <GridSplitter Grid.Column="1" Width="5" ResizeDirection="Columns" Background="Transparent" />
-            <Border Grid.Column="2" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+            <Border Grid.Column="2" Classes="frame" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
               <!-- As the BlameControl of RevisionDiffControl: the blame instead of the viewer while "Blame" is checked. -->
               <Panel>
                 <Panel IsVisible="{Binding !IsDiffBlameVisible}">
@@ -204,7 +221,7 @@
           <h:HotkeyGrid Name="treePanel" ColumnDefinitions="300,Auto,*">
             <fs:FileStatusListView Name="treeFiles" DataContext="{Binding FileTree}" />
             <GridSplitter Grid.Column="1" Width="5" ResizeDirection="Columns" Background="Transparent" />
-            <Border Grid.Column="2" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
+            <Border Grid.Column="2" Classes="frame" BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
               <!-- As the BlameControl of RevisionDiffControl: the blame instead of the viewer while "Blame" is checked. -->
               <Panel>
                 <Panel IsVisible="{Binding !IsTreeBlameVisible}">

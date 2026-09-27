@@ -18,6 +18,16 @@ tested; see the [QA checklist and reports](docs/avalonia-port/QA.md) for coverag
 and known limitations. The application is branded as Gitanas; internal project
 and plugin names retain their existing identifiers for compatibility.
 
+## Linux packages
+
+Version tags produce self-contained `.tar.gz` archives for Linux x64 and ARM64
+in [GitHub Releases](https://github.com/jvitkauskas/gitanas/releases). Extract the
+archive and run `./Gitanas/Gitanas`. .NET 10 is included; Git and system desktop
+libraries must be installed separately. Settings stay in your user configuration
+directory. These builds target glibc-based distributions, with Ubuntu 24.04 as
+the initial CI baseline.
+See [Linux packaging](eng/linux/README.md) for dependencies and build instructions.
+
 ## Windows packages
 
 Version tags produce framework-dependent ZIPs for Windows x64 and ARM64 in

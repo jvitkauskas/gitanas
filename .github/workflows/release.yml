@@ -37,6 +37,10 @@ jobs:
             rid: win-x64
           - runner: windows-11-arm
             rid: win-arm64
+          - runner: ubuntu-24.04
+            rid: linux-x64
+          - runner: ubuntu-24.04-arm
+            rid: linux-arm64
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
     defaults:
@@ -77,6 +81,29 @@ jobs:
         env:
           RID: ${{ matrix.rid }}
         run: python eng/windows/build.py "$RID" "$RELEASE_VERSION"
+
+      - name: Install Linux desktop dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            git openssh-client ca-certificates libicu74 libssl3t64 libgssapi-krb5-2 \
+            libfontconfig1 libx11-6 libice6 libsm6 libxext6 libxrender1 libxrandr2 libxi6 \
+            libxcursor1 libwayland-client0 libwayland-cursor0 libwayland-egl1 libxkbcommon0 \
+            libegl1 libgl1 libdbus-1-3 fonts-dejavu-core xvfb xauth
+
+      - name: Build self-contained Linux archive
+        if: runner.os == 'Linux'
+        env:
+          RID: ${{ matrix.rid }}
+        run: python3 eng/linux/build.py "$RID" "$RELEASE_VERSION"
+
+      - name: Check Linux archive starts after extraction
+        if: runner.os == 'Linux'
+        env:
+          RID: ${{ matrix.rid }}
+          GITEXTENSIONS_USE_WAYLAND: '0'
+        run: xvfb-run -a python3 eng/linux/smoke-test.py artifacts/linux/"$RID"/dist/*.tar.gz
 
       - name: Check Windows ZIP starts after extraction
         if: runner.os == 'Windows'
@@ -143,7 +170,7 @@ jobs:
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: release-${{ matrix.rid }}
-          path: artifacts/${{ runner.os == 'Windows' && 'windows' || 'macos' }}/${{ matrix.rid }}/dist/*
+          path: artifacts/${{ runner.os == 'Windows' && 'windows' || runner.os == 'Linux' && 'linux' || 'macos' }}/${{ matrix.rid }}/dist/*
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
@@ -186,7 +213,15 @@ jobs:
 
           Extract the ZIP and drag **Gitanas.app** to Applications. These builds are ad-hoc signed, not notarized by Apple. After the first blocked launch, use **System Settings → Privacy & Security → Open Anyway** if you trust this download.
 
-          SHA-256 checksum files are included alongside each ZIP.
+          ## Linux downloads
+
+          - **linux-x64**: 64-bit Intel/AMD Linux.
+          - **linux-arm64**: 64-bit ARM Linux.
+          - Self-contained: .NET 10 is included. Install Git separately.
+
+          Extract the entire `.tar.gz` and run `./Gitanas` inside the extracted `Gitanas` directory. These builds target glibc-based desktop distributions; they still require system graphics libraries, fonts, ICU, and OpenSSL. Alpine/musl is not supported by these archives. Settings are kept in your user configuration/data directories. Native Wayland is experimental; set `GITEXTENSIONS_USE_WAYLAND=0` for X11/XWayland. See [Linux packaging](https://github.com/jvitkauskas/gitanas/blob/main/eng/linux/README.md) for dependencies and usage.
+
+          SHA-256 checksum files are included alongside each archive.
           NOTES
           prerelease=()
           if [[ "$RELEASE_TAG" == *-* ]]; then prerelease+=(--prerelease); fi
@@ -194,5 +229,5 @@ jobs:
             gh release create "$RELEASE_TAG" --verify-tag --draft \
               --title "Gitanas $RELEASE_TAG" --notes-file notes.md "${prerelease[@]}"
           fi
-          gh release upload "$RELEASE_TAG" dist/*.zip dist/*.sha256 --clobber
+          gh release upload "$RELEASE_TAG" dist/*.zip dist/*.tar.gz dist/*.sha256 --clobber
           gh release edit "$RELEASE_TAG" --draft=false

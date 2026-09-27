@@ -6,7 +6,7 @@ GitHub-hosted runners, creates `Gitanas.app` for each architecture, applies an
 ad-hoc signature, checks its signature and native architectures, and checks
 that the packaged application stays running during startup.
 
-When **all four Windows/macOS** builds succeed, the workflow creates a GitHub release and attaches:
+When **all six Linux/Windows/macOS** builds succeed, the workflow creates a GitHub release and attaches:
 
 - `Gitanas-<version>-osx-arm64.zip` for Apple Silicon.
 - `Gitanas-<version>-osx-x64.zip` for Intel.

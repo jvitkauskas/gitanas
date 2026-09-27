@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(RepoRoot)\eng\Localisation.targets" />
   <Import Project="$(MSBuildProjectDirectory)\Project.Build.targets" />
-  <!-- Release archives use eng/macos/build.sh or eng/windows/build.py instead of the legacy Windows packaging pipeline. -->
+  <!-- Release archives use the scripts in eng/linux, eng/macos, and eng/windows instead of the legacy Windows packaging pipeline. -->
   <Import Project="$(MSBuildProjectDirectory)\Project.Publish.targets" Condition="'$(MacOSBundle)' != 'true' And '$(ReleaseArchive)' != 'true'" />
   <Import Project="$(MSBuildProjectDirectory)\Project.Loc.targets" />
   <Import Project="$(MSBuildProjectDirectory)\Project.Avalonia.targets" Condition="'$(MacOSBundle)' != 'true' And '$(ReleaseArchive)' != 'true'" />

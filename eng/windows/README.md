@@ -1,8 +1,8 @@
 # Windows release ZIPs
 
 The **Release builds** workflow produces `win-x64` and `win-arm64`
-framework-dependent ZIPs alongside the macOS bundles on version tags. The
-release is published only after all four builds and startup checks succeed.
+framework-dependent ZIPs alongside the Linux archives and macOS bundles on version tags. The
+release is published only after all six builds and startup checks succeed.
 Manual workflow runs upload artifacts without creating a release.
 
 ## Installation

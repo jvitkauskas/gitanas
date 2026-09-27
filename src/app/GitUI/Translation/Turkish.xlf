@@ -4278,11 +4278,6 @@ Devam etmek istiyor musun?</target>
         <target>Filtrelenmiş dalları göster</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Evet, telemetriye (izlemeye) izin veriyorum.</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Tüm dallar</target>
@@ -10141,11 +10136,6 @@ Ek işlemler için bağlam menüsünü kullan</target>
         <target>Otomatik zulalama içindeki izlenmeyen dosyaları dahil et</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Evet, telemetriye (izlemeye) izin veriyorum!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Çıkış işleminde alt modülleri güncelle</target>
@@ -10166,11 +10156,6 @@ Ek işlemler için bağlam menüsünü kullan</target>
         <target>Performans</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetri (İzleme)</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Yüklenecek teslim sayısını sınırla</target>
@@ -10189,11 +10174,6 @@ Ek işlemler için bağlam menüsünü kullan</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Düzeltme tablosu hızlı arama zaman aşımı [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Neden ve ne yakalanır?</target>
         
       </trans-unit>
     </body>
@@ -13659,26 +13639,6 @@ Simgeler ve aralık farkları hakkında daha fazla bilgi için belgelere bakın.
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Etiketler</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Telemetriye (izlemeye) izin vermek istiyor musun?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Uygulamayı daha iyi hale getirebilmek için bilgi topluyoruz.
-
-Herhangi bir kişisel veya tanımlanabilir bilgiler toplamayacağız.
-Fikrini istediğin zaman değiştirebilirsin.
-
-Evet, telemetriye (izlemeye) izin veriyorum!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

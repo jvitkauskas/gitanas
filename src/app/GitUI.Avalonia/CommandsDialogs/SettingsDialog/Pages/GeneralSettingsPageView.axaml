@@ -3,7 +3,7 @@
              xmlns:vm="using:GitUI.Presentation.CommandsDialogs.SettingsDialog.Pages"
              x:Class="GitUI.Avalonia.CommandsDialogs.SettingsDialog.Pages.GeneralSettingsPageView"
              x:DataType="vm:GeneralSettingsPageViewModel">
-  <!-- Equivalent of GeneralSettingsPage: groupBoxPerformance, groupBoxBehaviour, then groupBoxTelemetry. -->
+  <!-- Equivalent of GeneralSettingsPage: groupBoxPerformance and groupBoxBehaviour. -->
   <StackPanel>
     <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Performance.PlainText}">
       <StackPanel Spacing="4">
@@ -41,14 +41,6 @@
         <NumericUpDown Name="quickSearchTimeout" Grid.Row="9" Grid.Column="1" Width="140" HorizontalAlignment="Left" Minimum="100" Maximum="1000000" Increment="100"
                        FormatString="N0" HorizontalContentAlignment="Right" Value="{Binding QuickSearchTimeout}" />
       </Grid>
-    </HeaderedContentControl>
-    <HeaderedContentControl Classes="groupBox" Header="{Binding Strings.Telemetry.PlainText}">
-      <StackPanel Orientation="Horizontal" Spacing="12">
-        <CheckBox Name="telemetry" Content="{Binding Strings.TelemetryEnabled.AccessKeyText}" IsChecked="{Binding TelemetryEnabled}" />
-        <Button Name="telemetryPrivacyLink" Classes="link" VerticalAlignment="Center" Command="{Binding OpenTelemetryPrivacyCommand}">
-          <TextBlock Text="{Binding Strings.TelemetryPrivacyLink.PlainText}" />
-        </Button>
-      </StackPanel>
     </HeaderedContentControl>
   </StackPanel>
 </UserControl>

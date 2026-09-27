@@ -4279,11 +4279,6 @@ Do you want to continue?</source>
         <target>הצגת ענפים מסוננים</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;כן, אני מאפשר טלמטריה</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;כל הענפים</target>
@@ -10142,11 +10137,6 @@ Context menu for additional operations</source>
         <target>הכללת קבצים שאינם במעקב באחסון האוטומטי</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>כן, אני מתיר טלמטריה!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>עדכון תת-מודולים במעבר ענף</target>
@@ -10167,11 +10157,6 @@ Context menu for additional operations</source>
         <target>ביצועים</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>טלמטריה</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>הגבלת מספר ההגשות שייטענו</target>
@@ -10190,11 +10175,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>פסק זמן לחיפוש מהיר ברשת הגרסאות [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>מדוע ומה נאסף?</target>
         
       </trans-unit>
     </body>
@@ -13663,26 +13643,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>תגיות</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>לאפשר איסוף טלמטריה?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>אנו אוספים מידע כדי שנוכל לשפר את היישום.
-
-לא נאסוף כל מידע אישי או מזהה.
-תוכל לשנות את דעתך בכל עת.
-
-כן, אני מתיר איסוף טלמטריה!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

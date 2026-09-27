@@ -21,7 +21,6 @@
     <UIRef Id="WixUI_GitExtensions" />
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
     <Property Id="LAUNCH" Value="0" />
-    <Property Id="TELEMETRY_ENABLED" Value="1" Secure="yes" />
     <Property Id="MSIRESTARTMANAGERCONTROL" Value="Disable" />
     <WixVariable Id="WixUISupportPerUser" Value="0" Overridable="yes" />
     <WixVariable Id="WixUISupportPerMachine" Value="1" Overridable="yes" />
@@ -80,9 +79,6 @@
       <Component Id="gitex.cmd" Guid="*">
         <File Source="..\assets\gitex.cmd" />
       </Component>
-      <Component Id="set_telemetry" Guid="*">
-        <File Source="..\assets\set-telemetry.ps1" />
-      </Component>
       <Component Id="Gitanas.exe" Guid="888a01a5-023a-5222-9a57-7ba65aae02c8">
         <File Source="$(var.ArtifactsPublishPath)\Gitanas.exe" KeyPath="yes">
           <netfx:NativeImage Id="ngen_Gitanas.exe" Platform="all" Priority="1" />
@@ -95,9 +91,6 @@
       </Component>
       <Component Id="AdysTech.CredentialManager.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\AdysTech.CredentialManager.dll" />
-      </Component>
-      <Component Id="AppInsights.WindowsDesktop.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\AppInsights.WindowsDesktop.dll" />
       </Component>
       <Component Id="Ben.Demystifier.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Ben.Demystifier.dll" />
@@ -155,9 +148,6 @@
       </Component>
       <Component Id="Microsoft.AI.DependencyCollector.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Microsoft.AI.DependencyCollector.dll" />
-      </Component>
-      <Component Id="Microsoft.ApplicationInsights.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\Microsoft.ApplicationInsights.dll" />
       </Component>
       <Component Id="Microsoft.VisualStudio.Composition.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Microsoft.VisualStudio.Composition.dll" />
@@ -1144,7 +1134,6 @@
       <ComponentGroupRef Id="Component.Translation" />
       <ComponentGroupRef Id="Component.AvaloniaUI" />
       <ComponentRef Id="AdysTech.CredentialManager.dll" />
-      <ComponentRef Id="AppInsights.WindowsDesktop.dll" />
       <ComponentRef Id="Ben.Demystifier.dll" />
       <ComponentRef Id="BugReporter.dll" />
       <ComponentRef Id="BugReporter.exe" />
@@ -1164,7 +1153,6 @@
       <ComponentRef Id="GitUI.dll" />
       <ComponentRef Id="GitUIPluginInterfaces.dll" />
       <ComponentRef Id="Microsoft.AI.DependencyCollector.dll" />
-      <ComponentRef Id="Microsoft.ApplicationInsights.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Composition.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" />
       <ComponentRef Id="Microsoft.VisualStudio.Interop.dll" />
@@ -1201,7 +1189,6 @@
       <!-- end application build artifacts -->
       <ComponentRef Id="gitanas.ico" />
       <ComponentRef Id="gitex.cmd" />
-      <ComponentRef Id="set_telemetry" />
       <ComponentRef Id="checksettings.reg" />
       <ComponentRef Id="InstallDir.reg" />
       <ComponentRef Id="GitExtSshAskPass.exe" />

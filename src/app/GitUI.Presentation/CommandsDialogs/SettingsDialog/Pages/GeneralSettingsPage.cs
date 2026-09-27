@@ -42,9 +42,6 @@ public sealed class GeneralSettingsPageStrings : ViewStrings
         Browse = Add("btnDefaultDestinationBrowse", "Text", "Browse");
         DefaultPullAction = Add("lblDefaultPullAction", "Text", "Default pull action");
         QuickSearchTimeout = Add("lblQuickSearchTimeout", "Text", "Revision grid quick search timeout [ms]");
-        Telemetry = Add("groupBoxTelemetry", "Text", "Telemetry");
-        TelemetryEnabled = Add("chkTelemetry", "Text", "Yes, I allow telemetry!");
-        TelemetryPrivacyLink = Add("llblTelemetryPrivacyLink", "Text", "Why and what is captured?");
     }
 
     public TranslatedText Title { get; }
@@ -102,12 +99,6 @@ public sealed class GeneralSettingsPageStrings : ViewStrings
     public TranslatedText DefaultPullAction { get; }
 
     public TranslatedText QuickSearchTimeout { get; }
-
-    public TranslatedText Telemetry { get; }
-
-    public TranslatedText TelemetryEnabled { get; }
-
-    public TranslatedText TelemetryPrivacyLink { get; }
 }
 
 /// <summary>A choice of a combo box: a value and its text.</summary>
@@ -119,9 +110,6 @@ public sealed record SettingChoice<T>(T Value, string Text)
 /// <summary>Port of <c>GeneralSettingsPage</c> (global settings).</summary>
 public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServicesViewModel
 {
-    /// <summary>As <c>LlblTelemetryPrivacyLink_LinkClicked</c>.</summary>
-    public const string TelemetryPrivacyUrl = "https://github.com/gitextensions/gitextensions/blob/master/setup/assets/PrivacyPolicy.md";
-
     private readonly IFileDialogService _fileDialogs;
 
     /// <param name="recentCloneDestinations">
@@ -224,9 +212,6 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
     [ObservableProperty]
     public partial decimal QuickSearchTimeout { get; set; } = 1000;
 
-    [ObservableProperty]
-    public partial bool TelemetryEnabled { get; set; }
-
     partial void OnShowGitStatusInToolbarChanged(bool value) => SetSubmoduleStatus();
 
     partial void OnShowGitStatusForArtificialCommitsChanged(bool value) => SetSubmoduleStatus();
@@ -246,9 +231,6 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
             DefaultCloneDestination = path;
         }
     }
-
-    [RelayCommand]
-    private void OpenTelemetryPrivacy() => Services.OpenUrl(TelemetryPrivacyUrl);
 
     protected override void SettingsToPage(SettingsSource? settings)
     {
@@ -273,8 +255,6 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
         DefaultPullAction = PullActions.FirstOrDefault(a => a.Value == pullAction) ?? PullActions[0];
         FollowRenamesInFileHistoryExact = AppSettings.FollowRenamesInFileHistoryExactOnly;
         SetSubmoduleStatus();
-
-        TelemetryEnabled = AppSettings.TelemetryEnabled ?? false;
 
         base.SettingsToPage(settings);
     }
@@ -304,8 +284,6 @@ public sealed partial class GeneralSettingsPageViewModel : SettingsPageWithServi
         AppSettings.DefaultCloneDestinationPath = DefaultCloneDestination;
         AppSettings.DefaultPullAction = (DefaultPullAction ?? PullActions[0]).Value;
         AppSettings.FollowRenamesInFileHistoryExactOnly = FollowRenamesInFileHistoryExact;
-
-        AppSettings.TelemetryEnabled = TelemetryEnabled;
 
         base.PageToSettings(settings);
     }

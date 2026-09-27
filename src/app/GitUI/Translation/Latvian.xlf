@@ -4271,11 +4271,6 @@ Do you want to continue?</source>
         <target>Rādīt filtrētos zarus</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Jā, es atļauju telemetriju</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Visi zari</target>
@@ -10054,11 +10049,6 @@ Context menu for additional operations</source>
         <target>Iekļaut neizsekotos failus automātiskajā atlicināšanā</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Jā, es atļauju telemetriju!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Atjaunināt paņemšanas apakšmoduļus</target>
@@ -10079,11 +10069,6 @@ Context menu for additional operations</source>
         <target>Izpildījums</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetrija</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Ierobežot ielādējamo izpilžu skaitu</target>
@@ -10102,11 +10087,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Pārskatīšanas režģa ātrās meklēšanas taimauts [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Kāpēc un kas tiek uzskaitīts?</target>
         
       </trans-unit>
     </body>
@@ -13558,26 +13538,6 @@ pēdējai atlasītajai izpildei.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Atzīmes</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Vai atļaut telemetriju?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Mēs vācam informāciju, lai varētu uzlabot lietotni.
-
-Mēs nevāksim nekādu personisku vai identificējamu informāciju.
-Jūs jebkurā laikā varat mainīt savu izvēli.
-
-Jā, es atļauju telemetriju!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

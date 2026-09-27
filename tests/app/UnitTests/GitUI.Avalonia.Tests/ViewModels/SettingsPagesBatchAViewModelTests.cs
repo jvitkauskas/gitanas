@@ -47,7 +47,6 @@ public sealed class SettingsPagesBatchAViewModelTests
         page.DefaultPullAction = page.PullActions[2];
         page.BrowseDefaultCloneDestinationCommand.Execute(null);
         page.DefaultCloneDestination.Should().Be(@"C:\repos");
-        page.OpenTelemetryPrivacyCommand.Execute(null);
         page.SaveSettings();
 
         AppSettings.MaxRevisionGraphCommits.Should().Be(5000);
@@ -55,7 +54,6 @@ public sealed class SettingsPagesBatchAViewModelTests
         AppSettings.ShowSubmoduleStatus.Should().BeTrue();
         AppSettings.DefaultCloneDestinationPath.Should().Be(@"C:\repos");
         AppSettings.UpdateSubmodulesOnCheckout.Should().BeNull();
-        host.Urls.Should().Equal(GeneralSettingsPageViewModel.TelemetryPrivacyUrl);
         page.CloneDestinations.Should().Equal(@"C:\src");
 
         page.IsCommitsLimited = false;

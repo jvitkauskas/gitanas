@@ -4273,11 +4273,6 @@ Do you want to continue?</source>
         <target>顯示已過濾的分支</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>是，我允許傳送遙測資料(&amp;Y)</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>所有分支(&amp;A)</target>
@@ -10119,11 +10114,6 @@ Context menu for additional operations</source>
         <target>在自動儲藏時包含未追蹤的檔案</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>是，我允許遙測！</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>簽出時更新子模組</target>
@@ -10144,11 +10134,6 @@ Context menu for additional operations</source>
         <target>效能</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>遙測</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>限制要載入的提交數</target>
@@ -10167,11 +10152,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>版本網格快速搜尋逾時[毫秒]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>為什麼要收集？收集了哪些資料？</target>
         
       </trans-unit>
     </body>
@@ -13634,26 +13614,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>標籤</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>是否允許擷取遙測資料？</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>我們收集資訊以改善應用程式。
-
-我們不會收集任何個人或可識別的資訊。
-您可以隨時更改設定。
-
-好的，我允許遙測！</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

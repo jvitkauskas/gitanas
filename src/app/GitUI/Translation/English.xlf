@@ -7654,10 +7654,6 @@ Context menu for additional operations</source>
         <source>Include untracked files in autostash</source>
         <target />
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target />
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target />
@@ -7674,10 +7670,6 @@ Context menu for additional operations</source>
         <source>Performance</source>
         <target />
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target />
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target />
@@ -7692,10 +7684,6 @@ Context menu for additional operations</source>
       </trans-unit>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
         <target />
       </trans-unit>
     </body>

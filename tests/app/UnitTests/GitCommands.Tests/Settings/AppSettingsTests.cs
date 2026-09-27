@@ -240,7 +240,6 @@ internal sealed class AppSettingsTests
             const bool isNoISetting = false;
             const bool isNotNullable = false;
 
-            yield return (properties[nameof(AppSettings.TelemetryEnabled)], null, true, false);
             yield return (properties[nameof(AppSettings.AutoNormaliseBranchName)], true, false, false);
             yield return (properties[nameof(AppSettings.FileStatusFindInFilesGitGrepTypeIndex)], 1, isNotNullable, isISetting);
             yield return (properties[nameof(AppSettings.FileStatusMergeSingleItemWithFolder)], false, isNotNullable, isISetting);

@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.Design;
-using System.Configuration;
 using System.Diagnostics;
 using GitCommands;
 using GitExtensions.Extensibility;
@@ -9,12 +8,10 @@ using GitExtUtils.GitUI;
 using GitUI;
 using GitUI.CommandsDialogs.SettingsDialog;
 using GitUI.CommandsDialogs.SettingsDialog.Pages;
-using GitUI.Infrastructure.Telemetry;
 using GitUI.NBugReports;
 using GitUI.Theming;
 using GitUIPluginInterfaces;
 using Microsoft.VisualStudio.Threading;
-using MessageBoxes = GitUI.MessageBoxes;
 
 namespace GitExtensions;
 
@@ -61,21 +58,6 @@ internal static class Program
 
         ThemeModule.Load();
 
-        try
-        {
-            DiagnosticsClient.Initialize(ThisAssembly.Git.IsDirty);
-        }
-        catch (TypeInitializationException tie)
-        {
-            // is this exception caused by the configuration?
-            if (tie.InnerException is not null
-                && tie.InnerException.GetType()
-                    .IsSubclassOf(typeof(ConfigurationException)))
-            {
-                HandleConfigurationException((ConfigurationException)tie.InnerException);
-            }
-        }
-
         AppTitleGenerator.Initialise(ThisAssembly.Git.Sha, ThisAssembly.Git.Branch);
 
         // NOTE we perform the rest of the application's startup in another method to defer
@@ -110,9 +92,6 @@ internal static class Program
         {
             GitUI.AvaloniaHosting.AvaloniaStartupDialogs.TryShowChooseTranslation();
         }
-
-        // The first start does not ask about telemetry: it is off until the user allows it in the settings (General).
-        AppSettings.TelemetryEnabled ??= false;
 
         // The checklist and settings dialog load independent copies from disk. Flush the startup choices before
         // creating them, rather than waiting for the settings cache's delayed save (which can lose the language).
@@ -238,77 +217,6 @@ internal static class Program
         }
 
         return workingDir;
-    }
-
-    /// <summary>
-    /// Used in the rare event that the configuration file for the application is corrupted.
-    /// </summary>
-    private static void HandleConfigurationException(ConfigurationException ce)
-    {
-        bool exceptionHandled = false;
-        try
-        {
-            // perhaps this should be checked for if it is null
-            Exception? in3 = ce.InnerException?.InnerException;
-
-            // saves having to have a reference to System.Xml just to check that we have an XmlException
-            if (in3?.GetType().Name == "XmlException")
-            {
-                string localSettingsPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), AppSettings.ApplicationId);
-
-                // assume that if we are having this error and the installation is not a portable one then the folder will exist.
-                if (Directory.Exists(localSettingsPath))
-                {
-                    string messageContent = string.Format("There is a problem with the user.xml configuration file.{0}{0}The error message was: {1}{0}{0}The configuration file is usually found in: {2}{0}{0}Problems with configuration can usually be solved by deleting the configuration file. Would you like to delete the file?", Environment.NewLine, in3.Message, localSettingsPath);
-
-                    if (MessageBoxes.Show(messageContent, "Configuration Error",
-                                        MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
-                    {
-                        if (localSettingsPath.TryDeleteDirectory(out string? errorMessage))
-                        {
-                            // Restart Git Extensions with the same arguments after old config is deleted?
-                            if (DialogResult.OK.Equals(MessageBoxes.Show(string.Format("Files have been deleted.{0}{0}Would you like to attempt to restart Gitanas?", Environment.NewLine), "Configuration Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)))
-                            {
-                                string[] args = Environment.GetCommandLineArgs();
-
-                                // The executable of the process (the first argument is the dll of the application).
-                                Process p = new() { StartInfo = { FileName = Environment.ProcessPath ?? args[0] } };
-                                if (args.Length > 1)
-                                {
-                                    args[0] = "";
-                                    p.StartInfo.Arguments = string.Join(" ", args);
-                                }
-
-                                p.Start();
-                            }
-                        }
-                        else
-                        {
-                            MessageBoxes.Show(string.Format("Could not delete all files and folders in {0}!", localSettingsPath), "Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-
-                // assuming that there is no localSettingsPath directory in existence we probably have a portable installation.
-                else
-                {
-                    string messageContent = string.Format("There is a problem with the application settings XML configuration file.{0}{0}The error message was: {1}{0}{0}Problems with configuration can usually be solved by deleting the configuration file.", Environment.NewLine, in3.Message);
-                    MessageBoxes.Show(messageContent, "Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                exceptionHandled = true;
-            }
-        }
-        finally
-        {
-            // if we fail in this somehow at least this message might get somewhere
-            if (!exceptionHandled)
-            {
-                MessageBoxes.Show(ce.ToString(), "Configuration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            Environment.Exit(1);
-        }
     }
 
     /// <summary>The prompt of ssh and git off Windows (<see cref="AskPassScript"/>), in the local data folder of the application.</summary>

@@ -4278,11 +4278,6 @@ Szeretné folytatni?</target>
         <target>Szűrt branchek megjelenítése</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Igen, engedélyezem a telemetriát</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Minden branch</target>
@@ -10142,11 +10137,6 @@ Helyi menü további műveletekhez</target>
         <target>Nem követett fájlok belefoglalása az automatikus stash-be</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Igen, engedélyezem a telemetriát!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Almodulok frissítése checkoutkor</target>
@@ -10167,11 +10157,6 @@ Helyi menü további műveletekhez</target>
         <target>Teljesítmény</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetria</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Betöltendő kommitok számának korlátozása</target>
@@ -10190,11 +10175,6 @@ Helyi menü további műveletekhez</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Revízió táblázat gyorskeresés időtúllépése [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Miért és mi kerül rögzítésre?</target>
         
       </trans-unit>
     </body>
@@ -13665,26 +13645,6 @@ utolsó kijelölt kommitig terjedő különbség megjelenítése.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Címkék</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Engedélyezi a telemetria gyűjtését?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Információt gyűjtünk, hogy jobbá tehessük az alkalmazást.
-
-Nem gyűjtünk semmilyen személyes vagy azonosításra alkalmas adatot.
-Bármikor meggondolhatja magát.
-
-Igen, engedélyezem a telemetriát!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

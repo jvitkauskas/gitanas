@@ -4278,11 +4278,6 @@ Vil du fortsette?</target>
         <target>Vis filtrerte grener</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Ja, jeg tillater telemetri</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Alle grener</target>
@@ -10141,11 +10136,6 @@ Høyreklikkmeny for flere handlinger</target>
         <target>Inkluder ikke sporede filer i automatisk stash</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Ja, jeg tillater telemetri!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Oppdater undermoduler ved sjekk ut</target>
@@ -10166,11 +10156,6 @@ Høyreklikkmeny for flere handlinger</target>
         <target>Ytelse</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetri</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Begrens antall innsjekkinger som lastes inn</target>
@@ -10189,11 +10174,6 @@ Høyreklikkmeny for flere handlinger</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Tidsavbrudd for hurtigsøk i revisjonsrutenettet [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Hvorfor og hva samles inn?</target>
         
       </trans-unit>
     </body>
@@ -13662,26 +13642,6 @@ den sist valgte innsjekkingen.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Merker</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Tillat innsamling av telemetri?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Vi samler inn informasjon slik at vi kan gjøre appen bedre.
-
-Vi vil ikke samle inn personlig eller identifiserbar informasjon.
-Du kan når som helst ombestemme deg.
-
-Ja, jeg tillater telemetri!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

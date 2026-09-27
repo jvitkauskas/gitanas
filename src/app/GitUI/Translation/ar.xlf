@@ -4278,11 +4278,6 @@ Do you want to continue?</source>
         <target>أظهر الفروع المرشَّحة</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;نعم، أسمح بجمع بيانات القياس عن بعد</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;كل الفروع</target>
@@ -10141,11 +10136,6 @@ Context menu for additional operations</source>
         <target>أدرج الملفات غير المتتبعة في الإخفاء التلقائي</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>نعم، أسمح بجمع بيانات القياس عن بعد!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>حدّث الوحدات الفرعية عند الانتقال</target>
@@ -10166,11 +10156,6 @@ Context menu for additional operations</source>
         <target>الأداء</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>بيانات القياس عن بعد</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>حدد عدد الإيداعات المراد تحميلها</target>
@@ -10189,11 +10174,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>مهلة البحث السريع في شبكة المراجعات [مللي ثانية]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>لماذا وماذا يُلتقط؟</target>
         
       </trans-unit>
     </body>
@@ -13662,26 +13642,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>الأوسمة</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>هل تسمح بالتقاط بيانات القياس عن بعد؟</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>نجمع معلومات لنتمكن من تحسين التطبيق.
-
-لن نجمع أي معلومات شخصية أو قابلة لتحديد الهوية.
-يمكنك تغيير رأيك في أي وقت.
-
-نعم، أسمح بجمع بيانات القياس عن بعد!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

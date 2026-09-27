@@ -4278,11 +4278,6 @@ Bạn có muốn tiếp tục không?</target>
         <target>Hiển thị nhánh đã lọc</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Có, tôi cho phép telemetry</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Tất cả nhánh</target>
@@ -10140,11 +10135,6 @@ Menu ngữ cảnh cho các thao tác khác</target>
         <target>Bao gồm tệp chưa theo dõi trong autostash</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Có, tôi cho phép telemetry!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Cập nhật submodule khi checkout</target>
@@ -10165,11 +10155,6 @@ Menu ngữ cảnh cho các thao tác khác</target>
         <target>Hiệu năng</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetry</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Giới hạn số cam kết được tải</target>
@@ -10188,11 +10173,6 @@ Menu ngữ cảnh cho các thao tác khác</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Thời gian chờ tìm kiếm nhanh lưới bản sửa đổi [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Tại sao và những gì được thu thập?</target>
         
       </trans-unit>
     </body>
@@ -13661,26 +13641,6 @@ cam kết được chọn cuối cùng.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Thẻ</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Cho phép thu thập telemetry?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Chúng tôi thu thập thông tin để có thể cải thiện ứng dụng.
-
-Chúng tôi sẽ không thu thập bất kỳ thông tin cá nhân hoặc có thể nhận dạng nào.
-Bạn có thể đổi ý bất cứ lúc nào.
-
-Có, tôi cho phép telemetry!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

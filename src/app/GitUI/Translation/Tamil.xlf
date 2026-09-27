@@ -4272,11 +4272,6 @@ Do you want to continue?</source>
         <target>வடிகட்டப்பட்ட கிளைகளைக் காட்டு</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;ஆம், நான் தொலைஅளவுகளை அனுமதிக்கிறேன்</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;அனைத்து கிளைகளும்</target>
@@ -10127,11 +10122,6 @@ Context menu for additional operations</source>
         <target>தானிபதுக்கியில் கண்காணிக்கப்படாத கோப்புகளைச் சேர்</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>ஆம், நான் தொலைஅளவுகளை அனுமதிக்கிறேன்!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>மாறும்போது துணைத் தொகுதிகளைப் புதுப்பிக்கவும்</target>
@@ -10152,11 +10142,6 @@ Context menu for additional operations</source>
         <target>செயல்திறன்</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>தொலைஅளவுகள்</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>ஏற்றப்பட வேண்டிய உறுதிமொழிகளின் வரம்பு</target>
@@ -10175,11 +10160,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>மீள்திருத்த கட்டம் விரைவு தேடல் நேரமுடிவு [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>ஏன், என்ன கைப்பற்றப்பட்டது?</target>
         
       </trans-unit>
     </body>
@@ -13645,26 +13625,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>குறிச்சொற்கள்</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>தொலை அளவீட்டை சேகரிக்க அனுமதிக்கவா?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>நாங்கள் தகவலைச் சேகரிப்பதால், பயன்பாட்டைச் சிறந்ததாக்க முடியும்.
-
-தனிப்பட்ட அல்லது அடையாளம் காணக்கூடிய எந்த தகவலையும் நாங்கள் சேகரிக்க மாட்டோம்.
-நீங்கள் எந்த நேரத்திலும் உங்கள் மனதை மாற்றிக்கொள்ளலாம்.
-
-ஆம், தொலைஅளவீட்டை அனுமதிக்கிறேன்!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

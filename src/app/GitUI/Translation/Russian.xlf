@@ -4277,11 +4277,6 @@ Do you want to continue?</source>
         <target>Показывать отфильтрованные ветки</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Да, я разрешаю сбор телеметрии</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Все ветки</target>
@@ -10136,11 +10131,6 @@ Context menu for additional operations</source>
         <target>Включать неотслеживаемые файлы в автоматически спрятанные изменения</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Да, я разрешаю сбор телеметрии!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Обновить субмодули при переключении</target>
@@ -10161,11 +10151,6 @@ Context menu for additional operations</source>
         <target>Производительность</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Сбор телеметрии</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Ограничить количества коммитов которые будут загружены</target>
@@ -10184,11 +10169,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Таймаут быстрого поиска в сетке ревизий [мс]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Что и зачем собирается?</target>
         
       </trans-unit>
     </body>
@@ -13657,26 +13637,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Метки</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Разрешить сбор телеметрии?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Мы собираем информацию, чтобы сделать приложение лучше.
-
-Мы не собираем персональную информацию или информацию, позволяющую вас идентифицировать.
-Вы можете изменить свой выбор в любое время.
-
-Да, я разрешаю сбор данных!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

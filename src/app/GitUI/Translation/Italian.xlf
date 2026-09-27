@@ -4272,11 +4272,6 @@ Vuoi continuare?</target>
         <target>Visualizza branch filtrati</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Sì, autorizzo la telemetria</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Tutti i rami</target>
@@ -10121,11 +10116,6 @@ quando si esegue &quot;Cancella tutti gli oggetti vaganti&quot;.</target>
         <target>Includi i file non tracciati nell’autostash</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Sì, consento la telemetria!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Aggiorna i submodule al checkout</target>
@@ -10146,11 +10136,6 @@ quando si esegue &quot;Cancella tutti gli oggetti vaganti&quot;.</target>
         <target>Prestazioni</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetria</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Limita il numero di commit da caricare</target>
@@ -10169,11 +10154,6 @@ quando si esegue &quot;Cancella tutti gli oggetti vaganti&quot;.</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Timeout ricerca rapida nella tabella delle revisioni [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Perché e cosa viene catturato?</target>
         
       </trans-unit>
     </body>
@@ -13639,26 +13619,6 @@ all’ultimo commit selezionato.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Tag</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Consenti acquisizione dei dati di telemetria?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Raccogliamo informazioni per migliorare l&apos;app.
-
-Non raccogliamo alcuna informazione personale o identificabile.
-Puoi cambiare idea in qualsiasi momento.
-
-Sì, consento la telemetria!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

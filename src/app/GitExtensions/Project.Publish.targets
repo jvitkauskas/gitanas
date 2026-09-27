@@ -79,7 +79,6 @@
       <UnnecessaryFiles Include="$(AppPublishDir)\*.dll.config"/>
       <UnnecessaryFiles Include="$(AppPublishDir)\*.xml"/>
       <UnnecessaryFiles Include="$(AppPublishDir)\TranslationApp.*"/>
-      <UnnecessaryFiles Include="$(AppPublishDir)\ApplicationInsights.config"/>
       <!-- Duplicates -->
 
       <!-- Keep this one -->

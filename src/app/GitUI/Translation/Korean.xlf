@@ -4276,11 +4276,6 @@ Do you want to continue?</source>
         <target>필터링된 브랜치 표시</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>예, 원격 측정을 허용 (&amp;Y)</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>모든 브랜치 (&amp;A)</target>
@@ -10137,11 +10132,6 @@ Context menu for additional operations</source>
         <target>자동 Stash에 있는 untracked 파일도 포함</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>예, 원격 측정을 허용합니다!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>체크아웃시 서브모듈 업데이트</target>
@@ -10162,11 +10152,6 @@ Context menu for additional operations</source>
         <target>성능</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>원격 측정</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>로딩할 커밋 수 제한</target>
@@ -10185,11 +10170,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>리비전 그리드 빠른 검색 타임아웃 [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>무엇이 왜 캡쳐되나요?</target>
         
       </trans-unit>
     </body>
@@ -13650,26 +13630,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>태그</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>원격 측정을 허용하시겠습니까?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>우리는 더 나은 앱을 만들기 위해 정보를 수집합니다.
-
-개인 정보나 식별 가능한 정보는 수집하지 않습니다.
-언제든지 마음을 바꿀 수 있어요.
-
-예, 원격 측정을 허용합니다!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

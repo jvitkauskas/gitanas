@@ -458,3 +458,19 @@ was locked failed with the already documented native RenderTimer error (-6661); 
 Release build passed (7 warnings, no errors); all 18 sequential suite invocations succeeded, with 25,313 tests
 passed and Windows-only UI tests excluded. No further application changes were needed. Windows and Linux were
 not visually checked in this pass.
+
+### Telemetry removed from Gitanas (2026-09-27)
+
+The earlier first-start opt-out has been superseded by complete removal. The
+Application Insights client, initializers, package/configuration, General settings
+controls and setting, installer consent page and configuration script, and obsolete
+privacy-policy files and translations are gone. The installer now moves directly
+from customization to confirmation. Old saved preference entries are inert; there
+is no telemetry code to consume them. Manual bug reporting remains available.
+
+Validation: Release solution build passed (seven existing warnings); all 1,288
+Avalonia tests and 1,127 settings cases passed, with two Windows-specific UI cases
+skipped on Linux. General settings rendering was checked after removing the group.
+The dependency manifest and application output contain no Application Insights
+libraries. Translation XML and installer component references were checked; the
+Windows MSI was not built on this Linux host.

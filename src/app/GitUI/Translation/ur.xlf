@@ -4278,11 +4278,6 @@ Do you want to continue?</source>
         <target>فلٹر شدہ برانچز دکھائیں</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;جی ہاں، میں ٹیلی میٹری کی اجازت دیتا ہوں</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;تمام برانچز</target>
@@ -10140,11 +10135,6 @@ Context menu for additional operations</source>
         <target>آٹو سٹیش میں غیر ٹریک شدہ فائلیں شامل کریں</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>جی ہاں، میں ٹیلی میٹری کی اجازت دیتا ہوں!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>چیک آؤٹ پر ذیلی ماڈیولز اپ ڈیٹ کریں</target>
@@ -10165,11 +10155,6 @@ Context menu for additional operations</source>
         <target>کارکردگی</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>ٹیلی میٹری</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>لوڈ کیے جانے والے کمٹس کی تعداد کی حد</target>
@@ -10188,11 +10173,6 @@ Context menu for additional operations</source>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>ریویژن گرڈ کی فوری تلاش کا ٹائم آؤٹ [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>کیوں اور کیا کچھ حاصل کیا جاتا ہے؟</target>
         
       </trans-unit>
     </body>
@@ -13661,26 +13641,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>ٹیگز</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>ٹیلی میٹری کیپچر کرنے کی اجازت دیں؟</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>ہم معلومات اکٹھی کرتے ہیں تاکہ ہم ایپ کو بہتر بنا سکیں۔
-
-ہم کوئی بھی ذاتی یا شناخت کے قابل معلومات اکٹھی نہیں کریں گے۔
-آپ کسی بھی وقت اپنا ارادہ تبدیل کر سکتے ہیں۔
-
-جی ہاں، میں ٹیلی میٹری کی اجازت دیتا ہوں!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

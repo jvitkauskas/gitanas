@@ -4277,11 +4277,6 @@ Wilt u doorgaan?</target>
         <target>Toon alleen gefilterde vertakkingen</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;Ja, ik sta telemetrie toe</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;Alle vertakkingen</target>
@@ -10133,11 +10128,6 @@ and deze zal weer in het commit overzicht zichtbaar worden.</target>
         <target>Buiten git bestanden meenemen in autostash</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Ja, ik sta telemetrie toe!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Update submodules bij uitchecken</target>
@@ -10158,11 +10148,6 @@ and deze zal weer in het commit overzicht zichtbaar worden.</target>
         <target>Performance</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetrie</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Beperk aantal te laden commits</target>
@@ -10181,11 +10166,6 @@ and deze zal weer in het commit overzicht zichtbaar worden.</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Revisie lijst snel zoek timout [ms]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Waarom en wat wordt er verzameld?</target>
         
       </trans-unit>
     </body>
@@ -13654,26 +13634,6 @@ de laatst geselecteerde commit.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Labels</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Telemetrie verzamelen toestaan?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>We verzamelen informatie zodat we de app kunnen verbeteren.
-
-We verzamelen geen persoonlijke of identificeerbare informatie.
-U kunt op elk moment van gedachten veranderen.
-
-Ja, ik sta telemetrie toe!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

@@ -4278,11 +4278,6 @@ Do you want to continue?</source>
         <target>نمایش شاخه‌های فیلترشده</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>&amp;بله، اجازه ارسال telemetry را می‌دهم</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>&amp;همه شاخه‌ها</target>
@@ -10141,11 +10136,6 @@ commit هایی که می‌خواهید بازیابی کنید را انتخا
         <target>شامل کردن فایل‌های ردیابی‌نشده در autostash</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>بله، اجازه ارسال telemetry را می‌دهم!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>به‌روزرسانی زیر ماژول‌ها هنگام checkout</target>
@@ -10166,11 +10156,6 @@ commit هایی که می‌خواهید بازیابی کنید را انتخا
         <target>کارایی</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetry</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>محدود کردن تعداد commit های بارگذاری‌شده</target>
@@ -10189,11 +10174,6 @@ commit هایی که می‌خواهید بازیابی کنید را انتخا
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>timeout جستجوی سریع revision grid [میلی‌ثانیه]</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>چرا و چه چیزی ضبط می‌شود؟</target>
         
       </trans-unit>
     </body>
@@ -13662,26 +13642,6 @@ the last selected commit.</source>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>تگ‌ها</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>ضبط Telemetry مجاز باشد؟</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>ما اطلاعاتی جمع‌آوری می‌کنیم تا بتوانیم برنامه را بهتر کنیم.
-
-ما هیچ اطلاعات شخصی یا قابل‌شناسایی جمع‌آوری نخواهیم کرد.
-می‌توانید هر زمان نظرتان را تغییر دهید.
-
-بله، اجازه ارسال telemetry را می‌دهم!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

@@ -4278,11 +4278,6 @@ Chcete pokračovat?</target>
         <target>Zobrazit filtrované větve</target>
         
       </trans-unit>
-      <trans-unit id="tsmiTelemetryEnabled.Text">
-        <source>&amp;Yes, I allow telemetry</source>
-        <target>Ano, povoluji telemetrii (&amp;Y)</target>
-        
-      </trans-unit>
       <trans-unit id="tssbtnShowBranches.Text">
         <source>&amp;All branches</source>
         <target>Všechny větve (&amp;A)</target>
@@ -10132,11 +10127,6 @@ menu na tlačítku Obnovit pro další operace</target>
         <target>Zahrnout nesledované soubory do auto-úschovy</target>
         
       </trans-unit>
-      <trans-unit id="chkTelemetry.Text">
-        <source>Yes, I allow telemetry!</source>
-        <target>Ano, povoluji telemetrii!</target>
-        
-      </trans-unit>
       <trans-unit id="chkUpdateModules.Text">
         <source>Update submodules on checkout</source>
         <target>Při získání aktualizovat podmoduly</target>
@@ -10157,11 +10147,6 @@ menu na tlačítku Obnovit pro další operace</target>
         <target>Výkon</target>
         
       </trans-unit>
-      <trans-unit id="groupBoxTelemetry.Text">
-        <source>Telemetry</source>
-        <target>Telemetrie</target>
-        
-      </trans-unit>
       <trans-unit id="lblCommitsLimit.Text">
         <source>Limit number of commits to be loaded</source>
         <target>Omezit počet načítaných odevzdání</target>
@@ -10180,11 +10165,6 @@ menu na tlačítku Obnovit pro další operace</target>
       <trans-unit id="lblQuickSearchTimeout.Text">
         <source>Revision grid quick search timeout [ms]</source>
         <target>Prodleva rychlého hledání v mřížce revizí (v ms)</target>
-        
-      </trans-unit>
-      <trans-unit id="llblTelemetryPrivacyLink.Text">
-        <source>Why and what is captured?</source>
-        <target>Proč a co se zaznamenává?</target>
         
       </trans-unit>
     </body>
@@ -13653,26 +13633,6 @@ poslední vybrané odevzdání.</target>
       <trans-unit id="_tagsText.Text">
         <source>Tags</source>
         <target>Značky</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionCaption.Text">
-        <source>Allow Capture Telemetry?</source>
-        <target>Povolit shromažďování telemetrie?</target>
-        
-      </trans-unit>
-      <trans-unit id="_telemetryPermissionMessage.Text">
-        <source>We collect information so we can make the app better.
-
-We won&apos;t collect any personal or identifiable information.
-You can change your mind at any time.
-
-Yes, I allow telemetry!</source>
-        <target>Shromažďujeme informace, abychom mohli aplikaci vylepšovat.
-
-Nebudeme shromažďovat žádné osobní ani identifikovatelné informace.
-Své rozhodnutí můžete kdykoli změnit.
-
-Ano, povoluji telemetrii!</target>
         
       </trans-unit>
       <trans-unit id="_uninterestingDiffOmitted.Text">

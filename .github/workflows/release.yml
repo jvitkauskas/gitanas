@@ -91,10 +91,18 @@ jobs:
           $destination = Join-Path $env:RUNNER_TEMP "gitanas-$env:RID"
           Expand-Archive $zip.FullName $destination
           $app = Join-Path $destination 'Gitanas/Gitanas.exe'
-          $process = Start-Process $app -WorkingDirectory $env:RUNNER_TEMP -PassThru
+          $stdout = Join-Path $env:RUNNER_TEMP 'gitanas-stdout.log'
+          $stderr = Join-Path $env:RUNNER_TEMP 'gitanas-stderr.log'
+          $started = Get-Date
+          $process = Start-Process $app -WorkingDirectory $env:RUNNER_TEMP -PassThru `
+            -RedirectStandardOutput $stdout -RedirectStandardError $stderr
           try {
             Start-Sleep -Seconds 15
             if ($process.HasExited) {
+              Get-Content $stdout, $stderr
+              Get-WinEvent -FilterHashtable @{LogName='Application'; StartTime=$started} -ErrorAction SilentlyContinue |
+                Where-Object { $_.ProviderName -in @('.NET Runtime', 'Application Error') } |
+                Format-List TimeCreated, ProviderName, Message
               throw "Application exited during startup: $($process.ExitCode)"
             }
           } finally {
@@ -131,6 +139,7 @@ jobs:
           PY
 
       - name: Upload release files
+        if: success() || failure()
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: release-${{ matrix.rid }}

@@ -131,7 +131,7 @@ def package(args):
         with path.open('rb') as stream:
             native = stream.read(4) in macho_headers
         if native:
-            run('lipo', '-verify_arch', expected_arch, str(path))
+            run('lipo', str(path), '-verify_arch', expected_arch)
             run('codesign', '--force', '--sign', '-', str(path))
     run('plutil', '-lint', str(contents / 'Info.plist'))
     run('codesign', '--force', '--sign', '-', str(app))

@@ -42,8 +42,8 @@ See [Windows packaging](eng/windows/README.md) for details.
 Version tags produce separate Apple Silicon and Intel DMGs in
 [GitHub Releases](https://github.com/jvitkauskas/gitanas/releases). The packages
 include .NET and require macOS 14 or later and a separate Git installation.
-Open the DMG and drag Gitanas to Applications. The apps are ad-hoc signed, not Apple-notarized; the first launch requires approval
-in **System Settings → Privacy & Security → Open Anyway**.
+Open the DMG and drag Gitanas to Applications. The apps are ad-hoc signed, not
+Apple-notarized; the first launch requires approval in **System Settings → Privacy & Security → Open Anyway**.
 See [macOS packaging](eng/macos/README.md) for release and build instructions.
 
 ## Build and run

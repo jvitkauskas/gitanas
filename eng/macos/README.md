@@ -3,8 +3,8 @@
 The `Release builds` workflow runs when a version tag is pushed, for example
 `v0.1.0` or `v0.1.0-preview.1`. It builds natively on Apple Silicon and Intel
 GitHub-hosted runners, creates `Gitanas.app` for each architecture, applies an
-ad-hoc signature, checks its signature and native architectures, and packages a styled DMG. The
-app is copied back out of the mounted DMG and checked for signature integrity
+ad-hoc signature, checks its signature and native architectures, and packages a
+styled DMG. The app is copied back out of the mounted DMG and checked for signature integrity
 and successful startup.
 
 When **all six Linux/Windows/macOS** builds succeed, the workflow creates a GitHub release and attaches:
@@ -76,7 +76,7 @@ bypass the legacy Windows publishing/cleanup targets, and selects the current
 plugin discovery and the existing file layout.
 
 On Linux, append `--bundle-only` to cross-publish and inspect the unsigned `.app`.
-This deliberately produces no release ZIP: signing, signature verification, and
+This deliberately produces no release DMG: signing, signature verification, and
 startup checks need macOS. A startup check is not a replacement for interactive
 QA, particularly Git/SSH, plugins, file dialogs, and Retina rendering.
 

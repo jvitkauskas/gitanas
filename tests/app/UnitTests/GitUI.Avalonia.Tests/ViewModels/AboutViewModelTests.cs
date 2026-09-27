@@ -36,13 +36,11 @@ public sealed class AboutViewModelTests
         AboutViewModel viewModel = CreateViewModel(["Alice"]);
 
         viewModel.OpenHomepageCommand.Execute(null);
-        viewModel.OpenIconsAuthorCommand.Execute(null);
         viewModel.ShowContributorsCommand.Execute(null);
         viewModel.CopyEnvironmentInfoCommand.Execute(null);
 
         _host.Actions.Should().Equal(
             $"url:{AboutViewModel.HomepageUrl}",
-            $"url:{AboutViewModel.IconsAuthorUrl}",
             "contributors",
             "copy");
     }

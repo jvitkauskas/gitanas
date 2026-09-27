@@ -2946,11 +2946,6 @@ You will have push access. {2}</source>
         <target>Gitanas 是開放原始碼軟體。歡迎參與！</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>部分圖示由 Yusuke Kamiyamane 提供 (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="zh-Hant">

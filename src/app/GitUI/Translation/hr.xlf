@@ -2951,11 +2951,6 @@ Imat ćete pristup za slanje (push) promjena. {2}</target>
         <target>Gitanas je otvorenog koda. Uključite se!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Neke ikone izradio Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="hr">

@@ -2951,11 +2951,6 @@ You will have push access. {2}</source>
         <target>Gitanas เป็นโอเพนซอร์ส มาร่วมเป็นส่วนหนึ่งกันเถอะ!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>บางไอคอนโดย Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="th">

@@ -2951,11 +2951,6 @@ Vai ter acesso de push. {2}</target>
         <target>O Gitanas é de código aberto. Participe!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Alguns ícones por Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="pt">

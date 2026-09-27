@@ -31,10 +31,6 @@
               Command="{Binding ShowContributorsCommand}">
         <TextBlock Text="{Binding ThanksToText}" TextTrimming="CharacterEllipsis" />
       </Button>
-      <Button Name="iconsLink" Classes="link" HorizontalAlignment="Left"
-              Command="{Binding OpenIconsAuthorCommand}">
-        <TextBlock Text="{Binding Strings.IconsCredit.Text}" />
-      </Button>
 
       <Separator Margin="0,8" />
       <Grid ColumnDefinitions="*,Auto">

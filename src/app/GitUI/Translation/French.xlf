@@ -2950,11 +2950,6 @@ Vous aurez les droits de pousser. {2}</target>
         <target>Gitanas est open source. Impliquez-vous!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Quelques icônes par Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="fr">

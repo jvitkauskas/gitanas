@@ -1,6 +1,7 @@
 using System.Drawing.Imaging;
 using System.Reflection;
 using System.Text;
+using Avalonia.Platform;
 using GitExtensions.Extensibility;
 using GitExtensions.Extensibility.Plugins;
 using GitExtensions.Extensibility.Settings;
@@ -17,16 +18,16 @@ internal static partial class AvaloniaDialogs
 {
     /// <summary>As the end of <c>FormSettings.OnRuntimeLoad</c>: a page for each plugin with settings, sorted by title.</summary>
     /// <param name="getOwner">The owner of the dialogs of the links of the plugins (<see cref="ActionSetting"/>): the settings window.</param>
-    private static IEnumerable<(PluginSettingsPageViewModel Page, byte[]? Icon)> CreatePluginSettingsPages(Func<WindowOwner> getOwner)
+    private static IEnumerable<(PluginSettingsPageViewModel Page, object? Icon)> CreatePluginSettingsPages(Func<WindowOwner> getOwner)
     {
         PluginSettingsPageStrings strings = ViewStrings.Load<PluginSettingsPageStrings>();
         SettingValueStrings valueStrings = ViewStrings.Load<SettingValueStrings>();
-        List<(PluginSettingsPageViewModel Page, byte[]? Icon)> pages;
+        List<(PluginSettingsPageViewModel Page, object? Icon)> pages;
         lock (PluginRegistry.Plugins)
         {
             pages = [.. PluginRegistry.Plugins
                 .Where(plugin => plugin.HasSettings)
-                .Select(plugin => (CreatePluginSettingsPage(plugin, strings, valueStrings, getOwner), GetPluginIconPng(plugin)))];
+                .Select(plugin => (CreatePluginSettingsPage(plugin, strings, valueStrings, getOwner), GetPluginIcon(plugin)))];
         }
 
         return pages.OrderBy(entry => entry.Page.Title, StringComparer.CurrentCultureIgnoreCase);
@@ -90,8 +91,22 @@ internal static partial class AvaloniaDialogs
         };
     }
 
-    /// <summary>The icon of a plugin as PNG: its image of plugin API v3, else its GDI+ icon.</summary>
-    private static byte[]? GetPluginIconPng(IGitPlugin plugin) => plugin.IconImage?.ToArray() ?? ToPng(plugin.Icon);
+    /// <summary>A theme-aware asset for bundled plugins, else the plugin's own image.</summary>
+    private static object? GetPluginIcon(IGitPlugin plugin)
+    {
+        const string prefix = "GitExtensions.Plugins.";
+        string assemblyName = plugin.GetType().Assembly.GetName().Name ?? "";
+        if (assemblyName.StartsWith(prefix, StringComparison.Ordinal))
+        {
+            string name = "Plugin" + assemblyName[prefix.Length..];
+            if (AssetLoader.Exists(new Uri($"avares://GitUI.Avalonia/Assets/{name}.png")))
+            {
+                return name;
+            }
+        }
+
+        return plugin.IconImage?.ToArray() ?? ToPng(plugin.Icon);
+    }
 
     /// <summary>The PNG data of a GDI+ image (the icons of the plugins of API v1 and v2, of the shells), only on Windows.</summary>
     private static byte[]? ToPng(Image? image) => OperatingSystem.IsWindowsVersionAtLeast(6, 1) ? image?.ToPngData() : null;

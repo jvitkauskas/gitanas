@@ -2952,11 +2952,6 @@ You will have push access. {2}</source>
         <target>Gitanas היא תוכנת קוד פתוח. הצטרפו אלינו!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>חלק מהסמלים מאת Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="he">

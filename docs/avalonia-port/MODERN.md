@@ -80,3 +80,16 @@ Reproduce with `dotnet build GitExtensions.slnx -c Release -p:UseAppHost=false`,
 `dotnet test tests/app/UnitTests/GitUI.Avalonia.Tests -c Release -p:UseAppHost=false`,
 `dotnet test tests/app/UnitTests/GitUI.Tests -c Release -p:UseAppHost=false --filter FullyQualifiedName~EmbeddedIconsTests`,
 and `python3 eng/WaylandSmoke/run.py /tmp/gitanas-modern-wayland`.
+
+## Plugin icons
+
+The eleven bundled plugin icons now use Octicons, with original chart glyphs for
+Statistics and Impact Graph. Branch actions use plus/delete badges; background
+fetch combines a download arrow with a clock. The 32 px PNGs render at 16 logical
+pixels in menus and settings, using the current light/dark palette.
+
+The host resolves bundled plugin assembly names to `Plugin<AssemblySuffix>`
+assets, retaining the normal plugin image fallback for external plugins. Embedded
+plugin PNGs use the same shapes in neutral gray for API consumers without named
+asset support. Regenerate them with
+`dotnet run eng/ModernIcons/Generate.cs -- --plugins-only`.

@@ -2945,11 +2945,6 @@ Avrete accesso alla funzione push. {2}</target>
         <target>Gitanas è open source. Mettiti in gioco!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Alcune icone di Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="it">

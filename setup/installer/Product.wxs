@@ -73,6 +73,9 @@
       </Component>
     </Directory>
     <DirectoryRef Id="INSTALLDIR">
+      <Component Id="OcticonsLicense" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\OCTICONS-LICENSE.txt" KeyPath="yes" />
+      </Component>
       <Component Id="gitanas.ico" Guid="*">
         <File Source="..\assets\Logo\gitanas\gitanas.ico" />
       </Component>
@@ -1019,6 +1022,7 @@
       </Component>
     </DirectoryRef>
     <Feature Id="GitExtensions" Title="Gitanas" Level="1" Display="expand">
+      <ComponentRef Id="OcticonsLicense" />
       <!-- Application build artifacts -->
       <ComponentGroupRef Id="Component.ConEmuFiles" />
       <ComponentGroupRef Id="Component.Themes" />

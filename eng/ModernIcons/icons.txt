@@ -239,3 +239,16 @@ Changelog = note
 BugReport = bug
 Bug = bug
 Develop = code
+
+# Bundled plugins
+PluginAutoCompileSubmodules = tools
+PluginBackgroundFetch = arrow-down +clock
+PluginCreateLocalBranches = git-branch +plus:green
+PluginDeleteUnusedBranches = git-branch +x:red
+PluginFindLargeFiles = file +search
+PluginGitHub3 = mark-github
+PluginGitImpact = chart-area
+PluginGitStatistics = chart-bars
+PluginGource = workflow
+PluginProxySwitcher = arrow-switch
+PluginReleaseNotesGenerator = note

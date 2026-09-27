@@ -2950,11 +2950,6 @@ Vas a tener acceso para hacer push. {2}</target>
         <target>Gitanas es un proyecto de código abierto. ¡Sumate!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Algunos de los íconos usados fueron creados por Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="es-AR">

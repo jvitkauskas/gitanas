@@ -2947,11 +2947,6 @@ You will have push access. {2}</source>
         <target>அறிவிலி நீட்டிப்புகள் திறந்த மூலமாகும். ஈடுபடுங்கள்!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>யூசுகே கமியாமானே (CCA3) வழங்கிய சில சின்னங்கள்</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="ta">

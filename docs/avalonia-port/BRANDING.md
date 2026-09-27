@@ -4,7 +4,7 @@ The application name, window titles, settings headings, translated product names
 About dialog, executable metadata and GitHub token description use **Gitanas**.
 The folded-ribbon PNG/ICO assets in `setup/assets/Logo/gitanas/` supply the window,
 dashboard, About, settings and submodule icons, and the Windows executable icon.
-The About dialog retains upstream authorship and icon attribution.
+The About dialog retains upstream authorship credits.
 
 Build with `dotnet build GitExtensions.slnx -c Release -p:UseAppHost=false`.
 Run `dotnet artifacts/Release/bin/GitExtensions/net10.0/Gitanas.dll`.

@@ -21,7 +21,6 @@ public interface IAboutDialogHost
 public sealed partial class AboutViewModel : DialogViewModel
 {
     public const string HomepageUrl = "https://github.com/jvitkauskas/gitanas";
-    public const string IconsAuthorUrl = "http://p.yusukekamiyamane.com/";
 
     private readonly IAboutDialogHost _host;
     private readonly IReadOnlyList<string> _contributors;
@@ -69,9 +68,6 @@ public sealed partial class AboutViewModel : DialogViewModel
 
     [RelayCommand]
     private void OpenHomepage() => _host.OpenUrl(HomepageUrl);
-
-    [RelayCommand]
-    private void OpenIconsAuthor() => _host.OpenUrl(IconsAuthorUrl);
 
     [RelayCommand]
     private void ShowContributors() => _host.ShowContributors();

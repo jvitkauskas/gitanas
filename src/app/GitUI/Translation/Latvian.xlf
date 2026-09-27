@@ -2948,11 +2948,6 @@ Jums būs tiesības stumt izmaiņas. {2}</target>
         <target>Git paplašinājumi ir atvērts avots. Iesaisties!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Dažas Yusuke Kamiyamane ikonas (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="lv">

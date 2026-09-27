@@ -34,6 +34,11 @@ Dictionary<string, Dictionary<string, SKColor>> palettes = new()
     },
 };
 
+// Plugin API v3 also needs a self-contained PNG. A neutral gray stays readable on
+// both light and dark backgrounds in hosts that cannot use named theme assets.
+Dictionary<string, string> pluginFiles = JsonSerializer.Deserialize<Dictionary<string, string>>(File.ReadAllText(Path.Combine(here, "plugins.json")))!;
+palettes["Plugin"] = palettes["Light"].ToDictionary(pair => pair.Key, _ => SKColor.Parse("#767676"));
+
 const int Size = 32;
 const float Scale = Size / 16f;
 int count = 0;
@@ -47,6 +52,11 @@ foreach (string raw in File.ReadLines(Path.Combine(here, "icons.txt")))
 
     string[] parts = line.Split('=', 2, StringSplitOptions.TrimEntries);
     string name = parts[0];
+    if (args.Contains("--plugins-only") && !pluginFiles.ContainsKey(name))
+    {
+        continue;
+    }
+
     string[] tokens = parts[1].Split(' ', StringSplitOptions.RemoveEmptyEntries);
     string icon = tokens[0];
     string color = tokens.Skip(1).FirstOrDefault(t => !t.StartsWith('+')) ?? "fg";
@@ -59,6 +69,11 @@ foreach (string raw in File.ReadLines(Path.Combine(here, "icons.txt")))
 
     foreach ((string variant, Dictionary<string, SKColor> palette) in palettes)
     {
+        if (variant == "Plugin" && !pluginFiles.ContainsKey(name))
+        {
+            continue;
+        }
+
         using SKBitmap bitmap = new(new SKImageInfo(Size, Size, SKColorType.Rgba8888, SKAlphaType.Unpremul));
         using (SKCanvas canvas = new(bitmap))
         {
@@ -77,11 +92,16 @@ foreach (string raw in File.ReadLines(Path.Combine(here, "icons.txt")))
         }
 
         // The mark of the Modern icons (ImageLightness does not adapt them to the dark theme): invisible alphas in a corner.
-        bitmap.SetPixel(0, 0, new SKColor(0, 0, 0, 1));
-        bitmap.SetPixel(1, 0, new SKColor(0, 0, 0, 2));
-        bitmap.SetPixel(0, 1, new SKColor(0, 0, 0, 3));
+        if (variant != "Plugin")
+        {
+            bitmap.SetPixel(0, 0, new SKColor(0, 0, 0, 1));
+            bitmap.SetPixel(1, 0, new SKColor(0, 0, 0, 2));
+            bitmap.SetPixel(0, 1, new SKColor(0, 0, 0, 3));
+        }
 
-        string file = Path.Combine(target, variant, name + ".png");
+        string file = variant == "Plugin"
+            ? Path.GetFullPath(Path.Combine(here, "../../src/plugins", pluginFiles[name]))
+            : Path.Combine(target, variant, name + ".png");
         Directory.CreateDirectory(Path.GetDirectoryName(file)!);
         using FileStream stream = File.Create(file);
         bitmap.Encode(stream, SKEncodedImageFormat.Png, 100);

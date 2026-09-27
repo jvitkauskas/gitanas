@@ -29,9 +29,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <!-- Ship the Octicons copyright and MIT notice with every application using these assets. -->
+    <None Include="$(RepoRoot)eng/ModernIcons/OCTICONS-LICENSE"
+          Link="OCTICONS-LICENSE.txt"
+          CopyToOutputDirectory="PreserveNewest"
+          CopyToPublishDirectory="PreserveNewest"
+          ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
     <!-- The icons of the Modern theme, generated from Octicons by eng/ModernIcons (Hosting/ModernIconLoader.cs). -->
     <AvaloniaResource Include="Assets\Modern\**\*.png" />
     <!-- Modern light aliases preserve public asset URIs; the loader supplies dark variants. -->
+    <AvaloniaResource Include="Assets\Modern\Light\Plugin*.png" Link="Assets\%(Filename)%(Extension)" />
     <AvaloniaResource Include="..\..\..\setup\assets\Logo\gitanas\gitanas-256.png" Link="Assets\GitanasLogo256.png" />
     <!-- Menu icons and third-party product logos. -->
     <AvaloniaResource Include="..\GitUI\Resources\Icons\GitGui.png" Link="Assets\GitGui.png" />

@@ -2951,11 +2951,6 @@ Du kommer att ha push-åtkomst. {2}</target>
         <target>Gitanas är öppen källkod. Engagera dig!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Vissa ikoner av Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="sv">

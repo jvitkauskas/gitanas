@@ -2951,11 +2951,6 @@ You will have push access. {2}</source>
         <target>Git (Extensions) Uzantıları açık kaynaktır. Herkes katılabilir!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Bazı simgelerin telif hakkı Yusuke Kamiyamane&apos;ye (CCA3) aittir.</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="tr">

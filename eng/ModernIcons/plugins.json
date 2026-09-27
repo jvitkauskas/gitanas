@@ -1,0 +1,13 @@
+{
+  "PluginAutoCompileSubmodules": "AutoCompileSubmodules/Resources/IconAutoCompileSubmodules.png",
+  "PluginBackgroundFetch": "BackgroundFetch/Resources/IconBackgroundFetch.png",
+  "PluginCreateLocalBranches": "CreateLocalBranches/Resources/IconCreateLocalBranches.png",
+  "PluginDeleteUnusedBranches": "DeleteUnusedBranches/Resources/IconDeleteUnusedBranches.png",
+  "PluginFindLargeFiles": "FindLargeFiles/Resources/IconFindLargeFiles.png",
+  "PluginGitHub3": "GitHub3/Resources/IconGitHub.png",
+  "PluginGitImpact": "Statistics/GitImpact/Resources/IconGitImpact.png",
+  "PluginGitStatistics": "Statistics/GitStatistics/Resources/IconGitStatistics.png",
+  "PluginGource": "Gource/Resources/IconGource.png",
+  "PluginProxySwitcher": "ProxySwitcher/Resources/IconProxySwitcher.png",
+  "PluginReleaseNotesGenerator": "ReleaseNotesGenerator/Resources/IconReleaseNotesGenerator.png"
+}

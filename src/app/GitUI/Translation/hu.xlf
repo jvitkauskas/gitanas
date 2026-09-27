@@ -2951,11 +2951,6 @@ Push hozzáférése lesz. {2}</target>
         <target>A Gitanas nyílt forráskódú. Csatlakozz!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Néhány ikon Yusuke Kamiyamane munkája (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="hu">

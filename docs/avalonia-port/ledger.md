@@ -522,3 +522,26 @@ skipped. Keyboard navigation, confirmation and cancellation were exercised in
 headless view tests; light/dark screenshots were inspected. Build/installer XML
 parses and the application translation output contains no flags. The Windows MSI
 was not built on this Linux host.
+
+### Plugin icon refresh and About cleanup (2026-09-27)
+
+Replaced all eleven bundled plugin PNGs with Octicon-based artwork and two original
+chart glyphs for Statistics and Impact Graph. Menus and plugin settings resolve
+bundled plugin assembly names to Modern light/dark assets. Embedded PNGs retain
+neutral gray versions of the same artwork for consumers of the byte-image API;
+external plugins retain their supplied images. The reproducible generator uses
+`plugins.json` and supports `--plugins-only`. Removed the separate Yusuke
+Kamiyamane link from About, its command and obsolete translation entries.
+
+Validation: the Linux Release solution build passed with five existing Avalonia
+obsolete-property warnings. All 1,283 Avalonia tests passed; two Windows-only cases
+were skipped. Inspected plugin glyphs at 16 and 32 px in light/dark rendered
+previews, and checked resource loading through menu/settings rendering and all
+Modern asset variants. The About layout was also inspected in both themes.
+
+Octicons distribution notice: the shared Avalonia UI project now copies the full
+MIT/copyright notice to `OCTICONS-LICENSE.txt` in build and publish output. It is
+kept outside single-file bundles and included in the Windows installer's main
+feature. Verified the application build and SDK publish-copy targets on Linux;
+both output copies exactly match the source license. Installer XML references
+were validated; the Windows MSI was not built.

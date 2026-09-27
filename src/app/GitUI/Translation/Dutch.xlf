@@ -2952,11 +2952,6 @@ U heeft rechten om commits te verzenden. {2}
         <target>Gitanas is open source. Get involved!</target>
         
       </trans-unit>
-      <trans-unit id="linkLabelIcons.Text">
-        <source>Some icons by Yusuke Kamiyamane (CCA3)</source>
-        <target>Een aantal iconen door Yusuke Kamiyamane (CCA3)</target>
-        
-      </trans-unit>
     </body>
   </file>
   <file datatype="plaintext" original="FormAddFiles" source-language="en" target-language="nl">

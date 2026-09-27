@@ -28,7 +28,9 @@ def build_disk_image(app, archive, preview):
         # Hiding the extension with SetFile adds com.apple.FinderInfo to the
         # signed bundle, which codesign --strict rejects. Leave it untouched.
         'icon_locations': locations,
-        'window_rect': ((160, 160), (720, 500)),
+        # Finder's window bounds include its 28-point title bar. Preserve the
+        # full 720 x 500 background and its bottom margin in the content area.
+        'window_rect': ((160, 160), (720, 528)),
         'default_view': 'icon-view',
         'icon_size': 96,
         'text_size': 14,

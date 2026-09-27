@@ -1,4 +1,4 @@
-name: macOS release
+name: Release builds
 
 on:
   push:
@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: macos-release-${{ github.ref }}
+  group: release-${{ github.ref }}
   cancel-in-progress: false
 
 env:
@@ -33,6 +33,10 @@ jobs:
             rid: osx-arm64
           - runner: macos-15-intel
             rid: osx-x64
+          - runner: windows-2025
+            rid: win-x64
+          - runner: windows-11-arm
+            rid: win-arm64
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
     defaults:
@@ -63,11 +67,42 @@ jobs:
           dotnet run set_version_to.cs -- -v "${version%%-*}" -t "$version"
 
       - name: Build, bundle, and ad-hoc sign
+        if: runner.os == 'macOS'
         env:
           RID: ${{ matrix.rid }}
         run: bash eng/macos/build.sh "$RID" "$RELEASE_VERSION"
 
-      - name: Check packaged application starts
+      - name: Build framework-dependent Windows ZIP
+        if: runner.os == 'Windows'
+        env:
+          RID: ${{ matrix.rid }}
+        run: python eng/windows/build.py "$RID" "$RELEASE_VERSION"
+
+      - name: Check Windows ZIP starts after extraction
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          RID: ${{ matrix.rid }}
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $zips = @(Get-ChildItem "artifacts/windows/$env:RID/dist/*.zip")
+          if ($zips.Count -ne 1) { throw "Expected exactly one release ZIP" }
+          $zip = $zips[0]
+          $destination = Join-Path $env:RUNNER_TEMP "gitanas-$env:RID"
+          Expand-Archive $zip.FullName $destination
+          $app = Join-Path $destination 'Gitanas/Gitanas.exe'
+          $process = Start-Process $app -WorkingDirectory $env:RUNNER_TEMP -PassThru
+          try {
+            Start-Sleep -Seconds 15
+            if ($process.HasExited) {
+              throw "Application exited during startup: $($process.ExitCode)"
+            }
+          } finally {
+            if (-not $process.HasExited) { Stop-Process -Id $process.Id -Force }
+          }
+
+      - name: Check macOS packaged application starts
+        if: runner.os == 'macOS'
         env:
           RID: ${{ matrix.rid }}
         run: |
@@ -98,8 +133,8 @@ jobs:
       - name: Upload release files
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
-          name: macos-${{ matrix.rid }}
-          path: artifacts/macos/${{ matrix.rid }}/dist/*
+          name: release-${{ matrix.rid }}
+          path: artifacts/${{ runner.os == 'Windows' && 'windows' || 'macos' }}/${{ matrix.rid }}/dist/*
           if-no-files-found: error
           compression-level: 0
           retention-days: 14
@@ -114,11 +149,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          pattern: macos-*
+          pattern: release-*
           path: dist
           merge-multiple: true
 
-      - name: Create release and attach both builds
+      - name: Create release and attach all builds
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
@@ -126,6 +161,14 @@ jobs:
         shell: bash
         run: |
           cat > notes.md <<'NOTES'
+          ## Windows downloads
+
+          - **win-x64-framework-dependent**: 64-bit Intel/AMD Windows.
+          - **win-arm64-framework-dependent**: Windows on ARM.
+          - Requires the matching architecture's **.NET 10 Runtime** (`Microsoft.NETCore.App`), installed separately. The SDK and Desktop Runtime are not required.
+
+          Extract the entire ZIP into a writable folder and run **Gitanas.exe**. If .NET is missing, the launcher offers a download link; install the runtime and start the app again. These ZIPs store settings alongside the application. Install Git separately. Windows binaries are unsigned.
+
           ## macOS downloads
 
           - **osx-arm64**: Apple Silicon Macs (M1 and later).

@@ -18,6 +18,15 @@ tested; see the [QA checklist and reports](docs/avalonia-port/QA.md) for coverag
 and known limitations. The application is branded as Gitanas; internal project
 and plugin names retain their existing identifiers for compatibility.
 
+## Windows packages
+
+Version tags produce framework-dependent ZIPs for Windows x64 and ARM64 in
+[GitHub Releases](https://github.com/jvitkauskas/gitanas/releases). Extract the
+ZIP into a writable folder and run `Gitanas.exe` inside it. The matching .NET 10
+Runtime and Git are required; the launcher offers a download link if .NET is
+missing. Settings stay with the portable application.
+See [Windows packaging](eng/windows/README.md) for details.
+
 ## macOS packages
 
 Version tags produce separate Apple Silicon and Intel `.app` ZIPs in

@@ -1,19 +1,19 @@
 # macOS releases
 
-The `macOS release` workflow runs when a version tag is pushed, for example
+The `Release builds` workflow runs when a version tag is pushed, for example
 `v0.1.0` or `v0.1.0-preview.1`. It builds natively on Apple Silicon and Intel
 GitHub-hosted runners, creates `Gitanas.app` for each architecture, applies an
 ad-hoc signature, checks its signature and native architectures, and checks
 that the packaged application stays running during startup.
 
-When **both** builds succeed, the workflow creates a GitHub release and attaches:
+When **all four Windows/macOS** builds succeed, the workflow creates a GitHub release and attaches:
 
 - `Gitanas-<version>-osx-arm64.zip` for Apple Silicon.
 - `Gitanas-<version>-osx-x64.zip` for Intel.
 - A SHA-256 checksum file for each ZIP.
 
 Tags with a suffix such as `-preview.1` produce prereleases. The workflow first
-creates a draft, uploads both builds, then publishes it. A failed build creates
+creates a draft, uploads all builds, then publishes it. A failed build creates
 no release; a failed upload can leave a draft that a rerun completes. Existing
 release notes are preserved on reruns. No Apple account, signing certificate,
 or custom GitHub secret is needed; the release job uses `GITHUB_TOKEN` with
@@ -30,7 +30,7 @@ git push origin v0.1.0
 
 Choose the desired version instead of reusing an existing tag. Builds on every
 merge are intentionally omitted: version tags identify the downloadable releases.
-Use **Actions → macOS release → Run workflow** to test packaging first. Manual
+Use **Actions → Release builds → Run workflow** to test packaging first. Manual
 runs accept a version and upload workflow artifacts only, even when run on a tag.
 
 ## Installation

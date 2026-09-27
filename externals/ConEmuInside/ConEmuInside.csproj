@@ -2,7 +2,7 @@
 
   <!--
     The session of ConEmu embedded in a window of Git Extensions: the WinForms-free parts of conemu-inside
-    (externals/conemu-inside/ConEmuWinForms, BSD 3-clause, see README.md), without its WinForms control (ConEmuHost
+    (upstream ConEmuWinForms, BSD 3-clause, see README.md), without its WinForms control (ConEmuHost
     replaces it, hosting ConEmu in any native window).
   -->
   <PropertyGroup>

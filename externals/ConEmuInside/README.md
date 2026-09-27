@@ -1,9 +1,12 @@
 # ConEmuInside
 
-The console emulator session of [conemu-inside](https://github.com/gitextensions/conemu-inside) (the submodule in
-`externals/conemu-inside`, `ConEmuWinForms` at commit 769053b), without WinForms: the WinForms `ConEmuControl` is
+The console emulator session of [conemu-inside](https://github.com/gitextensions/conemu-inside) (`ConEmuWinForms` at
+[commit 769053b](https://github.com/gitextensions/conemu-inside/tree/769053bb1912d64c8ead6897bec142425b6630a7)), without WinForms: the WinForms `ConEmuControl` is
 replaced by `ConEmuHost`, which embeds ConEmu in any native window, and the WinForms timer of `ConEmuSession` by a
 thread pool timer that posts to the home thread (docs/avalonia-port/PLAN.md, phase 8).
+
+The required sources are vendored here; building does not require the original
+`conemu-inside` submodule.
 
 ## License (BSD 3-clause)
 

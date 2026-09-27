@@ -42,7 +42,3 @@ The maintainer may still request the contributor to squash and rebase, to make s
 -->
 
 I agree that the maintainer squash merge this PR (if the commit message is clear).
-
-----
-
-:black_nib: I contribute this code under [The Developer Certificate of Origin](../blob/master/contributors.txt).

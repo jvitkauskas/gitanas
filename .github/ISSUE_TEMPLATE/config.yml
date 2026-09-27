@@ -18,6 +18,3 @@ contact_links:
   - name: Issue with GitLab plugin
     url:  https://github.com/ahmeturun/GitExtensions.GitLab/issues/new
     about: Please open issues with the GitLab plugin in their repo
-  - name: Issue with the Visual Studio extension
-    url:  https://github.com/gitextensions/gitextensions.vsix/issues/new
-    about: Please open issues with the Visual Studio extension of the app in their repo

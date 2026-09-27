@@ -16,7 +16,7 @@ namespace GitUI.Editor
     /// <summary>
     ///     Class that can open text files with auto-detection of the encoding.
     /// </summary>
-    // From ICSharpCode.TextEditor (externals/ICSharpCode.TextEditor), whose editor is gone with WinForms.
+    // From ICSharpCode.TextEditor (https://github.com/gitextensions/ICSharpCode.TextEditor), whose editor is gone with WinForms.
     public static class FileReader
     {
         public static readonly UTF8Encoding Utf8WithoutBom = new(encoderShouldEmitUTF8Identifier: false);

@@ -4,7 +4,7 @@
 **TL;DR:** GitHub Actions gate every PR. The build/test/package logic lives in **one reusable
 workflow**, `_app-build-core.yml`, called two ways: `app-build.yml` (CI — runs tests) and
 `app-release.yml` (release — packages + signs). A PR must build, pass tests, have a current
-`English.xlf`, contain no `fixup!`/`squash!` commits, and pass the CLA check.
+`English.xlf`, and contain no `fixup!`/`squash!` commits.
 
 **Related:** [release-pipeline](release-pipeline.md) · [build-and-installer](build-and-installer.md) · [testing-guide](testing-guide.md) · [translation-system](translation-system.md) · [L0 primer](../L0-foundations/gitextensions-primer.md)
 
@@ -24,7 +24,6 @@ release ships".
 | [app-build.yml](../../../.github/workflows/app-build.yml) | **CI wrapper.** On PR + push to `master`/`release`/`release/**`/`experimental/**`. Resolves an OS matrix, calls the core with `release=false`, then publishes a `test-report`. The main quality gate. |
 | [app-release.yml](../../../.github/workflows/app-release.yml) | **Release wrapper.** On `v[0-9]*` tags. Calls the core with `release=true`, then submits artifacts to SignPath. See [release-pipeline](release-pipeline.md). |
 | [git.yml](../../../.github/workflows/git.yml) | Blocks merge while `fixup!`/`squash!` commits are present. |
-| [cla-check.yml](../../../.github/workflows/cla-check.yml) | Verifies the contributor sign-off in `contributors.txt`; publishes a `CLA` commit status. |
 | [pr-automation.yml](../../../.github/workflows/pr-automation.yml) · [pr-check-stale.yml](../../../.github/workflows/pr-check-stale.yml) · [label-lifecycle.yml](../../../.github/workflows/label-lifecycle.yml) | PR triage, stale handling, label lifecycle. |
 | `labeler-*.yml` | ML-based PR/issue labeling (train / predict / cache / promote). |
 
@@ -44,7 +43,6 @@ release ships".
 - **Stale `English.xlf`** — the `Verify localisation` step regenerates translations and fails if the
   working tree changed. Run `update-loc.cmd` locally. See [translation-system](translation-system.md).
 - **`fixup!` / `squash!` commits** present → `git.yml` blocks merge (autosquash them first).
-- **Missing CLA sign-off** → `cla-check.yml` blocks.
 
 ## Hard rules
 

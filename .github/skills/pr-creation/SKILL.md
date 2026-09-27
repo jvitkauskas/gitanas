@@ -38,7 +38,6 @@ A deterministic checklist to make a change merge-ready. Do the steps in order; S
 ## Postchecks (STOP conditions)
 
 - **NEVER** leave `fixup!` / `squash!` commits on the branch — the `git` workflow blocks merge. Autosquash locally.
-- Ensure the CLA is signed (the `cla-check` workflow gates it).
 - Files MUST be CRLF and satisfy `.editorconfig`/StyleCop.
 - Do **not** use `--no-verify` or disable CI checks to force a pass — fix the cause.
 

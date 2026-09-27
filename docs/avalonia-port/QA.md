@@ -18,6 +18,9 @@ intermittent Wayland popup-order crash observed during the preceding comparison.
 The [large-repository performance investigation](QA-Performance-2026-09-26.md) covers full Git and Linux kernel
 clones, native Wayland timing/profiling, history-loading optimizations and the deep-history graph-width fix.
 
+The [Modern control theme visual QA](QA-Modern-Theme-2026-09-27.md) covers light/dark rendering on GNOME and KDE
+Wayland and Windows 10, including main windows, diffs, dialogs, narrow layouts and automated regression tests.
+
 ## Setup
 
 ### Every system

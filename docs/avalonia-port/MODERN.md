@@ -46,4 +46,6 @@ In the order of their value for the effort:
 5. The grouped context menu of the revision grid (Checkout ▸, Rebase ▸, Rewrite History ▸, Compare ▸, Copy ▸, Bisect ▸).
 6. The commit dialog in the window (Workspace › Changes).
 
-Checked on macOS, light and dark. Not checked on Windows (the title bar stays the system's there) and Linux.
+Checked on macOS, light and dark. Also checked on Linux (GNOME and KDE, native Wayland) and Windows 10, light and
+dark: see [the visual QA report](QA-Modern-Theme-2026-09-27.md) for screenshots, test results, minor contrast observations
+and the limits of that coverage. Linux and Windows retain their system title bars.

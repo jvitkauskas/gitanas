@@ -35,10 +35,18 @@ public partial class BrowseWindow
         // The toolbar and the filters, out of the top of the window: above the history.
         root.Children.Remove(toolbar);
         toolbar.Children.Remove(filterToolBarHost);
+
+        // On macOS the bar stays without the toolbar (the dashboard): the title bar, below the window buttons.
         Border toolbarBar = new() { Classes = { "modernToolbar" }, Child = toolbar };
-        toolbarBar.Bind(IsVisibleProperty, toolbar.GetObservable(IsVisibleProperty));
+        if (!OperatingSystem.IsMacOS())
+        {
+            toolbarBar.Bind(IsVisibleProperty, toolbar.GetObservable(IsVisibleProperty));
+        }
+
+        // The filters, shown with the toolbar as in the default layout (where they are in it).
         Border filtersBar = new() { Classes = { "modernFilters" }, Child = filterToolBarHost };
-        filtersBar.Bind(IsVisibleProperty, filterToolBarHost.GetObservable(IsVisibleProperty));
+        filterToolBarHost.GetObservable(IsVisibleProperty).Subscribe(_ => UpdateFiltersBar());
+        toolbar.GetObservable(IsVisibleProperty).Subscribe(_ => UpdateFiltersBar());
 
         // The content column: the toolbar, the filters, then the grid and the tabs (contentGrid keeps its rows).
         mainSplit.Children.Remove(contentGrid);
@@ -59,6 +67,8 @@ public partial class BrowseWindow
         Border sidebar = new() { Classes = { "modernSidebar" }, Child = new Panel { Children = { sidebarTitleBar, leftColumn } } };
         mainSplit.Children.Insert(0, sidebar);
         leftPanel.FindControl<ListBox>("tree")?.SetValue(ListBox.BackgroundProperty, Brushes.Transparent);
+
+        void UpdateFiltersBar() => filtersBar.IsVisible = filterToolBarHost.IsVisible && toolbar.IsVisible;
 
         if (OperatingSystem.IsMacOS())
         {

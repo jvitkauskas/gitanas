@@ -16,9 +16,21 @@ public static class AccessibleNames
     /// <summary>Names the buttons of <paramref name="root"/> and its descendants that have no name.</summary>
     public static void Apply(ILogical root)
     {
-        foreach (ContentControl control in root.GetSelfAndLogicalDescendants().OfType<ContentControl>())
+        foreach (Control control in root.GetSelfAndLogicalDescendants().OfType<Control>())
         {
-            if (control is not (Button or ToggleButton) || control.Content is not Control content || control.IsSet(AutomationProperties.NameProperty))
+            // Stable XAML names also identify inputs and lists to accessibility/automation clients.
+            // Explicit metadata always wins, including identifiers supplied by a reusable view.
+            if (!control.IsSet(AutomationProperties.AutomationIdProperty) && !string.IsNullOrEmpty(control.Name))
+            {
+                control.SetValue(AutomationProperties.AutomationIdProperty, control.Name);
+            }
+
+            if (!control.IsSet(AutomationProperties.HelpTextProperty) && ToolTip.GetTip(control) is string)
+            {
+                control.Bind(AutomationProperties.HelpTextProperty, control.GetObservable(ToolTip.TipProperty).Select(tip => tip as string));
+            }
+
+            if (control is not (Button or ToggleButton) || ((ContentControl)control).Content is not Control content || control.IsSet(AutomationProperties.NameProperty))
             {
                 continue;
             }
@@ -28,9 +40,9 @@ public static class AccessibleNames
                 // Follows the text (e.g. "Commit & push" or "Commit & force push"), without the access key marker.
                 control.Bind(AutomationProperties.NameProperty, text.GetObservable(TextBlock.TextProperty).Select(t => text is AccessText ? RemoveAccessKey(t) : t));
             }
-            else if (ToolTip.GetTip(control) is string tip)
+            else if (ToolTip.GetTip(control) is string)
             {
-                control.SetValue(AutomationProperties.NameProperty, tip);
+                control.Bind(AutomationProperties.NameProperty, control.GetObservable(ToolTip.TipProperty).Select(tip => tip as string));
             }
         }
     }

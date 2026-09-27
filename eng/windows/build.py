@@ -12,8 +12,24 @@ import sys
 import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
+from xml.dom import minidom
 
 ROOT = Path(__file__).resolve().parents[2]
+
+
+def enable_portable_mode(config_file):
+    # ElementTree moves assemblyBinding's namespace declaration to the root,
+    # where System.Configuration rejects it as an unrecognized attribute.
+    config = minidom.parse(str(config_file))
+    settings = [node for node in config.getElementsByTagName('setting')
+                if node.getAttribute('name') == 'IsPortable']
+    if len(settings) != 1:
+        raise RuntimeError('Missing or ambiguous portable-settings switch')
+    value = settings[0].getElementsByTagName('value')[0]
+    for child in list(value.childNodes):
+        value.removeChild(child)
+    value.appendChild(config.createTextNode('True'))
+    config_file.write_bytes(config.toxml(encoding='utf-8'))
 
 
 def run(*args):
@@ -78,13 +94,7 @@ def assemble(work, rid, version):
 
     # ZIPs are portable: settings travel with the extracted directory. Unzip to
     # a writable directory, not Program Files. No registry/shell registration is run.
-    config_file = package / 'Gitanas.dll.config'
-    config = ET.parse(config_file)
-    portable = config.find(".//setting[@name='IsPortable']/value")
-    if portable is None:
-        raise RuntimeError('Missing portable-settings switch')
-    portable.text = 'True'
-    config.write(config_file, encoding='utf-8', xml_declaration=True)
+    enable_portable_mode(package / 'Gitanas.dll.config')
 
     shutil.copy2(ROOT / 'LICENSE.md', package / 'LICENSE.md')
     notices = package / 'licenses/Avalonia.Wayland'

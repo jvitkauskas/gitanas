@@ -1,5 +1,8 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Chrome;
+using Avalonia.Input;
+using Avalonia.Layout;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Media;
 
@@ -52,7 +55,8 @@ public partial class BrowseWindow
 
         // The sidebar: the left panel on the material of the sidebar, below the title bar.
         mainSplit.Children.Remove(leftColumn);
-        Border sidebar = new() { Classes = { "modernSidebar" }, Child = leftColumn };
+        Border sidebarTitleBar = new() { Height = ModernTitleBarHeight, VerticalAlignment = VerticalAlignment.Top, Background = Brushes.Transparent };
+        Border sidebar = new() { Classes = { "modernSidebar" }, Child = new Panel { Children = { sidebarTitleBar, leftColumn } } };
         mainSplit.Children.Insert(0, sidebar);
         leftPanel.FindControl<ListBox>("tree")?.SetValue(ListBox.BackgroundProperty, Brushes.Transparent);
 
@@ -60,6 +64,12 @@ public partial class BrowseWindow
         {
             ExtendClientAreaToDecorationsHint = true;
             ExtendClientAreaTitleBarHeightHint = ModernTitleBarHeight;
+
+            // The window moves (and zooms on a double click) from the empty parts of the toolbar and the top of the sidebar, as
+            // from a title bar; the controls of the toolbar keep their input (ModernBrowse.axaml gives them the role User).
+            WindowDecorationProperties.SetElementRole(toolbarBar, WindowDecorationsElementRole.TitleBar);
+            WindowDecorationProperties.SetElementRole(toolbar, WindowDecorationsElementRole.TitleBar);
+            WindowDecorationProperties.SetElementRole(sidebarTitleBar, WindowDecorationsElementRole.TitleBar);
             TransparencyLevelHint = [WindowTransparencyLevel.AcrylicBlur, WindowTransparencyLevel.Blur, WindowTransparencyLevel.None];
             Background = Brushes.Transparent;
             leftColumn.Margin = new Thickness(0, ModernTitleBarHeight, 0, 0);

@@ -15,7 +15,9 @@
           <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#8A000000" />
           <SolidColorBrush x:Key="ModernHoverBrush" Color="#0F000000" />
           <SolidColorBrush x:Key="ModernTrackBrush" Color="#0D000000" />
-          <SolidColorBrush x:Key="ModernSegmentBrush" Color="#FFFFFF" />
+          <SolidColorBrush x:Key="ModernTextBrush" Color="#1D1D1F" />
+          <SolidColorBrush x:Key="ModernSelectedTabBrush" Color="#E4E4E9" />
+          <SolidColorBrush x:Key="ModernSelectedTabBorderBrush" Color="#26000000" />
         </ResourceDictionary>
         <ResourceDictionary x:Key="Dark">
           <SolidColorBrush x:Key="ModernContentBrush" Color="#1E1E20" />
@@ -25,13 +27,18 @@
           <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#8CFFFFFF" />
           <SolidColorBrush x:Key="ModernHoverBrush" Color="#14FFFFFF" />
           <SolidColorBrush x:Key="ModernTrackBrush" Color="#14FFFFFF" />
-          <SolidColorBrush x:Key="ModernSegmentBrush" Color="#4A4A4F" />
+          <SolidColorBrush x:Key="ModernTextBrush" Color="#F2F2F7" />
+          <SolidColorBrush x:Key="ModernSelectedTabBrush" Color="#46464C" />
+          <SolidColorBrush x:Key="ModernSelectedTabBorderBrush" Color="#33FFFFFF" />
         </ResourceDictionary>
       </ResourceDictionary.ThemeDictionaries>
     </ResourceDictionary>
   </Styles.Resources>
 
-  <!-- Tabs as the segments of a segmented control: flat, rounded, the selected one raised (instead of the WinForms tabs). -->
+  <!--
+    Tabs as the segments of a segmented control: flat and dimmed, the selected one filled, framed and in the color of the text
+    (instead of the WinForms tabs).
+  -->
   <Style Selector="TabControl:not(#PART_TabControl) TabItem">
     <Setter Property="Background" Value="Transparent" />
     <Setter Property="BorderThickness" Value="0" />
@@ -40,12 +47,26 @@
     <Setter Property="Padding" Value="12,0" />
     <Setter Property="MinHeight" Value="26" />
   </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem /template/ Border#PART_LayoutRoot">
+    <Setter Property="BorderThickness" Value="1" />
+    <Setter Property="BorderBrush" Value="Transparent" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem:not(:selected) /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource ModernSecondaryTextBrush}" />
+    <Setter Property="Opacity" Value="0.85" />
+  </Style>
   <Style Selector="TabControl:not(#PART_TabControl) TabItem:pointerover /template/ Border#PART_LayoutRoot">
     <Setter Property="Background" Value="{DynamicResource ModernHoverBrush}" />
   </Style>
   <Style Selector="TabControl:not(#PART_TabControl) TabItem:selected /template/ Border#PART_LayoutRoot">
-    <Setter Property="Background" Value="{DynamicResource ModernSegmentBrush}" />
-    <Setter Property="BoxShadow" Value="0 1 2 0 #30000000" />
+    <Setter Property="Background" Value="{DynamicResource ModernSelectedTabBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource ModernSelectedTabBorderBrush}" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource ModernTextBrush}" />
+  </Style>
+  <Style Selector="TabControl:not(#PART_TabControl) TabItem /template/ Border#PART_SelectedPipe">
+    <Setter Property="IsVisible" Value="False" />
   </Style>
   <Style Selector="TabControl:not(#PART_TabControl) /template/ ItemsPresenter#PART_ItemsPresenter">
     <Setter Property="Margin" Value="8,4" />

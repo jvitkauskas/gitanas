@@ -7,13 +7,16 @@ look of the WinForms release.
 
 ## What it does now
 
-- **Controls** (`Themes/Modern.axaml`, after the styles of the application): the tabs as the segments of a segmented control,
+- **Controls** (`Themes/Modern.axaml`, after the styles of the application): the tabs as the segments of a segmented control
+  (the selected one filled and framed, the others dimmed),
   the column headers as the section headers of macOS, rounded selections in the lists and trees, and the brushes of the
   design (`Modern*Brush`, light and dark).
 - **Main window** (`BrowseWindow.Modern.cs`, `Themes/ModernBrowse.axaml`), with the same controls, bindings and commands,
   moved and restyled:
   - the toolbar above the history, in the title bar on macOS (the window extends under it; the window buttons get their
-    room when the left panel is hidden), with the labels of Pull, Push, Commit and Stash under their icons;
+    room when the left panel is hidden), with the labels of Pull, Push, Commit and Stash under their icons; its empty parts
+    and the top of the sidebar move the window and zoom it on a double click (`WindowDecorationsElementRole.TitleBar`,
+    the controls of the toolbar `User`);
   - the left panel as a full-height sidebar on the translucent material of the window (vibrancy on macOS);
   - the filters in a bar of their own above the history;
   - no frames around the panes.

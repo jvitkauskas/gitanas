@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 有効にすると、不正な記号は任意に指定した置換記号に置き換えられます。</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>リリース候補版を確認</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>毎週更新を確認</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>「コミットを修正」にチェックして「コミットとプッシュ」実行時に「--force-with-lease」オプションを有効にする</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>コミット</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>更新</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3644,11 +3629,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>変更履歴(&amp;C)</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>更新を確認(&amp;U)</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9723,70 +9703,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>名前</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="ja">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>更新の確認</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>更新の検索</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>更新をダウンロード中...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>ダウンロード失敗</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>更新のダウンロードに失敗しました。</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Gitanas の新しいバージョン {0} が利用可能です</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>更新はありません</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>今すぐ更新(&amp;U)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>リリースノートと変更履歴を表示(&amp;L)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>直接ダウンロード(&amp;D)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>必須: .NET {0} Desktop Runtime {1} 以降の {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>最新の .NET Desktop Runtime をダウンロードしてください。管理者権限なしでインストールする方法については説明文書を参照してください。</target>
         
       </trans-unit>
     </body>

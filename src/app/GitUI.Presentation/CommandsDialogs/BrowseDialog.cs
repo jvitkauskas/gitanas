@@ -127,7 +127,6 @@ public sealed class BrowseStrings : ViewStrings
         Translate = Add("translateToolStripMenuItem", "Text", "&Translate");
         Donate = Add("supportUpstreamToolStripMenuItem", "Text", "Support Git Extensions");
         ReportAnIssue = Add("reportAnIssueToolStripMenuItem", "Text", "&Report an issue");
-        CheckForUpdates = Add("checkForUpdatesToolStripMenuItem", "Text", "Check for &updates");
         About = Add("aboutToolStripMenuItem", "Text", "&About");
     }
 
@@ -320,8 +319,6 @@ public sealed class BrowseStrings : ViewStrings
 
     public TranslatedText ReportAnIssue { get; }
 
-    public TranslatedText CheckForUpdates { get; }
-
     public TranslatedText About { get; }
 }
 
@@ -409,7 +406,6 @@ public enum BrowseCommand
     Translate,
     Donate,
     ReportAnIssue,
-    CheckForUpdates,
     About,
 
     /// <summary>
@@ -913,7 +909,6 @@ public sealed partial class BrowseViewModel : DialogViewModel
             new(s.Translate.AccessKeyText, BrowseCommand.Translate, "Translate"),
             new(s.Donate.AccessKeyText, BrowseCommand.Donate, "DollarSign"),
             new(s.ReportAnIssue.AccessKeyText, BrowseCommand.ReportAnIssue, "BugReport"),
-            new(s.CheckForUpdates.AccessKeyText, BrowseCommand.CheckForUpdates, "CheckForUpdates"),
             BrowseMenuItem.Separator,
             new(s.About.AccessKeyText, BrowseCommand.About, "Information"),
         ]),

@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 در صورت فعال بودن، هر نماد غیرمجاز با نماد جایگزین انتخابی شما جایگزین خواهد شد.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>بررسی نسخه‌های release candidate</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>به‌روزرسانی‌های هفتگی را بررسی کن</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>هنگام انجام عملیات Commit &amp;&amp; Push با فعال بودن گزینه Amend، Push forced with lease اعمال می‌شود</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Commit</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>به روز رسانی ها</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Changelog</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>بررسی &amp;به‌روزرسانی‌ها</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9727,70 +9707,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>نام</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="fa">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>بررسی به‌روزرسانی</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>در حال جستجوی به‌روزرسانی‌ها</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>در حال دانلود به‌روزرسانی...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>دانلود ناموفق بود</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>دانلود یک به‌روزرسانی ناموفق بود.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>نسخه جدید {0} از Gitanas موجود است</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>هیچ به‌روزرسانی‌ای یافت نشد</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;به‌روزرسانی اکنون</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>نمایش release notes و &amp;change log</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;دانلود مستقیم</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>مورد نیاز: .NET {0} Desktop Runtime {1} یا نسخه‌های بعدی {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>دانلود آخرین .NET Desktop Runtime. برای نحوه نصب .NET runtime بدون دسترسی مدیریتی، مستندات را ببینید.</target>
         
       </trans-unit>
     </body>

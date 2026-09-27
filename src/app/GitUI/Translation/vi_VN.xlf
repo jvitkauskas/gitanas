@@ -30,14 +30,6 @@
 If enabled, any illegal symbols will be replaced with the replacement symbol of your choice.</source>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Đẩy có buộc kèm lease khi thực hiện thao tác Cam kết &amp;&amp; Đẩy với tùy chọn Amend được chọn</target>
@@ -78,11 +70,6 @@ Thao tác này sẽ được thực hiện mà không cảnh báo khi checkout n
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Cam kết</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Cập nhật</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3598,11 +3585,6 @@ Bạn có muốn tiếp tục không?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Nhật ký thay đổi</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>&amp;Kiểm tra cập nhật</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9677,70 +9659,6 @@ Do đó, nút Hủy bỏ KHÔNG hoàn tác bất kỳ thay đổi nào đã th�
       </trans-unit>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="vi-VN">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Kiểm tra cập nhật</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Đang tìm bản cập nhật</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Đang tải bản cập nhật...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>Tải thất bại</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Không thể tải bản cập nhật.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Có phiên bản mới {0} của Gitanas</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Không tìm thấy bản cập nhật</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;Cập nhật ngay</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Hiển thị ghi chú phát hành và &amp;nhật ký thay đổi</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;Tải trực tiếp</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Yêu cầu: .NET {0} Desktop Runtime {1} trở lên {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Tải .NET Desktop Runtime mới nhất. Xem tài liệu về cách cài đặt .NET runtime mà không cần quyền quản trị.</target>
         
       </trans-unit>
     </body>

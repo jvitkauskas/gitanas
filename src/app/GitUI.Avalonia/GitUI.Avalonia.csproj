@@ -37,7 +37,6 @@
     <!-- Menu icons and third-party product logos. -->
     <AvaloniaResource Include="..\GitUI\Resources\Icons\GitGui.png" Link="Assets\GitGui.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\Gitk.png" Link="Assets\Gitk.png" />
-    <AvaloniaResource Include="Assets\Modern\Light\CheckForUpdates.png" Link="Assets\CheckForUpdates.png" />
     <AvaloniaResource Include="..\GitUI\Resources\Icons\VisualStudio16.png" Link="Assets\VisualStudio16.png" />
     <AvaloniaResource Include="Assets\Modern\Light\AddToGitIgnore.png" Link="Assets\AddToGitIgnore.png" />
     <AvaloniaResource Include="Assets\Modern\Light\StopTrackingFile.png" Link="Assets\StopTrackingFile.png" />

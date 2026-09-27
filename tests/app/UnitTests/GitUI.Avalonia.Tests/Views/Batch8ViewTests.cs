@@ -7,19 +7,17 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using GitExtensions.Extensibility.Git;
 using GitUI.Avalonia.CommandsDialogs;
-using GitUI.Avalonia.CommandsDialogs.BrowseDialog;
 using GitUI.Avalonia.CommandsDialogs.SettingsDialog;
 using GitUI.Avalonia.Hosting;
 using GitUI.AvaloniaTests.ViewModels;
 using GitUI.Presentation.CommandsDialogs;
-using GitUI.Presentation.CommandsDialogs.BrowseDialog;
 using GitUI.Presentation.CommandsDialogs.SettingsDialog;
 using static GitUI.AvaloniaTests.ViewModels.ProcessViewModelTests;
 using static GitUI.AvaloniaTests.ViewModels.SmallDialogViewModelTests;
 
 namespace GitUI.AvaloniaTests.Views;
 
-/// <summary>Headless view tests of phase 2, batch 8: HOME directory, updates, worktrees, submodules and the help text window.</summary>
+/// <summary>Headless view tests of phase 2, batch 8: HOME directory, worktrees, submodules and the help text window.</summary>
 [TestFixture]
 public sealed class Batch8ViewTests : HeadlessTest
 {
@@ -41,9 +39,6 @@ public sealed class Batch8ViewTests : HeadlessTest
                 DataContext = new FixHomeViewModel(new FixHomeStrings(), Batch8ViewModelTests.Environment, "Error", new NoConfigHost(), new FakeMessageBoxes(), new FakeFileDialogs()),
             },
             $"fix-home-{theme}");
-
-        Capture(new UpdatesWindow { DataContext = CreateUpdates(update: null, searched: false) }, $"updates-searching-{theme}");
-        Capture(new UpdatesWindow { DataContext = CreateUpdates(new AvailableUpdate("6.1.0", "https://example.org/setup.msi", new Version(10, 0, 5))) }, $"updates-found-{theme}");
 
         Capture(new ManageWorktreeWindow { DataContext = new ManageWorktreeViewModel(new ManageWorktreeStrings(), @"C:\repo", new WorktreeHost()) }, $"manage-worktree-{theme}");
 
@@ -76,28 +71,6 @@ public sealed class Batch8ViewTests : HeadlessTest
     });
 
     [Test]
-    public Task Updates_shows_the_actions_once_an_update_is_found() => OnUiThreadAsync(() =>
-    {
-        UpdatesViewModel viewModel = CreateUpdates(update: null, searched: false);
-        UpdatesWindow window = Show(new UpdatesWindow { DataContext = viewModel });
-
-        window.FindControl<ProgressBar>("progressBar")!.IsVisible.Should().BeTrue();
-        window.FindControl<Button>("updateNowButton")!.IsVisible.Should().BeFalse();
-        window.FindControl<Button>("directDownloadLink")!.IsVisible.Should().BeFalse();
-        window.FindControl<StackPanel>("requiredRuntimePanel")!.IsVisible.Should().BeFalse();
-
-        viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup.msi", new Version(10, 0, 5)));
-        Dispatcher.UIThread.RunJobs();
-
-        window.FindControl<ProgressBar>("progressBar")!.IsVisible.Should().BeFalse();
-        window.FindControl<Button>("updateNowButton")!.IsVisible.Should().BeTrue();
-        window.FindControl<Button>("updateNowButton")!.IsFocused.Should().BeTrue();
-        window.FindControl<Button>("directDownloadLink")!.IsVisible.Should().BeTrue();
-        window.FindControl<StackPanel>("requiredRuntimePanel")!.IsVisible.Should().BeTrue();
-        window.Close();
-    });
-
-    [Test]
     public Task Submodules_details_show_the_selected_submodule() => OnUiThreadAsync(() =>
     {
         SubmodulesViewModel viewModel = new(new SubmodulesStrings(), new SubmodulesHost(), new FakeMessageBoxes());
@@ -113,17 +86,6 @@ public sealed class Batch8ViewTests : HeadlessTest
         window.FindControl<Button>("removeButton")!.IsEffectivelyEnabled.Should().BeTrue();
         window.Close();
     });
-
-    private static UpdatesViewModel CreateUpdates(AvailableUpdate? update, bool searched = true)
-    {
-        UpdatesViewModel viewModel = new(new UpdatesStrings(), isPortable: false, "x64", [new Version(8, 0, 1)], new UpdatesHost(), new FakeMessageBoxes());
-        if (searched)
-        {
-            viewModel.ReportSearchResult(update);
-        }
-
-        return viewModel;
-    }
 
     private static T Show<T>(T window)
         where T : DialogWindow
@@ -147,17 +109,6 @@ public sealed class Batch8ViewTests : HeadlessTest
         public string? ApplyHome(string customHomeDir, bool userProfileHomeDir) => null;
 
         public bool DirectoryExists(string? path) => false;
-    }
-
-    private sealed class UpdatesHost : IUpdatesHost
-    {
-        public void OpenUrl(string url)
-        {
-        }
-
-        public void DownloadAndInstall(string updateUrl, Action<string> reportDownloadFailure)
-        {
-        }
     }
 
     private sealed class WorktreeHost : IManageWorktreeHost

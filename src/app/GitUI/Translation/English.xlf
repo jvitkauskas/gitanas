@@ -31,14 +31,6 @@
 If enabled, any illegal symbols will be replaced with the replacement symbol of your choice.</source>
         <target />
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target />
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target />
@@ -67,10 +59,6 @@ This action will be performed without warning while checking out branch.</source
       </trans-unit>
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
         <target />
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -2755,10 +2743,6 @@ Right click starts the "Open repository" dialog.</source>
       </trans-unit>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
         <target />
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -7327,58 +7311,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       </trans-unit>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
-        <target />
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target />
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
         <target />
       </trans-unit>
     </body>

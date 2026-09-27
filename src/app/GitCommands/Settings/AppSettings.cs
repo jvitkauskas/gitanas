@@ -1896,24 +1896,6 @@ public static partial class AppSettings
         set => SetBool("AddCommitReferenceToCherryPick", value);
     }
 
-    public static DateTime LastUpdateCheck
-    {
-        get => GetDate("LastUpdateCheck", default);
-        set => SetDate("LastUpdateCheck", value);
-    }
-
-    public static bool CheckForUpdates
-    {
-        get => GetBool("CheckForUpdates", true);
-        set => SetBool("CheckForUpdates", value);
-    }
-
-    public static bool CheckForReleaseCandidates
-    {
-        get => GetBool("CheckForReleaseCandidates", false);
-        set => SetBool("CheckForReleaseCandidates", value);
-    }
-
     public static bool OmitUninterestingDiff
     {
         get => GetBool("OmitUninterestingDiff", false);

@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 若啟用，任何不合法的符號將被替換為您選擇的替換符號。</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>檢查候選發行版本 (RC)</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>每週檢查更新</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>當勾選「修訂 (Amend)」選項執行「提交並推送」時，使用強制推送 (Force with lease)</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>提交</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>更新</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3641,11 +3626,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>變更記錄(&amp;C)</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>檢查更新(&amp;U)</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9715,70 +9695,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>名稱</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="zh-Hant">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>檢查更新</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>搜尋更新</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>下載更新中...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>下載失敗</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>下載更新失敗</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>有新版本 {0} 的 Gitanas 可供使用</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>沒有找到更新</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>立即更新(&amp;U)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>顯示發行說明與變更記錄(&amp;L)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>直接下載(&amp;D)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Required： .NET {0} Desktop 執列time {1} or later {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Download latest .NET Desktop 執列time. See docs on how to install .NET runtime without administrative privileges.</target>
         
       </trans-unit>
     </body>

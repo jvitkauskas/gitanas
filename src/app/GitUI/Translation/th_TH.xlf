@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 หากเปิดใช้งาน สัญลักษณ์ที่ไม่ถูกต้องจะถูกแทนที่ด้วยสัญลักษณ์ทดแทนที่เลือกไว้</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>ตรวจสอบเวอร์ชั่นที่กำลังจะปล่อย</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>เช็คอัพเดททุกสัปดาห์</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>บังคับ Push แบบ with-lease เมื่อใช้คำสั่ง Commit &amp;&amp; Push พร้อมเลือกตัวเลือก Amend</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Commit</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>อัพเดท</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Changelog</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>ตรวจสอบการอัปเดต(&amp;U)</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9727,70 +9707,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>ชื่อ</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="th-TH">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>ตรวจสอบการอัปเดต</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>กำลังค้นหาการอัปเดต</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>กำลังดาวน์โหลดการอัปเดต...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>ดาวน์โหลดไม่สำเร็จ</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>ดาวน์โหลดการอัปเดตไม่สำเร็จ</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>มี Gitanas เวอร์ชันใหม่ {0} พร้อมใช้งาน</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>ไม่พบการอัปเดต</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>อัปเดตตอนนี้(&amp;U)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>แสดง release notes และ change &amp;log</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>ดาวน์โหลดโดยตรง(&amp;D)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>ต้องการ: .NET {0} Desktop Runtime {1} หรือใหม่กว่า {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>ดาวน์โหลด .NET Desktop Runtime ล่าสุด ดูเอกสารวิธีติดตั้ง .NET runtime โดยไม่ต้องใช้สิทธิ์ผู้ดูแลระบบ</target>
         
       </trans-unit>
     </body>

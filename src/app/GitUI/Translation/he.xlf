@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 אם האפשרות מופעלת, כל תו לא חוקי יוחלף בתו החלופי לבחירתך.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>בדוק גרסאות מועמדות לשחרור</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>בדוק עדכונים מדי שבוע</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>דחיפה בכפייה עם lease כאשר פעולת &apos;הגשה &amp;&amp; דחיפה&apos; מתבצעת כשאפשרות &apos;תיקון&apos; מסומנת</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>הגשה</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>עדכונים</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3647,11 +3632,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;יומן שינויים</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>בדיקת &amp;עדכונים</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9728,70 +9708,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>שם</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="he">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>בדיקת עדכון</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>מחפש עדכונים</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>מוריד עדכון...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>ההורדה נכשלה</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>הורדת עדכון נכשלה.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>גרסה חדשה {0} של Gitanas זמינה</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>לא נמצאו עדכונים</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;עדכון עכשיו</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>&amp;הצגת הערות מהדורה ויומן שינויים</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;הורדה ישירה</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>נדרש: .NET {0} Desktop Runtime {1} או גרסה מאוחרת יותר {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>הורדת .NET Desktop Runtime העדכני ביותר. עיין בתיעוד כיצד להתקין את סביבת ההרצה של .NET ללא הרשאות ניהול.</target>
         
       </trans-unit>
     </body>

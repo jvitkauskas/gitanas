@@ -621,10 +621,6 @@ internal static partial class AvaloniaDialogs
                 case BrowseCommand.ReportAnIssue:
                     OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas/issues");
                     break;
-                case BrowseCommand.CheckForUpdates:
-                    TrySearchForUpdatesAndShow(owner, alwaysShow: true);
-
-                    break;
                 case BrowseCommand.About:
                     TryShowAbout(owner);
 

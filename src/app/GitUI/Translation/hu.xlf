@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 Ha engedélyezve van, minden érvénytelen szimbólum a választott csere szimbólumra lesz cserélve.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>Ellenőrizze a kiadásra jelölt verziókat</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>Frissítések keresése hetente</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Force push lease-zel végrehajtva, ha a „Kommit &amp;&amp; Push” művelet a Módosítás jelölőnégyzet bejelölésével fut</target>
@@ -88,11 +78,6 @@ Ez a művelet figyelmeztetés nélkül lesz végrehajtva a branch checkout sorá
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Kommit</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Frissítések</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Szeretné folytatni?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Változásnapló</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>&amp;Frissítések keresése</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9728,70 +9708,6 @@ Ezért a Mégse gomb NEM vonja vissza az elvégzett módosításokat.</target>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>Név</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="hu">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Frissítés keresése</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Frissítések keresése</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Frissítés letöltése…</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>Letöltés sikertelen</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Nem sikerült letölteni egy frissítést.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Elérhető a Gitanas egy új verziója: {0}</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Nem található frissítés</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;Frissítés most</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Kiadási megjegyzések és változás&amp;napló megjelenítése</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;Közvetlen letöltés</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Szükséges: .NET {0} Desktop Runtime {1} vagy újabb {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Töltse le a legújabb .NET Desktop Runtime-ot. Nézze meg a dokumentációt arról, hogyan telepítse a .NET runtime-ot rendszergazdai jogosultság nélkül.</target>
         
       </trans-unit>
     </body>

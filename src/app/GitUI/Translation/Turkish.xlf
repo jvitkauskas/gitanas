@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 Etkinleştirilirse, geçersiz sembollerin yerine seçtiğin değiştirme sembolü ile yer değiştirir.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>Sürüm adayı sürümlerini denetle</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>Güncelleştirmeleri haftalık olarak denetle</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Teslimi düzenle seçeneği işaretli olarak, teslim etme &amp;&amp; İt eylemi gerçekleştirildiğinde kiralamayla zorla it.</target>
@@ -88,11 +78,6 @@ Bu eylem, daldan çıkış yapılırken, uyarı yapılmadan gerçekleştirilecek
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Teslim Et</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Güncellemeler</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Devam etmek istiyor musun?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Değişim günlüğü</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>G&amp;üncellemeleri kontrol et</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9727,70 +9707,6 @@ Bu nedenle İptal düğmesi yapılan değişiklikleri GERİ ALAMAZ.</target>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>Adı</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="tr">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Güncellemeyi kontrol et</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Güncelleştirmeler aranıyor</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Güncelleme indiriliyor...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>İndirme başarısız oldu</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Bir güncelleme indirilemedi.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Git Uzantılarının (Extensions&apos;ın) yeni bir sürümü var: Gitanas {0}</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Güncelleme bulunamadı</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;Şimdi Güncelle</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Sürüm notlarını ve değişiklik &amp;günlüğünü göster</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;Doğrudan İndir</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Gerekli: .NET {0} Desktop Runtime {1} veya üzeri {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>En son .NET Desktop Runtime&apos;ı indirin. Yönetici ayrıcalığı olmadan .NET runtime&apos;ı nasıl yükleyeceğinizi öğrenmek için belgelere bakın.</target>
         
       </trans-unit>
     </body>

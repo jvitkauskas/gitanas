@@ -26,14 +26,13 @@ upstream copyright notices and links explaining upstream behavior are retained.
   Cache/user-plugin directories use the new product name; separately installed
   user plugins can be placed in the new `Gitanas/UserPlugins` directory.
 - Script commands accept `gitanas` / `{gitanas}` as well as the old aliases.
-- Homepage, contributions and bug reports link to `jvitkauskas/gitanas`. Update
-  checks read that repository's published GitHub releases, honoring the prerelease
-  preference and selecting a newer numeric version tag (`v1.2.3`, for example).
-  Downloads open the fork's releases page on every OS, never the upstream MSI.
+- Homepage, contributions and bug reports link to `jvitkauskas/gitanas`. The
+  application updater has since been removed; there are no update checks or
+  download/install actions.
 - Windows installer product/upgrade/component identities, shell-extension COM
   identities and registry paths are separate from the upstream application.
 
-## Validation on Linux
+## Branding-pass validation on Linux
 
 - Release solution build: passed, no warnings or errors in the final build.
 - Avalonia suite: 1,288 passed; two Windows-specific cases skipped.

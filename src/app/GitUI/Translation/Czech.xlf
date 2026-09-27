@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 Pokud je povoleno, všechny nelegální symboly budou nahrazeny náhradním symbolem podle vašeho výběru.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>Kontrolovat dostupnost nevydaných verzí (release candidate)</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>Každý týden kontrolovat aktualizace</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Vynutit odeslání (force-with-lease), pokud je při akci Odevzdat a odeslat zaškrtnuta možnost Pozměnit</target>
@@ -88,11 +78,6 @@ Při získávání větve bude tato akce provedena bez varování.</target>
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Odevzdání</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Aktualizace</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Chcete pokračovat?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Changelog</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>Zkontrolovat aktualizace (&amp;U)</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9719,70 +9699,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>Název</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="cs">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Zkontrolovat aktualizace</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Vyhledávám aktualizace</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Stahuje se aktualizace...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>Stahování selhalo</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Nepodařilo se stáhnout aktualizaci.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Je k dispozici nová verze Gitanas {0}</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Nebyly nalezeny žádné aktualizace</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>Aktualizovat nyní (&amp;U)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Zobrazit poznámky k vydání a seznam změn (&amp;L)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>Přímé stažení (&amp;D)</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Vyžadováno: .NET {0} Desktop Runtime {1} nebo novější {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Stáhněte si nejnovější .NET Desktop Runtime. Návod, jak nainstalovat .NET runtime bez administrátorských oprávnění, najdete v dokumentaci.</target>
         
       </trans-unit>
     </body>

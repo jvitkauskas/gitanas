@@ -426,9 +426,6 @@ internal sealed class AppSettingsTests
             yield return (properties[nameof(AppSettings.UseFormCommitMessage)], true, false, false);
             yield return (properties[nameof(AppSettings.CommitAutomaticallyAfterCherryPick)], false, false, false);
             yield return (properties[nameof(AppSettings.AddCommitReferenceToCherryPick)], false, false, false);
-            yield return (properties[nameof(AppSettings.LastUpdateCheck)], default(DateTime), false, false);
-            yield return (properties[nameof(AppSettings.CheckForUpdates)], true, false, false);
-            yield return (properties[nameof(AppSettings.CheckForReleaseCandidates)], false, false, false);
             yield return (properties[nameof(AppSettings.OmitUninterestingDiff)], false, false, false);
             yield return (properties[nameof(AppSettings.UseConsoleEmulatorForCommands)], true, false, false);
             yield return (properties[nameof(AppSettings.RefsSortBy)], GitRefsSortBy.Default, false, false);

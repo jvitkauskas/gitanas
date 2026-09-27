@@ -1,13 +1,12 @@
 using GitExtensions.Extensibility.Git;
 using GitUI.Presentation.CommandsDialogs;
-using GitUI.Presentation.CommandsDialogs.BrowseDialog;
 using GitUI.Presentation.CommandsDialogs.SettingsDialog;
 using static GitUI.AvaloniaTests.ViewModels.ProcessViewModelTests;
 using static GitUI.AvaloniaTests.ViewModels.SmallDialogViewModelTests;
 
 namespace GitUI.AvaloniaTests.ViewModels;
 
-/// <summary>View model tests of phase 2, batch 8: HOME directory, updates, worktrees and submodules.</summary>
+/// <summary>View model tests of phase 2, batch 8: HOME directory, worktrees and submodules.</summary>
 [TestFixture]
 public sealed class Batch8ViewModelTests
 {
@@ -134,85 +133,6 @@ public sealed class Batch8ViewModelTests
     }
 
     [Test]
-    public void Updates_searches_then_reports_no_update()
-    {
-        UpdatesViewModel viewModel = CreateUpdates(isPortable: false);
-        viewModel.Status.Should().Be("Searching for updates");
-        viewModel.IsBusy.Should().BeTrue();
-
-        viewModel.ReportSearchResult(null);
-
-        viewModel.Status.Should().Be("No updates found");
-        viewModel.IsBusy.Should().BeFalse();
-        viewModel.IsUpdateFound.Should().BeFalse();
-        viewModel.CanUpdateNow.Should().BeFalse();
-    }
-
-    [Test]
-    public void Updates_offers_the_update_and_links_a_missing_runtime()
-    {
-        FakeUpdatesHost host = new();
-        UpdatesViewModel viewModel = CreateUpdates(isPortable: false, host, installed: [new Version(8, 0, 10), new Version(10, 0, 1)]);
-
-        viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup-arm64-6.1.msi", new Version(10, 0, 5)));
-
-        viewModel.Status.Should().Be("There is a new version 6.1.0 of Gitanas available");
-        viewModel.IsUpdateFound.Should().BeTrue();
-        viewModel.IsChangeLogVisible.Should().BeTrue();
-        viewModel.CanUpdateNow.Should().BeTrue();
-        viewModel.RequiredRuntimeText.Should().Be(new RequiredRuntimeLink("Required: .NET 10.0 Desktop Runtime ", "10.0.5", " or later 10.x"));
-        viewModel.RuntimeDownloadUrl.Should().Contain("arch=arm64").And.Contain("apphost_version=10.0.5");
-
-        viewModel.DirectDownloadCommand.Execute(null);
-        viewModel.OpenRuntimeDownloadCommand.Execute(null);
-        viewModel.OpenChangeLogCommand.Execute(null);
-        host.OpenedUrls.Should().Equal("https://example.org/setup-arm64-6.1.msi", viewModel.RuntimeDownloadUrl, UpdatesViewModel.ReleasesUrl);
-    }
-
-    [Test]
-    public void Updates_hides_the_runtime_link_when_the_installed_runtime_suffices()
-    {
-        UpdatesViewModel viewModel = CreateUpdates(isPortable: true, installed: [new Version(10, 0, 7)]);
-
-        viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup.msi", new Version(10, 0, 5)));
-
-        viewModel.RequiredRuntimeText.Should().BeNull();
-        viewModel.CanUpdateNow.Should().BeFalse("a portable installation is downloaded, not installed");
-    }
-
-    [Test]
-    public void Updates_portable_direct_download_opens_the_releases()
-    {
-        FakeUpdatesHost host = new();
-        UpdatesViewModel viewModel = CreateUpdates(isPortable: true, host);
-        viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup.msi", null));
-
-        viewModel.DirectDownloadCommand.Execute(null);
-
-        host.OpenedUrls.Should().Equal(UpdatesViewModel.ReleasesUrl);
-    }
-
-    [Test]
-    public void Updates_update_now_downloads_and_reports_a_failure()
-    {
-        FakeUpdatesHost host = new();
-        FakeMessageBoxes messageBoxes = new();
-        UpdatesViewModel viewModel = CreateUpdates(isPortable: false, host, messageBoxes: messageBoxes);
-        viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup.msi", null));
-
-        viewModel.UpdateNowCommand.Execute(null);
-
-        host.Downloads.Should().Equal("https://example.org/setup.msi");
-        viewModel.Status.Should().Be("Downloading update...");
-        viewModel.IsBusy.Should().BeTrue();
-        viewModel.IsChangeLogVisible.Should().BeFalse();
-        viewModel.UpdateNowCommand.CanExecute(null).Should().BeFalse();
-
-        host.ReportFailure!("timeout");
-        messageBoxes.Errors.Should().Equal($"Failed to download an update.{System.Environment.NewLine}timeout");
-    }
-
-    [Test]
     public void ManageWorktree_acts_only_on_other_existing_worktrees()
     {
         FakeWorktreeHost host = new()
@@ -315,9 +235,6 @@ public sealed class Batch8ViewModelTests
     private static FixHomeViewModel Create(FixHomeEnvironment environment, FakeFixHomeHost? host = null, FakeMessageBoxes? messageBoxes = null, FakeFileDialogs? fileDialogs = null)
         => new(new FixHomeStrings(), environment, "Error", host ?? new FakeFixHomeHost(), messageBoxes ?? new FakeMessageBoxes(), fileDialogs ?? new FakeFileDialogs());
 
-    private static UpdatesViewModel CreateUpdates(bool isPortable, FakeUpdatesHost? host = null, IReadOnlyList<Version>? installed = null, FakeMessageBoxes? messageBoxes = null)
-        => new(new UpdatesStrings(), isPortable, "arm64", installed ?? [], host ?? new FakeUpdatesHost(), messageBoxes ?? new FakeMessageBoxes());
-
     private sealed class FakeFixHomeHost : IFixHomeHost
     {
         public IReadOnlyList<string> ConfigLocations { get; init; } = [];
@@ -335,23 +252,6 @@ public sealed class Batch8ViewModelTests
         }
 
         public bool DirectoryExists(string? path) => path is not null && !path.StartsWith("Z:", StringComparison.Ordinal);
-    }
-
-    private sealed class FakeUpdatesHost : IUpdatesHost
-    {
-        public List<string> OpenedUrls { get; } = [];
-
-        public List<string> Downloads { get; } = [];
-
-        public Action<string>? ReportFailure { get; private set; }
-
-        public void OpenUrl(string url) => OpenedUrls.Add(url);
-
-        public void DownloadAndInstall(string updateUrl, Action<string> reportDownloadFailure)
-        {
-            Downloads.Add(updateUrl);
-            ReportFailure = reportDownloadFailure;
-        }
     }
 
     private sealed class FakeWorktreeHost : IManageWorktreeHost

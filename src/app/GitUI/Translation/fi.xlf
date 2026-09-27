@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 Jos käytössä, kaikki kielletyt merkit korvataan valitsemallasi korvausmerkillä.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>Tarkista julkaisukandidaattiversiot</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>Tarkista päivitykset viikottain.</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Pakota push lease-tilassa, kun Kommitoi &amp;&amp; Push -toiminto suoritetaan Oikaise-valinta käytössä</target>
@@ -88,11 +78,6 @@ Tämä toiminto suoritetaan ilman varoitusta haaraa vaihdettaessa.</target>
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Kommitoi</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Päivitykset</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3648,11 +3633,6 @@ Haluatko jatkaa?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Muutosloki</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>Tarkista &amp;päivitykset</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9729,70 +9709,6 @@ Siksi Peruuta-painike EI kumoa tehtyjä muutoksia.</target>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>Nimi</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="fi">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Tarkista päivitykset</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Etsitään päivityksiä</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Ladataan päivitystä...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>Lataus epäonnistui</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Päivityksen lataaminen epäonnistui.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Gitanasista on saatavilla uusi versio {0}</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Päivityksiä ei löytynyt</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;Päivitä nyt</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Näytä julkaisutiedot ja muutos&amp;loki</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;Suora lataus</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Vaaditaan: .NET {0} Desktop Runtime {1} tai uudempi {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Lataa uusin .NET Desktop Runtime. Katso ohjeet .NET-suoritusympäristön asentamiseen ilman järjestelmänvalvojan oikeuksia.</target>
         
       </trans-unit>
     </body>

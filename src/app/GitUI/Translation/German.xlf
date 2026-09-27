@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 Wenn aktiviert, werden alle ungültigen Symbole mit dem Ersetzungssymbol deiner Wahl ersetzt.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>Nach Release Candidate Versionen suchen.</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>Wöchentlich auf Updates prüfen</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>Pushe --force-with-lease wenn die Aktion Committe &amp;&amp; Pushe mit der Amend Option aktiviert ausgeführt wird.</target>
@@ -88,11 +78,6 @@ Diese Aktion wird dann ohne Warnung beim Auschecken eines Branch angewendet.</ta
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>Committen</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>Updates</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3647,11 +3632,6 @@ Wollen Sie weiter machen?</target>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;Änderungshistorie</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>Auf &amp;Updates prüfen</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9736,70 +9716,6 @@ Der Abbrechen Buttons macht darum KEINE Änderungen rückgängig.</target>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>Name</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="de">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>Auf Updates prüfen</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>Suche nach Updates</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>Update downloaden...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>Download fehlgeschlagen</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>Update konnte nicht heruntergeladen werden.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Es ist eine neue Version {0} von Gitanas verfügbar</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>Keine Updates gefunden</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>Jetzt &amp;Updaten</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>Versionshinweise und Änderungs&amp;protokoll anzeigen</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;Direkter Download</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>Erforderlich: .NET {0} Desktop Runtime {1} oder höher {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>Laden Sie die neueste .NET Desktop Runtime herunter. Lesen Sie die Dokumentation, wie Sie die .NET-Runtime ohne Administratorrechte installieren können.</target>
         
       </trans-unit>
     </body>

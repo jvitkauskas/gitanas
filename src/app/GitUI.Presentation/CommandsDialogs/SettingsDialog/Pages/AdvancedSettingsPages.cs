@@ -25,9 +25,6 @@ public sealed class AdvancedSettingsPageStrings : ViewStrings
         SymbolToUse = Add("label1", "Text", "Symbol to use:");
         Commit = Add("grpCommit", "Text", "Commit");
         CommitAndPushForcedWhenAmend = Add("chkCommitAndPushForcedWhenAmend", "Text", "Push forced with lease when Commit && Push action is performed with Amend option checked");
-        Updates = Add("grpUpdates", "Text", "Updates");
-        CheckForUpdates = Add("chkCheckForUpdates", "Text", "Check for updates weekly");
-        CheckForRCVersions = Add("chkCheckForRCVersions", "Text", "Check for release candidate versions");
     }
 
     public TranslatedText Title { get; }
@@ -57,12 +54,6 @@ public sealed class AdvancedSettingsPageStrings : ViewStrings
     public TranslatedText Commit { get; }
 
     public TranslatedText CommitAndPushForcedWhenAmend { get; }
-
-    public TranslatedText Updates { get; }
-
-    public TranslatedText CheckForUpdates { get; }
-
-    public TranslatedText CheckForRCVersions { get; }
 }
 
 /// <summary>Port of <c>AdvancedSettingsPage</c> (global settings).</summary>
@@ -76,9 +67,6 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
     }
 
     public AdvancedSettingsPageStrings Strings { get; }
-
-    // The current release feed supplies Windows installers.
-    public bool CanConfigureUpdates => OperatingSystem.IsWindows();
 
     public override string Title => Strings.Title.Text;
 
@@ -102,12 +90,6 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
     public partial bool AlwaysShowAdvOpt { get; set; }
 
     [ObservableProperty]
-    public partial bool CheckForUpdates { get; set; }
-
-    [ObservableProperty]
-    public partial bool CheckForRCVersions { get; set; }
-
-    [ObservableProperty]
     public partial bool UseConsoleEmulator { get; set; }
 
     /// <summary>As <c>chkAutoNormaliseBranchName</c>, enabling <c>cboAutoNormaliseSymbol</c>.</summary>
@@ -126,8 +108,6 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
         UseLocalChangesAction = AppSettings.UseDefaultCheckoutBranchAction;
         DontShowHelpImages = AppSettings.DontShowHelpImages;
         AlwaysShowAdvOpt = AppSettings.AlwaysShowAdvOpt;
-        CheckForUpdates = AppSettings.CheckForUpdates;
-        CheckForRCVersions = AppSettings.CheckForReleaseCandidates;
         UseConsoleEmulator = AppSettings.UseConsoleEmulatorForCommands.Value;
         AutoNormaliseBranchName = AppSettings.AutoNormaliseBranchName;
         AutoNormaliseSymbol = AutoNormaliseSymbols.FirstOrDefault(s => s.Value == AppSettings.AutoNormaliseSymbol) ?? AutoNormaliseSymbol;
@@ -142,12 +122,6 @@ public sealed partial class AdvancedSettingsPageViewModel : SettingsPageWithServ
         AppSettings.UseDefaultCheckoutBranchAction = UseLocalChangesAction;
         AppSettings.DontShowHelpImages = DontShowHelpImages;
         AppSettings.AlwaysShowAdvOpt = AlwaysShowAdvOpt;
-        if (CanConfigureUpdates)
-        {
-            AppSettings.CheckForUpdates = CheckForUpdates;
-            AppSettings.CheckForReleaseCandidates = CheckForRCVersions;
-        }
-
         AppSettings.UseConsoleEmulatorForCommands.Value = UseConsoleEmulator;
         AppSettings.AutoNormaliseBranchName = AutoNormaliseBranchName;
         AppSettings.AutoNormaliseSymbol = (AutoNormaliseSymbol ?? AutoNormaliseSymbols[0]).Value;

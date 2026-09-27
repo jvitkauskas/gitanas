@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 اگر فعال ہو تو کوئی بھی غیر قانونی علامت آپ کی پسند کی متبادل علامت سے تبدیل کر دی جائے گی۔</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>ریلیز کینڈیڈیٹ ورژنز چیک کریں</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>ہفتہ وار اپڈیٹس چیک کریں</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>جب &apos;ترمیم کریں&apos; کا آپشن چیک ہو اور &apos;کمٹ &amp;&amp; پش&apos; ایکشن انجام دیا جائے تو lease کے ساتھ زبردستی پش کریں</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>کمٹ</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>اپڈیٹس</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3646,11 +3631,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;چینج لاگ</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>&amp;اپ ڈیٹس کی جانچ کریں</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9726,70 +9706,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>نام</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="ur">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>اپ ڈیٹ کی جانچ کریں</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>اپ ڈیٹس تلاش کی جا رہی ہیں</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>اپ ڈیٹ ڈاؤن لوڈ ہو رہا ہے...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>ڈاؤن لوڈ ناکام ہو گیا</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>اپ ڈیٹ ڈاؤن لوڈ کرنے میں ناکامی۔</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>Gitanas کا نیا ورژن {0} دستیاب ہے</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>کوئی اپ ڈیٹ نہیں ملی</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>ابھی &amp;اپ ڈیٹ کریں</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>ریلیز نوٹس اور چینج &amp;لاگ دکھائیں</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;براہ راست ڈاؤن لوڈ</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>ضروری: .NET {0} ڈیسک ٹاپ رن ٹائم {1} یا اس کے بعد کا {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>تازہ ترین .NET ڈیسک ٹاپ رن ٹائم ڈاؤن لوڈ کریں۔ انتظامی اختیارات کے بغیر .NET رن ٹائم نصب کرنے کے طریقے کے لیے دستاویزات ملاحظہ کریں۔</target>
         
       </trans-unit>
     </body>

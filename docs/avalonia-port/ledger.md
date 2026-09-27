@@ -474,3 +474,18 @@ skipped on Linux. General settings rendering was checked after removing the grou
 The dependency manifest and application output contain no Application Insights
 libraries. Translation XML and installer component references were checked; the
 Windows MSI was not built on this Linux host.
+
+### Application updater removed (2026-09-27)
+
+Removed the update checker and release-feed client, update dialog, Help menu
+command, Advanced settings group, persisted-setting accessors, and unused release
+parsers. The obsolete updater icons, translation entries and tests were removed
+as well. Existing saved update preferences are ignored. There is no application
+update check, download or install action while Gitanas has no update distribution
+mechanism. Git repository operations and manual bug reporting are unaffected.
+
+Validation: the Release solution build passed with no warnings or errors. All
+1,281 remaining Avalonia tests, 1,113 settings cases and two embedded-icon checks
+passed; two Windows-only UI cases and one Windows-only icon case were skipped.
+Translation files parse, and the source scan finds no remaining application updater
+entry points or release-feed requests.

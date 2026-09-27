@@ -78,7 +78,6 @@
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\BrowseFileExplorer.png" LogicalName="GitUI.Icons.BrowseFileExplorer.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\BugReport.png" LogicalName="GitUI.Icons.BugReport.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\Changelog.png" LogicalName="GitUI.Icons.Changelog.png" />
-    <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\CheckForUpdates.png" LogicalName="GitUI.Icons.CheckForUpdates.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\CherryPick.png" LogicalName="GitUI.Icons.CherryPick.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\CleanupRepo.png" LogicalName="GitUI.Icons.CleanupRepo.png" />
     <EmbeddedResource Include="..\GitUI.Avalonia\Assets\Modern\Light\ClearLog.png" LogicalName="GitUI.Icons.ClearLog.png" />

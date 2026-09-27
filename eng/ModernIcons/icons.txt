@@ -240,4 +240,3 @@ Translate = comment-discussion
 BugReport = bug
 Bug = bug
 Develop = code
-CheckForUpdates = sync

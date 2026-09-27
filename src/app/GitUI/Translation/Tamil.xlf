@@ -38,16 +38,6 @@ If enabled, any illegal symbols will be replaced with the replacement symbol of 
 இயக்கப்பட்டால், ஏதேனும் ஒவ்வாதச் சின்னங்கள் நீங்கள் விரும்பும் மாற்றுச் சின்னத்துடன் மாற்றப்படும்.</target>
         
       </trans-unit>
-      <trans-unit id="chkCheckForRCVersions.Text">
-        <source>Check for release candidate versions</source>
-        <target>வெளியீட்டு வேட்பாளர் பதிப்புகளைச் சரிபார்</target>
-        
-      </trans-unit>
-      <trans-unit id="chkCheckForUpdates.Text">
-        <source>Check for updates weekly</source>
-        <target>வாரந்தோறும் புதுப்பிப்புகளைச் சரிபார்</target>
-        
-      </trans-unit>
       <trans-unit id="chkCommitAndPushForcedWhenAmend.Text">
         <source>Push forced with lease when Commit &amp;&amp; Push action is performed with Amend option checked</source>
         <target>உறுதிமொழி &amp;&amp; தள்ளு செயல்படும்போது திருத்த விருப்பம் இயக்கப்பட்டால் குத்தகைக்கு கட்டாயம் தள்ளு பயன்படுத்தபடும்</target>
@@ -88,11 +78,6 @@ This action will be performed without warning while checking out branch.</source
       <trans-unit id="grpCommit.Text">
         <source>Commit</source>
         <target>உறுதிமொழி</target>
-        
-      </trans-unit>
-      <trans-unit id="grpUpdates.Text">
-        <source>Updates</source>
-        <target>புதுப்பிகள்</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
@@ -3640,11 +3625,6 @@ Do you want to continue?</source>
       <trans-unit id="changelogToolStripMenuItem.Text">
         <source>&amp;Changelog</source>
         <target>&amp;மாற்றம்பதிவு</target>
-        
-      </trans-unit>
-      <trans-unit id="checkForUpdatesToolStripMenuItem.Text">
-        <source>Check for &amp;updates</source>
-        <target>&amp;புதுப்பிகள் சரிபார்</target>
         
       </trans-unit>
       <trans-unit id="checkoutBranchToolStripMenuItem.Text">
@@ -9719,70 +9699,6 @@ Therefore the Cancel button does NOT revert any changes made.</source>
       <trans-unit id="nameDataGridViewTextBoxColumn.HeaderText">
         <source>Name</source>
         <target>பெயர்</target>
-        
-      </trans-unit>
-    </body>
-  </file>
-  <file datatype="plaintext" original="FormUpdates" source-language="en" target-language="ta">
-    <body>
-      <trans-unit id="$this.Text">
-        <source>Check for update</source>
-        <target>புதுப்பிப்புக்காகச் சரிபார்க்கவும்</target>
-        
-      </trans-unit>
-      <trans-unit id="UpdateLabel.Text">
-        <source>Searching for updates</source>
-        <target>புதுப்பிப்புகளைத் தேடுகிறது</target>
-        
-      </trans-unit>
-      <trans-unit id="_downloadingUpdate.Text">
-        <source>Downloading update...</source>
-        <target>புதுப்பிப்பைப் பதிவிறக்குகிறது...</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorHeading.Text">
-        <source>Download Failed</source>
-        <target>பதிவிறக்க முடியவில்லை</target>
-        
-      </trans-unit>
-      <trans-unit id="_errorMessage.Text">
-        <source>Failed to download an update.</source>
-        <target>ஒரு புதுப்பிப்பைப் பதிவிறக்குவதில் தோல்வி.</target>
-        
-      </trans-unit>
-      <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Gitanas available</source>
-        <target>அறிவிலிநீட்டிப்புகளின் புதிய பதிப்பு {0} உள்ளது</target>
-        
-      </trans-unit>
-      <trans-unit id="_noUpdatesFound.Text">
-        <source>No updates found</source>
-        <target>மேம்படுகள் எதுவும் இல்லை</target>
-        
-      </trans-unit>
-      <trans-unit id="btnUpdateNow.Text">
-        <source>&amp;Update Now</source>
-        <target>&amp;இப்போது மேம்படுத்து</target>
-        
-      </trans-unit>
-      <trans-unit id="linkChangeLog.Text">
-        <source>Show release notes and change &amp;log</source>
-        <target>வெளியீட்டுக் குறிப்புகளைக் காட்டி பதிவை மாற்று</target>
-        
-      </trans-unit>
-      <trans-unit id="linkDirectDownload.Text">
-        <source>&amp;Direct Download</source>
-        <target>&amp;நேரடி பதிவிறக்கம்</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.Text">
-        <source>Required: .NET {0} Desktop Runtime {1} or later {2}.x</source>
-        <target>தேவை: .வலை {0} டெஸ்க்டாப் இயக்க நேரம் {1} அல்லது அதற்குப் பிறகு {2}.x</target>
-        
-      </trans-unit>
-      <trans-unit id="linkRequiredDotNetRuntime.ToolTipText">
-        <source>Download latest .NET Desktop Runtime. See docs on how to install .NET runtime without administrative privileges.</source>
-        <target>அண்மைகால .வலை பணிமேடை இயக்க நேரத்தைப் பதிவிறக்கவும். நிர்வாகச் சலுகைகள் இல்லாமல் .வலை இயக்க நேரத்தை எவ்வாறு நிறுவுவது என்பது குறித்த ஆவணத்தைப் பார்க்கவும்.</target>
         
       </trans-unit>
     </body>

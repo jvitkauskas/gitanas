@@ -19,6 +19,9 @@ public partial class BrowseWindow
     /// <summary>The height of the title bar with the toolbar in it (the unified toolbar of macOS).</summary>
     private const double ModernTitleBarHeight = 52;
 
+    /// <summary>The sidebar inset below the macOS window buttons.</summary>
+    private const double SidebarTitleBarHeight = 32;
+
     /// <summary>The room of the window buttons of macOS (close, minimize, zoom) at the left of the title bar.</summary>
     private const double TrafficLightsWidth = 78;
 
@@ -63,7 +66,7 @@ public partial class BrowseWindow
 
         // The sidebar: the left panel on the material of the sidebar, below the title bar.
         mainSplit.Children.Remove(leftColumn);
-        Border sidebarTitleBar = new() { Height = ModernTitleBarHeight, VerticalAlignment = VerticalAlignment.Top, Background = Brushes.Transparent };
+        Border sidebarTitleBar = new() { Height = SidebarTitleBarHeight, VerticalAlignment = VerticalAlignment.Top, Background = Brushes.Transparent };
         Border sidebar = new() { Classes = { "modernSidebar" }, Child = new Panel { Children = { sidebarTitleBar, leftColumn } } };
         mainSplit.Children.Insert(0, sidebar);
         leftPanel.FindControl<ListBox>("tree")?.SetValue(ListBox.BackgroundProperty, Brushes.Transparent);
@@ -82,7 +85,7 @@ public partial class BrowseWindow
             WindowDecorationProperties.SetElementRole(sidebarTitleBar, WindowDecorationsElementRole.TitleBar);
             TransparencyLevelHint = [WindowTransparencyLevel.AcrylicBlur, WindowTransparencyLevel.Blur, WindowTransparencyLevel.None];
             Background = Brushes.Transparent;
-            leftColumn.Margin = new Thickness(0, ModernTitleBarHeight, 0, 0);
+            leftColumn.Margin = new Thickness(0, SidebarTitleBarHeight, 0, 0);
 
             // Without the sidebar, the toolbar leaves the room of the window buttons.
             sidebar.GetObservable(BoundsProperty).Subscribe(bounds =>

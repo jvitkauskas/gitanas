@@ -48,4 +48,6 @@ In the order of their value for the effort:
 
 Checked on macOS, light and dark. Also checked on Linux (GNOME and KDE, native Wayland) and Windows 10, light and
 dark: see [the visual QA report](QA-Modern-Theme-2026-09-27.md) for screenshots, test results, minor contrast observations
-and the limits of that coverage. Linux and Windows retain their system title bars.
+and the limits of that coverage. Windows retains its native title bar, with a Modern-only dark-mode workaround on
+Windows 10. Modern on Wayland uses Avalonia-drawn decorations so the title bar follows the app colors on KDE as well
+as GNOME; other control themes retain compositor decorations. X11 decoration behavior is unchanged.

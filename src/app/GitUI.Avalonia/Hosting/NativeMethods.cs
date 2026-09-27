@@ -17,6 +17,7 @@ internal static class NativeMethods
     public const uint WM_NCHITTEST = 0x0084;
     public const uint SWP_NOSIZE = 0x0001;
     public const uint SWP_NOMOVE = 0x0002;
+    public const uint WM_NCACTIVATE = 0x0086;
     public const nint HTLEFT = 10;
     public const nint HTRIGHT = 11;
     public const nint HTTOP = 12;
@@ -49,6 +50,12 @@ internal static class NativeMethods
     }
 
     private delegate bool EnumWindowsProc(nint hWnd, nint lParam);
+
+    [DllImport("dwmapi.dll")]
+    public static extern int DwmSetWindowAttribute(nint hWnd, int attribute, ref int value, int size);
+
+    [DllImport("user32.dll")]
+    public static extern nint SendMessage(nint hWnd, uint message, nint wParam, nint lParam);
 
     [DllImport("user32.dll")]
     [return: MarshalAs(UnmanagedType.Bool)]

@@ -3,6 +3,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Platform;
+using Avalonia.Threading;
 using Avalonia.VisualTree;
 using GitUI.Presentation;
 using GitUI.Presentation.Services;
@@ -41,6 +42,7 @@ public class DialogWindow : Window
         if (OperatingSystem.IsWindows())
         {
             Win32Properties.AddWndProcHookCallback(this, WndProcHook);
+            ActualThemeVariantChanged += (_, _) => UpdateWindows10TitleBar();
         }
 
         // As ProcessCmdKey: the hotkeys come before the focused control (which gets the key if the command is not executed).
@@ -127,6 +129,30 @@ public class DialogWindow : Window
         base.OnDataContextChanged(e);
     }
 
+    private void UpdateWindows10TitleBar()
+    {
+        // Avalonia 12.1 applies this attribute only on Windows 11. Windows 10 20H1+ also supports it.
+        // Keep the workaround local to Modern and leave Windows 11 to the backend. Never pass a synthetic
+        // Wayland owner ID (or a headless test handle) to DWM.
+        if (GitExtensionsAvaloniaApp.IsModern
+            && OperatingSystem.IsWindowsVersionAtLeast(10, 0, 19041)
+            && !OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000)
+            && TryGetPlatformHandle() is { Handle: not 0, HandleDescriptor: "HWND" } handle)
+        {
+            const int DWMWA_USE_IMMERSIVE_DARK_MODE = 20;
+            int dark = ActualThemeVariant == global::Avalonia.Styling.ThemeVariant.Dark ? 1 : 0;
+
+            // Cosmetic best effort: an unsupported DWM attribute must not prevent a window from opening.
+            if (NativeMethods.DwmSetWindowAttribute(handle.Handle, DWMWA_USE_IMMERSIVE_DARK_MODE, ref dark, sizeof(int)) == 0)
+            {
+                // Repaint both caption states without changing keyboard focus or activating the window.
+                // SWP_FRAMECHANGED alone leaves a newly opened active dialog's caption light on Windows 10.
+                _ = NativeMethods.SendMessage(handle.Handle, NativeMethods.WM_NCACTIVATE, IsActive ? 0 : 1, 0);
+                _ = NativeMethods.SendMessage(handle.Handle, NativeMethods.WM_NCACTIVATE, IsActive ? 1 : 0, 0);
+            }
+        }
+    }
+
     protected override void OnOpened(EventArgs e)
     {
         // Cancel, OK on macOS (before the focus goes to the default button).
@@ -161,6 +187,12 @@ public class DialogWindow : Window
         }
 
         RememberNormalBounds();
+
+        // Refresh after the host has finished opening/centering a modal window and native messages settle.
+        if (OperatingSystem.IsWindows())
+        {
+            Dispatcher.UIThread.Post(UpdateWindows10TitleBar, DispatcherPriority.Loaded);
+        }
     }
 
     protected override void OnClosing(WindowClosingEventArgs e)

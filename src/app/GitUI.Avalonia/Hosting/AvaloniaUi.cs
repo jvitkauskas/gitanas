@@ -175,6 +175,9 @@ public static class AvaloniaUi
             return;
         }
 
+        // The control theme also chooses Wayland decorations, before the backend is initialized.
+        AvaloniaUiOptions options = getOptions();
+
         // WinForms installs its SynchronizationContext on the UI thread, and JoinableTaskFactory captured it at
         // startup. Avalonia's setup replaces it, so restore it: WinForms stays the owner of the process.
         SynchronizationContext? winFormsContext = SynchronizationContext.Current;
@@ -187,6 +190,14 @@ public static class AvaloniaUi
                 .UseHarfBuzz();
             if (ShouldUseWayland(OperatingSystem.IsLinux(), Environment.GetEnvironmentVariable("WAYLAND_DISPLAY"), Environment.GetEnvironmentVariable("GITEXTENSIONS_USE_WAYLAND")))
             {
+                // KWin's server decorations do not follow the application's color theme. Modern uses the same
+                // themed Avalonia decorations as GNOME; other control themes keep the compositor's preference.
+#pragma warning disable AVALONIA_WAYLAND_FORCE_CSD // Needed for Modern's light/dark title bars on SSD compositors.
+                builder.With(new WaylandPlatformOptions
+                {
+                    ForceDrawnDecorations = GitExtensionsAvaloniaApp.ResolveControlTheme(options.ControlTheme) == "modern",
+                });
+#pragma warning restore AVALONIA_WAYLAND_FORCE_CSD
                 builder.UseWaylandWithFallback();
             }
 
@@ -206,7 +217,7 @@ public static class AvaloniaUi
             SynchronizationContext.SetSynchronizationContext(winFormsContext);
         }
 
-        ((GitExtensionsAvaloniaApp)Application.Current!).ApplyOptions(getOptions());
+        ((GitExtensionsAvaloniaApp)Application.Current!).ApplyOptions(options);
         Dispatcher.UIThread.UnhandledException += (_, e) =>
         {
             if (UnhandledExceptionHandler is { } report)

@@ -12,7 +12,7 @@
           <SolidColorBrush x:Key="ModernSidebarBrush" Color="#C8EBEBEF" />
           <SolidColorBrush x:Key="ModernToolbarBrush" Color="#F0F6F6F8" />
           <SolidColorBrush x:Key="ModernSeparatorBrush" Color="#1F000000" />
-          <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#8A000000" />
+          <SolidColorBrush x:Key="ModernSecondaryTextBrush" Color="#99000000" />
           <SolidColorBrush x:Key="ModernHoverBrush" Color="#0F000000" />
           <SolidColorBrush x:Key="ModernTrackBrush" Color="#0D000000" />
           <SolidColorBrush x:Key="ModernTextBrush" Color="#1D1D1F" />
@@ -53,7 +53,6 @@
   </Style>
   <Style Selector="TabControl:not(#PART_TabControl) TabItem:not(:selected) /template/ ContentPresenter#PART_ContentPresenter">
     <Setter Property="Foreground" Value="{DynamicResource ModernSecondaryTextBrush}" />
-    <Setter Property="Opacity" Value="0.85" />
   </Style>
   <Style Selector="TabControl:not(#PART_TabControl) TabItem:pointerover /template/ Border#PART_LayoutRoot">
     <Setter Property="Background" Value="{DynamicResource ModernHoverBrush}" />

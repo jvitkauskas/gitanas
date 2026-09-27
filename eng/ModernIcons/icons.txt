@@ -218,6 +218,7 @@ LayoutFooterTab = rows
 
 # Tools, settings and help
 Console = terminal
+GitLogo16 = git-logo
 GitCommandLog = log
 ClearLog = circle-slash
 Settings = gear

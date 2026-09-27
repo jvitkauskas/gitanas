@@ -10,8 +10,13 @@ using SkiaSharp;
 
 string here = Path.GetDirectoryName(Path.GetFullPath(ThisFile()))!;
 string target = Path.GetFullPath(Path.Combine(here, "../../src/app/GitUI.Avalonia/Assets/Modern"));
-Dictionary<string, Octicon> octicons = JsonSerializer.Deserialize<Dictionary<string, Octicon>>(
-    File.ReadAllText(Path.Combine(here, "octicons-16.json")), new JsonSerializerOptions { PropertyNameCaseInsensitive = true })!;
+// The Octicons, and the icons of custom-16.json (e.g. the Git mark, which Octicons has not), on the same 16 px grid.
+JsonSerializerOptions json = new() { PropertyNameCaseInsensitive = true };
+Dictionary<string, Octicon> octicons = JsonSerializer.Deserialize<Dictionary<string, Octicon>>(File.ReadAllText(Path.Combine(here, "octicons-16.json")), json)!;
+foreach ((string name, Octicon icon) in JsonSerializer.Deserialize<Dictionary<string, Octicon>>(File.ReadAllText(Path.Combine(here, "custom-16.json")), json)!)
+{
+    octicons.Add(name, icon);
+}
 
 Dictionary<string, Dictionary<string, SKColor>> palettes = new()
 {
@@ -89,6 +94,12 @@ Console.WriteLine($"{count} icons in {target}");
 
 static void Draw(SKCanvas canvas, Octicon icon, SKColor color)
 {
+    bool cuts = icon.Cuts is not null || icon.CutStrokes is not null;
+    if (cuts)
+    {
+        canvas.SaveLayer();
+    }
+
     using SKPaint paint = new() { Color = color, IsAntialias = true, Style = SKPaintStyle.Fill };
     foreach (string data in icon.Paths)
     {
@@ -96,8 +107,25 @@ static void Draw(SKCanvas canvas, Octicon icon, SKColor color)
         path.FillType = icon.EvenOdd ? SKPathFillType.EvenOdd : SKPathFillType.Winding;
         canvas.DrawPath(path, paint);
     }
+
+    // The shapes cut out of a custom icon: filled, and stroked (1.25 wide).
+    using SKPaint cut = new() { BlendMode = SKBlendMode.Clear, IsAntialias = true, Style = SKPaintStyle.Fill };
+    using SKPaint cutStroke = new() { BlendMode = SKBlendMode.Clear, IsAntialias = true, Style = SKPaintStyle.Stroke, StrokeWidth = 1.25f, StrokeCap = SKStrokeCap.Round };
+    foreach ((string[]? paths, SKPaint clear) in new[] { (icon.Cuts, cut), (icon.CutStrokes, cutStroke) })
+    {
+        foreach (string data in paths ?? [])
+        {
+            using SKPath path = SKPath.ParseSvgPathData(data);
+            canvas.DrawPath(path, clear);
+        }
+    }
+
+    if (cuts)
+    {
+        canvas.Restore();
+    }
 }
 
 static string ThisFile([System.Runtime.CompilerServices.CallerFilePath] string path = "") => path;
 
-record Octicon(bool EvenOdd, string[] Paths);
+record Octicon(bool EvenOdd, string[] Paths, string[]? Cuts = null, string[]? CutStrokes = null);

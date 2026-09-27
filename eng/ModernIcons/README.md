@@ -2,7 +2,8 @@
 
 `icons.txt` maps the icons of Git Extensions (`src/app/GitUI.Avalonia/Assets/<name>.png`) to
 [Octicons](https://github.com/primer/octicons) (v19.38.0, MIT, see `OCTICONS-LICENSE`), with a color and an optional badge.
-`octicons-16.json` holds the 16 px path data of the Octicons it uses. After a change:
+`octicons-16.json` holds the 16 px path data of the Octicons it uses; `custom-16.json` the icons that Octicons has not, drawn
+on the same grid (the Git mark, after the Git logo by Jason Long, CC BY 3.0), with the shapes cut out of them. After a change:
 
 ```sh
 dotnet run eng/ModernIcons/Generate.cs

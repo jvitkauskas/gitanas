@@ -604,8 +604,8 @@ Las ramas serán eliminadas en el servidor remoto &apos;{0}&apos;. Esta acción 
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Nota: Es necesario reiniciar Git Extensions para que el token sea tenido en cuenta.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Nota: Es necesario reiniciar Gitanas para que el token sea tenido en cuenta.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

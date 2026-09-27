@@ -4,7 +4,7 @@
     <TargetFramework>$(PortableTargetFramework)</TargetFramework>
     <OutputType>WinExe</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ApplicationIcon>Resources\git-extensions-logo.ico</ApplicationIcon>
+    <ApplicationIcon>..\..\..\setup\assets\Logo\gitanas\gitanas.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

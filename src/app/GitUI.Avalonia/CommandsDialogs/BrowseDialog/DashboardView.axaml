@@ -84,7 +84,10 @@
   <Grid Name="layout" ColumnDefinitions="*,213,12*,*" Background="{DynamicResource DashboardBackgroundBrush}">
     <DockPanel Grid.Column="1">
       <Border Name="logoPanel" DockPanel.Dock="Top" Height="70" Background="{DynamicResource DashboardLogoBackBrush}" Padding="14,15,14,11">
-        <Image Source="avares://GitUI.Avalonia/Assets/GitExtensionsLogoWide.png" Width="185" Height="44" Stretch="Uniform" HorizontalAlignment="Left" />
+        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <Image Source="avares://GitUI.Avalonia/Assets/GitanasLogo256.png" Width="44" Height="44" />
+          <TextBlock Text="Gitanas" FontSize="27" FontWeight="SemiBold" VerticalAlignment="Center" />
+        </StackPanel>
       </Border>
       <Border Name="contributePanel" DockPanel.Dock="Bottom" Background="{DynamicResource DashboardContributeBackBrush}" Padding="20,20,20,30">
         <StackPanel>

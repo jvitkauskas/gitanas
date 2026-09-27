@@ -45,7 +45,7 @@ public class MessageBoxes : Translate
     private readonly TranslationString _shellNotFound = new("The selected shell is not installed, or is not on your path.");
 
     private readonly TranslationString _restartToApplyThemeCaption = new("Restart");
-    private readonly TranslationString _restartToApplyTheme = new("The theme is applied when Git Extensions starts.\nRestart Git Extensions now?");
+    private readonly TranslationString _restartToApplyTheme = new("The theme is applied when Gitanas starts.\nRestart Gitanas now?");
 
     private readonly TranslationString _gitToolNotFoundCaption = new("Program not found");
     private readonly TranslationString _gitToolNotFound = new(@"""{0}"" is not installed, or is not on your path.");
@@ -55,7 +55,7 @@ public class MessageBoxes : Translate
     private readonly TranslationString _submoduleDirectoryDoesNotExist = new(@"The directory ""{0}"" does not exist for submodule ""{1}"".");
     private readonly TranslationString _directoryDoesNotExist = new(@"The directory ""{0}"" does not exist.");
     private readonly TranslationString _cannotOpenSubmoduleCaption = new("Cannot open submodule");
-    private readonly TranslationString _cannotOpenGitExtensionsCaption = new("Cannot open Git Extensions");
+    private readonly TranslationString _cannotOpenGitExtensionsCaption = new("Cannot open Gitanas");
 
     private readonly TranslationString _confirmBranchCheckoutCaption = new("Confirm checkout");
     private readonly TranslationString _confirmBranchCheckout = new(@"Are you sure you want to check out branch ""{0}""?");

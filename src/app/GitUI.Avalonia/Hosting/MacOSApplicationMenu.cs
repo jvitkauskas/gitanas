@@ -13,7 +13,7 @@ namespace GitUI.Avalonia.Hosting;
 [SupportedOSPlatform("macos")]
 public static class MacOSApplicationMenu
 {
-    private static readonly NativeMenuItem _about = new("About Git Extensions");
+    private static readonly NativeMenuItem _about = new("About Gitanas");
     private static readonly NativeMenuItem _settings = new("Settings...") { Gesture = new KeyGesture(Key.OemComma, KeyModifiers.Meta) };
     private static readonly NativeMenu _menu = new() { Items = { _about, new NativeMenuItemSeparator(), _settings } };
     private static Action? _showAbout;

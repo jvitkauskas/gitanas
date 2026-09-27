@@ -35,7 +35,7 @@ function Generate-Changelog {
         [string] $pat
     )
 
-    $baseUri = "https://api.github.com/repos/gitextensions/gitextensions"
+    $baseUri = "https://api.github.com/repos/jvitkauskas/gitanas"
 
     # Use HttpClient with a per-request DefaultRequestHeaders so that the
     # Authorization header is set at the protocol level and cannot be dropped.
@@ -46,7 +46,7 @@ function Generate-Changelog {
     $httpClient = New-Object System.Net.Http.HttpClient
     $httpClient.DefaultRequestHeaders.Add('Accept', 'application/vnd.github+json')
     $httpClient.DefaultRequestHeaders.Add('X-GitHub-Api-Version', '2022-11-28')
-    $httpClient.DefaultRequestHeaders.Add('User-Agent', 'GitExtensions-PrepareRelease')
+    $httpClient.DefaultRequestHeaders.Add('User-Agent', 'Gitanas-PrepareRelease')
     if ($pat) {
         $httpClient.DefaultRequestHeaders.Authorization =
             New-Object System.Net.Http.Headers.AuthenticationHeaderValue('token', $pat)

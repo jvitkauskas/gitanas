@@ -2,12 +2,12 @@ using GitExtUtils;
 
 namespace GitExtUtilsTests;
 
-/// <summary>The executable of the application, also when it is started by the host of .NET (<c>dotnet GitExtensions.dll</c>).</summary>
+/// <summary>The executable of the application, also when it is started by the host of .NET (<c>dotnet Gitanas.dll</c>).</summary>
 public sealed class ApplicationInfoTests
 {
     private static readonly string AppFolder = Path.Join(Path.GetTempPath(), "app");
-    private static readonly string EntryAssembly = Path.Join(AppFolder, "GitExtensions.dll");
-    private static readonly string AppHost = Path.Join(AppFolder, OperatingSystem.IsWindows() ? "GitExtensions.exe" : "GitExtensions");
+    private static readonly string EntryAssembly = Path.Join(AppFolder, "Gitanas.dll");
+    private static readonly string AppHost = Path.Join(AppFolder, OperatingSystem.IsWindows() ? "Gitanas.exe" : "Gitanas");
 
     [Test]
     public void The_executable_of_the_process_is_the_executable()

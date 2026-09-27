@@ -503,7 +503,7 @@ public sealed partial class GitModule : IGitModule
     {
         GitArgumentBuilder arguments = new("notes") { "edit", commitId };
         string editor = GetEffectiveSetting("core.editor").ToLower();
-        bool createWindow = !editor.Contains("gitextensions") && !editor.Contains("notepad");
+        bool createWindow = !editor.Contains("gitanas", StringComparison.OrdinalIgnoreCase) && !editor.Contains("gitextensions") && !editor.Contains("notepad");
 
         return GitExecutable.RunCommand(arguments, createWindow: createWindow, throwOnErrorExit: false);
     }

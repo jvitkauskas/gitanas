@@ -511,8 +511,8 @@ Are you sure you want to continue?</source>
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Lưu ý: Cần khởi động lại Git Extensions để mã thông báo có hiệu lực.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Lưu ý: Cần khởi động lại Gitanas để mã thông báo có hiệu lực.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

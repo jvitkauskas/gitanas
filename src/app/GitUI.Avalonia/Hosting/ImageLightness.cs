@@ -46,7 +46,7 @@ public static class ImageLightness
     /// </summary>
     internal static bool IsModernIcon(Bitmap bitmap)
     {
-        if (!GitExtensionsAvaloniaApp.IsModern || bitmap.PixelSize.Width < 2 || bitmap.PixelSize.Height < 2)
+        if (bitmap.PixelSize.Width < 2 || bitmap.PixelSize.Height < 2)
         {
             return false;
         }

@@ -45,8 +45,8 @@ internal static class EmbeddedIcons
     public static byte[]? TryGet(string name) => _icons.GetOrAdd(name, Read);
 
     /// <summary>
-    ///  The icon <paramref name="name"/> for the Avalonia views: the name of their asset when GitUI.Avalonia has one (which a
-    ///  control theme may replace, as Modern does), else its PNG data.
+    ///  The icon <paramref name="name"/> for the Avalonia views: the name of their asset when GitUI.Avalonia has one (with a Modern light/dark
+    ///  variant where available), else its PNG data.
     /// </summary>
     public static object? ForAvalonia(string name)
         => AssetLoader.Exists(new Uri($"avares://GitUI.Avalonia/Assets/{name}.png")) ? name : TryGet(name);

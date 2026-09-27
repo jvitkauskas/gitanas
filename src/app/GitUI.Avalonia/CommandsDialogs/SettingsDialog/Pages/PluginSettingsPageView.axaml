@@ -55,7 +55,7 @@
             <!-- Without a store of the system (no secret service), the password is not written in clear anywhere. -->
             <TextBlock Name="credentialsForSessionOnly" Grid.Row="2" Grid.Column="1" Classes="info" TextWrapping="Wrap" Margin="0,4,0,0"
                        IsVisible="{Binding !Setting.IsPersistent}"
-                       Text="No secret service keeps passwords on this system: the password is kept until Git Extensions closes." />
+                       Text="No secret service keeps passwords on this system: the password is kept until Gitanas closes." />
           </Grid>
         </DataTemplate>
       </ItemsControl.DataTemplates>

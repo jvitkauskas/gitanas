@@ -93,54 +93,54 @@ for_window [title="^Git Extensions Wayland QA"] floating enable
                 assert {o["name"]: o["scale"] for o in outputs} == {"HEADLESS-1": 1.25, "HEADLESS-2": 1.5}, outputs
                 (output / "outputs.json").write_text(json.dumps(outputs, indent=2))
                 results = []
-                for theme in ("classic", "modern"):
-                    for color in ("light", "dark"):
-                        prefix = output / f"{theme}-{color}"
-                        report = prefix.with_suffix(".json")
-                        report.unlink(missing_ok=True)
-                        command = scratch / "command.txt"
-                        command.write_text("")
-                        sway("focus output HEADLESS-1")
-                        with prefix.with_suffix(".log").open("w") as app_log:
-                            probe_env = dict(env, WAYLAND_DEBUG="1")
-                            probe = subprocess.Popen(["dotnet", str(app), str(report), str(command), theme, color],
-                                                     env=probe_env, stdout=app_log, stderr=subprocess.STDOUT)
+                theme = "modern"
+                for color in ("light", "dark"):
+                    prefix = output / f"{theme}-{color}"
+                    report = prefix.with_suffix(".json")
+                    report.unlink(missing_ok=True)
+                    command = scratch / "command.txt"
+                    command.write_text("")
+                    sway("focus output HEADLESS-1")
+                    with prefix.with_suffix(".log").open("w") as app_log:
+                        probe_env = dict(env, WAYLAND_DEBUG="1")
+                        probe = subprocess.Popen(["dotnet", str(app), str(report), str(command), color],
+                                                 env=probe_env, stdout=app_log, stderr=subprocess.STDOUT)
 
-                            def snapshot(predicate):
-                                if probe.poll() is not None:
-                                    raise RuntimeError(f"Probe exited: {probe.returncode}; see {prefix}.log")
-                                try:
-                                    data = json.loads(report.read_text())
-                                except (FileNotFoundError, json.JSONDecodeError):
-                                    return None
-                                return data if predicate(data) else None
+                        def snapshot(predicate):
+                            if probe.poll() is not None:
+                                raise RuntimeError(f"Probe exited: {probe.returncode}; see {prefix}.log")
+                            try:
+                                data = json.loads(report.read_text())
+                            except (FileNotFoundError, json.JSONDecodeError):
+                                return None
+                            return data if predicate(data) else None
 
-                            first = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.25), "125% dialog")
-                            sway('[title="^Git Extensions Wayland QA$"] move container to output HEADLESS-2')
-                            second = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.5), "150% dialog")
-                            command.write_text("modal")
-                            modal = wait_for(lambda: snapshot(lambda d: d["Modal"] and d["ModalOwnedByRoot"] and not d["ModalTaskCompleted"]), "modal ownership")
-                            sway('[title="^Git Extensions Wayland QA modal$"] move container to output HEADLESS-1')
-                            moved_modal = wait_for(lambda: snapshot(lambda d: d["Modal"] and d["Modal"]["RenderScaling"] == 1.25), "125% modal")
-                            if shutil.which("grim"):
-                                subprocess.run(["grim", str(prefix.with_suffix(".png"))], env=env, check=True)
-                            command.write_text("close-modal")
-                            wait_for(lambda: snapshot(lambda d: d["Command"] == "close-modal" and d["Modal"] is None and d["ModalTaskCompleted"]), "modal completion")
-                            sway('[title="^Git Extensions Wayland QA$"] move container to output HEADLESS-1')
-                            returned = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.25), "125% round trip")
-                            for dimension in ("Width", "Height"):
-                                assert abs(first["Root"]["ClientSize"][dimension] - returned["Root"]["ClientSize"][dimension]) <= 1, (first, returned)
-                            command.write_text("stop")
-                            probe.wait(timeout=10)
-                            assert probe.returncode == 0, probe.returncode
-                            probe = None
-                        protocol = prefix.with_suffix(".log").read_text()
-                        assert "wl_surface" in protocol, "No native Wayland protocol observed"
-                        result = dict(theme=theme, color=color, first=first, second=second,
-                                      modal=modal, movedModal=moved_modal, returned=returned)
-                        prefix.with_suffix(".stages.json").write_text(json.dumps(result, indent=2))
-                        results.append(result)
-                        print(f"PASS {theme}/{color}: 125% → 150% → 125%, modal ownership and stable dialog size", flush=True)
+                        first = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.25), "125% dialog")
+                        sway('[title="^Git Extensions Wayland QA$"] move container to output HEADLESS-2')
+                        second = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.5), "150% dialog")
+                        command.write_text("modal")
+                        modal = wait_for(lambda: snapshot(lambda d: d["Modal"] and d["ModalOwnedByRoot"] and not d["ModalTaskCompleted"]), "modal ownership")
+                        sway('[title="^Git Extensions Wayland QA modal$"] move container to output HEADLESS-1')
+                        moved_modal = wait_for(lambda: snapshot(lambda d: d["Modal"] and d["Modal"]["RenderScaling"] == 1.25), "125% modal")
+                        if shutil.which("grim"):
+                            subprocess.run(["grim", str(prefix.with_suffix(".png"))], env=env, check=True)
+                        command.write_text("close-modal")
+                        wait_for(lambda: snapshot(lambda d: d["Command"] == "close-modal" and d["Modal"] is None and d["ModalTaskCompleted"]), "modal completion")
+                        sway('[title="^Git Extensions Wayland QA$"] move container to output HEADLESS-1')
+                        returned = wait_for(lambda: snapshot(lambda d: d["Root"]["RenderScaling"] == 1.25), "125% round trip")
+                        for dimension in ("Width", "Height"):
+                            assert abs(first["Root"]["ClientSize"][dimension] - returned["Root"]["ClientSize"][dimension]) <= 1, (first, returned)
+                        command.write_text("stop")
+                        probe.wait(timeout=10)
+                        assert probe.returncode == 0, probe.returncode
+                        probe = None
+                    protocol = prefix.with_suffix(".log").read_text()
+                    assert "wl_surface" in protocol, "No native Wayland protocol observed"
+                    result = dict(theme=theme, color=color, first=first, second=second,
+                                  modal=modal, movedModal=moved_modal, returned=returned)
+                    prefix.with_suffix(".stages.json").write_text(json.dumps(result, indent=2))
+                    results.append(result)
+                    print(f"PASS {theme}/{color}: 125% → 150% → 125%, modal ownership and stable dialog size", flush=True)
                 (output / "summary.json").write_text(json.dumps(dict(passed=len(results), results=results), indent=2))
             finally:
                 stop(probe)

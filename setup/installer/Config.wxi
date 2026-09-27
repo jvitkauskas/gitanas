@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
 
-  <?define Manufacturer = "Git Extensions Team" ?>
-  <?define ProductName = "Git Extensions" ?>
-  <?define InstallName = GitExtensions ?>
+  <?define Manufacturer = "Gitanas contributors" ?>
+  <?define ProductName = "Gitanas" ?>
+  <?define InstallName = Gitanas ?>
 
-  <?define AppRegKey = "Software\GitExtensions" ?>
-  <?define InstalledRegKey = "Software\GitExtensions\Installed" ?>
+  <?define AppRegKey = "Software\Gitanas" ?>
+  <?define InstalledRegKey = "Software\Gitanas\Installed" ?>
 
   <!-- upgrade code never changes -->
-  <?define UpgradeCode = "140e80ea-5053-42dc-ab0e-6ff0e49e6bcf" ?>
+  <?define UpgradeCode = "ac325a1c-30fa-4efa-a2ed-3f3c7d814951" ?>
 
   <!-- Prevent upgrade from previous versions. This is the minimum required version to install -->
   <?define MinSupportedVersion = '4.0.0' ?>

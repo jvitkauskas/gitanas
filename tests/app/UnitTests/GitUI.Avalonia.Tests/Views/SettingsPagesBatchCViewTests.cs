@@ -29,7 +29,7 @@ public sealed class SettingsPagesBatchCViewTests : HeadlessTest
         checklistHost.Results[ChecklistCheck.GcmDetected] = new(ChecklistState.Unset, "Obsolete git-credential-winstore.exe detected");
         FakeSources sources = new();
         SettingsDialogViewModel viewModel = new(new SettingsDialogStrings(), new FakeHost());
-        viewModel.AddPage(new GroupSettingsPageViewModel("Git Extensions", "GitExtensionsSettingsGroup"), null, "GitExtensionsLogo16", sources.None);
+        viewModel.AddPage(new GroupSettingsPageViewModel("Gitanas", "GitExtensionsSettingsGroup"), null, "GitanasLogo16", sources.None);
         viewModel.AddPage(new ChecklistSettingsPageViewModel(new ChecklistSettingsPageStrings(), checklistHost), "GitExtensionsSettingsGroup", null, sources.GlobalOnly, asRoot: true);
         viewModel.AddPage(new ScriptsSettingsPageViewModel(new ScriptsSettingsPageStrings(), new FakeScriptsHost()), "GitExtensionsSettingsGroup", "Console", sources.GlobalOnly);
         viewModel.AddPage(new HotkeysSettingsPageViewModel(new HotkeysSettingsPageStrings(), new FakeHotkeysHost()), "GitExtensionsSettingsGroup", "Hotkey", sources.GlobalOnly);
@@ -40,7 +40,7 @@ public sealed class SettingsPagesBatchCViewTests : HeadlessTest
         viewModel.Open("GitExtensionsSettingsGroup");
         Dispatcher.UIThread.RunJobs();
 
-        window.PageContent.GetLogicalDescendants().OfType<ChecklistSettingsPageView>().Should().ContainSingle("the checklist is the root of Git Extensions");
+        window.PageContent.GetLogicalDescendants().OfType<ChecklistSettingsPageView>().Should().ContainSingle("the checklist is the root of Gitanas");
         window.PageContent.GetLogicalDescendants().OfType<Button>().Select(b => b.Content).OfType<string>().Should().Contain(["Repair", "Save and rescan"]);
         SaveScreenshot(window.CaptureRenderedFrame(), $"settings-checklist-{theme}");
 

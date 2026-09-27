@@ -20,7 +20,7 @@ public interface IAboutDialogHost
 /// </summary>
 public sealed partial class AboutViewModel : DialogViewModel
 {
-    public const string HomepageUrl = "https://github.com/gitextensions/gitextensions";
+    public const string HomepageUrl = "https://github.com/jvitkauskas/gitanas";
     public const string IconsAuthorUrl = "http://p.yusukekamiyamane.com/";
 
     private readonly IAboutDialogHost _host;

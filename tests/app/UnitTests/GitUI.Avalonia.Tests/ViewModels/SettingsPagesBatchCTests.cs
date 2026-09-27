@@ -155,14 +155,14 @@ public sealed class SettingsPagesBatchCTests
         FakeChecklistHost host = new() { CheckAtStartup = true, FailingTranslationCheck = true };
         ChecklistSettingsPageViewModel page = new(new ChecklistSettingsPageStrings(), host);
         SettingsDialogViewModel dialog = new(new SettingsDialogStrings(), new FakeHost());
-        dialog.AddPage(new GroupSettingsPageViewModel("Git Extensions", "GitExtensionsSettingsGroup"), null, null, new FakeSources().None);
+        dialog.AddPage(new GroupSettingsPageViewModel("Gitanas", "GitExtensionsSettingsGroup"), null, null, new FakeSources().None);
         dialog.AddPage(page, "GitExtensionsSettingsGroup", null, new FakeSources().GlobalOnly, asRoot: true);
 
         host.Results[ChecklistCheck.MergeTool] = new(ChecklistState.Unset, "no merge tool");
         host.Results[ChecklistCheck.GitFound] = new(ChecklistState.NotRecommended, "old git");
         dialog.Open(null);
 
-        dialog.SelectedPage.Should().BeSameAs(page, "the checklist is the root page of Git Extensions");
+        dialog.SelectedPage.Should().BeSameAs(page, "the checklist is the root page of Gitanas");
         dialog.IsInstantSavePage.Should().BeTrue();
         ChecklistItem gitFound = page.Items[0];
         gitFound.IsVisible.Should().BeTrue();

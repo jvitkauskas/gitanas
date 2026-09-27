@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyDescription("GitExtensions UI")]
+[assembly: AssemblyDescription("Gitanas UI")]
 
 [assembly: InternalsVisibleTo("GitUI.Tests")]
 [assembly: InternalsVisibleTo("UI.IntegrationTests")]

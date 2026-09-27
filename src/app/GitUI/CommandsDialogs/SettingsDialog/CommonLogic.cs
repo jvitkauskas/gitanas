@@ -17,7 +17,7 @@ public sealed class CommonLogic : Translate
     internal const string AmbientGitEditorEnvVariableName = "EDITOR";
 
     private static readonly TranslationString _cantReadRegistry =
-        new("Git Extensions has insufficient permissions to check the registry.");
+        new("Gitanas has insufficient permissions to check the registry.");
 
     private readonly TranslationString _selectFile =
         new("Select file");

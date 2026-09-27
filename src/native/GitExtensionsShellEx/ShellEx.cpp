@@ -56,7 +56,7 @@ STDAPI DllRegisterServer()
     // If we're on NT, add ourselves to the list of approved shell extensions.
 
     // Note that you should *NEVER* use the overload of CRegKey::SetValue with
-    // 4 parameters.  It lets you set a value in one call, without having to 
+    // 4 parameters.  It lets you set a value in one call, without having to
     // call CRegKey::Open() first.  However, that version of SetValue() has a
     // bug in that it requests KEY_ALL_ACCESS to the key.  That will fail if the
     // user is not an administrator.  (The code should request KEY_WRITE, which
@@ -73,8 +73,8 @@ STDAPI DllRegisterServer()
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
 
-        lRet = reg.SetStringValue(_T("{3C16B20A-BA16-4156-916F-0A375ECFFE24}"), 
-            _T("GitExtensions2"));
+        lRet = reg.SetStringValue(_T("{c058a8b1-7307-5439-a0e8-676b85d54f6f}"),
+            _T("Gitanas"));
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
@@ -86,16 +86,16 @@ STDAPI DllRegisterServer()
         ///////////////////////
 
         reg.Create(HKEY_CLASSES_ROOT,
-            _T("*\\shellex\\ContextMenuHandlers\\GitExtensions2"));
+            _T("*\\shellex\\ContextMenuHandlers\\Gitanas"));
 
         lRet = reg.Open(HKEY_CLASSES_ROOT,
-            _T("*\\shellex\\ContextMenuHandlers\\GitExtensions2"),
+            _T("*\\shellex\\ContextMenuHandlers\\Gitanas"),
             KEY_SET_VALUE);
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
 
-        lRet = reg.SetStringValue(NULL, _T("{3C16B20A-BA16-4156-916F-0A375ECFFE24}"));
+        lRet = reg.SetStringValue(NULL, _T("{c058a8b1-7307-5439-a0e8-676b85d54f6f}"));
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
@@ -105,16 +105,16 @@ STDAPI DllRegisterServer()
         ///////////////////////
 
         reg.Create(HKEY_CLASSES_ROOT,
-            _T("Directory\\shellex\\ContextMenuHandlers\\GitExtensions2"));
+            _T("Directory\\shellex\\ContextMenuHandlers\\Gitanas"));
 
         lRet = reg.Open ( HKEY_CLASSES_ROOT,
-            _T("Directory\\shellex\\ContextMenuHandlers\\GitExtensions2"),
+            _T("Directory\\shellex\\ContextMenuHandlers\\Gitanas"),
             KEY_SET_VALUE);
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
 
-        lRet = reg.SetStringValue(NULL, _T("{3C16B20A-BA16-4156-916F-0A375ECFFE24}"));
+        lRet = reg.SetStringValue(NULL, _T("{c058a8b1-7307-5439-a0e8-676b85d54f6f}"));
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
@@ -124,16 +124,16 @@ STDAPI DllRegisterServer()
         ///////////////////////
 
         reg.Create(HKEY_CLASSES_ROOT,
-            _T("Directory\\Background\\shellex\\ContextMenuHandlers\\GitExtensions2"));
+            _T("Directory\\Background\\shellex\\ContextMenuHandlers\\Gitanas"));
 
         lRet = reg.Open ( HKEY_CLASSES_ROOT,
-            _T("Directory\\Background\\shellex\\ContextMenuHandlers\\GitExtensions2"),
+            _T("Directory\\Background\\shellex\\ContextMenuHandlers\\Gitanas"),
             KEY_SET_VALUE);
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
 
-        lRet = reg.SetStringValue(NULL, _T("{3C16B20A-BA16-4156-916F-0A375ECFFE24}"));
+        lRet = reg.SetStringValue(NULL, _T("{c058a8b1-7307-5439-a0e8-676b85d54f6f}"));
 
         if (ERROR_SUCCESS != lRet)
             return E_ACCESSDENIED;
@@ -164,13 +164,13 @@ STDAPI DllUnregisterServer()
 
         if (ERROR_SUCCESS == lRet)
         {
-            lRet = reg.DeleteValue(_T("{3C16B20A-BA16-4156-916F-0A375ECFFE24}"));
+            lRet = reg.DeleteValue(_T("{c058a8b1-7307-5439-a0e8-676b85d54f6f}"));
         }
     }
 
-    reg.DeleteSubKey(_T("*\\shellex\\ContextMenuHandlers\\GitExtensions2"));
-    reg.DeleteSubKey(_T("Directory\\shellex\\ContextMenuHandlers\\GitExtensions2"));
-    reg.DeleteSubKey(_T("Directory\\Background\\shellex\\ContextMenuHandlers\\GitExtensions2"));
+    reg.DeleteSubKey(_T("*\\shellex\\ContextMenuHandlers\\Gitanas"));
+    reg.DeleteSubKey(_T("Directory\\shellex\\ContextMenuHandlers\\Gitanas"));
+    reg.DeleteSubKey(_T("Directory\\Background\\shellex\\ContextMenuHandlers\\Gitanas"));
 
     return _Module.UnregisterServer(FALSE);
 }

@@ -718,8 +718,8 @@ Je vyžadován platný účet GitHub</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions se mohou integrovat se sestavovacími servery a poskytovat informace typu &apos;Continuous Integration&apos; podle odevzdání.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas se mohou integrovat se sestavovacími servery a poskytovat informace typu &apos;Continuous Integration&apos; podle odevzdání.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -889,8 +889,8 @@ Prosím ujistěte se že jsou linuxové nástroje nainstalovány (buď přes Git
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Není nastaven žádný jazyk pro program GitExtensions.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Není nastaven žádný jazyk pro program Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -924,18 +924,18 @@ Prosím ujistěte se že jsou linuxové nástroje nainstalovány (buď přes Git
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions je řádně zaregistrována.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas je řádně zaregistrována.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>V [Software\GitExtensions\InstallDir] je uložená neplatná složka instalace</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>V [Software\Gitanas\InstallDir] je uložená neplatná složka instalace</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>V registru chybí záznam [Software\GitExtensions\InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>V registru chybí záznam [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -986,8 +986,8 @@ Ujistěte se prosím, že je nainstalován Git for Windows, nebo nastavte správ
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Následující seznam kontroluje základní nastavení potřebná pro správnou funkci Git Extensions.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Následující seznam kontroluje základní nastavení potřebná pro správnou funkci Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1268,8 +1268,8 @@ Ujistěte se prosím, že je nainstalován Git for Windows, nebo nastavte správ
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="cs">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions nemá dostatečná oprávnění pro přístup k registru.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas nemá dostatečná oprávnění pro přístup k registru.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2978,8 +2978,8 @@ Budete moci odesílat. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions je open source. Zapojte se.</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas je open source. Zapojte se.</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3384,8 +3384,8 @@ compare with first:</source>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="cs">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4951,9 +4951,9 @@ Skutečný příkazový řádek (pokud není zaškrtnuto): --depth 1 --no-single
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Podporované parametry příkazové řádky pro
-gitex.cmd / gitex (umístěný ve stejné složce jako GitExtensions.exe):</target>
+gitex.cmd / gitex (umístěný ve stejné složce jako Gitanas.exe):</target>
         
       </trans-unit>
     </body>
@@ -6329,11 +6329,11 @@ Pokud si nejste jisti, prostě zavřete toto okno.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>Proměnná prostředí HOME nemíří na složku která obsahuje globální konfigurační soubor gitu:
 &quot;{0}&quot;
 
-Chcete aby vám program Git Extensions pomohl najít správnou složku?</target>
+Chcete aby vám program Gitanas pomohl najít správnou složku?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8294,14 +8294,14 @@ Pokud je nechcete ztratit, nejprve je uschovejte.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Otisk tohoto hostitele není v PuTTY zaregistrován.
 Toto způsobuje zaseknutí procesu, a proto je automaticky zastaven.
 
-Při otevření připojení odděleně od Gitu a Git Extensions lze otisk hostitele zaregistrovat.
+Při otevření připojení odděleně od Gitu a Gitanas lze otisk hostitele zaregistrovat.
 Otisk hostitele můžete také přidat ručně nebo spustit Testovací připojení z dialogu vzdálených repozitářů.
 
 Chcete zaregistrovat otisk hostitele a restartovat proces?</target>
@@ -9756,8 +9756,8 @@ Therefore the Cancel button does NOT revert any changes made.</source>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Je k dispozici nová verze GitExtensions {0}</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Je k dispozici nová verze Gitanas {0}</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10406,8 +10406,8 @@ měnit globální nastavení.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="cs">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10868,8 +10868,8 @@ nápovědu</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Nelze otevřít Git Extensions</target>
+        <source>Cannot open Gitanas</source>
+        <target>Nelze otevřít Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11086,7 +11086,7 @@ Tímto získáte podmodul na odevzdání určeném v nadřazeném projektu.</tar
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
         <target>Pro zobrazení nebo upravení nastavení zásuvného modulu zvolte jeden z uzlů.</target>
         
       </trans-unit>
@@ -13165,8 +13165,8 @@ Zkopírovat podrobnosti chyby do schránky?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Nepodařilo se přečíst &quot;{0}&quot; kvůli následující chybě:{1}{1}{2}{1}{1}Vzhledem k povaze tohoto problému nelze zaručit chování aplikace a musí být ukončena.{1}{1}Opravte prosím tento problém a znovu otevřete Git Extensions.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Nepodařilo se přečíst &quot;{0}&quot; kvůli následující chybě:{1}{1}{2}{1}{1}Vzhledem k povaze tohoto problému nelze zaručit chování aplikace a musí být ukončena.{1}{1}Opravte prosím tento problém a znovu otevřete Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13375,8 +13375,8 @@ Abyste mohli tento repozitář otevřít, musíte buď:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>Otevřít pomocí Git Extensions (&amp;O)</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>Otevřít pomocí Gitanas (&amp;O)</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13424,8 +13424,8 @@ Vzdálený repozitář: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Pokud si myslíte, že to způsobily Git Extensions, můžete nahlásit chybu, aby ji tým prošetřil.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Pokud si myslíte, že to způsobily Gitanas, můžete nahlásit chybu, aby ji tým prošetřil.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13434,8 +13434,8 @@ Vzdálený repozitář: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>aby to tým prošetřil - pokud si myslíte, že to způsobily Git Extensions</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>aby to tým prošetřil - pokud si myslíte, že to způsobily Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13459,8 +13459,8 @@ Vzdálený repozitář: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Restartovat Git Extensions</target>
+        <source>Restart Gitanas</source>
+        <target>Restartovat Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

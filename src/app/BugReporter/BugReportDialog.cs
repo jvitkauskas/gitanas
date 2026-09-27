@@ -23,7 +23,7 @@ namespace BugReporter;
 /// <summary>The bug report dialog (the Avalonia port of <c>BugReportForm</c>), for the application and for BugReporter.exe.</summary>
 public static class BugReportDialog
 {
-    private const string NewIssueUrl = "https://github.com/gitextensions/gitextensions/issues/new";
+    private const string NewIssueUrl = "https://github.com/jvitkauskas/gitanas/issues/new";
 
     private static readonly IErrorReportUrlBuilder _errorReportBodyBuilder = new ErrorReportUrlBuilder();
     private static readonly GitHubUrlBuilder _urlBuilder = new(_errorReportBodyBuilder);

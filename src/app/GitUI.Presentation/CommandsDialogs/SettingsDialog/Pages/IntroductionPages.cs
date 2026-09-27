@@ -24,7 +24,7 @@ public sealed class PluginRootIntroductionPageStrings : ViewStrings
         : base("PluginRootIntroductionPage")
     {
         Title = Add("$this", "Text", "Plugins Settings");
-        Text = Add("label1", "Text", "Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.");
+        Text = Add("label1", "Text", "Select one of the subnodes to view or edit the settings of a Gitanas Plugin.");
     }
 
     public TranslatedText Title { get; }

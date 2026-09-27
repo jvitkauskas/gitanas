@@ -4,7 +4,7 @@
                 xmlns:vm="using:GitUI.Presentation.CommandsDialogs"
                 x:Class="GitUI.Avalonia.CommandsDialogs.AboutWindow"
                 x:DataType="vm:AboutViewModel"
-                Title=" "
+                Title="About Gitanas"
                 Width="601"
                 SizeToContent="Height"
                 CanResize="False">
@@ -12,14 +12,14 @@
 
     <!-- Left: logo, call to action, donation badge -->
     <StackPanel Spacing="12" Margin="12">
-      <Image Source="avares://GitUI.Avalonia/Assets/git-extensions-logo-256px.png"
+      <Image Source="avares://GitUI.Avalonia/Assets/GitanasLogo256.png"
              Width="128" Height="128" HorizontalAlignment="Center" />
       <TextBlock Text="{Binding Strings.GetInvolved.Text}"
                  TextWrapping="Wrap" TextAlignment="Center" />
       <Button Name="donateButton" Classes="link" HorizontalAlignment="Center"
               Command="{Binding DonateCommand}"
-              AutomationProperties.Name="Donate">
-        <Image Source="avares://GitUI.Avalonia/Assets/Donate.png" Width="150" />
+              AutomationProperties.Name="Support Git Extensions" ToolTip.Tip="Support the original Git Extensions project">
+        <TextBlock Text="Support Git Extensions" TextWrapping="Wrap" TextAlignment="Center" />
       </Button>
     </StackPanel>
 
@@ -31,7 +31,7 @@
       </Button>
       <TextBlock Text="{Binding Strings.ProductDescription}" FontWeight="Bold" HorizontalAlignment="Center" />
 
-      <TextBlock Text="{Binding Strings.PresentedBy}" Margin="0,8,0,0" />
+      <TextBlock Text="{Binding Strings.PresentedBy}" TextWrapping="Wrap" Margin="0,8,0,0" />
       <Button Name="thanksToLink" Classes="link" HorizontalAlignment="Left"
               Command="{Binding ShowContributorsCommand}">
         <TextBlock Text="{Binding ThanksToText}" TextTrimming="CharacterEllipsis" />

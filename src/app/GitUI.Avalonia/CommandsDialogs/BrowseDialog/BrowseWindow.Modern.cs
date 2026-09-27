@@ -24,7 +24,7 @@ public partial class BrowseWindow
 
     private void ApplyModernLayout()
     {
-        if (!GitExtensionsAvaloniaApp.IsModern || Content is not DockPanel root)
+        if (Content is not DockPanel root)
         {
             return;
         }

@@ -26,7 +26,7 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_GITEXTENSIONS           ICON    "Resources\\git-extensions-logo.ico"
+IDI_GITEXTENSIONS           ICON    "..\\..\\..\\setup\\assets\\Logo\\gitanas\\gitanas.ico"
 IDI_ICONADDED               ICON    "Resources\\FileStatusAdded.ico"
 IDI_ICONBROWSEFILEEXPLORER  ICON    "Resources\\ShellExtensions.ico"
 IDI_ICONBRANCHCREATE        ICON    "Resources\\BranchCreate.ico"
@@ -69,10 +69,10 @@ BEGIN
         BEGIN
             VALUE "FileDescription", "Shell extensions for Windows Explorer"
             VALUE "FileVersion", "33.3.0"
-            VALUE "InternalName", "Git Extensions"
+            VALUE "InternalName", "Gitanas"
             VALUE "LegalCopyright", "Copyright 2008-2018"
             VALUE "OriginalFilename", "GitExtensionsShellEx.dll"
-            VALUE "ProductName", "Git Extensions"
+            VALUE "ProductName", "Gitanas"
             VALUE "ProductVersion", "33.33.0"
         END
     END

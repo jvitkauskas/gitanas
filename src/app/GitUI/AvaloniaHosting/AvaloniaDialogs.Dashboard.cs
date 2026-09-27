@@ -182,17 +182,17 @@ internal static partial class AvaloniaDialogs
                     commands.StartCloneDialog(Owner, null, false, OnGitModuleChanged);
                     break;
                 case DashboardLink.Develop:
-                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions");
+                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas");
                     break;
                 case DashboardLink.Donate:
                     OsShellUtil.OpenUrlInDefaultBrowser(DonationUrl);
                     break;
                 case DashboardLink.Translate:
-                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/wiki/Translations");
+                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas/blob/main/CONTRIBUTING.md");
                     break;
                 case DashboardLink.Issues:
                     UserEnvironmentInformation.CopyInformation();
-                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/issues");
+                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas/issues");
                     break;
             }
         });

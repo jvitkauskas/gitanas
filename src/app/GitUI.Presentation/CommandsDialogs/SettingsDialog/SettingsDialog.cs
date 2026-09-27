@@ -28,7 +28,7 @@ public sealed class SettingsDialogStrings : ViewStrings
         TypeToFind = Add("_settingsTypeToFind", "Text", "Type to find", category: "TranslatedStrings");
         GitGroup = Add("$this", "Title", "Git", category: "GitSettingsGroup");
         PluginsGroup = Add("$this", "Title", "Plugins", category: "PluginsSettingsGroup");
-        GitExtensionsGroup = Add("$this", "Title", "Git Extensions", category: "GitExtensionsSettingsGroup");
+        GitExtensionsGroup = Add("$this", "Title", "Gitanas", category: "GitExtensionsSettingsGroup");
         Error = Add("_error", "Text", "Error", category: "TranslatedStrings");
     }
 

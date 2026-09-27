@@ -51,7 +51,7 @@ public static partial class UserEnvironmentInformation
         // Build and open FormAbout design to make sure info still looks good if you change this code.
         StringBuilder sb = new();
 
-        sb.Append("- Git Extensions ").AppendLine(AppSettings.ProductVersion);
+        sb.Append("- Gitanas ").AppendLine(AppSettings.ProductVersion);
         sb.Append("- Build ").Append(_sha).AppendLine(_dirty ? " (Dirty)" : "");
         sb.Append("- Git ").AppendLine(gitVersionInfo);
         sb.Append("- ").Append(OperatingSystem.IsMacOS() ? $"macOS {Environment.OSVersion.Version}" : Environment.OSVersion.ToString()).AppendLine();

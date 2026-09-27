@@ -114,7 +114,7 @@ public sealed class ViewTests : HeadlessTest
         AboutWindow aboutWindow = Show(new AboutWindow
         {
             DataContext = new AboutViewModel(
-                new AboutStrings(), "Git Extensions", "Git Extensions 33.33.33\nBuild 0123456789\nGit 2.55.0", ["Alice"], "https://example.org", new NullAboutHost()),
+                new AboutStrings(), "Gitanas", "Gitanas 33.33.33\nBuild 0123456789\nGit 2.55.0", ["Alice"], "https://example.org", new NullAboutHost()),
         });
         SaveScreenshot(aboutWindow.CaptureRenderedFrame(), $"about-{theme}");
     });

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyDescription("GitExtensions Bug Reporter")]
+[assembly: AssemblyDescription("Gitanas Bug Reporter")]
 
 [assembly: InternalsVisibleTo("BugReporter.Tests")]
 [assembly: InternalsVisibleTo("BugReporter.IntegrationTests")]

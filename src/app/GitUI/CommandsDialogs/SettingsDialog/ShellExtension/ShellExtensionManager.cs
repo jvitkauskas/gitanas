@@ -31,10 +31,10 @@ public static class ShellExtensionManager
     {
         // The shell extension is the one of the Explorer of Windows.
         return OperatingSystem.IsWindows()
-            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.LocalMachine, @"Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved", "{3C16B20A-BA16-4156-916F-0A375ECFFE24}"))
-            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"*\shellex\ContextMenuHandlers\GitExtensions2"))
-            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"Directory\shellex\ContextMenuHandlers\GitExtensions2"))
-            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"Directory\Background\shellex\ContextMenuHandlers\GitExtensions2"));
+            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.LocalMachine, @"Software\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved", "{c058a8b1-7307-5439-a0e8-676b85d54f6f}"))
+            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"*\shellex\ContextMenuHandlers\Gitanas"))
+            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"Directory\shellex\ContextMenuHandlers\Gitanas"))
+            && !string.IsNullOrEmpty(CommonLogic.GetRegistryValue(Registry.ClassesRoot, @"Directory\Background\shellex\ContextMenuHandlers\Gitanas"));
     }
 
     /// <summary>

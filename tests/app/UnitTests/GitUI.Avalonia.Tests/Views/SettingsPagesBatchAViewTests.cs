@@ -127,7 +127,7 @@ public sealed class SettingsPagesBatchAViewTests : HeadlessTest
         SettingsDialogViewModel viewModel = new(new SettingsDialogStrings(), new SettingsDialogViewModelTests.FakeHost());
         SettingsDialogViewModelTests.FakeSources sources = new();
         SettingsDialogStrings strings = viewModel.Strings;
-        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, "GitExtensionsSettingsGroup"), null, "GitExtensionsLogo16", sources.None);
+        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, "GitExtensionsSettingsGroup"), null, "GitanasLogo16", sources.None);
         Add(new GeneralSettingsPageViewModel(new GeneralSettingsPageStrings(), [@"C:\src"], pages, fileDialogs), "GitExtensionsSettingsGroup", "GeneralSettings");
         Add(new AppearanceSettingsPageViewModel(new AppearanceSettingsPageStrings(), pages), "GitExtensionsSettingsGroup", "Appearance");
         Add(new SortingSettingsPageViewModel(new SortingSettingsPageStrings(), pages), "AppearanceSettingsPage", "SortBy");

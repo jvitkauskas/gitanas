@@ -47,6 +47,24 @@ public sealed class EmbeddedIconsTests
     }
 
     [Test]
+    public void Every_icon_property_has_decodable_PNG_data_without_GDI()
+    {
+        string[] names = typeof(Images).GetProperties()
+            .Where(property => property.PropertyType == typeof(Bitmap) && !_notIcons.Contains(property.Name))
+            .Select(property => property.Name).ToArray();
+        names.Should().HaveCountGreaterThan(200);
+        foreach (string name in names)
+        {
+            using SKBitmap? bitmap = SKBitmap.Decode(EmbeddedIcons.Get(name));
+            bitmap.Should().NotBeNull(name);
+            bitmap!.Width.Should().BeGreaterThan(0, name);
+        }
+
+        using SKBitmap modernPush = SKBitmap.Decode(EmbeddedIcons.Get("Push"));
+        modernPush.Width.Should().Be(32, "shared icon resources now use the Modern artwork");
+    }
+
+    [Test]
     public void Names_are_found_ignoring_case_and_unknown_ones_are_not()
     {
         EmbeddedIcons.TryGet("puttygen").Should().BeSameAs(EmbeddedIcons.TryGet("PuttyGen"));

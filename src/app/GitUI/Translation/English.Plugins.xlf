@@ -507,7 +507,7 @@ Are you sure you want to continue?</source>
         <target />
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
         <target />
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

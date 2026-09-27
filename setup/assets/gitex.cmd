@@ -4,4 +4,4 @@
 @REM If no arguments, try open current working directory
 @set arg=%*
 @if not defined arg SET arg=browse .
-@start /B GitExtensions.exe %arg%
+@start /B Gitanas.exe %arg%

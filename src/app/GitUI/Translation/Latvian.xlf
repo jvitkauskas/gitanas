@@ -716,8 +716,8 @@ Nepieciešams derīgs GitHub konts</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions var integrēties ar izveides serveriem, lai sniegtu nepārtrauktās integrācijas informāciju katrai izpildei.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas var integrēties ar izveides serveriem, lai sniegtu nepārtrauktās integrācijas informāciju katrai izpildei.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -886,7 +886,7 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
+        <source>There is no language configured for Gitanas.</source>
         <target>Git paplašinājumiem nav konfigurēta neviena valoda.</target>
         
       </trans-unit>
@@ -921,18 +921,18 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions ir pareizi reģistrēts.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas ir pareizi reģistrēts.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Nederīgs instalācijas direktorijs, kas saglabāts [Software\ GitExtensions\ InstallDir].</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Nederīgs instalācijas direktorijs, kas saglabāts [Software\ Gitanas\ InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Trūkst reģistra ieraksta [Software\ GitExtensions\ InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Trūkst reģistra ieraksta [Software\ Gitanas\ InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -983,8 +983,8 @@ Lūdzu, pārliecinieties, ka Git for Windows ir instalēts, vai manuāli iestati
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Tālāk redzamajā kontrolsarakstā ir validēti GitExtensions pamatiestatījumi, kas nepieciešami pareizai GitExtensions darbībai.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Tālāk redzamajā kontrolsarakstā ir validēti Gitanas pamatiestatījumi, kas nepieciešami pareizai Gitanas darbībai.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1264,8 +1264,8 @@ Lūdzu, pārliecinieties, ka Git for Windows ir instalēts, vai manuāli iestati
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="lv">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions nav pietiekamu atļauju, lai pārbaudītu reģistru.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas nav pietiekamu atļauju, lai pārbaudītu reģistru.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2974,7 +2974,7 @@ Jums būs tiesības stumt izmaiņas. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
+        <source>Gitanas is open source. Get involved!</source>
         <target>Git paplašinājumi ir atvērts avots. Iesaisties!</target>
         
       </trans-unit>
@@ -3379,7 +3379,7 @@ compare with first:</source>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="lv">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
+        <source>Gitanas</source>
         <target>Git paplašinājumi</target>
         
       </trans-unit>
@@ -4942,8 +4942,8 @@ Faktiskā komandrinda (ja nav atzīmēts): --depth 1 --no-single-branch</target>
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
-        <target>Atbalstītie komandlīnijas argumenti gitex.cmd/gitex (atrodas tajā pašā mapē, kur GitExtensions.exe):</target>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
+        <target>Atbalstītie komandlīnijas argumenti gitex.cmd/gitex (atrodas tajā pašā mapē, kur Gitanas.exe):</target>
         
       </trans-unit>
     </body>
@@ -6302,7 +6302,7 @@ If you are not sure just close this window.</source>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>Vides mainīgais HOME nenorāda uz direktoriju, kurā ir globālais režģa konfigurācijas fails: “{0}” Vai vēlaties, lai Git paplašinājumi palīdzētu atrast pareizo mapi?</target>
         
       </trans-unit>
@@ -8236,14 +8236,14 @@ Stash them before if you don&apos;t want to lose them.</source>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Šī resursdatora nospiedums nav reģistrēts PuTTY.
 Tas izraisa procesa iesalšanu, tāpēc process tiek automātiski apturēts.
 
-Atverot savienojumu atsevišķi no Git un Git Extensions, resursdatora nospiedumu var reģistrēt.
+Atverot savienojumu atsevišķi no Git un Gitanas, resursdatora nospiedumu var reģistrēt.
 Jūs varat arī manuāli pievienot resursdatora nospiedumu vai palaist Pārbaudīt savienojumu no attālināto repozitoriju dialoglodziņa.
 
 Vai vēlaties reģistrēt resursdatora nospiedumu un pārstartēt procesu?</target>
@@ -9686,7 +9686,7 @@ Therefore the Cancel button does NOT revert any changes made.</source>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
+        <source>There is a new version {0} of Gitanas available</source>
         <target>Ir pieejama jauna Git paplašinājumu versija {0}</target>
         
       </trans-unit>
@@ -10328,7 +10328,7 @@ globālos iestatījumus.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="lv">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
+        <source>Gitanas</source>
         <target>Git paplašinājumi</target>
         
       </trans-unit>
@@ -10778,8 +10778,8 @@ help</source>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Nevar atvērt Git Extensions</target>
+        <source>Cannot open Gitanas</source>
+        <target>Nevar atvērt Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -10994,8 +10994,8 @@ Tas tikai paņems apakšmodulī izpildi, ko nosaka superprojekts.</target>
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Atlasiet vienu no apakšzariem, lai skatītu vai rediģētu Git Extensions spraudņa iestatījumus.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Atlasiet vienu no apakšzariem, lai skatītu vai rediģētu Gitanas spraudņa iestatījumus.</target>
         
       </trans-unit>
     </body>
@@ -13070,8 +13070,8 @@ Kopēt kļūdas informāciju starpliktuvē?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Neizdevās nolasīt &quot;{0}&quot; šādas kļūdas dēļ:{1}{1}{2}{1}{1}Šīs problēmas rakstura dēļ lietotnes darbība nevar tikt garantēta, un tā jāaizver.{1}{1}Lūdzu, novērsiet šo problēmu un atkārtoti atveriet Git Extensions.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Neizdevās nolasīt &quot;{0}&quot; šādas kļūdas dēļ:{1}{1}{2}{1}{1}Šīs problēmas rakstura dēļ lietotnes darbība nevar tikt garantēta, un tā jāaizver.{1}{1}Lūdzu, novērsiet šo problēmu un atkārtoti atveriet Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13280,8 +13280,8 @@ Lai varētu atvērt šo repozitoriju, jums jāveic viena no šīm darbībām:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Atvērt ar Git Extensions</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Atvērt ar Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13329,8 +13329,8 @@ Attālinātais repozitorijs: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Ja domājat, ka to izraisīja Git Extensions, varat ziņot par kļūdu, lai komanda to izpētītu.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Ja domājat, ka to izraisīja Gitanas, varat ziņot par kļūdu, lai komanda to izpētītu.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13339,8 +13339,8 @@ Attālinātais repozitorijs: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>lai komanda to izpētītu - ja domājat, ka to izraisīja Git Extensions</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>lai komanda to izpētītu - ja domājat, ka to izraisīja Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13364,8 +13364,8 @@ Attālinātais repozitorijs: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Pārstartēt Git Extensions</target>
+        <source>Restart Gitanas</source>
+        <target>Pārstartēt Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

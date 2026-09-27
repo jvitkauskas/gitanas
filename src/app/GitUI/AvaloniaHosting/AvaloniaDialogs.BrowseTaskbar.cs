@@ -23,7 +23,7 @@ internal static partial class AvaloniaDialogs
     // The message that asks every instance to close its windows, registered once.
     [SupportedOSPlatform("windows")]
     private static uint CloseAllMessage
-        => _closeAllMessageId != 0 ? _closeAllMessageId : _closeAllMessageId = global::System.NativeMethods.RegisterWindowMessageW("Global.GitExtensions.CloseAllInstances");
+        => _closeAllMessageId != 0 ? _closeAllMessageId : _closeAllMessageId = global::System.NativeMethods.RegisterWindowMessageW("Global.Gitanas.CloseAllInstances");
 
     private sealed partial class BrowseSession
     {

@@ -10,7 +10,7 @@ using DrawingColor = System.Drawing.Color;
 namespace GitUI.AvaloniaTests;
 
 /// <summary>
-///  The colors of a Git Extensions theme (<c>src/app/GitUI/Themes/*.css</c>), for the screenshots of colored diffs on dark themes:
+///  The colors of a Gitanas theme (<c>src/app/GitUI/Themes/*.css</c>), for the screenshots of colored diffs on dark themes:
 ///  the colors that git's output is parsed with, and the <c>AppColor.*</c> resources the host provides (as <c>AvaloniaHostServices</c>).
 ///  The colors that the theme does not set are the default ones.
 /// </summary>
@@ -33,7 +33,7 @@ internal sealed partial class ThemeCssColors : IThemeColors
     [GeneratedRegex(@"^\.(?<name>\w+)\s*\{\s*color:\s*#(?<rgb>[0-9a-fA-F]{6});", RegexOptions.Multiline | RegexOptions.ExplicitCapture)]
     private static partial Regex ColorRegex { get; }
 
-    /// <summary>The dark theme of Git Extensions (<c>dark.css</c>).</summary>
+    /// <summary>The dark theme of Gitanas (<c>dark.css</c>).</summary>
     public static ThemeCssColors Dark { get; } = Load("dark.css", isDarkMode: true);
 
     public bool IsDarkMode { get; }

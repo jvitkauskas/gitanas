@@ -50,7 +50,7 @@ public sealed class AboutViewModelTests
     }
 
     private AboutViewModel CreateViewModel(IReadOnlyList<string> contributors, Random? random = null)
-        => new(new AboutStrings(), "Git Extensions", "Git Extensions 1.0", contributors, "https://donate.example", _host, random);
+        => new(new AboutStrings(), "Gitanas", "Gitanas 1.0", contributors, "https://donate.example", _host, random);
 
     private sealed class RecordingHost : IAboutDialogHost
     {

@@ -33,8 +33,6 @@ public sealed class ColorsSettingsPageStrings : ViewStrings
         UserFolder = Add("tsmiUserFolder", "Text", "User folder");
         Colorblind = Add("chkColorblind", "Text", "Colorblind");
         UseSystemVisualStyle = Add("chkUseSystemVisualStyle", "Text", "Use system-defined visual style (looks bad with dark colors)");
-        ControlTheme = Add("lblControlTheme", "Text", "&Controls:");
-        ControlThemeToolTip = Add("lblControlTheme", "ToolTipText", "The look of the controls: Fluent, or a community theme (a preview: some views are designed for Fluent).");
     }
 
     public TranslatedText Title { get; }
@@ -73,11 +71,6 @@ public sealed class ColorsSettingsPageStrings : ViewStrings
     public TranslatedText Colorblind { get; }
 
     public TranslatedText UseSystemVisualStyle { get; }
-
-    /// <summary>The label of the control theme of the Avalonia UI (<c>AppSettings.AvaloniaControlTheme</c>).</summary>
-    public TranslatedText ControlTheme { get; }
-
-    public TranslatedText ControlThemeToolTip { get; }
 }
 
 /// <summary>The page as <c>ColorsSettingsPageController</c> sees it (as <c>IColorsSettingsPage</c>).</summary>
@@ -129,12 +122,6 @@ public sealed record ThemeChoice(ThemeId ThemeId, string Text)
     public override string ToString() => Text;
 }
 
-/// <summary>A control theme of the Avalonia UI: its name in the settings and as shown (a product name, not translated).</summary>
-public sealed record ControlThemeChoice(string Name, string Text)
-{
-    public override string ToString() => Text;
-}
-
 /// <summary>Port of <c>ColorsSettingsPage</c> (global settings), using the logic of <c>ColorsSettingsPageController</c>.</summary>
 public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServicesViewModel, IColorsSettingsPageView
 {
@@ -178,12 +165,6 @@ public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServic
 
     [ObservableProperty]
     public partial ThemeChoice? SelectedTheme { get; set; }
-
-    /// <summary>The control themes of the Avalonia UI (<c>AppSettings.AvaloniaControlThemes</c>).</summary>
-    public IReadOnlyList<ControlThemeChoice> ControlThemes { get; } = [.. AppSettings.AvaloniaControlThemes.Select(name => new ControlThemeChoice(name, FormatControlTheme(name)))];
-
-    [ObservableProperty]
-    public partial ControlThemeChoice? SelectedControlTheme { get; set; }
 
     /// <summary>As <c>chkColorblind</c>.</summary>
     [ObservableProperty]
@@ -255,24 +236,6 @@ public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServic
 
     partial void OnSelectedThemeChanged(ThemeChoice? value) => _controller.HandleSelectedThemeChanged();
 
-    // The control theme is applied at the start of the application.
-    partial void OnSelectedControlThemeChanged(ControlThemeChoice? value)
-    {
-        if (value is not null && value.Name != AppSettings.AvaloniaControlTheme)
-        {
-            LabelRestartIsNeededVisible = true;
-        }
-    }
-
-    private static string FormatControlTheme(string name) => name switch
-    {
-        "fluent" => "Fluent",
-        "modern" => "Modern",
-        "classic" => "Classic",
-        "simple" => "Simple",
-        _ => name,
-    };
-
     partial void OnUseSystemVisualStyleChanged(bool value) => _controller.HandleUseSystemVisualStyleChanged();
 
     partial void OnIsColorblindChanged(bool value) => _controller.HandleUseColorblindVariationChanged();
@@ -292,7 +255,6 @@ public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServic
         HighlightAuthored = AppSettings.HighlightAuthoredRevisions;
         FillRefLabels = AppSettings.FillRefLabels;
         _controller.ShowThemeSettings();
-        SelectedControlTheme = ControlThemes.FirstOrDefault(theme => theme.Name == AppSettings.AvaloniaControlTheme) ?? ControlThemes[0];
 
         base.SettingsToPage(settings);
     }
@@ -306,10 +268,6 @@ public sealed partial class ColorsSettingsPageViewModel : SettingsPageWithServic
         AppSettings.HighlightAuthoredRevisions = HighlightAuthored;
         AppSettings.FillRefLabels = FillRefLabels;
         _controller.ApplyThemeSettings();
-        if (SelectedControlTheme is { } controlTheme)
-        {
-            AppSettings.AvaloniaControlTheme = controlTheme.Name;
-        }
 
         base.PageToSettings(settings);
     }

@@ -95,7 +95,7 @@ public sealed class GitHubActionsApiClient : IGitHubActionsApiClient
         };
 
         client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-        client.DefaultRequestHeaders.Add("User-Agent", "GitExtensions");
+        client.DefaultRequestHeaders.Add("User-Agent", "Gitanas");
         client.DefaultRequestHeaders.Add("X-GitHub-Api-Version", "2022-11-28");
 
         if (!string.IsNullOrWhiteSpace(apiToken))

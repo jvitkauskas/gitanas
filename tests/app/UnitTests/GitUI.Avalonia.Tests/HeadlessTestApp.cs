@@ -40,7 +40,8 @@ public abstract class HeadlessTest
     }, CancellationToken.None);
 
     /// <summary>Sets the theme variant for the rest of the current test (reset by <see cref="ResetThemeAsync"/>).</summary>
-    protected static void UseTheme(ThemeVariant theme) => Application.Current!.RequestedThemeVariant = theme;
+    protected static void UseTheme(ThemeVariant theme)
+        => ((GitExtensionsAvaloniaApp)Application.Current!).ApplyOptions(new AvaloniaUiOptions(theme == ThemeVariant.Dark, "Segoe UI", 12));
 
     [TearDown]
     public Task ResetThemeAsync() => OnUiThreadAsync(() => UseTheme(ThemeVariant.Light));

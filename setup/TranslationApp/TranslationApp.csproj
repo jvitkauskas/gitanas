@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>$(PortableTargetFramework)</TargetFramework>
-    <ApplicationIcon>..\assets\Logo\git-extensions-logo.ico</ApplicationIcon>
+    <ApplicationIcon>..\assets\Logo\gitanas\gitanas.ico</ApplicationIcon>
     <OutputType>WinExe</OutputType>
     <StartupObject />
   </PropertyGroup>

@@ -229,7 +229,7 @@ public sealed class ResolveConflictsViewModelTests
 
         viewModel.MergeCommand.Execute(null);
 
-        // The path that Git Extensions writes at the start of the command is the program, not an argument.
+        // The path that Gitanas writes at the start of the command is the program, not an argument.
         host.Calls.Should().Contain("run /usr/bin/meld:\"local/a.txt\" \"base/a.txt\" \"remote/a.txt\" --output \"a.txt\"");
     }
 

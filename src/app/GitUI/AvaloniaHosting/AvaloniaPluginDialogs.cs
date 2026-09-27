@@ -12,7 +12,7 @@ namespace GitUI.AvaloniaHosting;
 /// </summary>
 /// <remarks>
 ///  <see cref="AvaloniaDialogs"/> is internal to GitUI; this is its public surface for the plugins, as
-///  <see cref="AvaloniaStartupDialogs"/> is for <c>GitExtensions.exe</c>.
+///  <see cref="AvaloniaStartupDialogs"/> is for <c>Gitanas.exe</c>.
 /// </remarks>
 public static class AvaloniaPluginDialogs
 {

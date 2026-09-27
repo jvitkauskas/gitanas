@@ -3,8 +3,6 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.Styling;
 using Avalonia.Themes.Fluent;
-using Avalonia.Themes.Simple;
-using Classic.Avalonia.Theme;
 using GitUI.Avalonia.Hosting;
 
 namespace GitUI.Avalonia;
@@ -29,43 +27,21 @@ public partial class GitExtensionsAvaloniaApp : Application
     /// </summary>
     internal void ApplyOptions(AvaloniaUiOptions options)
     {
-        // The control theme is set once, before the first window: another one needs a restart.
+        // Install the Modern styles once, before the first window.
         if (!_hasControlTheme)
         {
             _hasControlTheme = true;
-            AddControlTheme(ResolveControlTheme(options.ControlTheme));
+            AddControlTheme();
         }
 
         ThemeVariant variant = options.IsDarkTheme ? ThemeVariant.Dark : ThemeVariant.Light;
         RequestedThemeVariant = variant;
 
-        if (_usesFluentControls && Styles.OfType<FluentTheme>().FirstOrDefault() is { } fluentControls)
+        if (Styles.OfType<FluentTheme>().FirstOrDefault() is { } fluentControls)
         {
             foreach ((object key, object? value) in FluentThemePalette.Create(options.IsDarkTheme, options.Colors))
             {
                 fluentControls.Resources[key] = value;
-            }
-        }
-
-        if (Styles.OfType<SimpleTheme>().FirstOrDefault() is { } simpleTheme)
-        {
-            // Simple also has non-variant accent resources: replace those at the same level as its palette.
-            foreach ((object key, object? value) in SimpleThemePalette.Create(options.IsDarkTheme, options.Colors))
-            {
-                simpleTheme.Resources[key] = value;
-            }
-        }
-
-        if (Styles.OfType<ClassicTheme>().FirstOrDefault() is { } classicTheme)
-        {
-            foreach ((object key, object? value) in ClassicThemePalette.Create(options.IsDarkTheme, options.Colors))
-            {
-                classicTheme.Resources[key] = value;
-            }
-
-            if (options.FontSize > 0)
-            {
-                classicTheme.Resources["FontSizeNormal"] = options.FontSize;
             }
         }
 

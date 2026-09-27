@@ -1,1 +1,1 @@
-﻿Get-ChildItem -Path "$PSScriptRoot\GitExtensions" -Recurse | Get-FileHash -Algorithm SHA512|fl -Property Hash,Path
+﻿Get-ChildItem -Path "$PSScriptRoot\Gitanas" -Recurse | Get-FileHash -Algorithm SHA512|fl -Property Hash,Path

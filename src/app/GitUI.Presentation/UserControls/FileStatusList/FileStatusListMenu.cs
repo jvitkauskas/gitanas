@@ -46,7 +46,7 @@ public sealed class FileStatusListMenuStrings : ViewStrings
         RememberSecondRevDiff = Add("tsmiRememberSecondRevDiff", "Text", "&Remember Second for diff");
         RememberFirstRevDiff = Add("tsmiRememberFirstRevDiff", "Text", "R&emember First for diff");
         DiffSelectedWithRememberedFile = Add("_diffSelectedWithRememberedFile", "Text", "&Diff with \"{0}\"", category: "TranslatedStrings");
-        OpenWithGitExtensions = Add("_openWithGitExtensions", "Text", "&Open with Git Extensions", category: "TranslatedStrings");
+        OpenWithGitExtensions = Add("_openWithGitExtensions", "Text", "&Open with Gitanas", category: "TranslatedStrings");
         OpenInVisualStudio = Add("tsmiOpenInVisualStudio", "Text", "Open in &Visual Studio");
         Move = Add("tsmiMove", "Text", "Rena&me / move");
         NewName = Add("_newName", "Text", "New name");

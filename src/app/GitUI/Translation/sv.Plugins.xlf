@@ -604,8 +604,8 @@ Grenar kommer att tas bort på fjärren ’{0}’. Detta kan inte ångras.
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Obs: Git Extensions måste startas om för att token ska träda i kraft.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Obs: Gitanas måste startas om för att token ska träda i kraft.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

@@ -489,7 +489,7 @@ public sealed partial class LeftPanelViewModel : ObservableObject, IDisposable
                 items.Add(Item(s.OpenSubmodule, LeftPanelAction.OpenSubmodule, "FolderOpen", s.OpenSubmoduleToolTip));
             }
 
-            items.Add(Item(s.OpenSubmoduleInNewInstance, LeftPanelAction.OpenSubmoduleInNewInstance, "GitExtensionsLogo16", s.OpenSubmoduleInNewInstanceToolTip));
+            items.Add(Item(s.OpenSubmoduleInNewInstance, LeftPanelAction.OpenSubmoduleInNewInstance, "GitanasLogo16", s.OpenSubmoduleInNewInstanceToolTip));
             if (!isBare && submodule.IsCurrent)
             {
                 items.Add(Item(s.ManageSubmodules, LeftPanelAction.ManageSubmodules, "SubmodulesManage", s.ManageSubmodulesToolTip));

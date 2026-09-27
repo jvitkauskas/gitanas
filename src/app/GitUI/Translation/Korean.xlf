@@ -717,8 +717,8 @@ A valid GitHub account is required</source>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions은 빌드 서버와 연동하여 커밋별 지속적 통합(CI) 정보를 제공할 수 있습니다.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas은 빌드 서버와 연동하여 커밋별 지속적 통합(CI) 정보를 제공할 수 있습니다.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -888,7 +888,7 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
+        <source>There is no language configured for Gitanas.</source>
         <target>해당 언어를 설정할 수 없습니다.</target>
         
       </trans-unit>
@@ -923,18 +923,18 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions 정상적으로 레지스트리에 등록되었습니다.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas 정상적으로 레지스트리에 등록되었습니다.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>[Software\GitExtensions\InstallDir]에 잘못된 설치 디렉토리가 저장되어 있음.</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>[Software\Gitanas\InstallDir]에 잘못된 설치 디렉토리가 저장되어 있음.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>[Software\GitExtensions\InstallDir] 레지스트리 항목 누락.</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>[Software\Gitanas\InstallDir] 레지스트리 항목 누락.</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -985,8 +985,8 @@ Please make sure that Git for Windows is installed or set the correct command ma
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>아래 체크리스트는 Git Extensions가 정상적으로 작동하는 데 필요한 기본 설정을 확인합니다.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>아래 체크리스트는 Gitanas가 정상적으로 작동하는 데 필요한 기본 설정을 확인합니다.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1267,8 +1267,8 @@ Please make sure that Git for Windows is installed or set the correct command ma
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="ko">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions가 레지스트리 접근 권한이 없습니다.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas가 레지스트리 접근 권한이 없습니다.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2975,8 +2975,8 @@ Push 액세스 권한이 있어야합니다. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions은 오픈 소스입니다. 누구나 참여할 수 있습니다!</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas은 오픈 소스입니다. 누구나 참여할 수 있습니다!</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3382,8 +3382,8 @@ compare with first:</source>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="ko">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4951,9 +4951,9 @@ Actual command line (if unchecked): --depth 1 --no-single-branch</source>
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>다음 명령에 지원되는 명령어 매개변수
-gitex.cmd / gitex (GitExtensions.exe와 같은 폴더에 있음):</target>
+gitex.cmd / gitex (Gitanas.exe와 같은 폴더에 있음):</target>
         
       </trans-unit>
     </body>
@@ -6329,11 +6329,11 @@ If you are not sure just close this window.</source>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>환경 변수 HOME은 전역 Git 설정 파일이 들어 있는 디렉터리를 가리키지 않습니다:
 &quot; {0} &quot;
 
-Git Extensions가 올바른 폴더를 찾는걸 도와드릴까요?</target>
+Gitanas가 올바른 폴더를 찾는걸 도와드릴까요?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8296,14 +8296,14 @@ Stash them before if you don&apos;t want to lose them.</source>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>이 호스트의 지문(fingerprint)이 PuTTY에 등록되어 있지 않습니다.
 이로 인해 프로세스가 멈추며, 자동으로 중지됩니다.
 
-Git 및 Git Extensions와 분리된 상태에서 연결을 열면 호스트의 지문을 등록할 수 있습니다.
+Git 및 Gitanas와 분리된 상태에서 연결을 열면 호스트의 지문을 등록할 수 있습니다.
 또는 호스트의 지문을 수동으로 추가하거나, 원격(Remotes) 대화 상자에서 Test Connection을 실행할 수도 있습니다.
 
 호스트의 지문을 등록하고 프로세스를 다시 시작하시겠습니까?</target>
@@ -9761,8 +9761,8 @@ Therefore the Cancel button does NOT revert any changes made.</source>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Git Extensions의 새 버전 {0}을 이용할 수 있습니다.</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Gitanas의 새 버전 {0}을 이용할 수 있습니다.</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10411,8 +10411,8 @@ global settings.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="ko">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10872,8 +10872,8 @@ help</source>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Git Extensions를 열 수 없습니다</target>
+        <source>Cannot open Gitanas</source>
+        <target>Gitanas를 열 수 없습니다</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11090,8 +11090,8 @@ This will just checkout on the submodule the commit determined by the superproje
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Git Extensions 플러그인의 설정을 보거나 편집하려면 하위 노드 중 하나를 선택하십시오.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Gitanas 플러그인의 설정을 보거나 편집하려면 하위 노드 중 하나를 선택하십시오.</target>
         
       </trans-unit>
     </body>
@@ -13165,8 +13165,8 @@ Copy error details to clipboard?</source>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>다음 오류 때문에 &quot;{0}&quot;을 읽지 못했습니다: {1}{1}{2}{1}{1} 이 문제의 특성상 응용 프로그램의 동작을 보장할 수 없으므로 종료되어야 합니다. {1}{1} 이 이슈를 해결하고 Git Extensions을 다시 여십시오.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>다음 오류 때문에 &quot;{0}&quot;을 읽지 못했습니다: {1}{1}{2}{1}{1} 이 문제의 특성상 응용 프로그램의 동작을 보장할 수 없으므로 종료되어야 합니다. {1}{1} 이 이슈를 해결하고 Gitanas을 다시 여십시오.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13375,8 +13375,8 @@ Git 관리 디렉터리의 소유자가 현재 사용자가 아닌 경우, 해�
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>Git Extensions로 열기 (&amp;O)</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>Gitanas로 열기 (&amp;O)</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13424,8 +13424,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Git Extensions에 의해서 오류가 발생했다고 생각되면, 버그를 리포트 해 주십시오.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Gitanas에 의해서 오류가 발생했다고 생각되면, 버그를 리포트 해 주십시오.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13434,8 +13434,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>팀의 조사가 필요 - 이 문제가 Git Extensions로 인해 발생한 것으로 판단되는 경우</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>팀의 조사가 필요 - 이 문제가 Gitanas로 인해 발생한 것으로 판단되는 경우</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13459,8 +13459,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Git Extensions 재시작</target>
+        <source>Restart Gitanas</source>
+        <target>Gitanas 재시작</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

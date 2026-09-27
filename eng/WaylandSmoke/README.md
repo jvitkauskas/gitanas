@@ -14,7 +14,7 @@ python3 eng/WaylandSmoke/run.py /tmp/gitextensions-wayland-results
 The runner prevents Sway from acquiring elevated capabilities (including realtime scheduling)
 with `setpriv --no-new-privs`. This also supports hosts with a zero realtime CPU limit.
 It builds its host, starts Sway with XWayland disabled and no DISPLAY, then tests
-Classic and Modern in light and dark colors. For each combination it:
+Modern in light and dark colors. For each combination it:
 
 - moves a real dialog from 125% to 150% and back, asserting actual RenderScaling;
 - opens an owned modal, checks its ownership and pending completion task, and moves it

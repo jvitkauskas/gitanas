@@ -460,12 +460,12 @@ STDMETHODIMP CGitExtensionsShellEx::QueryContextMenu(
         return E_FAIL;
     }
 
-    CString szCascadeShellMenuItems = GetRegistryValue(HKEY_CURRENT_USER, L"SOFTWARE\\GitExtensions", L"CascadeShellMenuItems");
+    CString szCascadeShellMenuItems = GetRegistryValue(HKEY_CURRENT_USER, L"SOFTWARE\\Gitanas", L"CascadeShellMenuItems");
     if (szCascadeShellMenuItems.IsEmpty())
         szCascadeShellMenuItems = "110111000111111111";
     bool cascadeContextMenu = szCascadeShellMenuItems.Find('1') != -1;
     SHORT keyState = GetKeyState(VK_SHIFT);
-    bool alwaysShowAllCommands = (keyState & 0x8000) || GetRegistryBoolValue(HKEY_CURRENT_USER, L"SOFTWARE\\GitExtensions", L"AlwaysShowAllCommands");
+    bool alwaysShowAllCommands = (keyState & 0x8000) || GetRegistryBoolValue(HKEY_CURRENT_USER, L"SOFTWARE\\Gitanas", L"AlwaysShowAllCommands");
 
     HMENU popupMenu = NULL;
     if (cascadeContextMenu)
@@ -639,7 +639,7 @@ STDMETHODIMP CGitExtensionsShellEx::QueryContextMenu(
         info.wID = uidFirstCmd + id;
         info.hbmpItem = BufferedPaintAvailable ? IconToBitmapPARGB32(IDI_GITEXTENSIONS) : HBMMENU_CALLBACK;
         myIDMap[uidFirstCmd + id] = IDI_GITEXTENSIONS;
-        info.dwTypeData = _T("Git Extensions");
+        info.dwTypeData = _T("Gitanas");
         info.hSubMenu = popupMenu;
         if (!InsertMenuItem(hMenu, menuIndex, true, &info)) {
             DestroyMenu(popupMenu);
@@ -762,13 +762,13 @@ void CGitExtensionsShellEx::RunGitEx(const TCHAR* command)
     CString sDir = "";
 
     if (sDir.GetLength() == 0)
-        sDir = GetRegistryValue(HKEY_CURRENT_USER, L"SOFTWARE\\GitExtensions", L"InstallDir");
+        sDir = GetRegistryValue(HKEY_CURRENT_USER, L"SOFTWARE\\Gitanas", L"InstallDir");
     if (sDir.GetLength() == 0)
-        sDir = GetRegistryValue(HKEY_USERS, L"SOFTWARE\\GitExtensions", L"InstallDir");
+        sDir = GetRegistryValue(HKEY_USERS, L"SOFTWARE\\Gitanas", L"InstallDir");
     if (sDir.GetLength() == 0)
-        sDir = GetRegistryValue(HKEY_LOCAL_MACHINE, L"SOFTWARE\\GitExtensions", L"InstallDir");
+        sDir = GetRegistryValue(HKEY_LOCAL_MACHINE, L"SOFTWARE\\Gitanas", L"InstallDir");
 
-    CString sExe = sDir + L"\\GitExtensions.exe";
+    CString sExe = sDir + L"\\Gitanas.exe";
     ShellExecute(NULL, L"open", sExe, sArgs, nullptr, SW_SHOWNORMAL);
 }
 

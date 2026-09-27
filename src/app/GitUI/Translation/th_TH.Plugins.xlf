@@ -604,8 +604,8 @@ Branch จะถูกลบที่ remote &apos;{0}&apos; การกระ�
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>หมายเหตุ: ต้องรีสตาร์ท Git Extensions เพื่อให้ token มีผล</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>หมายเหตุ: ต้องรีสตาร์ท Gitanas เพื่อให้ token มีผล</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

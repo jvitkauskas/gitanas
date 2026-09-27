@@ -24,7 +24,7 @@ public static partial class AppSettings
     // semi-constants
     public static Version AppVersion => Assembly.GetCallingAssembly().GetName().Version!;
     public static string ProductVersion => ApplicationInfo.ProductVersion;
-    public static readonly string ApplicationName = "Git Extensions";
+    public static readonly string ApplicationName = "Gitanas";
     public static readonly string ApplicationId = ApplicationName.Replace(" ", "");
     public static readonly string SettingsFileName = ApplicationId + ".settings";
     public static readonly string UserPluginsDirectoryName = "UserPlugins";
@@ -69,7 +69,7 @@ public static partial class AppSettings
 
             // Make ApplicationDataPath version independent
             return ApplicationInfo.UserAppDataPath.Replace(ApplicationInfo.ProductVersion, string.Empty)
-                                              .Replace(ApplicationName, ApplicationId); // 'GitExtensions' has been changed to 'Git Extensions' in v3.0
+                                              .Replace(ApplicationName, ApplicationId); // Remove spaces from the product directory name.
         });
 
         LocalApplicationDataPath = new Lazy<string?>(() =>
@@ -87,6 +87,16 @@ public static partial class AppSettings
 
             return path;
         });
+
+        if (ApplicationInfo.ProductName == ApplicationName)
+        {
+            string legacyDirectory = IsPortable()
+                ? GetGitExtensionsDirectory()!
+                : Path.Join(Environment.GetFolderPath(
+                    OperatingSystem.IsMacOS() ? Environment.SpecialFolder.LocalApplicationData : Environment.SpecialFolder.ApplicationData),
+                    "GitExtensions", "GitExtensions");
+            LegacySettingsMigration.CopyIfMissing(legacyDirectory, SettingsFilePath);
+        }
 
         bool newFile = CreateEmptySettingsFileIfMissing();
 
@@ -262,7 +272,7 @@ public static partial class AppSettings
 
     #region Registry helpers
 
-    // The settings that other Windows components read from HKCU\Software\GitExtensions: the installer (InstallDir,
+    // The settings that other Windows components read from HKCU\Software\Gitanas: the installer (InstallDir,
     // CheckSettings), the Explorer shell extension (CascadeShellMenuItems, AlwaysShowAllCommands) and the Visual Studio
     // extension (ShowCurrentBranchInVS). They stay in the registry on Windows and are kept in the settings file elsewhere.
     private static bool GetWindowsRegistryBool(string key, bool defaultValue)
@@ -298,7 +308,7 @@ public static partial class AppSettings
     [SupportedOSPlatform("windows")]
     private static bool ReadBoolRegKey(string key, bool defaultValue)
     {
-        using RegistryKey? settings = Registry.CurrentUser.OpenSubKey("Software\\GitExtensions");
+        using RegistryKey? settings = Registry.CurrentUser.OpenSubKey("Software\\Gitanas");
         object? obj = settings?.GetValue(key);
         if (obj is not string)
         {
@@ -323,7 +333,7 @@ public static partial class AppSettings
     [return: NotNullIfNotNull(nameof(defaultValue))]
     private static string? ReadStringRegValue(string key, string? defaultValue)
     {
-        using RegistryKey? settings = Registry.CurrentUser.OpenSubKey("Software\\GitExtensions");
+        using RegistryKey? settings = Registry.CurrentUser.OpenSubKey("Software\\Gitanas");
         return (string?)settings?.GetValue(key, defaultValue) ?? defaultValue;
     }
 
@@ -1512,22 +1522,6 @@ public static partial class AppSettings
         }
     }
 
-    /// <summary>
-    ///  The control themes of the Avalonia UI, the default (Fluent) first; Modern is Fluent with the design of its own and the
-    ///  layout of the main window of docs/avalonia-port/MODERN.md; the others are community themes.
-    /// </summary>
-    public static IReadOnlyList<string> AvaloniaControlThemes { get; } = ["fluent", "modern", "simple", "classic"];
-
-    /// <summary>
-    ///  The control theme of the Avalonia UI, one of <see cref="AvaloniaControlThemes"/> (the default for another name, e.g. of
-    ///  a theme removed since), applied at the next start.
-    /// </summary>
-    public static string AvaloniaControlTheme
-    {
-        get => GetString("AvaloniaControlTheme", AvaloniaControlThemes[0]) is { } name && AvaloniaControlThemes.Contains(name) ? name : AvaloniaControlThemes[0];
-        set => SetString("AvaloniaControlTheme", value);
-    }
-
     public static string[] ThemeVariations
     {
         get
@@ -1959,9 +1953,9 @@ public static partial class AppSettings
         {
             bool isExpectedExe =
 
-                // The app's entry point is GitExtensions.exe (GitExtensions off Windows)
-                _applicationExecutablePath.EndsWith("GitExtensions.exe", StringComparison.InvariantCultureIgnoreCase) ||
-                (!OperatingSystem.IsWindows() && Path.GetFileName(_applicationExecutablePath) is "GitExtensions" or "testhost" or "dotnet" or "TranslationApp") ||
+                // The app's entry point is Gitanas.exe (Gitanas off Windows)
+                _applicationExecutablePath.EndsWith("Gitanas.exe", StringComparison.InvariantCultureIgnoreCase) ||
+                (Path.GetFileNameWithoutExtension(_applicationExecutablePath) is "Gitanas" or "testhost" or "dotnet" or "TranslationApp") ||
 
                 // Tests are run by testhost.exe
                 _applicationExecutablePath.EndsWith("testhost.exe", StringComparison.InvariantCultureIgnoreCase) ||
@@ -1973,7 +1967,7 @@ public static partial class AppSettings
                 // Translations
                 _applicationExecutablePath.EndsWith("TranslationApp.exe", StringComparison.InvariantCultureIgnoreCase);
 
-            DebugHelpers.Assert(isExpectedExe, $"{_applicationExecutablePath} must point to GitExtensions.exe");
+            DebugHelpers.Assert(isExpectedExe, $"{_applicationExecutablePath} must point to Gitanas.exe");
         }
 #endif
 
@@ -1994,7 +1988,7 @@ public static partial class AppSettings
         {
             if (_versionIndependentRegKey is null)
             {
-                _versionIndependentRegKey = Registry.CurrentUser.CreateSubKey("Software\\GitExtensions", RegistryKeyPermissionCheck.ReadWriteSubTree);
+                _versionIndependentRegKey = Registry.CurrentUser.CreateSubKey("Software\\Gitanas", RegistryKeyPermissionCheck.ReadWriteSubTree);
                 Validates.NotNull(_versionIndependentRegKey);
             }
 

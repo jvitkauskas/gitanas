@@ -15,7 +15,7 @@
     <!--
       Read the currently configured value.
      -->
-    <Icon Id="gitextensions.ico" SourceFile="..\assets\Logo\git-extensions-logo.ico" />
+    <Icon Id="gitanas.ico" SourceFile="..\assets\Logo\gitanas\gitanas.ico" />
     <?include AddRemove.wxi?>
     <?include EnableUpgrades.wxi?>
     <UIRef Id="WixUI_GitExtensions" />
@@ -23,8 +23,6 @@
     <Property Id="LAUNCH" Value="0" />
     <Property Id="TELEMETRY_ENABLED" Value="1" Secure="yes" />
     <Property Id="MSIRESTARTMANAGERCONTROL" Value="Disable" />
-    <WixVariable Id="WixUIDialogBmp" Value="dialog.bmp" />
-    <WixVariable Id="WixUIBannerBmp" Value="banner.bmp" />
     <WixVariable Id="WixUISupportPerUser" Value="0" Overridable="yes" />
     <WixVariable Id="WixUISupportPerMachine" Value="1" Overridable="yes" />
     <Directory Id="TARGETDIR" Name="SourceDir">
@@ -52,11 +50,11 @@
         </Directory>
       </Directory>
       <Directory Id="LocalAppDataFolder">
-        <Directory Id="LocalAppDataOrganizationDir" Name="GitExtensions">
+        <Directory Id="LocalAppDataOrganizationDir" Name="Gitanas">
           <Directory Id="UserPluginsDir" Name="UserPlugins">
             <Directory Id="PluginManagerDir" Name="GitExtensions.PluginManager">
               <Directory Id="PackageManagerDir" Name="PackageManager">
-                <Component Id="PackageManager" Guid="{81556E1B-270C-448D-A68D-FD30678D4827}">
+                <Component Id="PackageManager" Guid="d4ce2165-773b-534e-85b3-8eb6b0c41845">
                   <RemoveFolder Id="RemoveLocalAppDataOrganizationDir" Directory="LocalAppDataOrganizationDir" On="uninstall" />
                   <RemoveFolder Id="RemoveUserPluginsDir" Directory="UserPluginsDir" On="uninstall" />
                   <RemoveFolder Id="RemovePluginManagerDir" Directory="PluginManagerDir" On="uninstall" />
@@ -71,13 +69,13 @@
         <Directory Id="StartMenuDir" Name="$(var.ProductName)" />
       </Directory>
       <Directory Id="DesktopFolder" />
-      <Component Id="Path" Guid="{DAC97FD8-A869-4458-AABD-C27D2C892643}">
+      <Component Id="Path" Guid="7d92bda5-05da-5988-b013-f02f867c8281">
         <Environment Id="PATH" Name="PATH" Value="[INSTALLDIR]" Permanent="no" Part="last" Action="set" System="yes" />
       </Component>
     </Directory>
     <DirectoryRef Id="INSTALLDIR">
-      <Component Id="gitextensions.ico" Guid="*">
-        <File Source="..\assets\Logo\git-extensions-logo.ico" />
+      <Component Id="gitanas.ico" Guid="*">
+        <File Source="..\assets\Logo\gitanas\gitanas.ico" />
       </Component>
       <Component Id="gitex.cmd" Guid="*">
         <File Source="..\assets\gitex.cmd" />
@@ -85,13 +83,13 @@
       <Component Id="set_telemetry" Guid="*">
         <File Source="..\assets\set-telemetry.ps1" />
       </Component>
-      <Component Id="GitExtensions.exe" Guid="5530254F-DCAC-4C82-BD4B-F54D76024929">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.exe" KeyPath="yes">
-          <netfx:NativeImage Id="ngen_GitExtensions.exe" Platform="all" Priority="1" />
+      <Component Id="Gitanas.exe" Guid="888a01a5-023a-5222-9a57-7ba65aae02c8">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.exe" KeyPath="yes">
+          <netfx:NativeImage Id="ngen_Gitanas.exe" Platform="all" Priority="1" />
         </File>
-        <ProgId Id="GitExtensions" Description="Git Extentions Shortcut" Advertise="no">
+        <ProgId Id="Gitanas" Description="Gitanas Shortcut" Advertise="no">
           <Extension Id="gitext">
-            <Verb Id="open" Command="Open Git Extentions Repository" TargetFile="GitExtensions.exe" Argument="openrepo &quot;%1&quot;" />
+            <Verb Id="open" Command="Open Gitanas Repository" TargetFile="Gitanas.exe" Argument="openrepo &quot;%1&quot;" />
           </Extension>
         </ProgId>
       </Component>
@@ -128,23 +126,23 @@
       <Component Id="GitCommands.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\GitCommands.dll" />
       </Component>
-      <Component Id="GitExtensions.deps.json" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.deps.json" />
+      <Component Id="Gitanas.deps.json" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.deps.json" />
       </Component>
-      <!-- <Component Id="GitExtensions.exe.config" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.exe.config" />
+      <!-- <Component Id="Gitanas.exe.config" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.exe.config" />
       </Component> -->
-      <Component Id="GitExtensions.dll" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.dll" />
+      <Component Id="Gitanas.dll" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.dll" />
       </Component>
-      <Component Id="GitExtensions.dll.config" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.dll.config" />
+      <Component Id="Gitanas.dll.config" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.dll.config" />
       </Component>
       <Component Id="GitExtensions.Extensibility.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\GitExtensions.Extensibility.dll" />
       </Component>
-      <Component Id="GitExtensions.runtimeconfig.json" Guid="*">
-        <File Source="$(var.ArtifactsPublishPath)\GitExtensions.runtimeconfig.json" />
+      <Component Id="Gitanas.runtimeconfig.json" Guid="*">
+        <File Source="$(var.ArtifactsPublishPath)\Gitanas.runtimeconfig.json" />
       </Component>
       <Component Id="GitExtUtils.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\GitExtUtils.dll" />
@@ -165,7 +163,7 @@
         <File Source="$(var.ArtifactsPublishPath)\Microsoft.VisualStudio.Composition.dll" />
       </Component>
       <!-- Remove unused dll, installed in versions <= 4.0.1 -->
-      <Component Id="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" Guid="D4782F6D-044B-5BD2-858A-1A3D8510B277">
+      <Component Id="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" Guid="c0717157-126f-58cd-8fd5-a3cc59b14062">
         <RemoveFile Name="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" Id="Microsoft.VisualStudio.Composition.NetFxAttributes.dll" On="both" />
       </Component>
       <Component Id="Microsoft.VisualStudio.Interop.dll" Guid="*">
@@ -262,7 +260,7 @@
         <File Source="$(var.ArtifactsPublishPath)\ZString.dll" />
       </Component>
       <!-- Shell extensions -->
-      <?define ShellExCLSID = "{3C16B20A-BA16-4156-916F-0A375ECFFE24}"?>
+      <?define ShellExCLSID = "{c058a8b1-7307-5439-a0e8-676b85d54f6f}"?>
       <Component Id="GitExtensionsShellEx32.dll" Guid="*">
         <File Name="GitExtensionsShellEx32.dll" Source="$(var.ArtifactsPublishPath)\GitExtensionsShellEx32.dll" KeyPath="yes" />
         <?foreach ShellExFileName in GitExtensionsShellEx32.dll?>
@@ -292,12 +290,12 @@
           <RegistryValue Name="URL Protocol" Value="" Type="string" />
         </RegistryKey>
         <RegistryKey Key="git\DefaultIcon" Root="HKCR">
-          <RegistryValue Value="[INSTALLDIR]GitExtensions.exe" Type="string" />
+          <RegistryValue Value="[INSTALLDIR]Gitanas.exe" Type="string" />
         </RegistryKey>
         <RegistryKey Root="HKCR" Key="git\shell" />
         <RegistryKey Root="HKCR" Key="git\shell\open" />
         <RegistryKey Root="HKCR" Key="git\shell\open\command">
-          <RegistryValue Value="&quot;[INSTALLDIR]GitExtensions.exe&quot; %1" Type="string" />
+          <RegistryValue Value="&quot;[INSTALLDIR]Gitanas.exe&quot; %1" Type="string" />
         </RegistryKey>
       </Component>
       <Component Id="Protocol.github_windows" Guid="*">
@@ -306,12 +304,12 @@
           <RegistryValue Name="URL Protocol" Value="" Type="string" />
         </RegistryKey>
         <RegistryKey Key="github-windows\DefaultIcon" Root="HKCR">
-          <RegistryValue Value="[INSTALLDIR]GitExtensions.exe" Type="string" />
+          <RegistryValue Value="[INSTALLDIR]Gitanas.exe" Type="string" />
         </RegistryKey>
         <RegistryKey Root="HKCR" Key="github-windows\shell" />
         <RegistryKey Root="HKCR" Key="github-windows\shell\open" />
         <RegistryKey Root="HKCR" Key="github-windows\shell\open\command">
-          <RegistryValue Value="&quot;[INSTALLDIR]GitExtensions.exe&quot; %1" Type="string" />
+          <RegistryValue Value="&quot;[INSTALLDIR]Gitanas.exe&quot; %1" Type="string" />
         </RegistryKey>
       </Component>
       <Component Id="Protocol.github_mac" Guid="*">
@@ -320,12 +318,12 @@
           <RegistryValue Name="URL Protocol" Value="" Type="string" />
         </RegistryKey>
         <RegistryKey Key="github-mac\DefaultIcon" Root="HKCR">
-          <RegistryValue Value="[INSTALLDIR]GitExtensions.exe" Type="string" />
+          <RegistryValue Value="[INSTALLDIR]Gitanas.exe" Type="string" />
         </RegistryKey>
         <RegistryKey Root="HKCR" Key="github-mac\shell" />
         <RegistryKey Root="HKCR" Key="github-mac\shell\open" />
         <RegistryKey Root="HKCR" Key="github-mac\shell\open\command">
-          <RegistryValue Value="&quot;[INSTALLDIR]GitExtensions.exe&quot; %1" Type="string" />
+          <RegistryValue Value="&quot;[INSTALLDIR]Gitanas.exe&quot; %1" Type="string" />
         </RegistryKey>
       </Component>
     </DirectoryRef>
@@ -365,7 +363,7 @@
       <Component Id="GitImpact.dll" Guid="*">
         <File Source="$(var.ArtifactsPublishPath)\Plugins\GitExtensions.Plugins.GitImpact.dll" />
       </Component>
-      <Component Id="Gource.dll" Guid="52F03345-7A36-5CFC-9287-94F03E72556B">
+      <Component Id="Gource.dll" Guid="0aace6c6-feb8-5ed4-8603-ebe517cc13bd">
         <File Source="$(var.ArtifactsPublishPath)\Plugins\GitExtensions.Plugins.Gource.dll" />
       </Component>
       <Component Id="Github3.dll" Guid="*">
@@ -1120,7 +1118,7 @@
     <ComponentGroup Id="Component.PluginResources" />
     <DirectoryRef Id="ProgramMenuFolder">
       <Component Id="GitExtensions.newstartmenu" Guid="*">
-        <Shortcut Id="GitExtensions.newstartmenu" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="gitextensions.ico" Target="[INSTALLDIR]GitExtensions.exe" WorkingDirectory="INSTALLDIR">
+        <Shortcut Id="GitExtensions.newstartmenu" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="gitanas.ico" Target="[INSTALLDIR]Gitanas.exe" WorkingDirectory="INSTALLDIR">
           <ShortcutProperty Key="System.AppUserModel.ID" Value="$(var.InstallName)" />
         </Shortcut>
         <RegistryValue Root="HKCU" Key="$(var.InstalledRegKey)" Name="GitExtensions.newstartmenu" Value="" Type="string" KeyPath="yes" />
@@ -1128,18 +1126,18 @@
     </DirectoryRef>
     <!-- Remove old start menu entries -->
     <DirectoryRef Id="StartMenuDir">
-      <Component Id="GitExtensions.startmenu" Guid="{028C359A-8752-48E1-86EE-A539A9D2709A}">
+      <Component Id="GitExtensions.startmenu" Guid="05ffd58d-b5a1-546d-9f21-5e2714b2eae5">
         <RemoveFolder Id="GitExtensions.startmenu" Directory="StartMenuDir" On="install" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="DesktopFolder">
       <Component Id="GitExtensions.desktop" Guid="*">
-        <Shortcut Id="GitExtensions.desktop" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="gitextensions.ico" Target="[INSTALLDIR]GitExtensions.exe" WorkingDirectory="INSTALLDIR" />
+        <Shortcut Id="GitExtensions.desktop" Name="$(var.ProductName)" Description="$(var.ProductName)" Icon="gitanas.ico" Target="[INSTALLDIR]Gitanas.exe" WorkingDirectory="INSTALLDIR" />
         <RegistryValue Root="HKCU" Key="$(var.InstalledRegKey)" Name="GitExtensions.desktop" Value="" Type="string" KeyPath="yes" />
         <RemoveFolder Id="GitExtensions.desktop" On="uninstall" />
       </Component>
     </DirectoryRef>
-    <Feature Id="GitExtensions" Title="Git Extensions" Level="1" Display="expand">
+    <Feature Id="GitExtensions" Title="Gitanas" Level="1" Display="expand">
       <!-- Application build artifacts -->
       <ComponentGroupRef Id="Component.ConEmuFiles" />
       <ComponentGroupRef Id="Component.Themes" />
@@ -1156,12 +1154,12 @@
       <ComponentRef Id="ExCSS.dll" />
       <ComponentRef Id="Git.hub.dll" />
       <ComponentRef Id="GitCommands.dll" />
-      <ComponentRef Id="GitExtensions.deps.json" />
-      <ComponentRef Id="GitExtensions.dll" />
-      <ComponentRef Id="GitExtensions.dll.config" />
-      <ComponentRef Id="GitExtensions.exe" />
+      <ComponentRef Id="Gitanas.deps.json" />
+      <ComponentRef Id="Gitanas.dll" />
+      <ComponentRef Id="Gitanas.dll.config" />
+      <ComponentRef Id="Gitanas.exe" />
       <ComponentRef Id="GitExtensions.Extensibility.dll" />
-      <ComponentRef Id="GitExtensions.runtimeconfig.json" />
+      <ComponentRef Id="Gitanas.runtimeconfig.json" />
       <ComponentRef Id="GitExtUtils.dll" />
       <ComponentRef Id="GitUI.dll" />
       <ComponentRef Id="GitUIPluginInterfaces.dll" />
@@ -1201,7 +1199,7 @@
       <ComponentRef Id="System.Reactive.Linq.dll" />
       <ComponentRef Id="ZString.dll" />
       <!-- end application build artifacts -->
-      <ComponentRef Id="gitextensions.ico" />
+      <ComponentRef Id="gitanas.ico" />
       <ComponentRef Id="gitex.cmd" />
       <ComponentRef Id="set_telemetry" />
       <ComponentRef Id="checksettings.reg" />
@@ -1510,7 +1508,7 @@
         <ComponentRef Id="Protocol.github_mac" />
       </Feature>
     </Feature>
-    <CustomAction Id="LaunchFile" FileKey="GitExtensions.exe" ExeCommand="" Return="asyncNoWait" />
+    <CustomAction Id="LaunchFile" FileKey="Gitanas.exe" ExeCommand="" Return="asyncNoWait" />
     <UI />
     <InstallExecuteSequence>
       <Custom Action="LaunchFile" After="InstallFinalize">( NOT Installed ) AND ( LAUNCH = "1" )</Custom>

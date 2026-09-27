@@ -713,7 +713,7 @@ A valid GitHub account is required</source>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
         <target>அறிவிலி நீட்டிப்புகள் ஆனது உருவாக்கச் சேவைகளுடன் ஒருங்கிணைக்க முடியும்.</target>
         
       </trans-unit>
@@ -884,7 +884,7 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
+        <source>There is no language configured for Gitanas.</source>
         <target>அறிவிலி நீட்டிப்புகளுக்கு எந்த மொழியும் உள்ளமைக்கப்படவில்லை.</target>
         
       </trans-unit>
@@ -919,17 +919,17 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
+        <source>Gitanas is properly registered.</source>
         <target>அறிவிலி நீட்டிப்புகள் சரியாகப் பதிவு செய்யப்பட்டுள்ளன.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
         <target>தவறான நிறுவல் கோப்பகம் [மென்பொருள்\அறிவிலிநீட்டிப்புகள்\நிறுவல்அடைவு] இல் சேமிக்கப்பட்டுள்ளது.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
         <target>பதிவேட்டில் உள்ளீடு இல்லை [மென்பொருள்\அறிவிலிநீட்டிப்புகள்\நிறுவல்அடைவு].</target>
         
       </trans-unit>
@@ -981,7 +981,7 @@ Please make sure that Git for Windows is installed or set the correct command ma
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
         <target>கீழே உள்ள சரிபார்ப்புப் பட்டியல், அறிவிலி நீட்டிப்புகள் சரியாகச் செயல்படத் தேவையான அடிப்படை அமைப்புகளைச் சரிபார்க்கிறது.</target>
         
       </trans-unit>
@@ -1263,7 +1263,7 @@ Please make sure that Git for Windows is installed or set the correct command ma
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="ta">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
         <target>அறிவிலி நீட்டிப்புகளில் பதிவேட்டைச் சரிபார்க்க போதுமான அனுமதிகள் இல்லை.</target>
         
       </trans-unit>
@@ -2973,7 +2973,7 @@ You will have push access. {2}</source>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
+        <source>Gitanas is open source. Get involved!</source>
         <target>அறிவிலி நீட்டிப்புகள் திறந்த மூலமாகும். ஈடுபடுங்கள்!</target>
         
       </trans-unit>
@@ -3378,7 +3378,7 @@ compare with first:</source>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="ta">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
+        <source>Gitanas</source>
         <target>அறிவிலி நீட்டிப்புகள்</target>
         
       </trans-unit>
@@ -4947,7 +4947,7 @@ Actual command line (if unchecked): --depth 1 --no-single-branch</source>
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>ஆதரவு கட்டளை வரி வாதங்கள்
 அறிவிலிநீட்டி.ஆணை / அறிவிலிநீட்டி (அறிவிலிநீட்டிப்புகள்.இயங்கு போன்ற அதே கோப்புறையில் உள்ளது):</target>
         
@@ -6325,7 +6325,7 @@ If you are not sure just close this window.</source>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>சூழல் மாறி வீடு ஆனது உலகளாவிய அறிவிலி கட்டமைப்பு கோப்பைக் கொண்ட கோப்பகத்தை சுட்டிக்காட்டவில்லை:
 &quot; {0} &quot;
 
@@ -8293,7 +8293,7 @@ Stash them before if you don&apos;t want to lose them.</source>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
@@ -9756,7 +9756,7 @@ Therefore the Cancel button does NOT revert any changes made.</source>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
+        <source>There is a new version {0} of Gitanas available</source>
         <target>அறிவிலிநீட்டிப்புகளின் புதிய பதிப்பு {0} உள்ளது</target>
         
       </trans-unit>
@@ -10400,7 +10400,7 @@ global settings.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="ta">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
+        <source>Gitanas</source>
         <target>அறிவிலி நீட்டிப்புகள்</target>
         
       </trans-unit>
@@ -10862,7 +10862,7 @@ help</source>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
+        <source>Cannot open Gitanas</source>
         <target>அறிவிலி நீட்டிப்புகளைத் திறக்க முடியாது</target>
         
       </trans-unit>
@@ -11080,7 +11080,7 @@ This will just checkout on the submodule the commit determined by the superproje
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
         <target>பார்க்கத் துணை முனைகளில் ஒன்றைத் தேர்ந்தெடுக்கவும் அல்லது ஒரு அறிவிலி நீட்டிப்புகள் செருகுநிரலின் அமைப்புகளைத் திருத்தம் செய்யவும்.</target>
         
       </trans-unit>
@@ -13159,7 +13159,7 @@ Copy error details to clipboard?</source>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
         <target>பின்வரும் பிழையின் காரணமாக &quot;{0}&quot; ஐப் படிக்க முடியவில்லை:{1}{1}{2}{1}{1}இந்தச் சிக்கலின் தன்மை காரணமாக, பயன்பாட்டின் நடத்தைக்கு உத்தரவாதம் அளிக்க முடியாது. மூடப்பட வேண்டும்.{1}{1}இந்தச் சிக்கலைச் சரிசெய்து, அறிவிலி நீட்டிப்புகளை மீண்டும் திறக்கவும்.</target>
         
       </trans-unit>
@@ -13369,7 +13369,7 @@ To be able to open this repository, you need to either:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
+        <source>&amp;Open with Gitanas</source>
         <target>&amp;அறிவிலி நீட்டிப்புகளுடன் திற</target>
         
       </trans-unit>
@@ -13418,7 +13418,7 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
         <target>இது அறிவிலி நீட்டிப்புகளால் ஏற்பட்டதாக நீங்கள் நினைத்தால், குழு விசாரணை செய்ய ஒரு பிழையைப் புகாரளிக்கலாம்.</target>
         
       </trans-unit>
@@ -13428,7 +13428,7 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
         <target>குழு விசாரணைக்கு - இது அறிவிலி நீட்டிப்புகளால் ஏற்பட்டது என்று நீங்கள் நினைத்தால்</target>
         
       </trans-unit>
@@ -13453,7 +13453,7 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
+        <source>Restart Gitanas</source>
         <target>அறிவிலி நீட்டிப்புகள் மறுதொடக்கம்</target>
         
       </trans-unit>

@@ -604,8 +604,8 @@ Sind Sie sich sicher und wollen damit fortfahren?</target>
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Hinweis: Git Extensions muss neugestartet werden, damit der Token berücksichtigt wird.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Hinweis: Gitanas muss neugestartet werden, damit der Token berücksichtigt wird.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

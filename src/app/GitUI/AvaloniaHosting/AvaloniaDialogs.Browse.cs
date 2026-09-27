@@ -612,14 +612,14 @@ internal static partial class AvaloniaDialogs
 
                     break;
                 case BrowseCommand.Translate:
-                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/wiki/Translations");
+                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas/blob/main/CONTRIBUTING.md");
                     break;
                 case BrowseCommand.Donate:
                     TryShowDonate(owner);
 
                     break;
                 case BrowseCommand.ReportAnIssue:
-                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/gitextensions/gitextensions/issues");
+                    OsShellUtil.OpenUrlInDefaultBrowser(@"https://github.com/jvitkauskas/gitanas/issues");
                     break;
                 case BrowseCommand.CheckForUpdates:
                     TrySearchForUpdatesAndShow(owner, alwaysShow: true);

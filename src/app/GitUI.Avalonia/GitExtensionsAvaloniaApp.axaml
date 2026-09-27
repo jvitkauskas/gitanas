@@ -1,7 +1,7 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="GitUI.Avalonia.GitExtensionsAvaloniaApp"
-             Name="Git Extensions"
+             Name="Gitanas"
              RequestedThemeVariant="Light">
   <Application.Resources>
     <ResourceDictionary>
@@ -15,7 +15,7 @@
       <x:Double x:Key="CommitFontSize">12</x:Double>
       <!-- The rows of the revision grid; follows the font, see ApplyOptions. -->
       <x:Double x:Key="RevisionGridRowHeight">22</x:Double>
-      <!-- Reference colors of the default theme (AppColorDefaults); replaced by the Git Extensions theme, see ApplyOptions. -->
+      <!-- Reference colors of the default theme (AppColorDefaults); replaced by the Gitanas theme, see ApplyOptions. -->
       <SolidColorBrush x:Key="AppColor.Branch" Color="#008000" />
       <SolidColorBrush x:Key="AppColor.RemoteBranch" Color="#8B0009" />
       <SolidColorBrush x:Key="AppColor.Tag" Color="#00008B" />
@@ -24,7 +24,7 @@
       <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Light">
           <SolidColorBrush x:Key="InfoBackgroundBrush" Color="#FFFFE1" />
-          <!-- SystemColors.Window and Control; replaced by the Git Extensions theme, see ApplyColors. -->
+          <!-- SystemColors.Window and Control; replaced by the Gitanas theme, see ApplyColors. -->
           <SolidColorBrush x:Key="WindowBrush" Color="#FFFFFF" />
           <SolidColorBrush x:Key="ControlBrush" Color="#F0F0F0" />
         </ResourceDictionary>

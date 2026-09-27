@@ -19,7 +19,7 @@ public sealed class BrowseStrings : ViewStrings
     public BrowseStrings()
         : base("FormBrowse")
     {
-        Title = Add("$this", "Text", "Git Extensions");
+        Title = Add("$this", "Text", "Gitanas");
         CommitTab = Add("CommitInfoTabPage", "Text", "Commit");
         DiffTab = Add("DiffTabPage", "Text", "Diff");
         TreeTab = Add("TreeTabPage", "Text", "File tree");
@@ -125,7 +125,7 @@ public sealed class BrowseStrings : ViewStrings
         UserManual = Add("userManualToolStripMenuItem", "Text", "User &manual");
         Changelog = Add("changelogToolStripMenuItem", "Text", "&Changelog");
         Translate = Add("translateToolStripMenuItem", "Text", "&Translate");
-        Donate = Add("donateToolStripMenuItem", "Text", "&Donate");
+        Donate = Add("supportUpstreamToolStripMenuItem", "Text", "Support Git Extensions");
         ReportAnIssue = Add("reportAnIssueToolStripMenuItem", "Text", "&Report an issue");
         CheckForUpdates = Add("checkForUpdatesToolStripMenuItem", "Text", "Check for &updates");
         About = Add("aboutToolStripMenuItem", "Text", "&About");

@@ -8,7 +8,7 @@ import "oaidl.idl";
 import "ocidl.idl";
 	[
 		object,
-		uuid(5E2121ED-0300-11D4-8D3B-444553540000),
+		uuid(b1a1376c-c4a4-58cb-a3a9-fdc18aaab70f),
 		dual,
 		helpstring("IGitExtensionsShellEx Interface"),
 		pointer_default(unique)
@@ -18,7 +18,7 @@ import "ocidl.idl";
 	};
 
 [
-	uuid(5E2121E1-0300-11D4-8D3B-444553540000),
+	uuid(c6acb2ce-f155-5779-b93e-f09bdb5f5c3d),
 	version(1.0),
 	helpstring("GitExtensionsShellEx 1.0 Type Library")
 ]
@@ -28,7 +28,7 @@ library GITEXTENSIONSSHELLEXLib
 	importlib("stdole2.tlb");
 
 	[
-		uuid(3C16B20A-BA16-4156-916F-0A375ECFFE24),
+		uuid(c058a8b1-7307-5439-a0e8-676b85d54f6f),
 		helpstring("GitExtensionsShellEx Class")
 	]
 	coclass GitExtensionsShellEx

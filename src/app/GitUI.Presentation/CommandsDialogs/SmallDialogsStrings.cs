@@ -9,7 +9,7 @@ public sealed class CommandlineHelpStrings : ViewStrings
         : base("FormCommandlineHelp")
     {
         Title = Add("$this", "Text", "Commandline usage");
-        Intro = Add("label1", "Text", "Supported commandline arguments for\r\ngitex.cmd / gitex (located in the same folder as GitExtensions.exe):");
+        Intro = Add("label1", "Text", "Supported commandline arguments for\r\ngitex.cmd / gitex (located in the same folder as Gitanas.exe):");
     }
 
     public TranslatedText Title { get; }
@@ -45,16 +45,14 @@ public sealed class AddFilesStrings : ViewStrings
 public sealed class DonateStrings : ViewStrings
 {
     public DonateStrings()
-        : base("FormDonate")
+        : base("SupportUpstreamDialog")
     {
-        Title = Add("$this", "Text", "Donate");
+        Title = Add("$this", "Text", "Support Git Extensions");
         Text = Add(
             "_donateText",
             "Text",
-            "We have a dedicated team of collaborators that spends a lot of time maintaining the app, working on new features and fixing bugs."
-            + "You can support the project by making a financial contribution. Donations will be used to cover running costs "
-            + "and to get the resources needed to keep the project running. We will also use donations to thank collaborators for their efforts.\r\n\r\n"
-            + "Click on the button below to get more information about making a donation.");
+            "Gitanas is based on Git Extensions. You can support the original Git Extensions project by making a donation. "
+            + "The button below opens the Git Extensions Open Collective page; donations go to the upstream project.");
     }
 
     public TranslatedText Title { get; }

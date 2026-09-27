@@ -181,7 +181,7 @@ internal static class Program
             catch (Exception ex)
             {
                 BugReportInvoker.Report(new UserExternalOperationException(
-                        context: "Invalid Git Extensions command line",
+                        context: "Invalid Gitanas command line",
                         new ExternalOperationException(command: args.Join(" ").Quote(), innerException: ex)),
                     isTerminating: false);
             }
@@ -254,7 +254,7 @@ internal static class Program
             // saves having to have a reference to System.Xml just to check that we have an XmlException
             if (in3?.GetType().Name == "XmlException")
             {
-                string localSettingsPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "GitExtensions");
+                string localSettingsPath = Path.Join(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), AppSettings.ApplicationId);
 
                 // assume that if we are having this error and the installation is not a portable one then the folder will exist.
                 if (Directory.Exists(localSettingsPath))
@@ -267,7 +267,7 @@ internal static class Program
                         if (localSettingsPath.TryDeleteDirectory(out string? errorMessage))
                         {
                             // Restart Git Extensions with the same arguments after old config is deleted?
-                            if (DialogResult.OK.Equals(MessageBoxes.Show(string.Format("Files have been deleted.{0}{0}Would you like to attempt to restart Git Extensions?", Environment.NewLine), "Configuration Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)))
+                            if (DialogResult.OK.Equals(MessageBoxes.Show(string.Format("Files have been deleted.{0}{0}Would you like to attempt to restart Gitanas?", Environment.NewLine), "Configuration Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Question)))
                             {
                                 string[] args = Environment.GetCommandLineArgs();
 

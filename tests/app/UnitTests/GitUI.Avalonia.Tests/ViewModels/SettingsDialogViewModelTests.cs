@@ -14,7 +14,7 @@ public sealed class SettingsDialogViewModelTests
         (SettingsDialogViewModel viewModel, _, FakeSources sources) = Create();
 
         viewModel.Open(initialPageName: null);
-        viewModel.SelectedPage!.Title.Should().Be("Detailed", "the Git Extensions group has no page of its own here, its first child is shown");
+        viewModel.SelectedPage!.Title.Should().Be("Detailed", "the Gitanas group has no page of its own here, its first child is shown");
         viewModel.Title.Should().Be("Settings - Detailed");
 
         viewModel.GotoPage("GitSettingsGroup");
@@ -35,7 +35,7 @@ public sealed class SettingsDialogViewModelTests
         viewModel.Filter = "graph diagonals";
         Highlighted(viewModel).Should().Equal(["Detailed"], "spaces combine keywords");
         viewModel.Filter = "git";
-        Highlighted(viewModel).Should().Equal("Git Extensions", "Git");
+        Highlighted(viewModel).Should().Equal("Gitanas", "Git");
 
         viewModel.SelectNextFoundCommand.Execute(null);
         viewModel.SelectedPage!.Title.Should().Be("Detailed", "the group found shows its first child");
@@ -125,7 +125,7 @@ public sealed class SettingsDialogViewModelTests
         FakeSources sources = new();
         SettingsDialogViewModel viewModel = new(new SettingsDialogStrings(), host);
         SettingsDialogStrings strings = viewModel.Strings;
-        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, "GitExtensionsSettingsGroup"), null, "GitExtensionsLogo16", sources.None);
+        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, "GitExtensionsSettingsGroup"), null, "GitanasLogo16", sources.None);
         viewModel.AddPage(new DetailedSettingsPageViewModel(new DetailedSettingsPageStrings()), "GitExtensionsSettingsGroup", "Settings", sources.Distributed);
         viewModel.AddPage(new RecordingPage(), "DetailedSettingsPage", "Blame", sources.GlobalOnly);
         viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitGroup.Text, "GitSettingsGroup"), null, "GitLogo16", sources.None);

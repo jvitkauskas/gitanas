@@ -38,7 +38,7 @@
     <ArtifactsUnitTestsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsTestsDir)', 'UnitTests'))</ArtifactsUnitTestsDir>
     <ArtifactsIntegrationTestsDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsTestsDir)', 'IntegrationTests'))</ArtifactsIntegrationTestsDir>
     <ArtifactsPublishDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsDir)', 'publish'))</ArtifactsPublishDir>
-    <AppPublishDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsPublishDir)', 'GitExtensions'))</AppPublishDir>
+    <AppPublishDir>$([MSBuild]::NormalizeDirectory('$(ArtifactsPublishDir)', 'Gitanas'))</AppPublishDir>
   </PropertyGroup>
   <PropertyGroup>
     <OutDirName Condition="'$(OutDirName)' == ''">$(MSBuildProjectName)</OutDirName>

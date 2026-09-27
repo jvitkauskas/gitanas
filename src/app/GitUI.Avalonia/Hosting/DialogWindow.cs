@@ -26,7 +26,7 @@ public class DialogWindow : Window
     private readonly nint _ownerId = Interlocked.Decrement(ref _nextOwnerId);
 
     private static readonly Lazy<WindowIcon> _applicationIcon = new(
-        () => new WindowIcon(AssetLoader.Open(new Uri("avares://GitUI.Avalonia/Assets/git-extensions-logo-256px.png"))));
+        () => new WindowIcon(AssetLoader.Open(new Uri("avares://GitUI.Avalonia/Assets/GitanasLogo256.png"))));
 
     private DialogViewModel? _viewModel;
     private PixelRect? _lastNormalBounds;
@@ -132,10 +132,9 @@ public class DialogWindow : Window
     private void UpdateWindows10TitleBar()
     {
         // Avalonia 12.1 applies this attribute only on Windows 11. Windows 10 20H1+ also supports it.
-        // Keep the workaround local to Modern and leave Windows 11 to the backend. Never pass a synthetic
+        // Leave Windows 11 to the backend. Never pass a synthetic
         // Wayland owner ID (or a headless test handle) to DWM.
-        if (GitExtensionsAvaloniaApp.IsModern
-            && OperatingSystem.IsWindowsVersionAtLeast(10, 0, 19041)
+        if (OperatingSystem.IsWindowsVersionAtLeast(10, 0, 19041)
             && !OperatingSystem.IsWindowsVersionAtLeast(10, 0, 22000)
             && TryGetPlatformHandle() is { Handle: not 0, HandleDescriptor: "HWND" } handle)
         {

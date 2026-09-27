@@ -13,7 +13,7 @@
     <ProductVersion>3.0</ProductVersion>
     <ProjectGuid>{9380c29c-3c7f-47a8-a4c9-a5ee9d7b386a}</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>GitExtensions</OutputName>
+    <OutputName>Gitanas</OutputName>
     <OutputType>Package</OutputType>
     <DefineSolutionProperties>false</DefineSolutionProperties>
     <OutputPath>bin\$(Configuration)\</OutputPath>

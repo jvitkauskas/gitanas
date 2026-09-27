@@ -224,7 +224,7 @@ public sealed partial class ShellExtensionSettingsPageViewModel : SettingsPageVi
         string preview = topLevel;
         if (!string.IsNullOrWhiteSpace(cascaded))
         {
-            preview += "Git Extensions > \n" + cascaded;
+            preview += "Gitanas > \n" + cascaded;
         }
         else if (string.IsNullOrWhiteSpace(topLevel))
         {

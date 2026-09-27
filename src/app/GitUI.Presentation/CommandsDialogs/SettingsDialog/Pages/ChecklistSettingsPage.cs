@@ -12,7 +12,7 @@ public sealed class ChecklistSettingsPageStrings : ViewStrings
         : base("ChecklistSettingsPage")
     {
         Title = Add("$this", "Text", "Checklist");
-        Intro = Add("label11", "Text", "The checklist below validates the basic settings needed for Git Extensions to work properly.");
+        Intro = Add("label11", "Text", "The checklist below validates the basic settings needed for Gitanas to work properly.");
         CheckAtStartup = Add("CheckAtStartup", "Text", "Check settings at startup (disables automatically if all settings are correct)");
         Rescan = Add("Rescan", "Text", "Save and rescan");
         Repair = Add("GitFound_Fix", "Text", "Repair");
@@ -30,14 +30,14 @@ public sealed class ChecklistSettingsPageStrings : ViewStrings
         ShellExtNoInstalled = Add("_shellExtNoInstalled", "Text", "Shell extensions are not installed. Run the installer to install the shell extensions.");
         ShellExtNeedsToBeRegistered = Add("_shellExtNeedsToBeRegistered", "Text", "{0} needs to be registered in order to use the shell extensions.");
         SolveGitCommandFailedUnix = Add("_solveGitCommandFailedUnix", "Text", "The command to run git could not be determined automatically.\nPlease install Git using your package manager or set the correct command manually.");
-        RegistryKeyGitExtensionsMissing = Add("_registryKeyGitExtensionsMissing", "Text", @"Registry entry missing [Software\GitExtensions\InstallDir].");
-        RegistryKeyGitExtensionsFaulty = Add("_registryKeyGitExtensionsFaulty", "Text", @"Invalid installation directory stored in [Software\GitExtensions\InstallDir].");
-        RegistryKeyGitExtensionsCorrect = Add("_registryKeyGitExtensionsCorrect", "Text", "Git Extensions is properly registered.");
+        RegistryKeyGitExtensionsMissing = Add("_registryKeyGitExtensionsMissing", "Text", @"Registry entry missing [Software\Gitanas\InstallDir].");
+        RegistryKeyGitExtensionsFaulty = Add("_registryKeyGitExtensionsFaulty", "Text", @"Invalid installation directory stored in [Software\Gitanas\InstallDir].");
+        RegistryKeyGitExtensionsCorrect = Add("_registryKeyGitExtensionsCorrect", "Text", "Gitanas is properly registered.");
         PlinkPuttyGenPageantNotFound = Add("_plinkputtyGenpageantNotFound", "Text", "PuTTY is configured as SSH client but cannot find plink.exe, puttygen.exe or pageant.exe.");
         PuttyConfigured = Add("_puttyConfigured", "Text", "SSH client PuTTY is configured properly.");
         OpensshUsed = Add("_opensshUsed", "Text", "Default SSH client, OpenSSH, will be used. (commandline window will appear on pull, push and clone operations)");
         LanguageConfigured = Add("_languageConfigured", "Text", "The configured language is {0}.");
-        NoLanguageConfigured = Add("_noLanguageConfigured", "Text", "There is no language configured for Git Extensions.");
+        NoLanguageConfigured = Add("_noLanguageConfigured", "Text", "There is no language configured for Gitanas.");
         NoEmailSet = Add("_noEmailSet", "Text", "You need to configure a username and an email address.");
         EmailSet = Add("_emailSet", "Text", "A username and an email address are configured.");
         MergeToolXConfiguredNeedsCmd = Add("_mergeToolXConfiguredNeedsCmd", "Text", "{0} is configured as mergetool, this is a custom mergetool and needs a custom cmd to be configured.");

@@ -20,9 +20,6 @@ namespace GitUI.Avalonia.Hosting;
 /// <param name="EditorFontSize">The font size of the file viewer and editor, in device-independent pixels.</param>
 /// <param name="CommitFontFamily">The font family of the commit message (<c>AppSettings.CommitFont</c>).</param>
 /// <param name="CommitFontSize">The font size of the commit message, in device-independent pixels.</param>
-/// <param name="ControlTheme">
-///  The control theme (<c>AppSettings.AvaloniaControlTheme</c>), used by the first options only: Fluent when missing.
-/// </param>
 public sealed record AvaloniaUiOptions(
     bool IsDarkTheme,
     string? FontFamily,
@@ -31,7 +28,6 @@ public sealed record AvaloniaUiOptions(
     string? MonospaceFontFamily = null,
     string? EditorFontFamily = null,
     double EditorFontSize = 0,
-    string? ControlTheme = null,
     string? CommitFontFamily = null,
     double CommitFontSize = 0);
 
@@ -175,7 +171,6 @@ public static class AvaloniaUi
             return;
         }
 
-        // The control theme also chooses Wayland decorations, before the backend is initialized.
         AvaloniaUiOptions options = getOptions();
 
         // WinForms installs its SynchronizationContext on the UI thread, and JoinableTaskFactory captured it at
@@ -191,11 +186,11 @@ public static class AvaloniaUi
             if (ShouldUseWayland(OperatingSystem.IsLinux(), Environment.GetEnvironmentVariable("WAYLAND_DISPLAY"), Environment.GetEnvironmentVariable("GITEXTENSIONS_USE_WAYLAND")))
             {
                 // KWin's server decorations do not follow the application's color theme. Modern uses the same
-                // themed Avalonia decorations as GNOME; other control themes keep the compositor's preference.
+                // themed Avalonia decorations as GNOME.
 #pragma warning disable AVALONIA_WAYLAND_FORCE_CSD // Needed for Modern's light/dark title bars on SSD compositors.
                 builder.With(new WaylandPlatformOptions
                 {
-                    ForceDrawnDecorations = GitExtensionsAvaloniaApp.ResolveControlTheme(options.ControlTheme) == "modern",
+                    ForceDrawnDecorations = true,
                 });
 #pragma warning restore AVALONIA_WAYLAND_FORCE_CSD
                 builder.UseWaylandWithFallback();

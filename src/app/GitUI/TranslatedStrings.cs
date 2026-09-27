@@ -49,7 +49,7 @@ internal sealed class TranslatedStrings : Translate
     private readonly TranslationString _local = new("Local");
     private readonly TranslationString _tag = new("Tag");
     private readonly TranslationString _remote = new("Remote");
-    private readonly TranslationString _openWithGitExtensions = new("&Open with Git Extensions");
+    private readonly TranslationString _openWithGitExtensions = new("&Open with Gitanas");
     private readonly TranslationString _contScrollToNextFileOnlyWithAlt = new("Enable automatic continuous scroll (without ALT button)");
     private readonly TranslationString _noRevision = new("No revision");
 
@@ -113,7 +113,7 @@ the last selected commit.");
     private readonly TranslationString _commandText = new("Command");
     private readonly TranslationString _exitCodeText = new("Exit code");
     private readonly TranslationString _workingDirectoryText = new("Working directory");
-    private readonly TranslationString _reportBugText = new("If you think this was caused by Git Extensions, you can report a bug for the team to investigate.");
+    private readonly TranslationString _reportBugText = new("If you think this was caused by Gitanas, you can report a bug for the team to investigate.");
     private readonly TranslationString _reportIssueDescription = new($"for the team to investigate - if you think this was caused by {AppSettings.ApplicationName}");
     private readonly TranslationString _externalErrorDescription = new("error from git or from other external application");
 

@@ -16,6 +16,9 @@ internal sealed class ModernIconLoader(IAssetLoader inner) : IAssetLoader
 {
     private const string Prefix = "avares://GitUI.Avalonia/Assets/";
 
+    // AssetLoader is also used by background file-icon readers. Read Avalonia properties only on the UI thread.
+    private volatile string _variant = "Light";
+
     /// <summary>
     ///  Serves the Modern icons from now on (once), in place of the asset loader of the platform. The locator of Avalonia is
     ///  internal since Avalonia 12: bound through reflection, and without the Modern icons if that fails.
@@ -32,8 +35,15 @@ internal sealed class ModernIconLoader(IAssetLoader inner) : IAssetLoader
 
         try
         {
+            ModernIconLoader loader = new(current);
+            if (Application.Current is { } app)
+            {
+                loader._variant = app.ActualThemeVariant == ThemeVariant.Dark ? "Dark" : "Light";
+                app.ActualThemeVariantChanged += (_, _) => loader._variant = app.ActualThemeVariant == ThemeVariant.Dark ? "Dark" : "Light";
+            }
+
             object? registration = typeof(AvaloniaLocator).GetMethod("Bind", flags)?.MakeGenericMethod(typeof(IAssetLoader)).Invoke(locator, null);
-            registration?.GetType().GetMethod("ToConstant", flags)?.MakeGenericMethod(typeof(ModernIconLoader)).Invoke(registration, [new ModernIconLoader(current)]);
+            registration?.GetType().GetMethod("ToConstant", flags)?.MakeGenericMethod(typeof(ModernIconLoader)).Invoke(registration, [loader]);
         }
         catch (Exception exception) when (exception is TargetInvocationException or InvalidOperationException or ArgumentException)
         {
@@ -49,7 +59,7 @@ internal sealed class ModernIconLoader(IAssetLoader inner) : IAssetLoader
     internal Uri Resolve(Uri uri, Uri? baseUri = null)
     {
         Uri absolute = uri.IsAbsoluteUri || baseUri is null ? uri : new Uri(baseUri, uri);
-        if (!GitExtensionsAvaloniaApp.IsModern || !absolute.IsAbsoluteUri)
+        if (!absolute.IsAbsoluteUri)
         {
             return uri;
         }
@@ -62,12 +72,11 @@ internal sealed class ModernIconLoader(IAssetLoader inner) : IAssetLoader
             return uri;
         }
 
-        string variant = Application.Current?.ActualThemeVariant == ThemeVariant.Dark ? "Dark" : "Light";
-        Uri modern = new($"{Prefix}Modern/{variant}/{text[Prefix.Length..]}");
+        Uri modern = new($"{Prefix}Modern/{_variant}/{text[Prefix.Length..]}");
         return inner.Exists(modern) ? modern : uri;
     }
 
-    public bool Exists(Uri uri, Uri? baseUri = null) => inner.Exists(uri, baseUri);
+    public bool Exists(Uri uri, Uri? baseUri = null) => inner.Exists(Resolve(uri, baseUri), baseUri);
 
     public Stream Open(Uri uri, Uri? baseUri = null) => inner.Open(Resolve(uri, baseUri), baseUri);
 

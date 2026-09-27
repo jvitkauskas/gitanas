@@ -78,7 +78,7 @@ public class GitHub3Plugin : GitPluginBase, IRepositoryHostPlugin, IGitPluginFor
     private readonly TranslationString _generateToken = new("Generate a GitHub personal access token");
     private readonly TranslationString _manageToken = new("Manage GitHub personal access token");
     private readonly TranslationString _openLinkFailed = new("Fail to open the link. Reason: ");
-    private readonly TranslationString _noteRestartNeeded = new("Note: Git Extensions need to be restarted so that the token is taken into account.");
+    private readonly TranslationString _noteRestartNeeded = new("Note: Gitanas need to be restarted so that the token is taken into account.");
     private readonly TranslationString _noTokenError = new("No GitHub personal access token (PAT) defined");
     private readonly TranslationString _noAssignedIssues = new("No assigned GitHub issues found");
     private readonly TranslationString _error = new("Error");
@@ -119,7 +119,7 @@ public class GitHub3Plugin : GitPluginBase, IRepositoryHostPlugin, IGitPluginFor
     {
         yield return PersonalAccessToken;
 
-        yield return new ActionSetting(_generateToken.Text, context => OpenLink(context.Owner, $"https://{GitHubHost.ValueOrDefault(Instance.Settings)}/settings/tokens/new?description=Token%20for%20GitExtensions&scopes=repo,public_repo"));
+        yield return new ActionSetting(_generateToken.Text, context => OpenLink(context.Owner, $"https://{GitHubHost.ValueOrDefault(Instance.Settings)}/settings/tokens/new?description=Token%20for%20Gitanas&scopes=repo,public_repo"));
 
         yield return new ActionSetting(_manageToken.Text, context => OpenLink(context.Owner, $"https://{GitHubHost.ValueOrDefault(Instance.Settings)}/settings/tokens"));
 

@@ -70,7 +70,7 @@ public sealed class SettingsPageLocator : IDataTemplate
 /// <summary>Converters of the settings dialog: the icon of a page (an asset name), a bold highlighted page, a visible arrow.</summary>
 public sealed class SettingsIconConverter : IValueConverter
 {
-    private static readonly Dictionary<string, Bitmap?> _icons = [];
+    private static readonly Dictionary<(string Name, bool Dark), Bitmap?> _icons = [];
 
     public static SettingsIconConverter Instance { get; } = new();
 
@@ -102,11 +102,12 @@ public sealed class SettingsIconConverter : IValueConverter
             return null;
         }
 
-        if (!_icons.TryGetValue(name, out Bitmap? icon))
+        (string Name, bool Dark) cacheKey = (name, global::Avalonia.Application.Current?.ActualThemeVariant == global::Avalonia.Styling.ThemeVariant.Dark);
+        if (!_icons.TryGetValue(cacheKey, out Bitmap? icon))
         {
             Uri uri = new($"avares://GitUI.Avalonia/Assets/{name}.png");
             icon = AssetLoader.Exists(uri) ? new Bitmap(AssetLoader.Open(uri)) : null;
-            _icons[name] = icon;
+            _icons[cacheKey] = icon;
         }
 
         return icon;

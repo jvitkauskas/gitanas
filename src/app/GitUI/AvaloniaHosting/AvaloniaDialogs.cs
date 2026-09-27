@@ -155,7 +155,6 @@ internal static partial class AvaloniaDialogs
             MonospaceFontFamily: AppSettings.MonospaceFont.FamilyName,
             EditorFontFamily: AppSettings.FixedWidthFont.FamilyName,
             EditorFontSize: AppSettings.FixedWidthFont.SizeInPixels,
-            ControlTheme: AppSettings.AvaloniaControlTheme,
             CommitFontFamily: AppSettings.CommitFont.FamilyName,
             CommitFontSize: AppSettings.CommitFont.SizeInPixels);
     }

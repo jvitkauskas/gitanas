@@ -11,7 +11,7 @@ public sealed class FileStatusIconConverter : IValueConverter
 {
     public static FileStatusIconConverter Instance { get; } = new();
 
-    private static readonly Dictionary<string, Bitmap?> _icons = [];
+    private static readonly Dictionary<(string Name, bool Dark), Bitmap?> _icons = [];
 
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         => value is string key ? GetIcon(key) : null;
@@ -21,7 +21,8 @@ public sealed class FileStatusIconConverter : IValueConverter
 
     public static Bitmap? GetIcon(string key)
     {
-        if (!_icons.TryGetValue(key, out Bitmap? icon))
+        (string Name, bool Dark) cacheKey = (key, global::Avalonia.Application.Current?.ActualThemeVariant == global::Avalonia.Styling.ThemeVariant.Dark);
+        if (!_icons.TryGetValue(cacheKey, out Bitmap? icon))
         {
             string file = key switch
             {
@@ -31,7 +32,7 @@ public sealed class FileStatusIconConverter : IValueConverter
             };
             Uri uri = new($"avares://GitUI.Avalonia/Assets/{file}.png");
             icon = AssetLoader.Exists(uri) ? new Bitmap(AssetLoader.Open(uri)) : null;
-            _icons[key] = icon;
+            _icons[cacheKey] = icon;
         }
 
         return icon;

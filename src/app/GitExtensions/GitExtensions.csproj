@@ -8,8 +8,10 @@
   <PropertyGroup>
     <TargetFramework>$(PortableTargetFramework)</TargetFramework>
     <OutputType>WinExe</OutputType>
+    <AssemblyName>Gitanas</AssemblyName>
+    <RootNamespace>GitExtensions</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <ApplicationIcon>..\..\..\setup\assets\Logo\git-extensions-logo.ico</ApplicationIcon>
+    <ApplicationIcon>..\..\..\setup\assets\Logo\gitanas\gitanas.ico</ApplicationIcon>
     <StartupObject />
 
     <IsPublishable>true</IsPublishable>

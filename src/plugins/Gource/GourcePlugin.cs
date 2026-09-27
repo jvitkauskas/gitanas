@@ -242,7 +242,7 @@ public class GourcePlugin : GitPluginBase, IGitPluginForRepository
         async Task<string> FindWin64AssetAsync(string apiUrl)
         {
             using HttpRequestMessage request = new(HttpMethod.Get, apiUrl);
-            request.Headers.UserAgent.ParseAdd("GitExtensions");
+            request.Headers.UserAgent.ParseAdd("Gitanas");
             using HttpResponseMessage response = await _httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode)
             {

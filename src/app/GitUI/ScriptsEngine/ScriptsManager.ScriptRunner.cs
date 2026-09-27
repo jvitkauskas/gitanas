@@ -251,7 +251,9 @@ partial class ScriptsManager
                 return AppSettings.GitCommand;
             }
 
-            if (originalCommand.Equals("gitextensions", StringComparison.CurrentCultureIgnoreCase) ||
+            if (originalCommand.Equals("gitanas", StringComparison.CurrentCultureIgnoreCase) ||
+                originalCommand.Equals("{gitanas}", StringComparison.CurrentCultureIgnoreCase) ||
+                originalCommand.Equals("gitextensions", StringComparison.CurrentCultureIgnoreCase) ||
                 originalCommand.Equals("{gitextensions}", StringComparison.CurrentCultureIgnoreCase) ||
                 originalCommand.Equals("gitex", StringComparison.CurrentCultureIgnoreCase) ||
                 originalCommand.Equals("{gitex}", StringComparison.CurrentCultureIgnoreCase))

@@ -4,7 +4,7 @@
   <!-- COM Registration -->
   <RegistryValue
     Root="HKCR" Key="CLSID\$(var.ShellExCLSID)"
-    Value="GitExtensions Shell Extension" Type="string"/>
+    Value="Gitanas Shell Extension" Type="string"/>
   <RegistryValue
     Root="HKCR" Key="CLSID\$(var.ShellExCLSID)\InprocServer32"
     Value="[INSTALLDIR]$(var.ShellExFileName)" Type="string"/>
@@ -15,15 +15,15 @@
   <!-- Shell Extension Registration -->
   <RegistryValue
     Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved"
-    Name="$(var.ShellExCLSID)" Value="GitExtensions2" Type="string"/>
+    Name="$(var.ShellExCLSID)" Value="Gitanas" Type="string"/>
   <RegistryValue
-    Root="HKCR" Key="*\shellex\ContextMenuHandlers\GitExtensions2"
+    Root="HKCR" Key="*\shellex\ContextMenuHandlers\Gitanas"
     Value="$(var.ShellExCLSID)" Type="string"/>
   <RegistryValue
-    Root="HKCR" Key="Directory\shellex\ContextMenuHandlers\GitExtensions2"
+    Root="HKCR" Key="Directory\shellex\ContextMenuHandlers\Gitanas"
     Value="$(var.ShellExCLSID)" Type="string"/>
   <RegistryValue
-    Root="HKCR" Key="Directory\Background\shellex\ContextMenuHandlers\GitExtensions2"
+    Root="HKCR" Key="Directory\Background\shellex\ContextMenuHandlers\Gitanas"
     Value="$(var.ShellExCLSID)" Type="string"/>
   
 </Include>

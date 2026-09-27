@@ -20,8 +20,8 @@ public static class ApplicationInfo
 
     /// <summary>
     ///  The executable of the application: the one of the process, except when the process is the host of .NET (the application
-    ///  started as <c>dotnet GitExtensions.dll</c>), whose folder is not the one of the application (the portable settings, the
-    ///  plugins, the version): then the executable next to the entry assembly (<c>GitExtensions</c>, <c>GitExtensions.exe</c>),
+    ///  started as <c>dotnet Gitanas.dll</c>), whose folder is not the one of the application (the portable settings, the
+    ///  plugins, the version): then the executable next to the entry assembly (<c>Gitanas</c>, <c>Gitanas.exe</c>),
     ///  else the entry assembly.
     /// </summary>
     internal static string GetExecutablePath(string processPath, string? entryAssemblyPath, Func<string, bool> fileExists)

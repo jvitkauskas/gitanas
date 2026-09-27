@@ -16,7 +16,7 @@ public sealed class DashboardStrings : ViewStrings
         CloneRepository = Add("_cloneRepository", "Text", "Clone repository");
         CreateRepository = Add("_createRepository", "Text", "Create new repository");
         Develop = Add("_develop", "Text", "Develop");
-        Donate = Add("_donate", "Text", "Donate");
+        Donate = Add("_supportUpstream", "Text", "Support Git Extensions");
         Issues = Add("_issues", "Text", "Issues");
         OpenRepository = Add("_openRepository", "Text", "Open repository");
         Translate = Add("_translate", "Text", "Translate");

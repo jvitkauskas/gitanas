@@ -604,8 +604,8 @@ Opravdu chcete pokračovat?</target>
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Poznámka: Aby se token projevil, je nutné restartovat Git Extensions.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Poznámka: Aby se token projevil, je nutné restartovat Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

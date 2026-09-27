@@ -605,8 +605,8 @@ Delete branches fully merged into branch</target>
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Megjegyzés: a Git Extensions újraindítása szükséges ahhoz, hogy a token életbe lépjen.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Megjegyzés: a Gitanas újraindítása szükséges ahhoz, hogy a token életbe lépjen.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

@@ -28,7 +28,7 @@ public sealed class DialogBoxViewTests : HeadlessTest
 
         TaskDialogPage page = new()
         {
-            Caption = "Git Extensions",
+            Caption = "Gitanas",
             Heading = "There are uncommitted changes",
             Text = "Checking out another branch discards them. See <a href=\"https://git-scm.com\">the manual</a>.",
             Icon = TaskDialogIcon.Warning,

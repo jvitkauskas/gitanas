@@ -717,8 +717,8 @@ A valid GitHub account is required</source>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions 可與組建伺服器整合，以提供每個提交的持續整合資訊。</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas 可與組建伺服器整合，以提供每個提交的持續整合資訊。</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -888,8 +888,8 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>尚未為 Git Extensions 設定語言。</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>尚未為 Gitanas 設定語言。</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -923,18 +923,18 @@ Please make sure there are linux tools installed (through Git for Windows or cyg
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions 已正確註冊。</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas 已正確註冊。</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>儲存於 [Software\GitExtensions\InstallDir] 的安裝目錄無效。</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>儲存於 [Software\Gitanas\InstallDir] 的安裝目錄無效。</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>遺失登錄項目 [Software\GitExtensions\InstallDir]。</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>遺失登錄項目 [Software\Gitanas\InstallDir]。</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -985,8 +985,8 @@ Please make sure that Git for Windows is installed or set the correct command ma
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>下方的檢查清單會驗證 Git Extensions 正常運作所需的基本設定。</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>下方的檢查清單會驗證 Gitanas 正常運作所需的基本設定。</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1267,8 +1267,8 @@ Please make sure that Git for Windows is installed or set the correct command ma
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="zh-Hant">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions 權限不足，無法檢查登錄。</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas 權限不足，無法檢查登錄。</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2972,8 +2972,8 @@ You will have push access. {2}</source>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions 是開放原始碼軟體。歡迎參與！</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas 是開放原始碼軟體。歡迎參與！</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3379,8 +3379,8 @@ compare with first:</source>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="zh-Hant">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4948,8 +4948,8 @@ Actual command line (if unchecked): --depth 1 --no-single-branch</source>
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
-        <target>gitex.cmd / gitex (位於與 GitExtensions.exe 相同的資料夾中)
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
+        <target>gitex.cmd / gitex (位於與 Gitanas.exe 相同的資料夾中)
 支援的命令列引數：</target>
         
       </trans-unit>
@@ -6326,11 +6326,11 @@ If you are not sure just close this window.</source>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>環境變數 HOME 未指向包含全域 git 設定檔案的目錄：
 &quot; {0} &quot;
 
-您要讓 Git Extensions 協助找到正確的資料夾嗎？</target>
+您要讓 Gitanas 協助找到正確的資料夾嗎？</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8292,14 +8292,14 @@ Stash them before if you don&apos;t want to lose them.</source>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>PuTTY 尚未登錄此主機的指紋。
 這會導致此處理程序停止回應，因此會自動將其停止。
 
-當連線獨立於 Git 與 Git Extensions 開啟時，才能登錄主機的指紋。
+當連線獨立於 Git 與 Gitanas 開啟時，才能登錄主機的指紋。
 您也可以手動新增主機的指紋，或從遠端對話方塊執行「測試連線」。
 
 您要登錄此主機的指紋並重新啟動此處理程序嗎？</target>
@@ -9752,8 +9752,8 @@ Therefore the Cancel button does NOT revert any changes made.</source>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>有新版本 {0} 的 Git Extensions 可供使用</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>有新版本 {0} 的 Gitanas 可供使用</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10392,8 +10392,8 @@ global settings.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="zh-Hant">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10854,8 +10854,8 @@ help</source>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>無法開啟 Git Extensions</target>
+        <source>Cannot open Gitanas</source>
+        <target>無法開啟 Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11072,8 +11072,8 @@ This will just checkout on the submodule the commit determined by the superproje
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>選取一個子節點以檢視或編輯 Git Extensions 外掛的設定。</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>選取一個子節點以檢視或編輯 Gitanas 外掛的設定。</target>
         
       </trans-unit>
     </body>
@@ -13149,8 +13149,8 @@ Copy error details to clipboard?</source>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>由於以下錯誤，無法讀取「{0}」：{1}{1}{2}{1}{1}由於此問題的性質，無法保證應用程式能夠正常執行，必須將其關閉。{1}{1}請修正此問題並重新開啟 Git Extensions。</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>由於以下錯誤，無法讀取「{0}」：{1}{1}{2}{1}{1}由於此問題的性質，無法保證應用程式能夠正常執行，必須將其關閉。{1}{1}請修正此問題並重新開啟 Gitanas。</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13359,8 +13359,8 @@ To be able to open this repository, you need to either:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>以 Git Extensions 開啟（&amp;O）</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>以 Gitanas 開啟（&amp;O）</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13408,8 +13408,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>如果您認為這是由 Git Extensions 引起的，可以向團隊回報錯誤以供調查。</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>如果您認為這是由 Gitanas 引起的，可以向團隊回報錯誤以供調查。</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13418,8 +13418,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>讓團隊進列調查 - 如果您認為這是由 Git Extensions 引起的</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>讓團隊進列調查 - 如果您認為這是由 Gitanas 引起的</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13443,8 +13443,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>重新啟動 Git Extensions</target>
+        <source>Restart Gitanas</source>
+        <target>重新啟動 Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

@@ -140,7 +140,7 @@ internal sealed partial class SecretServiceCredentialStore : ICredentialStore
 
         return WithAttributes(target, attributes =>
         {
-            int stored = secret_password_storev_sync(_schema.Value, attributes, collection: null, $"Git Extensions: {target}", $"{credential.UserName}\n{credential.Password}", IntPtr.Zero, out IntPtr error);
+            int stored = secret_password_storev_sync(_schema.Value, attributes, collection: null, $"Gitanas: {target}", $"{credential.UserName}\n{credential.Password}", IntPtr.Zero, out IntPtr error);
             return stored != 0 && CheckError(error);
         });
     }

@@ -4,7 +4,7 @@
                 xmlns:vm="using:GitUI.Presentation.HelperDialogs"
                 x:Class="GitUI.Avalonia.HelperDialogs.AskPassWindow"
                 x:DataType="vm:AskPassViewModel"
-                Title="Git Extensions"
+                Title="Gitanas"
                 Width="420" MinWidth="320" SizeToContent="Height" CanMaximize="False">
   <!-- The prompt of ssh and git off Windows (GitExtensions askpass), as GitExtSshAskPass on Windows. The buttons are those
        of a dialog footer, in the order of the system (DialogButtonOrder). -->

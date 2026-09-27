@@ -38,11 +38,6 @@
           </DropDownButton>
         </StackPanel>
         <CheckBox Name="colorblind" Content="{Binding Strings.Colorblind.AccessKeyText}" IsChecked="{Binding IsColorblind}" />
-        <!-- The control theme of the Avalonia UI (not in ColorsSettingsPage). -->
-        <StackPanel Orientation="Horizontal" Spacing="6" ToolTip.Tip="{Binding Strings.ControlThemeToolTip.Text}">
-          <Label Content="{Binding Strings.ControlTheme.AccessKeyText}" Target="controlTheme" VerticalAlignment="Center" Padding="0" />
-          <ComboBox Name="controlTheme" MinWidth="160" ItemsSource="{Binding ControlThemes}" SelectedItem="{Binding SelectedControlTheme}" />
-        </StackPanel>
         <CheckBox Name="useSystemVisualStyle" Content="{Binding Strings.UseSystemVisualStyle.AccessKeyText}" IsChecked="{Binding UseSystemVisualStyle}"
                   IsEnabled="{Binding IsChoosingVisualStyleEnabled}" />
       </StackPanel>

@@ -719,8 +719,8 @@ Voimassa oleva GitHub-tili vaaditaan</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions voi integroitua koontipalvelimiin tarjotakseen kommittikohtaista jatkuvan integroinnin tietoa.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas voi integroitua koontipalvelimiin tarjotakseen kommittikohtaista jatkuvan integroinnin tietoa.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -890,8 +890,8 @@ Varmista, että linux-työkalut on asennettu (Git for Windowsin tai cygwinin kau
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Git Extensionsille ei ole määritetty kieltä.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Gitanasille ei ole määritetty kieltä.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -925,18 +925,18 @@ Varmista, että linux-työkalut on asennettu (Git for Windowsin tai cygwinin kau
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions on rekisteröity oikein.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas on rekisteröity oikein.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Virheellinen asennushakemisto tallennettu kohteessa [Software\GitExtensions\InstallDir].</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Virheellinen asennushakemisto tallennettu kohteessa [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Rekisterimerkintä puuttuu [Software\GitExtensions\InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Rekisterimerkintä puuttuu [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -987,8 +987,8 @@ Varmista, että Git for Windows on asennettu tai aseta oikea komento manuaalises
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Alla oleva tarkistuslista vahvistaa Git Extensionsin toiminnan kannalta tarvittavat perusasetukset.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Alla oleva tarkistuslista vahvistaa Gitanasin toiminnan kannalta tarvittavat perusasetukset.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1269,8 +1269,8 @@ Varmista, että Git for Windows on asennettu tai aseta oikea komento manuaalises
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="fi">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensionsilla ei ole riittäviä oikeuksia rekisterin tarkistamiseen.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanasilla ei ole riittäviä oikeuksia rekisterin tarkistamiseen.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2979,8 +2979,8 @@ Saat push-oikeudet. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions on avoimen lähdekoodin ohjelma. Ole mukana!</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas on avoimen lähdekoodin ohjelma. Ole mukana!</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3386,8 +3386,8 @@ verrataan ensin:</target>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="fi">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4955,9 +4955,9 @@ Todellinen komentorivi (jos ei valittu): --depth 1 --no-single-branch</target>
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Tuetut komentorivin argumentit
-gitex.cmd / gitex -tiedostolle (sijaitsee samassa kansiossa kuin GitExtensions.exe):</target>
+gitex.cmd / gitex -tiedostolle (sijaitsee samassa kansiossa kuin Gitanas.exe):</target>
         
       </trans-unit>
     </body>
@@ -6333,11 +6333,11 @@ Jos olet epävarma, sulje tämä ikkuna.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>Ympäristömuuttuja HOME ei osoita hakemistoon, joka sisältää yleisen git-asetustiedoston:
 ” {0} ”
 
-Haluatko, että Git Extensions auttaa löytämään oikean kansion?</target>
+Haluatko, että Gitanas auttaa löytämään oikean kansion?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8301,14 +8301,14 @@ Stash-taa ne ensin, jos et halua menettää niitä.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>PuTTY ei ole rekisteröinyt tämän isännän sormenjälkeä.
 Tämä aiheuttaa prosessin jumiutumisen, minkä vuoksi se pysäytetään automaattisesti.
 
-Kun yhteys avataan erillään Gitistä ja Git Extensionsista, isännän sormenjälki voidaan rekisteröidä.
+Kun yhteys avataan erillään Gitistä ja Gitanasista, isännän sormenjälki voidaan rekisteröidä.
 Voit myös lisätä isännän sormenjäljen manuaalisesti tai suorittaa yhteystestin etävarastojen ikkunasta.
 
 Haluatko rekisteröidä isännän sormenjäljen ja käynnistää prosessin uudelleen?</target>
@@ -9766,8 +9766,8 @@ Siksi Peruuta-painike EI kumoa tehtyjä muutoksia.</target>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Git Extensionsista on saatavilla uusi versio {0}</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Gitanasista on saatavilla uusi versio {0}</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10417,8 +10417,8 @@ yleisiä asetuksia.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="fi">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10879,8 +10879,8 @@ ohje</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Git Extensionsia ei voi avata</target>
+        <source>Cannot open Gitanas</source>
+        <target>Gitanasia ei voi avata</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11097,8 +11097,8 @@ Tämä tekee alimoduulille vain checkoutin siihen kommittiin, jonka superproject
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Valitse jokin alisolmuista tarkastellaksesi tai muokataksesi Git Extensions -liitännäisen asetuksia.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Valitse jokin alisolmuista tarkastellaksesi tai muokataksesi Gitanas -liitännäisen asetuksia.</target>
         
       </trans-unit>
     </body>
@@ -13172,8 +13172,8 @@ Copy error details to clipboard?</source>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Kohteen &quot;{0}&quot; lukeminen epäonnistui seuraavan virheen vuoksi:{1}{1}{2}{1}{1}Tämän ongelman luonteen vuoksi sovelluksen toimintaa ei voida taata, ja se on suljettava.{1}{1}Korjaa tämä ongelma ja avaa Git Extensions uudelleen.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Kohteen &quot;{0}&quot; lukeminen epäonnistui seuraavan virheen vuoksi:{1}{1}{2}{1}{1}Tämän ongelman luonteen vuoksi sovelluksen toimintaa ei voida taata, ja se on suljettava.{1}{1}Korjaa tämä ongelma ja avaa Gitanas uudelleen.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13377,8 +13377,8 @@ To be able to open this repository, you need to either:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Avaa Git Extensionsilla</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Avaa Gitanasilla</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13424,8 +13424,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Jos uskot tämän johtuvan Git Extensionsista, voit ilmoittaa viasta tiimin tutkittavaksi.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Jos uskot tämän johtuvan Gitanasista, voit ilmoittaa viasta tiimin tutkittavaksi.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13434,8 +13434,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>tiimin tutkittavaksi - jos uskot tämän johtuvan Git Extensionsista</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>tiimin tutkittavaksi - jos uskot tämän johtuvan Gitanasista</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13459,8 +13459,8 @@ Remote: {1}</source>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Käynnistä Git Extensions uudelleen</target>
+        <source>Restart Gitanas</source>
+        <target>Käynnistä Gitanas uudelleen</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

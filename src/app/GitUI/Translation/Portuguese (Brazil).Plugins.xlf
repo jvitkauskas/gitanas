@@ -605,8 +605,8 @@ Escolha os arquivos a remover. &quot;Force push&quot; para substituir os dados n
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Obs: Git Extensions necessita ser reiniciado para que o token seja direcionado à conta</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Obs: Gitanas necessita ser reiniciado para que o token seja direcionado à conta</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

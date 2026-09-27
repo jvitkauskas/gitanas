@@ -1,28 +1,30 @@
+using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Themes.Fluent;
 using GitUI.Avalonia;
+using GitUI.Avalonia.Hosting;
 
 namespace GitUI.AvaloniaTests.Views;
 
-/// <summary>The control theme of the Avalonia UI: Fluent, or a community theme chosen in the Colors settings.</summary>
+/// <summary>The Modern appearance is always installed over its Fluent control base.</summary>
 [TestFixture]
 public sealed class ControlThemeTests : HeadlessTest
 {
-    [TestCase(null, null, "fluent")]
-    [TestCase("simple", null, "simple")]
-    [TestCase("Classic ", null, "classic")]
-    [TestCase("simple", "classic", "classic")]
-    [TestCase("simple", " ", "simple")]
-    [TestCase("semi", null, "fluent")]
-    [TestCase("unknown", null, "fluent")]
-    [TestCase(null, "unknown", "fluent")]
-    public void The_variable_overrides_the_setting_and_an_unknown_name_is_Fluent(string? setting, string? variable, string expected)
-    {
-        GitExtensionsAvaloniaApp.ResolveControlTheme(setting, variable ?? "").Should().Be(expected);
-    }
-
     [Test]
-    public Task Fluent_comes_before_the_styles_of_the_application() => OnUiThreadAsync(() =>
+    public Task Modern_is_always_loaded_and_legacy_theme_overrides_are_ignored() => OnUiThreadAsync(() =>
     {
-        global::Avalonia.Application.Current!.Styles[0].Should().BeOfType<FluentTheme>();
+        string? previous = Environment.GetEnvironmentVariable("GE_AVALONIA_THEME");
+        try
+        {
+            Environment.SetEnvironmentVariable("GE_AVALONIA_THEME", "classic");
+            GitExtensionsAvaloniaApp app = (GitExtensionsAvaloniaApp)global::Avalonia.Application.Current!;
+            app.ApplyOptions(new AvaloniaUiOptions(false, "Segoe UI", 12));
+            app.Styles[0].Should().BeOfType<FluentTheme>();
+            app.Styles.OfType<StyleInclude>().Should().ContainSingle(style =>
+                style.Source == new Uri("avares://GitUI.Avalonia/Themes/Modern.axaml"));
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("GE_AVALONIA_THEME", previous);
+        }
     });
 }

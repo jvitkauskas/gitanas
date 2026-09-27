@@ -717,8 +717,8 @@ A valid GitHub account is required</source>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>A Git Extensions képes build szerverekkel integrálódni, hogy kommitonkénti folyamatos integrációs (CI) információt biztosítson.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>A Gitanas képes build szerverekkel integrálódni, hogy kommitonkénti folyamatos integrációs (CI) információt biztosítson.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -888,8 +888,8 @@ Győződjön meg róla, hogy telepítve vannak a linux eszközök (Git for Windo
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Nincs nyelv beállítva a Git Extensionshöz.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Nincs nyelv beállítva a Gitanashöz.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -923,18 +923,18 @@ Győződjön meg róla, hogy telepítve vannak a linux eszközök (Git for Windo
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>A Git Extensions megfelelően regisztrálva van.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>A Gitanas megfelelően regisztrálva van.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Érvénytelen telepítési könyvtár van tárolva itt: [Software\GitExtensions\InstallDir].</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Érvénytelen telepítési könyvtár van tárolva itt: [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Hiányzó registry bejegyzés: [Software\GitExtensions\InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Hiányzó registry bejegyzés: [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -985,8 +985,8 @@ Győződjön meg róla, hogy a Git for Windows telepítve van, vagy állítsa be
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Az alábbi ellenőrzőlista ellenőrzi a Git Extensions megfelelő működéséhez szükséges alapvető beállításokat.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Az alábbi ellenőrzőlista ellenőrzi a Gitanas megfelelő működéséhez szükséges alapvető beállításokat.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1267,8 +1267,8 @@ Győződjön meg róla, hogy a Git for Windows telepítve van, vagy állítsa be
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="hu">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>A Git Extensionsnek nincs elegendő jogosultsága a registry ellenőrzéséhez.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>A Gitanasnek nincs elegendő jogosultsága a registry ellenőrzéséhez.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2977,8 +2977,8 @@ Push hozzáférése lesz. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>A Git Extensions nyílt forráskódú. Csatlakozz!</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>A Gitanas nyílt forráskódú. Csatlakozz!</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3384,8 +3384,8 @@ az elsővel való összehasonlításhoz:</target>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="hu">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4953,9 +4953,9 @@ Tényleges parancssor (ha nincs bejelölve): --depth 1 --no-single-branch</targe
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Támogatott parancssori argumentumok a
-gitex.cmd / gitex számára (a GitExtensions.exe-vel azonos mappában található):</target>
+gitex.cmd / gitex számára (a Gitanas.exe-vel azonos mappában található):</target>
         
       </trans-unit>
     </body>
@@ -6332,11 +6332,11 @@ Ha nem biztos benne, egyszerűen zárja be ezt az ablakot.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>A HOME környezeti változó nem egy olyan könyvtárra mutat, amely tartalmazza a globális git konfigurációs fájlt:
 „ {0} ”
 
-Szeretné, hogy a Git Extensions segítsen megtalálni a helyes mappát?</target>
+Szeretné, hogy a Gitanas segítsen megtalálni a helyes mappát?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8300,14 +8300,14 @@ Stashelje őket előtte, ha nem szeretné elveszíteni.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Ennek a hostnak az ujjlenyomata nincs regisztrálva a PuTTY-ban.
 Ez a folyamat lefagyásához vezet, ezért automatikusan leállításra kerül.
 
-Ha a kapcsolat a Gittől és a Git Extensionstől függetlenül kerül megnyitásra, a host ujjlenyomata regisztrálható.
+Ha a kapcsolat a Gittől és a Gitanastől függetlenül kerül megnyitásra, a host ujjlenyomata regisztrálható.
 Megadhatja manuálisan is a host ujjlenyomatát, vagy futtathatja a Kapcsolat tesztelését a távolik ablakból.
 
 Szeretné regisztrálni a host ujjlenyomatát és újraindítani a folyamatot?</target>
@@ -9765,8 +9765,8 @@ Ezért a Mégse gomb NEM vonja vissza az elvégzett módosításokat.</target>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Elérhető a Git Extensions egy új verziója: {0}</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Elérhető a Gitanas egy új verziója: {0}</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10416,8 +10416,8 @@ a globális beállításokat.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="hu">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10878,8 +10878,8 @@ megjelenítése</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Nem sikerült megnyitni a Git Extensionst</target>
+        <source>Cannot open Gitanas</source>
+        <target>Nem sikerült megnyitni a Gitanast</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11096,8 +11096,8 @@ Ez csak checkoutolja az almodulon a szuperprojekt által meghatározott kommitot
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Válassz egyet az alpontok közül, hogy megnézd vagy szerkeszd a Git Extensions pluginok beállításait.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Válassz egyet az alpontok közül, hogy megnézd vagy szerkeszd a Gitanas pluginok beállításait.</target>
         
       </trans-unit>
     </body>
@@ -13177,8 +13177,8 @@ Másolja a hiba részleteit a vágólapra?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Nem sikerült beolvasni a(z) „{0}” fájlt a következő hiba miatt:{1}{1}{2}{1}{1}A probléma természete miatt az alkalmazás viselkedése nem garantálható, ezért be kell zárni.{1}{1}Kérjük, javítsa ki ezt a problémát, és nyissa meg újra a Git Extensionst.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Nem sikerült beolvasni a(z) „{0}” fájlt a következő hiba miatt:{1}{1}{2}{1}{1}A probléma természete miatt az alkalmazás viselkedése nem garantálható, ezért be kell zárni.{1}{1}Kérjük, javítsa ki ezt a problémát, és nyissa meg újra a Gitanast.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13387,8 +13387,8 @@ A tároló megnyitásához az alábbiak egyikét kell tennie:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Megnyitás Git Extensionsszel</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Megnyitás Gitanasszel</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13436,8 +13436,8 @@ Távoli: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Ha úgy gondolja, hogy ezt a Git Extensions okozta, jelenthet egy hibát, hogy a csapat kivizsgálja.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Ha úgy gondolja, hogy ezt a Gitanas okozta, jelenthet egy hibát, hogy a csapat kivizsgálja.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13446,8 +13446,8 @@ Távoli: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>hogy a csapat kivizsgálja - ha úgy gondolja, hogy ezt a Git Extensions okozta</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>hogy a csapat kivizsgálja - ha úgy gondolja, hogy ezt a Gitanas okozta</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13471,8 +13471,8 @@ Távoli: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Git Extensions újraindítása</target>
+        <source>Restart Gitanas</source>
+        <target>Gitanas újraindítása</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

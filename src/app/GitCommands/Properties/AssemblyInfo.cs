@@ -1,10 +1,10 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 
-[assembly: AssemblyDescription("GitExtensions commands")]
+[assembly: AssemblyDescription("Gitanas commands")]
 
 [assembly: InternalsVisibleTo("CommonTestUtils")]
-[assembly: InternalsVisibleTo("GitExtensions")]
+[assembly: InternalsVisibleTo("Gitanas")]
 [assembly: InternalsVisibleTo("GitCommands.Tests")]
 [assembly: InternalsVisibleTo("GitUI.Tests")]
 [assembly: InternalsVisibleTo("UI.IntegrationTests")]

@@ -14,7 +14,7 @@ public sealed class FixHomeStrings : ViewStrings
         Title = Add("$this", "Text", "Home");
         GitGlobalConfigNotFound = Add("_gitGlobalConfigNotFound", "Text",
             "The environment variable HOME does not point to a directory that contains the global git config file:" + System.Environment.NewLine +
-            "\" {0} \"" + System.Environment.NewLine + System.Environment.NewLine + "Do you want Git Extensions to help locate the correct folder?");
+            "\" {0} \"" + System.Environment.NewLine + System.Environment.NewLine + "Do you want Gitanas to help locate the correct folder?");
         GitGlobalConfigNotFoundCaption = Add("_gitGlobalConfigNotFoundCaption", "Text", "Global config");
         Explanation = Add("label51", "Text", "The global config file located in the location stored environment variable %HOME%. \nBy default %HOME% will be set to %HOMEDRIVE%%HOMEPATH% if empty. \nChange the default behaviour only if you experience problems.");
         UnixExplanation = Add("_unixExplanation", "Text", "By default, HOME uses your user home directory. Choose a different directory only if Git is using the wrong home directory.");

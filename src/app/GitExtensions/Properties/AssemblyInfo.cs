@@ -1,3 +1,3 @@
 ﻿using System.Reflection;
 
-[assembly: AssemblyDescription("GitExtensions is a GUI for git")]
+[assembly: AssemblyDescription("Gitanas is a cross-platform Git client")]

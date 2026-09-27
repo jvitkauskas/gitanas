@@ -717,8 +717,8 @@ Diperlukan akun GitHub yang valid</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions dapat terintegrasi dengan build server untuk menyediakan informasi Continuous Integration per komit.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas dapat terintegrasi dengan build server untuk menyediakan informasi Continuous Integration per komit.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -888,8 +888,8 @@ Pastikan linux tools sudah terpasang (melalui Git for Windows atau cygwin) atau 
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Tidak ada bahasa yang dikonfigurasi untuk Git Extensions.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Tidak ada bahasa yang dikonfigurasi untuk Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -923,18 +923,18 @@ Pastikan linux tools sudah terpasang (melalui Git for Windows atau cygwin) atau 
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions terdaftar dengan benar.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas terdaftar dengan benar.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Direktori instalasi yang tersimpan di [Software\GitExtensions\InstallDir] tidak valid.</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Direktori instalasi yang tersimpan di [Software\Gitanas\InstallDir] tidak valid.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Entri registry [Software\GitExtensions\InstallDir] tidak ditemukan.</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Entri registry [Software\Gitanas\InstallDir] tidak ditemukan.</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -985,8 +985,8 @@ Pastikan Git for Windows sudah terpasang atau atur perintah yang benar secara ma
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Daftar periksa di bawah ini memvalidasi pengaturan dasar yang diperlukan agar Git Extensions berfungsi dengan benar.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Daftar periksa di bawah ini memvalidasi pengaturan dasar yang diperlukan agar Gitanas berfungsi dengan benar.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1267,8 +1267,8 @@ Pastikan Git for Windows sudah terpasang atau atur perintah yang benar secara ma
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="id">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions tidak memiliki izin yang cukup untuk memeriksa registry.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas tidak memiliki izin yang cukup untuk memeriksa registry.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2977,8 +2977,8 @@ Akses push akan tersedia. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions adalah open source. Mari berkontribusi!</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas adalah open source. Mari berkontribusi!</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3384,8 +3384,8 @@ dibandingkan dengan yang pertama:</target>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="id">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4953,9 +4953,9 @@ Command line sebenarnya (jika tidak dicentang): --depth 1 --no-single-branch</ta
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Argumen command line yang didukung untuk
-gitex.cmd / gitex (terletak di folder yang sama dengan GitExtensions.exe):</target>
+gitex.cmd / gitex (terletak di folder yang sama dengan Gitanas.exe):</target>
         
       </trans-unit>
     </body>
@@ -6331,11 +6331,11 @@ Jika tidak yakin, tutup saja jendela ini.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>Variabel environment HOME tidak menunjuk ke direktori yang berisi berkas konfigurasi git global:
 &quot; {0} &quot;
 
-Izinkan Git Extensions membantu mencari folder yang benar?</target>
+Izinkan Gitanas membantu mencari folder yang benar?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8299,14 +8299,14 @@ Stase perubahan tersebut dahulu jika tidak ingin kehilangannya.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Fingerprint host ini belum terdaftar di PuTTY.
 Ini menyebabkan proses macet (hang), sehingga dihentikan secara otomatis.
 
-Fingerprint host dapat didaftarkan dengan membuka koneksi secara terpisah dari Git dan Git Extensions.
+Fingerprint host dapat didaftarkan dengan membuka koneksi secara terpisah dari Git dan Gitanas.
 Fingerprint host juga dapat ditambahkan secara manual, atau jalankan Test Connection dari dialog remote.
 
 Daftarkan fingerprint host dan mulai ulang proses?</target>
@@ -9764,8 +9764,8 @@ Karena itu, tombol Batal TIDAK akan mengembalikan perubahan yang telah dibuat.</
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Versi baru {0} Git Extensions tersedia</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Versi baru {0} Gitanas tersedia</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10415,8 +10415,8 @@ pengaturan global dapat diubah.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="id">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10877,8 +10877,8 @@ bantuan</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Tidak dapat membuka Git Extensions</target>
+        <source>Cannot open Gitanas</source>
+        <target>Tidak dapat membuka Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11095,8 +11095,8 @@ Ini hanya akan men-checkout submodul ke komit yang ditentukan oleh superproject.
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Pilih salah satu subsimpul untuk melihat atau mengubah pengaturan Plugin Git Extensions.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Pilih salah satu subsimpul untuk melihat atau mengubah pengaturan Plugin Gitanas.</target>
         
       </trans-unit>
     </body>
@@ -13174,8 +13174,8 @@ Salin detail galat ke clipboard?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Gagal membaca &quot;{0}&quot; karena galat berikut:{1}{1}{2}{1}{1}Karena sifat masalah ini, perilaku aplikasi tidak dapat dijamin dan harus ditutup.{1}{1}Perbaiki masalah ini dan buka ulang Git Extensions.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Gagal membaca &quot;{0}&quot; karena galat berikut:{1}{1}{2}{1}{1}Karena sifat masalah ini, perilaku aplikasi tidak dapat dijamin dan harus ditutup.{1}{1}Perbaiki masalah ini dan buka ulang Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13384,8 +13384,8 @@ Untuk dapat membuka repositori ini, lakukan salah satu:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Buka dengan Git Extensions</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Buka dengan Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13433,8 +13433,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Jika ini diduga disebabkan oleh Git Extensions, bug dapat dilaporkan agar tim dapat menyelidikinya.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Jika ini diduga disebabkan oleh Gitanas, bug dapat dilaporkan agar tim dapat menyelidikinya.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13443,8 +13443,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>agar tim dapat menyelidikinya - jika ini diduga disebabkan oleh Git Extensions</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>agar tim dapat menyelidikinya - jika ini diduga disebabkan oleh Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13468,8 +13468,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Mulai ulang Git Extensions</target>
+        <source>Restart Gitanas</source>
+        <target>Mulai ulang Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

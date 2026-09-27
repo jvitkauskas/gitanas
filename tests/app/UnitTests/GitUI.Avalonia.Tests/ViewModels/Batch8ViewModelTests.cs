@@ -156,7 +156,7 @@ public sealed class Batch8ViewModelTests
 
         viewModel.ReportSearchResult(new AvailableUpdate("6.1.0", "https://example.org/setup-arm64-6.1.msi", new Version(10, 0, 5)));
 
-        viewModel.Status.Should().Be("There is a new version 6.1.0 of Git Extensions available");
+        viewModel.Status.Should().Be("There is a new version 6.1.0 of Gitanas available");
         viewModel.IsUpdateFound.Should().BeTrue();
         viewModel.IsChangeLogVisible.Should().BeTrue();
         viewModel.CanUpdateNow.Should().BeTrue();

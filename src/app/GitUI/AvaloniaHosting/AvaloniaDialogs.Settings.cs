@@ -86,9 +86,9 @@ internal static partial class AvaloniaDialogs
         return true;
     }
 
-    /// <summary>The settings applied at the start: the theme, its variations and the control theme.</summary>
+    /// <summary>The settings applied at the start: the color theme and its variations.</summary>
     private static string GetThemeSettings()
-        => $"{AppSettings.ThemeId.Name}|{AppSettings.ThemeId.IsBuiltin}|{string.Join(",", AppSettings.ThemeVariations)}|{AppSettings.AvaloniaControlTheme}";
+        => $"{AppSettings.ThemeId.Name}|{AppSettings.ThemeId.IsBuiltin}|{string.Join(",", AppSettings.ThemeVariations)}";
 
     /// <summary>
     ///  Starts the application again on <paramref name="repository"/> (as the main window), then closes the main windows of
@@ -98,7 +98,7 @@ internal static partial class AvaloniaDialogs
     {
         ProcessStartInfo startInfo = new(Environment.ProcessPath!) { WorkingDirectory = repository, UseShellExecute = false };
 
-        // Started as "dotnet GitExtensions.dll": the host is given the application again.
+        // Started as "dotnet Gitanas.dll": the host is given the application again.
         if (Path.GetFileNameWithoutExtension(startInfo.FileName).Equals("dotnet", StringComparison.OrdinalIgnoreCase))
         {
             startInfo.ArgumentList.Add(Environment.GetCommandLineArgs()[0]);
@@ -162,7 +162,7 @@ internal static partial class AvaloniaDialogs
 
         // Git Extensions settings
         const string gitExtensions = nameof(GitExtensionsSettingsGroup);
-        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, gitExtensions), null, "GitExtensionsLogo16", none);
+        viewModel.AddPage(new GroupSettingsPageViewModel(strings.GitExtensionsGroup.Text, gitExtensions), null, "GitanasLogo16", none);
         ChecklistSettingsPageStrings checklistStrings = ViewStrings.Load<ChecklistSettingsPageStrings>();
         ChecklistSettingsPageViewModel checklist = new(checklistStrings, new ChecklistSettingsHost(checklistStrings, commonLogic, commands, getOwner));
         Add(checklist, gitExtensions, null, global, asRoot: true);

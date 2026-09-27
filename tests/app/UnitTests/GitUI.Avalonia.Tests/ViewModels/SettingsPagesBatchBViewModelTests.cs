@@ -372,7 +372,7 @@ public sealed class SettingsPagesBatchBViewModelTests
         page.MenuEntries[0].State.Should().BeTrue();
         page.MenuEntries[1].State.Should().BeNull();
         page.MenuEntries[2].State.Should().BeFalse();
-        page.Preview.Should().Be("GitExt Add files...\nGit Extensions > \n       Apply patch...\n");
+        page.Preview.Should().Be("GitExt Add files...\nGitanas > \n       Apply patch...\n");
         page.IsExplorerIntegrationEnabled.Should().BeTrue();
         page.CanRegister.Should().BeTrue();
 

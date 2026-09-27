@@ -1,7 +1,6 @@
 using System.ComponentModel;
-using System.Diagnostics;
+using System.Net;
 using System.Runtime.InteropServices;
-using Git.hub;
 using GitCommands;
 using GitExtensions.Extensibility;
 using GitUI.Avalonia.CommandsDialogs.BrowseDialog;
@@ -28,10 +27,10 @@ internal static partial class AvaloniaDialogs
         UpdatesWindow window = new();
         UpdatesViewModel viewModel = new(
             ViewStrings.Load<UpdatesStrings>(),
-            AppSettings.IsPortable(),
+            isPortable: true,
             RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant(),
             [.. UserEnvironmentInformation.GetDotnetDesktopRuntimeVersions()],
-            new UpdatesHost(window),
+            new UpdatesHost(),
             new MessageBoxService(window));
         window.DataContext = viewModel;
 
@@ -44,7 +43,7 @@ internal static partial class AvaloniaDialogs
             Exception? failure = null;
             try
             {
-                update = SearchForUpdate(currentVersion);
+                update = await SearchForUpdateAsync(currentVersion);
             }
             catch (Exception ex) when (ex.Message.Contains("rate limit", StringComparison.OrdinalIgnoreCase))
             {
@@ -81,84 +80,28 @@ internal static partial class AvaloniaDialogs
         return true;
     }
 
-    /// <summary>The newest update of <paramref name="currentVersion"/>, as <c>FormUpdates.SearchForUpdates</c>.</summary>
-    private static AvailableUpdate? SearchForUpdate(Version currentVersion)
+    // Fork releases are selected on GitHub; never offer or install upstream WinForms binaries.
+    private static async Task<AvailableUpdate?> SearchForUpdateAsync(Version currentVersion)
     {
-        Client github = new();
-        Repository gitExtRepo = github.getRepository("gitextensions", "gitextensions");
-        GitHubTree? tree = gitExtRepo?.GetRef("heads/configdata")?.GetTree();
-        GitHubTreeEntry? releases = tree?.Tree.FirstOrDefault(entry => "GitExtensions.releases".Equals(entry.Path, StringComparison.InvariantCultureIgnoreCase));
-        if (releases?.Blob.Value is null)
+        using HttpClient client = new() { Timeout = TimeSpan.FromSeconds(20) };
+        client.DefaultRequestHeaders.UserAgent.ParseAdd("Gitanas");
+        client.DefaultRequestHeaders.Accept.ParseAdd("application/vnd.github+json");
+        using HttpResponseMessage response = await client.GetAsync(GitanasReleaseFeed.ApiUrl).ConfigureAwait(false);
+        if (response.StatusCode == HttpStatusCode.NotFound)
         {
-            return null;
+            return null; // A newly created repository may not have published releases yet.
         }
 
-        ReleaseVersion? update = ReleaseVersion.GetNewerVersions(currentVersion, AppSettings.CheckForReleaseCandidates, ReleaseVersion.Parse(releases.Blob.Value.GetContent()))
-            .OrderBy(version => version.ApplicationVersion)
-            .LastOrDefault();
-        if (update is null)
-        {
-            return null;
-        }
-
-        // The download page links the x64 installer.
-        string updateUrl = RuntimeInformation.OSArchitecture == Architecture.X64
-            ? update.DownloadPage
-            : update.DownloadPage.Replace("-x64-", $"-{RuntimeInformation.OSArchitecture.ToString().ToLowerInvariant()}-");
-        return new AvailableUpdate(update.ApplicationVersion.ToString(), updateUrl, update.RequiredNetRuntimeVersion);
+        response.EnsureSuccessStatusCode();
+        string json = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        return GitanasReleaseFeed.FindUpdate(json, currentVersion, AppSettings.CheckForReleaseCandidates);
     }
 
-    private sealed class UpdatesHost(DialogWindow window) : IUpdatesHost
+    private sealed class UpdatesHost : IUpdatesHost
     {
         public void OpenUrl(string url) => AvaloniaUi.RunInHostContext(() => OsShellUtil.OpenUrlInDefaultBrowser(url));
 
         public void DownloadAndInstall(string updateUrl, Action<string> reportDownloadFailure)
-        {
-            // The installer is the MSI of Windows; elsewhere the releases page shows what to download (the packages of other
-            // systems come with docs/avalonia-port/CROSS-PLATFORM.md, phase 6).
-            if (!OperatingSystem.IsWindows())
-            {
-                OpenUrl("https://github.com/gitextensions/gitextensions/releases/latest");
-                return;
-            }
-
-            // As FormUpdates.btnUpdateNow_Click.
-            ThreadHelper.FileAndForget(async () =>
-            {
-                string fileName = Path.GetFileName(updateUrl);
-                string temp = Environment.GetEnvironmentVariable("TEMP") ?? Path.GetTempPath();
-                try
-                {
-                    using HttpClient client = new();
-                    await using Stream download = await client.GetStreamAsync(updateUrl);
-                    await using FileStream file = File.Create(Path.Join(temp, fileName));
-                    await download.CopyToAsync(file);
-                }
-                catch (Exception ex)
-                {
-                    await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-                    reportDownloadFailure(ex.Message);
-                    return;
-                }
-
-                try
-                {
-                    Process process = new();
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.FileName = "msiexec.exe";
-                    process.StartInfo.Arguments = $"/i \"{temp}\\{fileName}\" /qb LAUNCH=1";
-                    process.Start();
-
-                    await ThreadHelper.JoinableTaskFactory.SwitchToMainThreadAsync();
-                    window.Close();
-
-                    // As Application.Exit: all the windows are closed, which ends the application.
-                    AvaloniaDialogHost.CloseAllWindows();
-                }
-                catch (Win32Exception)
-                {
-                }
-            });
-        }
+            => OpenUrl(UpdatesViewModel.ReleasesUrl);
     }
 }

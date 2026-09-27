@@ -37,7 +37,7 @@ internal static class UserEnvironmentInformation
         // Build and open FormAbout design to make sure info still looks good if you change this code.
         StringBuilder sb = new();
 
-        sb.AppendLine($"- Git Extensions {AppSettings.ProductVersion}");
+        sb.AppendLine($"- Gitanas {AppSettings.ProductVersion}");
         sb.AppendLine($"- Build {_sha}{(_dirty ? " (Dirty)" : "")}");
         sb.AppendLine($"- Git {gitVersionInfo}");
         sb.AppendLine($"- {(OperatingSystem.IsMacOS() ? $"macOS {Environment.OSVersion.Version}" : Environment.OSVersion.ToString())}");

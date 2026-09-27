@@ -14,14 +14,14 @@ internal static class Program
     [STAThread]
     private static void Main(string[] args)
     {
-        if (args.Length != 4)
+        if (args.Length != 3)
         {
-            throw new ArgumentException("Usage: WaylandSmoke <report.json> <command.txt> <control-theme> <light|dark>");
+            throw new ArgumentException("Usage: WaylandSmoke <report.json> <command.txt> <light|dark>");
         }
 
         string reportPath = Path.GetFullPath(args[0]);
         string commandPath = Path.GetFullPath(args[1]);
-        AvaloniaUi.EnsureInitialized(() => new AvaloniaUiOptions(args[3] == "dark", "DejaVu Sans", 12, ControlTheme: args[2]));
+        AvaloniaUi.EnsureInitialized(() => new AvaloniaUiOptions(args[2] == "dark", "DejaVu Sans", 12));
         RenameBranchWindow root = CreateWindow("Git Extensions Wayland QA");
         RenameBranchWindow? modal = null;
         Task? modalTask = null;
@@ -54,8 +54,8 @@ internal static class Program
             scales.Add(root.RenderScaling);
             string json = JsonSerializer.Serialize(new
             {
-                Theme = args[2],
-                Color = args[3],
+                Theme = "modern",
+                Color = args[2],
                 Command = previousCommand,
                 Root = Describe(root),
                 Modal = modal is null ? null : Describe(modal),

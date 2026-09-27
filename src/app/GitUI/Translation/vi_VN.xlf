@@ -688,8 +688,8 @@ Cần có tài khoản GitHub hợp lệ</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions có thể tích hợp với máy chủ build để cung cấp thông tin Continuous Integration theo từng cam kết.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas có thể tích hợp với máy chủ build để cung cấp thông tin Continuous Integration theo từng cam kết.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -849,8 +849,8 @@ Vui lòng đảm bảo đã cài đặt công cụ linux (thông qua Git for Win
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Chưa cấu hình ngôn ngữ cho Git Extensions.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Chưa cấu hình ngôn ngữ cho Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -884,18 +884,18 @@ Vui lòng đảm bảo đã cài đặt công cụ linux (thông qua Git for Win
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions đã được đăng ký đúng cách.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas đã được đăng ký đúng cách.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Thư mục cài đặt không hợp lệ được lưu trong [Software\GitExtensions\InstallDir].</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Thư mục cài đặt không hợp lệ được lưu trong [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Thiếu mục registry [Software\GitExtensions\InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Thiếu mục registry [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -946,8 +946,8 @@ Vui lòng đảm bảo đã cài đặt Git for Windows hoặc tự đặt lện
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Danh sách kiểm tra dưới đây xác nhận các cài đặt cơ bản cần thiết để Git Extensions hoạt động đúng.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Danh sách kiểm tra dưới đây xác nhận các cài đặt cơ bản cần thiết để Gitanas hoạt động đúng.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1222,8 +1222,8 @@ Vui lòng đảm bảo đã cài đặt Git for Windows hoặc tự đặt lện
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="vi-VN">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
-        <target>Git Extensions không có đủ quyền để kiểm tra registry.</target>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
+        <target>Gitanas không có đủ quyền để kiểm tra registry.</target>
         
       </trans-unit>
       <trans-unit id="_selectFile.Text">
@@ -2929,8 +2929,8 @@ Bạn sẽ có quyền đẩy. {2}</target>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
-        <target>Git Extensions là phần mềm mã nguồn mở. Hãy cùng tham gia!</target>
+        <source>Gitanas is open source. Get involved!</source>
+        <target>Gitanas là phần mềm mã nguồn mở. Hãy cùng tham gia!</target>
         
       </trans-unit>
       <trans-unit id="linkLabelIcons.Text">
@@ -3336,8 +3336,8 @@ so sánh với bản đầu tiên:</target>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="vi-VN">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4905,9 +4905,9 @@ Dòng lệnh thực tế (nếu bỏ chọn): --depth 1 --no-single-branch</targ
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Đối số dòng lệnh được hỗ trợ cho
-gitex.cmd / gitex (nằm trong cùng thư mục với GitExtensions.exe):</target>
+gitex.cmd / gitex (nằm trong cùng thư mục với Gitanas.exe):</target>
         
       </trans-unit>
     </body>
@@ -6283,11 +6283,11 @@ Nếu không chắc chắn, hãy đóng cửa sổ này.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>Biến môi trường HOME không trỏ đến thư mục chứa tệp cấu hình git toàn cục:
 &quot; {0} &quot;
 
-Bạn có muốn Git Extensions giúp định vị thư mục đúng không?</target>
+Bạn có muốn Gitanas giúp định vị thư mục đúng không?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8251,14 +8251,14 @@ Hãy stash chúng trước nếu bạn không muốn mất chúng.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Vân tay (fingerprint) của máy chủ này chưa được PuTTY đăng ký.
 Điều này khiến tiến trình bị treo, vì vậy nó đã được tự động dừng lại.
 
-Khi kết nối được mở tách biệt khỏi Git và Git Extensions, vân tay của máy chủ có thể được đăng ký.
+Khi kết nối được mở tách biệt khỏi Git và Gitanas, vân tay của máy chủ có thể được đăng ký.
 Bạn cũng có thể tự thêm vân tay của máy chủ hoặc chạy Test Connection từ hộp thoại remote.
 
 Bạn có muốn đăng ký vân tay của máy chủ và khởi động lại tiến trình không?</target>
@@ -9714,8 +9714,8 @@ Do đó, nút Hủy bỏ KHÔNG hoàn tác bất kỳ thay đổi nào đã th�
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Có phiên bản mới {0} của Git Extensions</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Có phiên bản mới {0} của Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10362,8 +10362,8 @@ cài đặt toàn cục.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="vi-VN">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions</target>
+        <source>Gitanas</source>
+        <target>Gitanas</target>
         
       </trans-unit>
     </body>
@@ -10824,8 +10824,8 @@ trợ giúp</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Không thể mở Git Extensions</target>
+        <source>Cannot open Gitanas</source>
+        <target>Không thể mở Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11041,8 +11041,8 @@ Thao tác này chỉ checkout trên submodule cam kết được xác định b�
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Chọn một node con để xem hoặc chỉnh sửa cài đặt của một Git Extensions Plugin.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Chọn một node con để xem hoặc chỉnh sửa cài đặt của một Gitanas Plugin.</target>
         
       </trans-unit>
     </body>
@@ -13118,8 +13118,8 @@ Sao chép chi tiết lỗi vào khay nhớ tạm?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Không thể đọc &quot;{0}&quot; do lỗi sau:{1}{1}{2}{1}{1}Do bản chất của vấn đề này, hành vi của ứng dụng không thể được đảm bảo và phải đóng lại.{1}{1}Vui lòng khắc phục vấn đề này và mở lại Git Extensions.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Không thể đọc &quot;{0}&quot; do lỗi sau:{1}{1}{2}{1}{1}Do bản chất của vấn đề này, hành vi của ứng dụng không thể được đảm bảo và phải đóng lại.{1}{1}Vui lòng khắc phục vấn đề này và mở lại Gitanas.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13328,8 +13328,8 @@ Các thư mục được git theo dõi bị coi là không an toàn nếu chúng
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Mở bằng Git Extensions</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Mở bằng Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13377,8 +13377,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Nếu bạn nghĩ điều này do Git Extensions gây ra, bạn có thể báo cáo lỗi để nhóm phát triển điều tra.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Nếu bạn nghĩ điều này do Gitanas gây ra, bạn có thể báo cáo lỗi để nhóm phát triển điều tra.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13387,8 +13387,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>để nhóm phát triển điều tra - nếu bạn nghĩ điều này do Git Extensions gây ra</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>để nhóm phát triển điều tra - nếu bạn nghĩ điều này do Gitanas gây ra</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13412,8 +13412,8 @@ Remote: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Khởi động lại Git Extensions</target>
+        <source>Restart Gitanas</source>
+        <target>Khởi động lại Gitanas</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

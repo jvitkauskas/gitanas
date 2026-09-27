@@ -10,7 +10,7 @@ if ($ExecutionContext.SessionState.LanguageMode -ne "FullLanguage")
     exit 0
 }
 
-[string]$userAppDataPath = Join-Path -Path $env:APPDATA -ChildPath 'GitExtensions\GitExtensions\GitExtensions.settings'
+[string]$userAppDataPath = Join-Path -Path $env:APPDATA -ChildPath 'Gitanas\Gitanas\Gitanas.settings'
 if (-not (Test-Path -Path $userAppDataPath)) {
     [string]$userAppDataFolder = Split-Path $userAppDataPath -Parent
     if (-not (Test-Path -Path $userAppDataFolder)) {

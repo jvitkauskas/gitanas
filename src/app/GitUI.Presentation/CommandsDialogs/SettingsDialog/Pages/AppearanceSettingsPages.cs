@@ -117,7 +117,7 @@ public interface IAppearanceSettingsPageHost : ISettingsPageServices
 public sealed partial class AppearanceSettingsPageViewModel : SettingsPageWithServicesViewModel
 {
     /// <summary>As <c>_translationsWikiURL</c>.</summary>
-    public const string TranslationsWikiUrl = "https://github.com/gitextensions/gitextensions/wiki/Translations";
+    public const string TranslationsWikiUrl = "https://github.com/jvitkauskas/gitanas/blob/main/CONTRIBUTING.md";
 
     /// <summary>As <c>_spellingWikiURL</c>.</summary>
     public const string SpellingWikiUrl = "https://github.com/gitextensions/gitextensions/wiki/Spelling";

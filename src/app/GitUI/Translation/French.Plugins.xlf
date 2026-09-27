@@ -604,8 +604,8 @@ Les branches distantes seront supprimées &apos;{0}&apos;. On ne peut pas annule
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
-        <target>Note : Git Extensions doit être redémarré afin que le jeton soit pris en compte.</target>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
+        <target>Note : Gitanas doit être redémarré afin que le jeton soit pris en compte.</target>
         
       </trans-unit>
       <trans-unit id="_openLinkFailed.Text">

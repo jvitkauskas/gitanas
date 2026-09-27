@@ -217,7 +217,7 @@ public sealed class LeftPanelViewTests : HeadlessTest
             remove { }
         }
 
-        public string GetTitle() => "repo (main) - Git Extensions";
+        public string GetTitle() => "repo (main) - Gitanas";
 
         public string GetCurrentBranch() => "main";
 

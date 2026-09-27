@@ -604,7 +604,7 @@ Are you sure you want to continue?</source>
         
       </trans-unit>
       <trans-unit id="_noteRestartNeeded.Text">
-        <source>Note: Git Extensions need to be restarted so that the token is taken into account.</source>
+        <source>Note: Gitanas need to be restarted so that the token is taken into account.</source>
         <target>குறிப்பு: அறிவிலி நீட்டிப்புகளை மறுதொடக்கம் செய்ய வேண்டும், இதனால் அடையாளம் கணக்கில் எடுத்துக்கொள்ளப்படும்.</target>
         
       </trans-unit>

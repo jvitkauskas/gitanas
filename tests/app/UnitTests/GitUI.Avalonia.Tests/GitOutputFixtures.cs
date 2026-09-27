@@ -1,6 +1,6 @@
 namespace GitUI.AvaloniaTests;
 
-/// <summary>Outputs of git 2.55 (with the configuration of the Git Extensions viewer) for the tests of the diff appearances.</summary>
+/// <summary>Outputs of git 2.55 (with the configuration of the Gitanas viewer) for the tests of the diff appearances.</summary>
 internal static class GitOutputFixtures
 {
     /// <summary>git diff --color=always --word-diff=color (with the colors and diff.wordregex of PatchHighlightService.GetGitCommandConfiguration).</summary>

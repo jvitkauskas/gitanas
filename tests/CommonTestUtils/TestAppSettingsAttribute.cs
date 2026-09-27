@@ -25,7 +25,7 @@ public sealed class TestAppSettingsAttribute : Attribute, ITestAction
         // AppSettings.GetGitExtensionsDirectory() — points at the dotnet install directory instead of the test output,
         // so app-relative content such as the Themes folder cannot be found and theme loading throws (and, worse, pops
         // a modal error dialog that hangs the headless run). Pin the path to the test's own directory so it resolves.
-        AppSettings.GetTestAccessor().ApplicationExecutablePath = Path.Combine(AppContext.BaseDirectory, "GitExtensions.exe");
+        AppSettings.GetTestAccessor().ApplicationExecutablePath = Path.Combine(AppContext.BaseDirectory, "Gitanas.exe");
 
         File.Delete(AppSettings.SettingsContainer.SettingsCache.SettingsFilePath);
         AppSettings.SettingsContainer.SettingsCache.Load();

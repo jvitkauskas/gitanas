@@ -36,7 +36,7 @@ public sealed class TranslatedStrings : Translate
 
     private readonly TranslationString _deleteFile = new("{0:Delete file|Delete files}");
 
-    private readonly TranslationString _generalGitConfigExceptionMessage = new("Failed to read \"{0}\" due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.");
+    private readonly TranslationString _generalGitConfigExceptionMessage = new("Failed to read \"{0}\" due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.");
     private readonly TranslationString _generalGitConfigExceptionCaption = new("Repository Configuration Error");
 
     private readonly TranslationString _disableMenuItem = new("Disable this dropdown");

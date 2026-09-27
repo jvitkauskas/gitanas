@@ -13,7 +13,7 @@ public sealed class UpdatesStrings : ViewStrings
     {
         Title = Add("$this", "Text", "Check for update");
         Searching = Add("UpdateLabel", "Text", "Searching for updates");
-        NewVersionAvailable = Add("_newVersionAvailable", "Text", "There is a new version {0} of Git Extensions available");
+        NewVersionAvailable = Add("_newVersionAvailable", "Text", "There is a new version {0} of Gitanas available");
         NoUpdatesFound = Add("_noUpdatesFound", "Text", "No updates found");
         DownloadingUpdate = Add("_downloadingUpdate", "Text", "Downloading update...");
         ErrorHeading = Add("_errorHeading", "Text", "Download Failed");
@@ -73,7 +73,7 @@ public interface IUpdatesHost
 /// <summary>View model of the check for updates dialog (port of <c>FormUpdates</c>).</summary>
 public sealed partial class UpdatesViewModel : DialogViewModel
 {
-    public const string ReleasesUrl = "https://github.com/gitextensions/gitextensions/releases";
+    public const string ReleasesUrl = "https://github.com/jvitkauskas/gitanas/releases";
     public const string LocalRuntimeHelpUrl = "https://github.com/gitextensions/gitextensions/wiki/.NET-Desktop-Runtime";
 
     private readonly bool _isPortable;

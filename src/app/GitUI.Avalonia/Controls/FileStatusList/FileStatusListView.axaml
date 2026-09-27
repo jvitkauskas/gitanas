@@ -225,7 +225,7 @@
             <MenuItem Name="openSubmoduleMenuItem" Header="{Binding MenuStrings.OpenWithGitExtensions.AccessKeyText}" Command="{Binding OpenSubmoduleCommand}"
                       IsVisible="{Binding MenuState.ShowOpenSubmodule}" FontWeight="{Binding IsOpenSubmoduleBold, Converter={x:Static local:FileStatusListConverters.Bold}}">
               <MenuItem.Icon>
-                <Image Source="avares://GitUI.Avalonia/Assets/GitExtensionsLogo16.png" Width="16" Height="16" />
+                <Image Source="avares://GitUI.Avalonia/Assets/GitanasLogo16.png" Width="16" Height="16" />
               </MenuItem.Icon>
             </MenuItem>
             <!-- As InsertTreeContextMenuItems: for the selected nodes with nodes below them. -->

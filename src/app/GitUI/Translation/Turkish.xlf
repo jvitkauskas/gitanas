@@ -717,8 +717,8 @@ Geçerli bir GitHub hesabı gereklidir</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerSettingsInfo.Text">
-        <source>Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.</source>
-        <target>Git Extensions, teslim başına Sürekli Entegrasyon bilgilerini sağlanması için derleme sunucularıyla entegre olabilir.</target>
+        <source>Gitanas can integrate with build servers to supply per-commit Continuous Integration information.</source>
+        <target>Gitanas, teslim başına Sürekli Entegrasyon bilgilerini sağlanması için derleme sunucularıyla entegre olabilir.</target>
         
       </trans-unit>
       <trans-unit id="labelBuildServerType.Text">
@@ -888,8 +888,8 @@ Lütfen, Linux araçlarının kurulu olduğundan emin ol (Windows için Git veya
         
       </trans-unit>
       <trans-unit id="_noLanguageConfigured.Text">
-        <source>There is no language configured for Git Extensions.</source>
-        <target>Git Extensions için yapılandırılmış bir dil yok.</target>
+        <source>There is no language configured for Gitanas.</source>
+        <target>Gitanas için yapılandırılmış bir dil yok.</target>
         
       </trans-unit>
       <trans-unit id="_notRecommendedGitVersion.Text">
@@ -923,18 +923,18 @@ Lütfen, Linux araçlarının kurulu olduğundan emin ol (Windows için Git veya
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsCorrect.Text">
-        <source>Git Extensions is properly registered.</source>
-        <target>Git Extensions, kayıt defterine başarılı bir şekilde kaydedildi.</target>
+        <source>Gitanas is properly registered.</source>
+        <target>Gitanas, kayıt defterine başarılı bir şekilde kaydedildi.</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsFaulty.Text">
-        <source>Invalid installation directory stored in [Software\GitExtensions\InstallDir].</source>
-        <target>Geçersiz kurulum dizini: [Software\GitExtensions\InstallDir].</target>
+        <source>Invalid installation directory stored in [Software\Gitanas\InstallDir].</source>
+        <target>Geçersiz kurulum dizini: [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_registryKeyGitExtensionsMissing.Text">
-        <source>Registry entry missing [Software\GitExtensions\InstallDir].</source>
-        <target>Kayıt defteri girdisi eksik: [Software\GitExtensions\InstallDir].</target>
+        <source>Registry entry missing [Software\Gitanas\InstallDir].</source>
+        <target>Kayıt defteri girdisi eksik: [Software\Gitanas\InstallDir].</target>
         
       </trans-unit>
       <trans-unit id="_shCanBeRun.Text">
@@ -985,8 +985,8 @@ Lütfen, Windows için Git&apos;in kurulu olduğuna emin ol veya doğru komutu e
         
       </trans-unit>
       <trans-unit id="label11.Text">
-        <source>The checklist below validates the basic settings needed for Git Extensions to work properly.</source>
-        <target>Aşağıdaki kontrol listesi, Git Extensions&apos;ın (uzantılarının) düzgün çalışması için gereken temel ayarları doğrular.</target>
+        <source>The checklist below validates the basic settings needed for Gitanas to work properly.</source>
+        <target>Aşağıdaki kontrol listesi, Gitanas&apos;ın (uzantılarının) düzgün çalışması için gereken temel ayarları doğrular.</target>
         
       </trans-unit>
       <trans-unit id="translationConfig_Fix.Text">
@@ -1267,7 +1267,7 @@ Lütfen, Windows için Git&apos;in kurulu olduğuna emin ol veya doğru komutu e
   <file datatype="plaintext" original="CommonLogic" source-language="en" target-language="tr">
     <body>
       <trans-unit id="_cantReadRegistry.Text">
-        <source>Git Extensions has insufficient permissions to check the registry.</source>
+        <source>Gitanas has insufficient permissions to check the registry.</source>
         <target>Git Uzantılarının (Extensions) kayıt defterini kontrol etme izni yok.</target>
         
       </trans-unit>
@@ -2977,7 +2977,7 @@ You will have push access. {2}</source>
         
       </trans-unit>
       <trans-unit id="label2.Text">
-        <source>Git Extensions is open source. Get involved!</source>
+        <source>Gitanas is open source. Get involved!</source>
         <target>Git (Extensions) Uzantıları açık kaynaktır. Herkes katılabilir!</target>
         
       </trans-unit>
@@ -3384,8 +3384,8 @@ düzeltmeyi seç:</target>
   <file datatype="plaintext" original="FormBrowse" source-language="en" target-language="tr">
     <body>
       <trans-unit id="$this.Text">
-        <source>Git Extensions</source>
-        <target>Git Extensions (Uygulamaları)</target>
+        <source>Gitanas</source>
+        <target>Gitanas (Uygulamaları)</target>
         
       </trans-unit>
       <trans-unit id="CommitInfoTabPage.Text">
@@ -4953,9 +4953,9 @@ Gerçek komut satırı (işaretli değilse): --depth 1 --no-single-branch</targe
       </trans-unit>
       <trans-unit id="label1.Text">
         <source>Supported commandline arguments for
-gitex.cmd / gitex (located in the same folder as GitExtensions.exe):</source>
+gitex.cmd / gitex (located in the same folder as Gitanas.exe):</source>
         <target>Gitex.cmd / gitex için desteklenen
-komut satırı bağımsız değişkenleri (GitExtensions.exe ile aynı klasörde bulunur):</target>
+komut satırı bağımsız değişkenleri (Gitanas.exe ile aynı klasörde bulunur):</target>
         
       </trans-unit>
     </body>
@@ -6331,11 +6331,11 @@ Eğer emin değilsen sadece bu pencereyi kapat.</target>
         <source>The environment variable HOME does not point to a directory that contains the global git config file:
 &quot; {0} &quot;
 
-Do you want Git Extensions to help locate the correct folder?</source>
+Do you want Gitanas to help locate the correct folder?</source>
         <target>EV (HOME) ortam değişkeni, genel git yapılandırma (config) dosyasını içeren bir dizine işaret etmiyor:
 &quot; {0} &quot;
 
-Git Extensions&apos;ın doğru klasörü bulmana yardımcı olmasını istiyor musun?</target>
+Gitanas&apos;ın doğru klasörü bulmana yardımcı olmasını istiyor musun?</target>
         
       </trans-unit>
       <trans-unit id="_gitGlobalConfigNotFoundCaption.Text">
@@ -8299,14 +8299,14 @@ Onların kaybolmasını istemiyorsan önce onları zulala.</target>
         <source>The fingerprint of this host is not registered by PuTTY.
 This causes this process to hang, and that why it is automatically stopped.
 
-When the connection is opened detached from Git and Git Extensions, the host&apos;s fingerprint can be registered.
+When the connection is opened detached from Git and Gitanas, the host&apos;s fingerprint can be registered.
 You could also manually add the host&apos;s fingerprint or run Test Connection from the remotes dialog.
 
 Do you want to register the host&apos;s fingerprint and restart the process?</source>
         <target>Bu ana bilgisayarın parmak izi, PuTTY tarafından kaydedilmemiştir.
 Bu nedenle, bu işlemin askıda kalmasına ve otomatik olarak durdurulmasına neden olur.
 
-Git ve Git Extensions&apos;dan ayrılmış olarak bağlantı açıldığında, ana bilgisayarın parmak izi kaydedilebilir.
+Git ve Gitanas&apos;dan ayrılmış olarak bağlantı açıldığında, ana bilgisayarın parmak izi kaydedilebilir.
 Ayrıca ana bilgisayarın parmak izini manuel olarak ekleyebilir veya uzak iletişim kutusundan Bağlantı Testi&apos;ni çalıştırabilirsin.
 
 Ana bilgisayarın parmak izini kaydetmek ve işlemi yeniden başlatmak ister misin?</target>
@@ -9764,8 +9764,8 @@ Bu nedenle İptal düğmesi yapılan değişiklikleri GERİ ALAMAZ.</target>
         
       </trans-unit>
       <trans-unit id="_newVersionAvailable.Text">
-        <source>There is a new version {0} of Git Extensions available</source>
-        <target>Git Uzantılarının (Extensions&apos;ın) yeni bir sürümü var: Git Extensions {0}</target>
+        <source>There is a new version {0} of Gitanas available</source>
+        <target>Git Uzantılarının (Extensions&apos;ın) yeni bir sürümü var: Gitanas {0}</target>
         
       </trans-unit>
       <trans-unit id="_noUpdatesFound.Text">
@@ -10415,8 +10415,8 @@ ayarlaman gerekiyor.
   <file datatype="plaintext" original="GitExtensionsSettingsGroup" source-language="en" target-language="tr">
     <body>
       <trans-unit id="$this.Title">
-        <source>Git Extensions</source>
-        <target>Git Extensions (Uygulamaları)</target>
+        <source>Gitanas</source>
+        <target>Gitanas (Uygulamaları)</target>
         
       </trans-unit>
     </body>
@@ -10877,8 +10877,8 @@ göster</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenGitExtensionsCaption.Text">
-        <source>Cannot open Git Extensions</source>
-        <target>Git Extensions (uzantıları) açılamıyor</target>
+        <source>Cannot open Gitanas</source>
+        <target>Gitanas (uzantıları) açılamıyor</target>
         
       </trans-unit>
       <trans-unit id="_cannotOpenSubmoduleCaption.Text">
@@ -11095,8 +11095,8 @@ Bu, yalnızca alt modül içerisinde bulunan ve süper proje tarafından belirle
         
       </trans-unit>
       <trans-unit id="label1.Text">
-        <source>Select one of the subnodes to view or edit the settings of a Git Extensions Plugin.</source>
-        <target>Git Extensions&apos;ın eklentilerinin ayarlarını görüntülemek veya düzenlemek için alt düğümlerden birini seç.</target>
+        <source>Select one of the subnodes to view or edit the settings of a Gitanas Plugin.</source>
+        <target>Gitanas&apos;ın eklentilerinin ayarlarını görüntülemek veya düzenlemek için alt düğümlerden birini seç.</target>
         
       </trans-unit>
     </body>
@@ -13174,8 +13174,8 @@ Hata ayrıntılarını panoya kopyalamak istiyor musun?</target>
         
       </trans-unit>
       <trans-unit id="_generalGitConfigExceptionMessage.Text">
-        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Git Extensions.</source>
-        <target>Aşağıdaki hata nedeniyle &quot;{0}&quot; okunamadı:{1}{1}{2}{1}{1}Bu sorunun doğası gereği, uygulamanın davranışı garanti edilemez ve kapatılması gerekir.{1}{1}Lütfen bu sorunu düzeltin ve Git Extensions&apos;ı(Uzantılarını) yeniden açın.</target>
+        <source>Failed to read &quot;{0}&quot; due to the following error:{1}{1}{2}{1}{1}Due to the nature of this problem, the behavior of the application cannot be guaranteed and it must be closed.{1}{1}Please correct this issue and re-open Gitanas.</source>
+        <target>Aşağıdaki hata nedeniyle &quot;{0}&quot; okunamadı:{1}{1}{2}{1}{1}Bu sorunun doğası gereği, uygulamanın davranışı garanti edilemez ve kapatılması gerekir.{1}{1}Lütfen bu sorunu düzeltin ve Gitanas&apos;ı(Uzantılarını) yeniden açın.</target>
         
       </trans-unit>
       <trans-unit id="_gitDubiousOwnershipHeader.Text">
@@ -13384,8 +13384,8 @@ Bu depoyu açabilmek için şunlardan birini yapmanız gerekir:
         
       </trans-unit>
       <trans-unit id="_openWithGitExtensions.Text">
-        <source>&amp;Open with Git Extensions</source>
-        <target>&amp;Git Extensions ile aç</target>
+        <source>&amp;Open with Gitanas</source>
+        <target>&amp;Gitanas ile aç</target>
         
       </trans-unit>
       <trans-unit id="_parentsText.Text">
@@ -13433,8 +13433,8 @@ Uzak sunucu: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportBugText.Text">
-        <source>If you think this was caused by Git Extensions, you can report a bug for the team to investigate.</source>
-        <target>Bu hatanın, Git Extensions&apos;dan kaynaklandığını düşünüyorsan, araştırması için bu hatayı takımımıza bildirebilirsin.</target>
+        <source>If you think this was caused by Gitanas, you can report a bug for the team to investigate.</source>
+        <target>Bu hatanın, Gitanas&apos;dan kaynaklandığını düşünüyorsan, araştırması için bu hatayı takımımıza bildirebilirsin.</target>
         
       </trans-unit>
       <trans-unit id="_reportIssue.Text">
@@ -13443,8 +13443,8 @@ Uzak sunucu: {1}</target>
         
       </trans-unit>
       <trans-unit id="_reportIssueDescription.Text">
-        <source>for the team to investigate - if you think this was caused by Git Extensions</source>
-        <target>ekibin incelemesi için - eğer bunun Git Extensions&apos;tan kaynaklandığını düşünüyorsanız</target>
+        <source>for the team to investigate - if you think this was caused by Gitanas</source>
+        <target>ekibin incelemesi için - eğer bunun Gitanas&apos;tan kaynaklandığını düşünüyorsanız</target>
         
       </trans-unit>
       <trans-unit id="_reportReproducedIssueDescription.Text">
@@ -13468,8 +13468,8 @@ Uzak sunucu: {1}</target>
         
       </trans-unit>
       <trans-unit id="_restartApplication.Text">
-        <source>Restart Git Extensions</source>
-        <target>Git Extensions&apos;ı Yeniden Başlat</target>
+        <source>Restart Gitanas</source>
+        <target>Gitanas&apos;ı Yeniden Başlat</target>
         
       </trans-unit>
       <trans-unit id="_restartApplicationDescription.Text">

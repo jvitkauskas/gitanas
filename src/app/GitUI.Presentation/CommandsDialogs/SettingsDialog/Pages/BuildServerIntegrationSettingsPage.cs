@@ -15,7 +15,7 @@ public sealed class BuildServerIntegrationSettingsPageStrings : ViewStrings
     {
         Title = Add("$this", "Text", "Build server integration");
         None = Add("_noneItem", "Text", "None");
-        Info = Add("labelBuildServerSettingsInfo", "Text", "Git Extensions can integrate with build servers to supply per-commit Continuous Integration information.");
+        Info = Add("labelBuildServerSettingsInfo", "Text", "Gitanas can integrate with build servers to supply per-commit Continuous Integration information.");
         EnableIntegration = Add("checkBoxEnableBuildServerIntegration", "Text", "Enable build server integration");
         ShowBuildResultPage = Add("checkBoxShowBuildResultPage", "Text", "Show build result page");
         BuildServerType = Add("labelBuildServerType", "Text", "Build server type");

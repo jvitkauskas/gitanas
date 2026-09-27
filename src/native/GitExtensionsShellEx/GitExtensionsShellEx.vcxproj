@@ -360,7 +360,7 @@
     <None Include="GitExtensionsShellEx.def" />
     <None Include="Resources\information.ico" />
     <None Include="Resources\FileStatusAdded.ico" />
-    <None Include="Resources\git-extensions-logo.ico" />
+    <None Include="..\..\..\setup\assets\Logo\gitanas\gitanas.ico" />
     <None Include="Resources\BranchCheckout.ico" />
     <None Include="Resources\BranchCreate.ico" />
     <None Include="Resources\ShellExtensions.ico" />

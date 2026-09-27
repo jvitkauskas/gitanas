@@ -3,6 +3,8 @@
   <PropertyGroup>
     <TargetFramework>$(PortableTargetFramework)</TargetFramework>
     <OutputType>WinExe</OutputType>
+    <!-- Build the app reference as a library; eng/macos/build.sh publishes the standalone reporter separately. -->
+    <OutputType Condition="'$(MacOSBundle)' == 'true'">Library</OutputType>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <ApplicationIcon>..\..\..\setup\assets\Logo\gitanas\gitanas.ico</ApplicationIcon>
   </PropertyGroup>

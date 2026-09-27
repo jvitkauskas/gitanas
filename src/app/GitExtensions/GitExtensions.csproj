@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(RepoRoot)\eng\Localisation.targets" />
   <Import Project="$(MSBuildProjectDirectory)\Project.Build.targets" />
-  <Import Project="$(MSBuildProjectDirectory)\Project.Publish.targets" />
+  <!-- macOS bundles use eng/macos/build.sh instead of the legacy Windows packaging pipeline. -->
+  <Import Project="$(MSBuildProjectDirectory)\Project.Publish.targets" Condition="'$(MacOSBundle)' != 'true'" />
   <Import Project="$(MSBuildProjectDirectory)\Project.Loc.targets" />
-  <Import Project="$(MSBuildProjectDirectory)\Project.Avalonia.targets" />
+  <Import Project="$(MSBuildProjectDirectory)\Project.Avalonia.targets" Condition="'$(MacOSBundle)' != 'true'" />
 
   <PropertyGroup>
     <TargetFramework>$(PortableTargetFramework)</TargetFramework>
@@ -14,6 +15,7 @@
     <ApplicationIcon>..\..\..\setup\assets\Logo\gitanas\gitanas.ico</ApplicationIcon>
     <StartupObject />
 
+    <UseAppHost Condition="'$(MacOSBundle)' == 'true'">true</UseAppHost>
     <IsPublishable>true</IsPublishable>
     <PublishDir Condition="'$(IsPublishable)' == 'true'">$(AppPublishDir)</PublishDir>
     <ApplicationManifest>app.manifest</ApplicationManifest>

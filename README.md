@@ -18,6 +18,15 @@ tested; see the [QA checklist and reports](docs/avalonia-port/QA.md) for coverag
 and known limitations. The application is branded as Gitanas; internal project
 and plugin names retain their existing identifiers for compatibility.
 
+## macOS packages
+
+Version tags produce separate Apple Silicon and Intel `.app` ZIPs in
+[GitHub Releases](https://github.com/jvitkauskas/gitanas/releases). The packages
+include .NET and require macOS 14 or later and a separate Git installation.
+They are ad-hoc signed, not Apple-notarized; the first launch requires approval
+in **System Settings → Privacy & Security → Open Anyway**.
+See [macOS packaging](eng/macos/README.md) for release and build instructions.
+
 ## Build and run
 
 Install Git and the .NET 10 SDK, then:

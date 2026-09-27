@@ -8,6 +8,7 @@ import plistlib
 import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 
@@ -119,20 +120,24 @@ def package(args):
     if sys.platform != 'darwin':
         raise RuntimeError('Signing and archiving require macOS')
 
-    # Sign native code inside-out, then the bundle. Ad-hoc signing uses no Apple
-    # credentials. Do not enable hardened runtime without the required .NET entitlements.
+    # Sign every file under MacOS, including managed DLLs: codesign treats this
+    # directory as nested code. Non-Mach-O signatures use extended attributes,
+    # which ditto preserves in the ZIP. Sign the main executable via the bundle
+    # LAST, because codesign recognizes it as the bundle and validates siblings.
+    # Ad-hoc signing needs no Apple credentials or hardened-runtime entitlements.
     macho_headers = {bytes.fromhex(h) for h in (
         'feedface', 'cefaedfe', 'feedfacf', 'cffaedfe', 'cafebabe', 'bebafeca',
         'cafebabf', 'bfbafeca')}
     expected_arch = 'arm64' if args.rid == 'osx-arm64' else 'x86_64'
     for path in sorted(binaries.rglob('*')):
-        if not path.is_file():
+        if not path.is_file() or path == binaries / 'Gitanas':
             continue
         with path.open('rb') as stream:
             native = stream.read(4) in macho_headers
         if native:
             run('lipo', str(path), '-verify_arch', expected_arch)
-            run('codesign', '--force', '--sign', '-', str(path))
+        run('codesign', '--force', '--sign', '-', str(path))
+    run('lipo', str(binaries / 'Gitanas'), '-verify_arch', expected_arch)
     run('plutil', '-lint', str(contents / 'Info.plist'))
     run('codesign', '--force', '--sign', '-', str(app))
     run('codesign', '--verify', '--deep', '--strict', '--verbose=2', str(app))
@@ -141,6 +146,10 @@ def package(args):
     dist.mkdir(exist_ok=True)
     archive = dist / f'Gitanas-{args.version}-{args.rid}.zip'
     run('ditto', '-c', '-k', '--sequesterRsrc', '--keepParent', str(app), str(archive))
+    with tempfile.TemporaryDirectory() as unpacked:
+        run('ditto', '-x', '-k', str(archive), unpacked)
+        run('codesign', '--verify', '--deep', '--strict', '--verbose=2',
+            str(Path(unpacked) / 'Gitanas.app'))
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
     archive.with_suffix('.zip.sha256').write_text(f'{digest}  {archive.name}\n')
     print(f'Created {archive} ({archive.stat().st_size // 1024 // 1024} MiB)')

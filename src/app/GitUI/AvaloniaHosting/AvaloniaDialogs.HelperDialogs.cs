@@ -99,7 +99,8 @@ internal static partial class AvaloniaDialogs
     {
         ChooseTranslationViewModel viewModel = new(
             ViewStrings.Load<ChooseTranslationStrings>(),
-            ChooseTranslationViewModel.CreateChoices(Translator.GetAllTranslations(), Translator.GetTranslationDir(), File.Exists));
+            ChooseTranslationViewModel.CreateChoices(Translator.GetAllTranslations()),
+            AppSettings.Translation);
         ShowDialog(() => new ChooseTranslationWindow { DataContext = viewModel }, owner);
 
         if (viewModel.SelectedTranslation is not null)

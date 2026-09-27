@@ -504,3 +504,21 @@ two Windows-only UI cases and one Windows-only icon case were skipped. Inspected
 fresh dashboard, About and Appearance screenshots in light and dark themes.
 Translation XML parses and no donation or translation-contribution actions remain
 in the application source.
+
+### Text-only language selection (2026-09-27)
+
+Replaced the first-run language flag grid with a compact, scrollable text list.
+The current language is preselected; OK or Enter confirms and Cancel or Escape
+leaves the saved language unchanged. English is the first-run fallback. The list
+receives keyboard focus on its selected row. Appearance settings retains its
+text-only language dropdown.
+
+Removed the flag images and unused bitmap converter, and removed flag entries
+from translation build/publish enumeration and the Windows installer.
+
+Validation: the Release solution build passed with five existing Avalonia obsolete
+property warnings. All 1,281 Avalonia tests passed, with two Windows-only cases
+skipped. Keyboard navigation, confirmation and cancellation were exercised in
+headless view tests; light/dark screenshots were inspected. Build/installer XML
+parses and the application translation output contains no flags. The Windows MSI
+was not built on this Linux host.

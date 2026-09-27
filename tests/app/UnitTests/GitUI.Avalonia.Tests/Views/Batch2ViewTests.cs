@@ -4,7 +4,6 @@ using Avalonia.Headless;
 using Avalonia.Input;
 using Avalonia.Styling;
 using Avalonia.Threading;
-using Avalonia.VisualTree;
 using GitCommands.Git;
 using GitUI.Avalonia.CommandsDialogs;
 using GitUI.Avalonia.CommandsDialogs.SettingsDialog;
@@ -36,7 +35,7 @@ public sealed class Batch2ViewTests : HeadlessTest
             new SelectMultipleBranchesWindow { DataContext = new SelectMultipleBranchesViewModel(new SelectMultipleBranchesStrings(), [("a", "main"), ("b", "feature/x"), ("c", "release")], ["release"]) },
             $"select-multiple-branches-{theme}");
         Capture(
-            new ChooseTranslationWindow { DataContext = new ChooseTranslationViewModel(new ChooseTranslationStrings(), [new("English", null), new("Dutch", null), new("German", null)]) },
+            new ChooseTranslationWindow { DataContext = new ChooseTranslationViewModel(new ChooseTranslationStrings(), ["English", "Czech", "Dutch", "French", "German", "Italian", "Japanese", "Korean", "Polish", "Portuguese (Brazil)", "Spanish", "Traditional Chinese"], "German") },
             $"choose-translation-{theme}");
         Capture(
             new AvailableEncodingsWindow { DataContext = new AvailableEncodingsViewModel(new AvailableEncodingsStrings(), [new UTF8Encoding(false), Encoding.Unicode]) },
@@ -101,19 +100,40 @@ public sealed class Batch2ViewTests : HeadlessTest
     });
 
     [Test]
-    public Task ChooseTranslation_lists_a_button_per_language() => OnUiThreadAsync(() =>
+    public Task ChooseTranslation_selects_from_a_list_and_confirms_with_Enter() => OnUiThreadAsync(() =>
     {
-        ChooseTranslationViewModel viewModel = new(new ChooseTranslationStrings(), [new("English", null), new("German", null)]);
+        ChooseTranslationViewModel viewModel = new(new ChooseTranslationStrings(), ["English", "German"]);
         ChooseTranslationWindow window = Show(new ChooseTranslationWindow { DataContext = viewModel });
 
-        Button[] buttons = [.. window.FindControl<ItemsControl>("translationsItemsControl")!.GetVisualDescendants().OfType<Button>()];
-        buttons.Should().HaveCount(2);
+        ListBox languages = window.FindControl<ListBox>("translationsListBox")!;
+        languages.Items.Cast<string>().Should().Equal("English", "German");
+        languages.SelectedItem.Should().Be("English");
 
-        buttons[1].Command!.Execute(buttons[1].CommandParameter);
+        window.KeyPressQwerty(PhysicalKey.ArrowDown, RawInputModifiers.None);
+        window.KeyReleaseQwerty(PhysicalKey.ArrowDown, RawInputModifiers.None);
+        viewModel.Language.Should().Be("German");
+        viewModel.SelectedTranslation.Should().BeNull();
+        window.KeyPressQwerty(PhysicalKey.Enter, RawInputModifiers.None);
         Dispatcher.UIThread.RunJobs();
 
         viewModel.SelectedTranslation.Should().Be("German");
         window.DialogResult.Should().BeTrue();
+    });
+
+    [Test]
+    public Task ChooseTranslation_keeps_the_current_language_and_Escape_cancels() => OnUiThreadAsync(() =>
+    {
+        ChooseTranslationViewModel viewModel = new(new ChooseTranslationStrings(), ["English", "German"], "German");
+        ChooseTranslationWindow window = Show(new ChooseTranslationWindow { DataContext = viewModel });
+        ListBox languages = window.FindControl<ListBox>("translationsListBox")!;
+        languages.SelectedItem.Should().Be("German");
+
+        languages.SelectedIndex = 0;
+        window.KeyPressQwerty(PhysicalKey.Escape, RawInputModifiers.None);
+        Dispatcher.UIThread.RunJobs();
+
+        viewModel.SelectedTranslation.Should().BeNull();
+        window.DialogResult.Should().BeFalse();
     });
 
     [Test]

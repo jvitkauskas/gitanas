@@ -1,42 +1,27 @@
 <h:DialogWindow xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:h="using:GitUI.Avalonia.Hosting"
-                xmlns:c="using:GitUI.Avalonia.Converters"
                 xmlns:vm="using:GitUI.Presentation.CommandsDialogs.SettingsDialog"
                 x:Class="GitUI.Avalonia.CommandsDialogs.SettingsDialog.ChooseTranslationWindow"
                 x:DataType="vm:ChooseTranslationViewModel"
                 Title="{Binding Strings.Title.PlainText}"
-                Width="800" Height="540" MinWidth="400" MinHeight="300">
-  <DockPanel Margin="12">
-    <StackPanel DockPanel.Dock="Top" Spacing="6" Margin="0,0,0,8">
-      <TextBlock Text="{Binding Strings.ChooseLanguage.Text}" FontWeight="SemiBold" />
-      <TextBlock Text="{Binding Strings.ChangeLater.Text}" />
-    </StackPanel>
-    <Border BorderThickness="1" BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}">
-      <ScrollViewer HorizontalScrollBarVisibility="Disabled">
-        <ItemsControl Name="translationsItemsControl" ItemsSource="{Binding Translations}" Margin="4">
-          <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-              <WrapPanel />
-            </ItemsPanelTemplate>
-          </ItemsControl.ItemsPanel>
-          <ItemsControl.ItemTemplate>
-            <!-- A single click chooses the language, as the WinForms list view (ItemActivation.OneClick). -->
-            <DataTemplate x:DataType="vm:TranslationChoice">
-              <Button Margin="4" Padding="6" Width="170" Background="Transparent" BorderThickness="0"
-                      Command="{Binding $parent[ItemsControl].((vm:ChooseTranslationViewModel)DataContext).ChooseCommand}"
-                      CommandParameter="{Binding}">
-                <StackPanel Spacing="4">
-                  <Border Width="150" Height="75">
-                    <Image Source="{Binding ImagePath, Converter={x:Static c:FilePathToBitmapConverter.Instance}}" Stretch="Uniform" />
-                  </Border>
-                  <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" />
-                </StackPanel>
-              </Button>
-            </DataTemplate>
-          </ItemsControl.ItemTemplate>
-        </ItemsControl>
-      </ScrollViewer>
+                Width="440" Height="500" MinWidth="320" MinHeight="300">
+  <DockPanel>
+    <Border DockPanel.Dock="Bottom" Classes="dialogFooter">
+      <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="6">
+        <Button Name="cancelButton" IsCancel="True"
+                Content="{Binding Strings.Cancel.AccessKeyText}" Command="{Binding CancelCommand}" />
+        <Button Name="okButton" Classes="accent" IsDefault="True"
+                Content="{Binding Strings.Ok.AccessKeyText}" Command="{Binding ChooseCommand}" />
+      </StackPanel>
     </Border>
+    <DockPanel Margin="12">
+      <StackPanel DockPanel.Dock="Top" Spacing="6" Margin="0,0,0,8">
+        <Label Content="{Binding Strings.ChooseLanguage.AccessKeyText}" Target="translationsListBox" FontWeight="SemiBold" Padding="0" />
+        <TextBlock Text="{Binding Strings.ChangeLater.Text}" TextWrapping="Wrap" />
+      </StackPanel>
+      <ListBox Name="translationsListBox" ItemsSource="{Binding Translations}" SelectedItem="{Binding Language}"
+               SelectionMode="Single" />
+    </DockPanel>
   </DockPanel>
 </h:DialogWindow>

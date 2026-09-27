@@ -172,9 +172,10 @@ public sealed partial class AvaloniaHostingTests
             DriveNextDialog(window =>
             {
                 ChooseTranslationViewModel viewModel = (ChooseTranslationViewModel)window.DataContext!;
-                viewModel.Translations[0].Name.Should().Be("English");
+                viewModel.Translations[0].Should().Be("English");
                 Capture(window, "choose-translation");
-                viewModel.ChooseCommand.Execute(viewModel.Translations[0]);
+                viewModel.Language = viewModel.Translations[0];
+                viewModel.ChooseCommand.Execute(null);
             });
             AvaloniaStartupDialogs.TryShowChooseTranslation().Should().BeTrue();
             AppSettings.Translation.Should().Be("English");

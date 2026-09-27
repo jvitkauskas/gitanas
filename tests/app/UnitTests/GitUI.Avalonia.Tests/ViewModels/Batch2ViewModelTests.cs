@@ -71,26 +71,23 @@ public sealed class Batch2ViewModelTests
     }
 
     [Test]
-    public void ChooseTranslation_lists_English_first_and_images_that_exist()
+    public void ChooseTranslation_lists_English_first_then_languages_by_name()
     {
-        IReadOnlyList<TranslationChoice> choices = ChooseTranslationViewModel.CreateChoices(
-            ["German", "Dutch"],
-            TestPaths.Native(@"C:\translations"),
-            path => path.EndsWith("German.gif"));
+        IReadOnlyList<string> choices = ChooseTranslationViewModel.CreateChoices(["German", "Dutch", "English"]);
 
-        choices.Select(c => c.Name).Should().Equal("English", "Dutch", "German");
-        choices.Single(c => c.Name == "German").ImagePath.Should().Be(Path.Join(TestPaths.Native(@"C:\translations"), "German.gif"));
-        choices.Single(c => c.Name == "Dutch").ImagePath.Should().BeNull();
+        choices.Should().Equal("English", "Dutch", "German");
     }
 
     [Test]
     public void ChooseTranslation_choosing_closes_with_the_language()
     {
-        ChooseTranslationViewModel viewModel = new(new ChooseTranslationStrings(), [new("English", null), new("German", null)]);
+        ChooseTranslationViewModel viewModel = new(new ChooseTranslationStrings(), ["English", "German"]);
         bool? closed = null;
         viewModel.CloseRequested += (_, accepted) => closed = accepted;
 
-        viewModel.ChooseCommand.Execute(viewModel.Translations[1]);
+        viewModel.Language = "German";
+        closed.Should().BeNull();
+        viewModel.ChooseCommand.Execute(null);
 
         closed.Should().BeTrue();
         viewModel.SelectedTranslation.Should().Be("German");

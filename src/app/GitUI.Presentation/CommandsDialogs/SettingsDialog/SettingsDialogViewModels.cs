@@ -14,6 +14,8 @@ public sealed class ChooseTranslationStrings : ViewStrings
     {
         Title = Add("$this", "Text", "Choose language");
         ChooseLanguage = Add("label1", "Text", "Choose your language");
+        Ok = Add("ButtonOk", "Text", "OK", "FormAvailableEncodings");
+        Cancel = Add("ButtonCancel", "Text", "Cancel", "FormAvailableEncodings");
         ChangeLater = Add("label2", "Text", "You can change the language at any time in the settings dialog");
     }
 
@@ -22,43 +24,55 @@ public sealed class ChooseTranslationStrings : ViewStrings
     public TranslatedText ChooseLanguage { get; }
 
     public TranslatedText ChangeLater { get; }
+
+    public TranslatedText Ok { get; }
+
+    public TranslatedText Cancel { get; }
 }
 
-/// <summary>A language to choose, with the path of its flag image if there is one.</summary>
-public sealed record TranslationChoice(string Name, string? ImagePath);
-
 /// <summary>View model of the language selection (port of <c>FormChooseTranslation</c>).</summary>
-public sealed partial class ChooseTranslationViewModel(ChooseTranslationStrings strings, IReadOnlyList<TranslationChoice> translations) : DialogViewModel
+public sealed partial class ChooseTranslationViewModel : DialogViewModel
 {
     public const string English = "English";
 
-    public ChooseTranslationStrings Strings { get; } = strings;
+    public ChooseTranslationViewModel(ChooseTranslationStrings strings, IReadOnlyList<string> translations, string? currentTranslation = null)
+    {
+        Strings = strings;
+        Translations = translations;
+        Language = translations.FirstOrDefault(language => string.Equals(language, currentTranslation, StringComparison.OrdinalIgnoreCase))
+            ?? translations.FirstOrDefault();
+    }
 
-    public IReadOnlyList<TranslationChoice> Translations { get; } = translations;
+    public ChooseTranslationStrings Strings { get; }
 
-    /// <summary>The chosen language, or <see langword="null"/> if the dialog was closed without choosing.</summary>
+    public IReadOnlyList<string> Translations { get; }
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(ChooseCommand))]
+    public partial string? Language { get; set; }
+
+    /// <summary>The confirmed language, or <see langword="null"/> if the dialog was cancelled.</summary>
     public string? SelectedTranslation { get; private set; }
 
-    /// <summary>The choices as <c>FormChooseTranslation</c> lists them: English first, then the translations sorted by name.</summary>
-    public static IReadOnlyList<TranslationChoice> CreateChoices(IEnumerable<string> translations, string translationDirectory, Func<string, bool> fileExists)
-    {
-        List<string> names = [.. translations];
-        names.Sort();
-        names.Insert(0, English);
+    /// <summary>English first, then the translations sorted by name.</summary>
+    public static IReadOnlyList<string> CreateChoices(IEnumerable<string> translations)
+        => [English, .. translations.Where(name => !string.Equals(name, English, StringComparison.OrdinalIgnoreCase))
+            .Distinct(StringComparer.OrdinalIgnoreCase).Order(StringComparer.CurrentCulture)];
 
-        return [.. names.Select(name =>
+    private bool CanChoose() => Language is not null && Translations.Contains(Language);
+
+    [RelayCommand(CanExecute = nameof(CanChoose))]
+    private void Choose()
+    {
+        if (CanChoose())
         {
-            string imagePath = Path.Join(translationDirectory, name + ".gif");
-            return new TranslationChoice(name, fileExists(imagePath) ? imagePath : null);
-        })];
+            SelectedTranslation = Language;
+            Close(accepted: true);
+        }
     }
 
     [RelayCommand]
-    private void Choose(TranslationChoice translation)
-    {
-        SelectedTranslation = translation.Name;
-        Close(accepted: true);
-    }
+    private void Cancel() => Close(accepted: false);
 }
 
 /// <summary>Strings of the encodings configuration; ids match <c>FormAvailableEncodings</c>.</summary>

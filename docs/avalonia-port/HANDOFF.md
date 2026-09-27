@@ -278,3 +278,12 @@ Avalonia equivalent in `af72747eb`; the WinForms code is not reintroduced.
 - From Git Bash, `wsl.exe` arguments are mangled twice: MSYS converts paths (set `MSYS_NO_PATHCONV=1`) and `wsl.exe`
   expands `$` through the default shell of the distribution. Put Linux commands in a script file and run it with
   `wsl.exe -e bash <script>`.
+
+## Measured performance follow-up (2026-09-27)
+
+The [measured follow-up](QA-Performance-Followup-2026-09-27.md) keeps background construction for large File Tree
+views and deferred inline diff highlighting, with cancellation and selection regressions. Total work remains
+similar, but measured UI pauses are much shorter. Repository → Git maintenance → Optimize history queries updates
+the commit-graph explicitly; it does not register automatic maintenance. The reported triple-status refresh was
+not reproduced in the live Trace2 logs, so no status cache/deduplication rewrite was made. libgit2, revision-memory
+restructuring and further graph-layout changes remain deferred. See the report for timings, trade-offs and validation.

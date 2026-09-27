@@ -101,6 +101,12 @@ public sealed partial class BrowseViewModel
         }
 
         fileTree.SetGroups([files]);
+        await fileTree.WaitForTreeAsync();
+        if (cancellationToken.IsCancellationRequested)
+        {
+            return;
+        }
+
         _pendingTreePath = null;
         _pendingTreeFolder = false;
         if (selectedPath is not null)

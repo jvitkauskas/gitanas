@@ -436,6 +436,9 @@ internal static partial class AvaloniaDialogs
                 case BrowseCommand.EditMailMap:
                     _commands.StartMailMapDialog(owner);
                     break;
+                case BrowseCommand.OptimizeHistory:
+                    ProcessDialogs.ReadProcess(owner, _commands, arguments: "maintenance run --task=commit-graph", Module.WorkingDir, input: null, useDialogSettings: true);
+                    break;
                 case BrowseCommand.CompressGitDatabase:
                     ProcessDialogs.ReadProcess(owner, _commands, arguments: "gc", Module.WorkingDir, input: null, useDialogSettings: true);
                     break;

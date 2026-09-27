@@ -9,6 +9,10 @@ namespace GitUI.Presentation.Editor;
 public sealed partial class TextEditorViewModel : ObservableObject
 {
     private string _loadedText = "";
+    private CancellationTokenSource? _inlineDiffCancellation;
+
+    /// <summary>Completes when the current diff's optional word highlighting has been calculated.</summary>
+    public Task InlineDiffLoading { get; private set; } = Task.CompletedTask;
 
     /// <summary>The text, as edited.</summary>
     [ObservableProperty]
@@ -119,7 +123,9 @@ public sealed partial class TextEditorViewModel : ObservableObject
     /// </summary>
     public void LoadDiff(string text, DiffLoadOptions options)
     {
+        CancelInlineDiff();
         IsReadOnly = true;
+        bool deferInlineDiff = false;
         GitColoring? gitColoring = null;
         IReadOnlyList<DiffLine> diffLines;
         IReadOnlyList<InlineDiffMarker> inlineDiffMarkers = [];
@@ -158,7 +164,16 @@ public sealed partial class TextEditorViewModel : ObservableObject
                 diffLines = DiffLinesAnalyzer.Analyze(text, isCombinedDiff, gitColoring, isGitWordDiff: options.IsGitWordDiff && !isCombinedDiff);
 
                 // As DiffHighlightService.SetHighlighting: git colors the words of a git word diff.
-                inlineDiffMarkers = gitColoring is not null && options.IsGitWordDiff ? [] : InlineDiffAnalyzer.Analyze(text, diffLines);
+                if (gitColoring is null || !options.IsGitWordDiff)
+                {
+                    // Keep small diffs immediate. Large diffs can be read while word highlighting is prepared.
+                    deferInlineDiff = text.Length >= 128 * 1024 && SynchronizationContext.Current is not null;
+                    if (!deferInlineDiff)
+                    {
+                        inlineDiffMarkers = InlineDiffAnalyzer.Analyze(text, diffLines);
+                    }
+                }
+
                 break;
         }
 
@@ -168,12 +183,52 @@ public sealed partial class TextEditorViewModel : ObservableObject
         InlineDiffMarkers = inlineDiffMarkers;
         FirstChangeContextLines = options.FirstChangeContextLines;
         LoadText(text, options.HighlightingFileName, line: null, diffLines, options.ContentIdentification);
+        if (deferInlineDiff)
+        {
+            CancellationTokenSource cancellation = new();
+            _inlineDiffCancellation = cancellation;
+            InlineDiffLoading = LoadInlineDiffAsync(text, diffLines, cancellation);
+        }
+    }
+
+    private async Task LoadInlineDiffAsync(string text, IReadOnlyList<DiffLine> lines, CancellationTokenSource cancellation)
+    {
+        try
+        {
+            IReadOnlyList<InlineDiffMarker> markers = await Task.Run(() => InlineDiffAnalyzer.Analyze(text, lines, cancellation.Token), cancellation.Token);
+            if (!cancellation.IsCancellationRequested)
+            {
+                InlineDiffMarkers = markers;
+                OnPropertyChanged(nameof(InlineDiffMarkers));
+            }
+        }
+        catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
+        {
+            // A different file or diff replaced this one.
+        }
+        finally
+        {
+            if (ReferenceEquals(_inlineDiffCancellation, cancellation))
+            {
+                _inlineDiffCancellation = null;
+            }
+
+            cancellation.Dispose();
+        }
+    }
+
+    private void CancelInlineDiff()
+    {
+        _inlineDiffCancellation?.Cancel();
+        _inlineDiffCancellation = null;
+        InlineDiffLoading = Task.CompletedTask;
     }
 
     /// <summary>Loads a text, which is unchanged afterwards (as <c>FileViewer.TextLoaded</c>).</summary>
     /// <param name="contentIdentification">What the text is, to keep the position when it is shown again (<see cref="ContentIdentification"/>).</param>
     public void Load(string text, string? fileName = null, int? line = null, string? contentIdentification = null)
     {
+        CancelInlineDiff();
         GitColoring = null;
         InlineDiffMarkers = [];
         DiffMode = DiffViewMode.Diff;

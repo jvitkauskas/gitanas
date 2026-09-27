@@ -473,6 +473,10 @@ public partial class TextEditorView : UserControl
     {
         switch (e.PropertyName)
         {
+            case nameof(TextEditorViewModel.InlineDiffMarkers):
+                ShowDiff(_viewModel!.DiffLines);
+                break;
+
             case nameof(TextEditorViewModel.Text) when !_updatingText:
                 // Before the text is replaced (a text loaded replaces it before TextLoaded).
                 CapturePosition();

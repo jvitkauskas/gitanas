@@ -35,7 +35,7 @@ public static class InlineDiffAnalyzer
     // To skip the prefixes '-' / '+' (this is only for the normal patch format).
     private const int DiffContentOffset = 1;
 
-    public static IReadOnlyList<InlineDiffMarker> Analyze(string text, IReadOnlyList<DiffLine> lines)
+    public static IReadOnlyList<InlineDiffMarker> Analyze(string text, IReadOnlyList<DiffLine> lines, CancellationToken cancellationToken = default)
     {
         List<InlineDiffMarker> markers = [];
         if (lines.Count == 0)
@@ -50,6 +50,8 @@ public static class InlineDiffAnalyzer
         // Process the next blocks of removed / added lines and mark in-line differences.
         while (index < diffLines.Length)
         {
+            cancellationToken.ThrowIfCancellationRequested();
+
             // git-diff presents the removed lines directly followed by the added in a "block".
             List<DiffTextSegment> linesRemoved = GetBlockOfLines(diffLines, segments, DiffLineKind.Minus, ref index, found: false);
             if (linesRemoved.Count == 0)
@@ -65,6 +67,7 @@ public static class InlineDiffAnalyzer
 
             foreach ((DiffTextSegment lineRemoved, DiffTextSegment lineAdded) in DiffLinesMatcher.FindLinePairs(GetText, linesRemoved, linesAdded))
             {
+                cancellationToken.ThrowIfCancellationRequested();
                 AddDifferenceMarkers(markers, GetText, lineRemoved, lineAdded, DiffContentOffset);
             }
         }

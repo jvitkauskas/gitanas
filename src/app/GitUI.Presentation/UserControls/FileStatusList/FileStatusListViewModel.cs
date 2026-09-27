@@ -60,8 +60,27 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     private readonly GitItemStatus _noItemStatus;
     private IReadOnlyList<FileStatusGroup> _groups = [];
     private Regex? _filterRegex;
+    private CancellationTokenSource? _treeBuildCancellation;
+    private bool _waitingForGroups;
+
+    /// <summary>Completes when the current tree has been built and its selection restored.</summary>
+    public Task TreeLoading { get; private set; } = Task.CompletedTask;
     private bool _updatingSelection;
     private Func<IReadOnlyList<FileStatusNode>, IReadOnlyList<FileStatusNode>>? _restoreSelection;
+
+    /// <summary>Waits for the latest build, including a filter changed while an earlier build was running.</summary>
+    public async Task WaitForTreeAsync()
+    {
+        Task current;
+        do
+        {
+            current = TreeLoading;
+#pragma warning disable VSTHRD003 // Tree builds use the caller's UI context; no synchronous join is made.
+            await current;
+#pragma warning restore VSTHRD003
+        }
+        while (current != TreeLoading);
+    }
 
     /// <param name="fileNameOnlyFilter">Whether the filter matches only file names (<c>TruncatePathMethod.FileNameOnly</c>).</param>
     public FileStatusListViewModel(FileStatusListStrings strings, FileStatusTreeOptions? options = null, bool fileNameOnlyFilter = false)
@@ -227,6 +246,8 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     /// <summary>Shows "Loading data..." until the files are set.</summary>
     public void SetLoading()
     {
+        CancelTreeBuild();
+        _waitingForGroups = true;
         IsLoading = true;
         ShowNoFiles = false;
     }
@@ -235,6 +256,7 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     public void SetGroups(IReadOnlyList<FileStatusGroup> groups)
     {
         _groups = groups;
+        _waitingForGroups = false;
         IsLoading = false;
 
         // As SetDiffsAsync with git grep: the search runs again for the new revision.
@@ -766,10 +788,85 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     /// <summary>As <c>UpdateFileStatusListView</c>.</summary>
     private void Update(bool updateCausedByFilter)
     {
+        if (IsFileTreeMode && _waitingForGroups)
+        {
+            // The incoming revision will use the latest filter; do not rebuild the previous revision meanwhile.
+            return;
+        }
+
         HashSet<GitItemStatus>? previouslySelectedItems = updateCausedByFilter ? [.. SelectedEntries.Select(e => e.Item)] : null;
 
         IReadOnlyList<FileStatusGroup> groups = ShownGroups;
-        (List<FileStatusNode> nodes, _, bool filesPresent) = FileStatusTreeBuilder.Build(groups, Options, IsFilterMatch, _noItemStatus, expandIfFewFiles: !IsFileTreeMode || IsFilterActive || IsGitGrepActive);
+        CancelTreeBuild();
+        FileStatusTreeOptions options = Options;
+        Func<GitItemStatus, bool> filter = CreateFilterMatch();
+        bool expand = !IsFileTreeMode || IsFilterActive || IsGitGrepActive;
+        bool delayFilter = updateCausedByFilter && IsFilterActive;
+        if (IsFileTreeMode && groups.Sum(group => group.Statuses.Count) >= 5000 && SynchronizationContext.Current is not null)
+        {
+            CancellationTokenSource cancellation = new();
+            _treeBuildCancellation = cancellation;
+            IsLoading = true;
+            TreeLoading = BuildAsync();
+            return;
+
+            async Task BuildAsync()
+            {
+                try
+                {
+                    if (delayFilter)
+                    {
+                        await Task.Delay(100, cancellation.Token);
+                    }
+
+                    (List<FileStatusNode> nodes, _, bool filesPresent) = await Task.Run(
+                        () => FileStatusTreeBuilder.Build(groups, options, Match, _noItemStatus, expand), cancellation.Token);
+                    if (!cancellation.IsCancellationRequested)
+                    {
+                        ApplyTree(nodes, filesPresent, groups, updateCausedByFilter, previouslySelectedItems);
+                        IsLoading = false;
+                    }
+                }
+                catch (OperationCanceledException) when (cancellation.IsCancellationRequested)
+                {
+                    // A new revision, filter or grouping superseded this tree.
+                }
+                finally
+                {
+                    if (ReferenceEquals(_treeBuildCancellation, cancellation))
+                    {
+                        _treeBuildCancellation = null;
+                    }
+
+                    cancellation.Dispose();
+                }
+
+                bool Match(GitItemStatus item)
+                {
+                    cancellation.Token.ThrowIfCancellationRequested();
+                    return filter(item);
+                }
+            }
+        }
+
+        (List<FileStatusNode> immediateNodes, _, bool immediateFilesPresent) = FileStatusTreeBuilder.Build(groups, options, filter, _noItemStatus, expand);
+        ApplyTree(immediateNodes, immediateFilesPresent, groups, updateCausedByFilter, previouslySelectedItems);
+        if (IsFileTreeMode)
+        {
+            IsLoading = false;
+        }
+    }
+
+    private void CancelTreeBuild()
+    {
+        _treeBuildCancellation?.Cancel();
+        _treeBuildCancellation = null;
+        TreeLoading = Task.CompletedTask;
+    }
+
+    private void ApplyTree(List<FileStatusNode> nodes, bool filesPresent, IReadOnlyList<FileStatusGroup> groups,
+        bool updateCausedByFilter, HashSet<GitItemStatus>? previouslySelectedItems)
+    {
         ShowNoFiles = !filesPresent && groups.Count <= 1 && !IsFileTreeMode && !IsGitGrepActive;
 
         Nodes.Clear();
@@ -816,32 +913,44 @@ public sealed partial class FileStatusListViewModel : ObservableObject
     }
 
     /// <summary>As <c>FileStatusList.IsFilterMatch</c>: the A/B diff status buttons and the filter.</summary>
-    private bool IsFilterMatch(GitItemStatus item)
+    private Func<GitItemStatus, bool> CreateFilterMatch()
     {
-        if (item.IsRangeDiff)
+        // Workers must not observe UI options changing in the middle of a build.
+        Regex? regex = _filterRegex;
+        bool onlyA = ShowOnlyA;
+        bool onlyB = ShowOnlyB;
+        bool unequal = ShowUnequalChange;
+        bool same = ShowSameChange;
+        return item =>
         {
-            return true;
-        }
+            if (item.IsRangeDiff)
+            {
+                return true;
+            }
 
-        if (!IsDiffStatusMatch(item.DiffStatus))
-        {
-            return false;
-        }
+            bool matchesStatus = item.DiffStatus switch
+            {
+                DiffBranchStatus.UnequalChange => unequal,
+                DiffBranchStatus.OnlyBChange => onlyB,
+                DiffBranchStatus.OnlyAChange => onlyA,
+                DiffBranchStatus.SameChange => same,
+                _ => true,
+            };
+            if (!matchesStatus || regex is null)
+            {
+                return matchesStatus;
+            }
 
-        if (_filterRegex is null)
-        {
-            return true;
-        }
+            string name = item.Name.TrimEnd('/');
+            string? oldName = item.OldName;
+            if (FileNameOnlyFilter)
+            {
+                name = Path.GetFileName(name);
+                oldName = Path.GetFileName(oldName);
+            }
 
-        string name = item.Name.TrimEnd('/');
-        string? oldName = item.OldName;
-        if (FileNameOnlyFilter)
-        {
-            name = Path.GetFileName(name);
-            oldName = Path.GetFileName(oldName);
-        }
-
-        return _filterRegex.IsMatch(name) || (oldName is not null && _filterRegex.IsMatch(oldName));
+            return regex.IsMatch(name) || (oldName is not null && regex.IsMatch(oldName));
+        };
     }
 
     private void SetSelection(IReadOnlyList<FileStatusNode> nodes)

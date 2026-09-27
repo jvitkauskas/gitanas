@@ -627,17 +627,6 @@ public sealed partial class FileStatusListViewModel
 
     partial void OnShowUntrackedFilesChanged(bool value) => RefreshRequested?.Invoke(this, EventArgs.Empty);
 
-    /// <summary>As <c>IsDiffStatusMatch</c>: the A/B buttons.</summary>
-    private bool IsDiffStatusMatch(DiffBranchStatus diffStatus)
-        => diffStatus switch
-        {
-            DiffBranchStatus.UnequalChange => ShowUnequalChange,
-            DiffBranchStatus.OnlyBChange => ShowOnlyB,
-            DiffBranchStatus.OnlyAChange => ShowOnlyA,
-            DiffBranchStatus.SameChange => ShowSameChange,
-            _ => true,
-        };
-
     /// <summary>The groups shown: those of the diffs and the git grep results, or only these in a searched file tree.</summary>
     private IReadOnlyList<FileStatusGroup> ShownGroups
         => _gitGrepGroup is not { } grep ? _groups
@@ -700,6 +689,12 @@ public sealed partial class FileStatusListViewModel
 
             _gitGrepGroup = group;
             Update(updateCausedByFilter: false);
+            await WaitForTreeAsync();
+            if (cancellationToken.IsCancellationRequested)
+            {
+                return;
+            }
+
             if (SelectedNodes.Count == 0)
             {
                 SelectFirstVisibleItem();

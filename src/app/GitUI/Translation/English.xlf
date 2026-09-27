@@ -2977,6 +2977,10 @@ Right click starts the "Open repository" dialog.</source>
         <source>&amp;Open...</source>
         <target />
       </trans-unit>
+      <trans-unit id="optimizeHistoryToolStripMenuItem.Text">
+        <source>&amp;Optimize history queries</source>
+        <target />
+      </trans-unit>
       <trans-unit id="patchToolStripMenuItem.Text">
         <source>View patc&amp;h file...</source>
         <target />

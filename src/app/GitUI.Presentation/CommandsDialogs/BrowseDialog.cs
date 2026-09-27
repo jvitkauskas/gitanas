@@ -64,6 +64,7 @@ public sealed class BrowseStrings : ViewStrings
         EditGitAttributes = Add("editGitAttributesToolStripMenuItem", "Text", "Edit .git&attributes");
         EditMailMap = Add("editmailmapToolStripMenuItem", "Text", "Edit .&mailmap");
         GitMaintenance = Add("gitMaintenanceToolStripMenuItem", "Text", "&Git maintenance");
+        OptimizeHistory = Add("optimizeHistoryToolStripMenuItem", "Text", "&Optimize history queries");
         CompressGitDatabase = Add("compressGitDatabaseToolStripMenuItem", "Text", "&Compress git database");
         RecoverLostObjects = Add("recoverLostObjectsToolStripMenuItem", "Text", "&Recover lost objects...");
         DeleteIndexLock = Add("deleteIndexLockToolStripMenuItem", "Text", "&Delete index.lock");
@@ -207,6 +208,8 @@ public sealed class BrowseStrings : ViewStrings
     public TranslatedText EditMailMap { get; }
 
     public TranslatedText GitMaintenance { get; }
+
+    public TranslatedText OptimizeHistory { get; }
 
     public TranslatedText CompressGitDatabase { get; }
 
@@ -414,6 +417,7 @@ public enum BrowseCommand
     ///  else without selection the compare dialog.
     /// </summary>
     ViewSelectedRevisions,
+    OptimizeHistory,
 }
 
 /// <summary>
@@ -846,6 +850,7 @@ public sealed partial class BrowseViewModel : DialogViewModel
             new(s.EditMailMap.AccessKeyText, BrowseCommand.EditMailMap, "EditMailMap"),
             new(s.GitMaintenance.AccessKeyText, null, "Maintenance", Children:
             [
+                new(s.OptimizeHistory.AccessKeyText, BrowseCommand.OptimizeHistory, "Maintenance"),
                 new(s.CompressGitDatabase.AccessKeyText, BrowseCommand.CompressGitDatabase, "CompressGitDatabase"),
                 new(s.RecoverLostObjects.AccessKeyText, BrowseCommand.RecoverLostObjects, "RecoverLostObjects"),
                 new(s.DeleteIndexLock.AccessKeyText, BrowseCommand.DeleteIndexLock, "DeleteIndexLock"),
